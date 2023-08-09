@@ -28,6 +28,56 @@ public :
 int main()
 {
     Calculator c1 ;
+    int a , b;
+    int choice;
+    cout<<"1.Additon  2.Substraction 3.Multiplication 4.modulus 5.division";
+    cin>>choice;
+    switch (choice)
+    {
+        case 1:
+                cout<<"enter a number ";
+                cin>>a;
+                cout<<"enter a number ";
+                cin>>b;
+                c1.Addition(a,b);
+                break;
+        case 2:
+                cout<<"enter a number ";
+                cin>>a;
+                cout<<"enter a number ";
+                cin>>b;
+                c1.Substraction(a,b);
+                break;
+        case 3:
+                cout<<"enter a number ";
+                cin>>a;
+                cout<<"enter a number ";
+                cin>>b;
+                c1.Multiplication(a,b);
+                break;
+        case 4:
+                cout<<"enter a number ";
+                cin>>a;
+                cout<<"enter a number ";
+                cin>>b;
+                c1.modulus(a,b);
+                break;
+        case 5:
+                cout<<"enter a number ";
+                cin>>a;
+                cout<<"enter a number ";
+                cin>>b;
+                c1.division(a,b);
+                break;
+        default:
+                cout<<"wrong choice";
+                
+
+
+    }
+
+    
+    
     cout<<c1.Addition(6,4)<<" addition "<<"\n";
     cout<<c1.Substraction(6,4)<<" subtraction"<<"\n";
     cout<<c1.Multiplication(6,4)<<" multiplication"<<"\n";
