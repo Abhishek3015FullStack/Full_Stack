@@ -30,8 +30,8 @@ class Bank{
     public:
     void displayname_and_balance()
     {
-        cout<<"name is\n"<<Name_of_the_depositor<<"\n";
-        cout<<"balance is\n"<<Balance<<"\n";
+        cout<<"name is "<<Name_of_the_depositor<<"\n";
+        cout<<"balance is "<<Balance<<"\n";
     }
 
     
@@ -41,9 +41,67 @@ class Bank{
 
 int main()
 {
+   
     Bank b1;
-    b1.Assign("Abhishek",1,"savings",5000);
-    b1.Deposit(5000);
-    b1.Withdraw(6000);
-    b1.displayname_and_balance();
+    
+    string Name_of_the_depositor_;
+    int Account_number_;
+    string Type_of_Account_;
+    int Balance_;
+    int deposit_amount;
+    int withdrwal_amount;
+    int choice;
+    cout<<"1.account add 2.enter a deposit amount 3.enter a withdrawal amount 4.display the balance";
+    cout<<"enter your choice";
+    cin>>choice;
+
+
+    switch (choice)
+    {
+        case 1:
+        cout<<"enter a name of the depositor";
+        cin>>Name_of_the_depositor_;
+
+        cout<<"enter a account number";
+        cin>>Account_number_;
+
+        cout<<"enter a type of the account ";
+        cin>>Type_of_Account_;
+
+        cout<<"enter balance";
+        cin>>Balance_;
+
+        b1.Assign(Name_of_the_depositor_,Account_number_,Type_of_Account_,Balance_);
+        break;
+        case 2:
+        cout<<"enter a deposit amount ";
+        cin>> deposit_amount;
+        b1.Deposit(deposit_amount);
+        break;;
+
+        case 3:
+        cout<<"enter a withdrawal amount";
+        cin>>withdrwal_amount;
+        b1.Withdraw(withdrwal_amount);
+        break;
+
+        case 4:
+                cout<<"showing the details ";
+
+
+        default:
+                cout<<"enter wrong choice";
+                b1.displayname_and_balance();
+
+        
+
+        
+
+    }
+   
+   
+
+    
+
+    
 }
