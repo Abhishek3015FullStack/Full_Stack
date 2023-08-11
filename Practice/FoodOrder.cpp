@@ -16,7 +16,7 @@ string name;
     int  order()
     {
         int a = 1;
-        cout<<"1.Pizzas\n2.Burgurs\n3.sandwitch\n4.Rolls\n5.Biryani";
+        cout<<"1.Pizzas\n2.Burgurs\n3.sandwitch\n4.Rolls\n5.Biryani ";
         cin>>a;
         return a;
 
@@ -34,7 +34,7 @@ string name;
         switch(c)
         {
             case 1:
-                    cout<<"1.mexican Pizza\n2.Peri Pizza\n3.Italian Pizza";
+                    cout<<"1.mexican Pizza 100\n2.Peri Pizza 120\n3.Italian Pizza 140";
                     cin>>choice;
                     switch(choice)
                     {
@@ -42,7 +42,8 @@ string name;
                                 quantity = Quantity();
                                 price = 100;
                                 total = price*quantity;
-                                cout<<total;
+                                cout<<total<<"\n";
+                               
                                
 
                                 break;
@@ -50,13 +51,13 @@ string name;
                                 quantity = Quantity();
                                 price = 120;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
                         case 3:
                                 quantity = Quantity();
                                 price = 140;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
                     }
                 break;
@@ -70,19 +71,19 @@ string name;
                                 quantity = Quantity();
                                 price = 240;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
                         case 2:
                                 quantity = Quantity();
                                 price = 160;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
                         case 3:
                                 quantity = Quantity();
                                 price = 100;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
 
 
@@ -98,19 +99,19 @@ string name;
                                 quantity = Quantity();
                                 price = 240;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
                         case 2:
                                 quantity = Quantity();
                                 price = 160;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
                         case 3:
                                 quantity = Quantity();
                                 price = 100;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
 
 
@@ -126,20 +127,20 @@ string name;
                                 quantity = Quantity();
                                 price = 240;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
 
                                 break;
                             case 2:
                                 quantity = Quantity();
                                 price = 160;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
                             case 3:
                                 quantity = Quantity();
                                 price = 100;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
 
 
@@ -155,17 +156,20 @@ string name;
                                 quantity = Quantity();
                                 price = 240;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
                             case 2:
                                 quantity = Quantity();
                                 price = 160;
                                 total = price*quantity;
-                                
+                                cout<<total<<"\n";
                                 break;
+
                             case 3:
                                 quantity = Quantity();
                                 price = 100;
+                                total = price*quantity;
+                                cout<<total<<"\n";
                                 break;
 
 
@@ -189,26 +193,10 @@ string name;
         cin>>quantity;
         return quantity;
     }
-    // public: bool  EveryTime()
-    // {
-    //     bool a;
-    //     cout<<"you want to the continue  y and n";
-    //     cin>>a;
-    //     if(a=='y' || a== 'Y')
-    //     {
-    //         return true;
-    //     }
-    //     else if(a=='n'|| a=='N')
-    //     {
-    //         return false;
-    //     }
-
-
-
-    // }
-
 
 };
+
+
 int main()
 {
     int c;
