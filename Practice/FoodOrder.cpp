@@ -1,6 +1,9 @@
 #include<iostream>
 using namespace std;
 class FoodOrder{
+    int choice, price,quantity,total;
+        bool conts;
+        int a = 0;
 string name;
     public:
     void Name()
@@ -18,10 +21,15 @@ string name;
         return a;
 
     }
+
     public:
     void SubCategory(int c)
     {
-        int choice, price;
+        
+
+       
+       
+       
 
         switch(c)
         {
@@ -31,14 +39,24 @@ string name;
                     switch(choice)
                     {
                         case 1: 
+                                quantity = Quantity();
                                 price = 100;
-                                cout<<price;
+                                total = price*quantity;
+                                cout<<total;
+                               
+
                                 break;
                         case 2:
+                                quantity = Quantity();
                                 price = 120;
+                                total = price*quantity;
+                                
                                 break;
                         case 3:
+                                quantity = Quantity();
                                 price = 140;
+                                total = price*quantity;
+                                
                                 break;
                     }
                 break;
@@ -49,13 +67,22 @@ string name;
                     switch(choice)
                     {
                         case 1:
+                                quantity = Quantity();
                                 price = 240;
+                                total = price*quantity;
+                                
                                 break;
                         case 2:
+                                quantity = Quantity();
                                 price = 160;
+                                total = price*quantity;
+                                
                                 break;
                         case 3:
+                                quantity = Quantity();
                                 price = 100;
+                                total = price*quantity;
+                                
                                 break;
 
 
@@ -68,13 +95,22 @@ string name;
                     switch(choice)
                     {
                         case 1:
+                                quantity = Quantity();
                                 price = 240;
+                                total = price*quantity;
+                                
                                 break;
                         case 2:
+                                quantity = Quantity();
                                 price = 160;
+                                total = price*quantity;
+                                
                                 break;
                         case 3:
+                                quantity = Quantity();
                                 price = 100;
+                                total = price*quantity;
+                                
                                 break;
 
 
@@ -87,13 +123,23 @@ string name;
                     switch(choice)
                         {
                             case 1:
+                                quantity = Quantity();
                                 price = 240;
+                                total = price*quantity;
+                                
+
                                 break;
                             case 2:
+                                quantity = Quantity();
                                 price = 160;
+                                total = price*quantity;
+                                
                                 break;
                             case 3:
+                                quantity = Quantity();
                                 price = 100;
+                                total = price*quantity;
+                                
                                 break;
 
 
@@ -106,12 +152,19 @@ string name;
                     switch(choice)
                         {
                             case 1:
+                                quantity = Quantity();
                                 price = 240;
+                                total = price*quantity;
+                                
                                 break;
                             case 2:
+                                quantity = Quantity();
                                 price = 160;
+                                total = price*quantity;
+                                
                                 break;
                             case 3:
+                                quantity = Quantity();
                                 price = 100;
                                 break;
 
@@ -122,9 +175,37 @@ string name;
 
 
 
-        }
-
+        
     }
+
+    
+   
+
+}
+    public:
+    int static Quantity()
+    {   int quantity;
+        cout<<"Please enter a quantity ";
+        cin>>quantity;
+        return quantity;
+    }
+    // public: bool  EveryTime()
+    // {
+    //     bool a;
+    //     cout<<"you want to the continue  y and n";
+    //     cin>>a;
+    //     if(a=='y' || a== 'Y')
+    //     {
+    //         return true;
+    //     }
+    //     else if(a=='n'|| a=='N')
+    //     {
+    //         return false;
+    //     }
+
+
+
+    // }
 
 
 };
@@ -132,6 +213,23 @@ int main()
 {
     int c;
     FoodOrder f1;
-    int a = f1.order();
-    f1.SubCategory(a);
+    char i = true;
+    while(i)
+    {
+        int a = f1.order();
+        f1.SubCategory(a);
+       
+        cout<<"you want to the continue  or not  y and n";
+        cin>>i;
+        if(i=='y')
+        {
+            i = true;
+        }
+        else
+        {
+            i =  false;
+        }
+
+    }
+
 }
