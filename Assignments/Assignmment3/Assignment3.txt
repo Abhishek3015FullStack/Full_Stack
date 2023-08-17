@@ -1,0 +1,1020 @@
+1.WAP to create simple calculator using class
+#include<iostream>
+using namespace std;
+class Calculator{
+
+public :
+    int  Addition(int a,int b)
+    {
+        return a+b;   
+    }
+    int  Substraction(int a,int b)
+    {
+        return a-b;   
+    }
+    int  Multiplication(int a,int b)
+    {
+        return a*b;   
+    }
+    int  modulus(int a,int b)
+    {
+        return a%b;   
+    }
+    int  division(int a,int b)
+    {
+        return a/b;   
+    }
+    
+};
+int main()
+{
+    Calculator c1 ;
+    int a , b;
+    int choice;
+    cout<<"1.Additon  2.Substraction 3.Multiplication 4.modulus 5.division";
+    cin>>choice;
+    switch (choice)
+    {
+        case 1:
+                cout<<"enter a number ";
+                cin>>a;
+                cout<<"enter a number ";
+                cin>>b;
+                c1.Addition(a,b);
+                break;
+        case 2:
+                cout<<"enter a number ";
+                cin>>a;
+                cout<<"enter a number ";
+                cin>>b;
+                c1.Substraction(a,b);
+                break;
+        case 3:
+                cout<<"enter a number ";
+                cin>>a;
+                cout<<"enter a number ";
+                cin>>b;
+                c1.Multiplication(a,b);
+                break;
+        case 4:
+                cout<<"enter a number ";
+                cin>>a;
+                cout<<"enter a number ";
+                cin>>b;
+                c1.modulus(a,b);
+                break;
+        case 5:
+                cout<<"enter a number ";
+                cin>>a;
+                cout<<"enter a number ";
+                cin>>b;
+                c1.division(a,b);
+                break;
+        default:
+                cout<<"wrong choice";
+                
+
+
+    }
+
+    
+    
+    cout<<c1.Addition(6,4)<<" addition "<<"\n";
+    cout<<c1.Substraction(6,4)<<" subtraction"<<"\n";
+    cout<<c1.Multiplication(6,4)<<" multiplication"<<"\n";
+    cout<<c1.modulus(6,4)<<" modulus"<<"\n";
+    cout<<c1.division(6,4)<<" division"<<"\n";
+}
+============================================================================================================
+Define a class to represent a bank account. Include the following members:
+1. Data Member:
+-Name of the depositor
+-Account Number
+-Type of Account
+-Balance amount in the account
+2. Member Functions
+-To assign values
+-To deposited an amount
+-To withdraw an amount after checking balance
+-To display name and balance
+
+#include<iostream>
+using namespace std;
+class Bank{
+
+    string Name_of_the_depositor ;
+    int Account_number;
+    string Type_of_Account;
+    int Balance ;
+    public:
+    void Assign(string Name_of_the_depositor_, int Account_number_,string Type_of_Account_,int Balance_)
+    {
+        Name_of_the_depositor =Name_of_the_depositor_;
+        Account_number =Account_number_;
+        Type_of_Account =Type_of_Account_;
+        Balance =Balance_;
+
+    }
+    public:
+    void Deposit(int deposit)
+    {
+        Balance = Balance+deposit;
+       // cout<<Balance;
+    }
+    public:
+    void Withdraw(int withdraw)
+    {
+        Balance = Balance-withdraw;
+
+    }
+    public:
+    void displayname_and_balance()
+    {
+        cout<<"name is "<<Name_of_the_depositor<<"\n";
+        cout<<"balance is "<<Balance<<"\n";
+    }
+
+    
+
+
+};
+
+int main()
+{
+   
+    Bank b1;
+    
+    string Name_of_the_depositor_;
+    int Account_number_;
+    string Type_of_Account_;
+    int Balance_;
+    int deposit_amount;
+    int withdrwal_amount;
+    int choice;
+    cout<<"1.account add 2.enter a deposit amount 3.enter a withdrawal amount 4.display the balance";
+    cout<<"enter your choice";
+    cin>>choice;
+
+
+    switch (choice)
+    {
+        case 1:
+        cout<<"enter a name of the depositor";
+        cin>>Name_of_the_depositor_;
+
+        cout<<"enter a account number";
+        cin>>Account_number_;
+
+        cout<<"enter a type of the account ";
+        cin>>Type_of_Account_;
+
+        cout<<"enter balance";
+        cin>>Balance_;
+
+        b1.Assign(Name_of_the_depositor_,Account_number_,Type_of_Account_,Balance_);
+        break;
+        case 2:
+        cout<<"enter a deposit amount ";
+        cin>> deposit_amount;
+        b1.Deposit(deposit_amount);
+        break;;
+
+        case 3:
+        cout<<"enter a withdrawal amount";
+        cin>>withdrwal_amount;
+        b1.Withdraw(withdrwal_amount);
+        break;
+
+        case 4:
+                cout<<"showing the details ";
+
+
+        default:
+                cout<<"enter wrong choice";
+                b1.displayname_and_balance();
+
+        
+
+        
+
+    }
+   
+   
+
+    
+
+    
+}
+=====================================================================================
+Write a program to find the multiplication values and the cubic values using inline function
+#include <iostream>
+using namespace std;
+
+inline int multiply(int num) {
+    return num * 2;
+}
+
+inline int cube(int num) {
+    return num * num * num;
+}
+
+int main() {
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+
+    int result_multiply = multiply(number);
+    int result_cube = cube(number);
+
+    cout << "Multiplication value: " << result_multiply << endl;
+    cout << "Cubic value: " << result_cube << endl;
+
+   
+}
+==============================================================================
+Write a program of Addition, Subtraction, Division, Multiplication using constructor. 
+#include<iostream>
+using namespace std;
+class Abhishek{
+    public:
+    Abhishek(int a, int b)
+    {
+       cout<<"addition" <<" " << a+b<<"\n";
+       cout<<"Substraction" <<" " << a-b<<"\n";
+       cout<<"multiplication" <<" " << a*b<<"\n";
+       cout<<"modulus" <<" " << a%b<<"\n";
+       cout<<"division" <<" " << a/b<<"\n"; 
+       
+    }
+};
+int main()
+{
+    Abhishek a1(4,1);
+
+    
+}
+
+=============================================================================================
+Write a program of Addition, Subtraction, Division, Multiplication using
+constructor. 
+#include<iostream>
+using namespace std;
+class Abhishek{
+    public:
+    Abhishek(int a, int b)
+    {
+       cout<<"addition" <<" " << a+b<<"\n";
+       cout<<"Substraction" <<" " << a-b<<"\n";
+       cout<<"multiplication" <<" " << a*b<<"\n";
+       cout<<"modulus" <<" " << a%b<<"\n";
+       cout<<"division" <<" " << a/b<<"\n"; 
+       
+    }
+};
+int main()
+{
+    Abhishek a1(4,1);
+
+    
+}
+
+====================================================================================================
+Assume a class cricketer is declared. Declare a derived class batsman from
+cricketer. Data member of batsman. Total runs, Average runs and best
+performance. Member functions input data, calculate average runs, Display
+data. (Single Inheritance)
+
+#include<iostream>
+using namespace std;
+ class Cricketer
+{
+
+};
+class Batsman :public  Cricketer {
+
+    int total_runs =0;
+    int average_runs=0;
+    int best_performance=0;
+    int Number_of_Matches=0;
+
+    public:
+    void SetTotalRuns(int total_runs)
+    {
+        this->total_runs =  total_runs;
+    }
+    public:
+    int Gettotal_runs()
+    {
+        return total_runs; 
+    }
+    public:
+    void Setaverage_runs(int average_runs)
+    {
+        this->average_runs = average_runs;
+    }
+    public:
+    int  Getaverage_runs()
+    {
+        return average_runs;
+    }
+    public:
+    void Setbest_performance(int best_performance)
+    {
+        this->best_performance  = best_performance;
+    }
+    public:
+    int  Getbest_performance()
+    {
+        return best_performance;
+    }
+    public:
+    void SetNumber_of_Matches(int Number_of_Matches)
+    {
+        this->Number_of_Matches =Number_of_Matches;
+    }
+    public:
+    int GetNumber_of_Matches()
+    {
+        return Number_of_Matches;
+    }
+
+    public:
+    void Inputdata( int total_runs ,int best_performance, int Number_of_Matches)
+    {
+        this->total_runs = total_runs;
+        this->best_performance = best_performance;
+        this->Number_of_Matches = Number_of_Matches;
+    }
+    public:
+    void   CalculateAverage()
+    {
+       average_runs = total_runs/Number_of_Matches;
+       
+
+    }
+    public:
+    void Display()
+    {
+        cout<<"total runs: \n"<<total_runs<<"\n";
+        cout<<"Average runs :\n"<<average_runs<<"\n";
+        cout<<"best performance :\n"<<best_performance<<"\n";
+        cout<<"number of Matches :\n"<<Number_of_Matches<<"\n";
+    }
+    
+
+
+};
+int main()
+{
+    Batsman b1;
+    cout<<"total runs ";
+    b1.SetTotalRuns(100);
+    b1.Setbest_performance(100);
+    b1.SetNumber_of_Matches(5);
+
+
+
+
+    
+
+}
+
+=================================================================================================
+Create a class person having members name and age. Derive a class student
+having member percentage. Derive another class teacher having member
+salary. Write necessary member function to initialize, read and write data.
+Write also Main function (Multiple Inheritance) 
+
+#include<iostream>
+using namespace std;
+class person
+{
+    string name ;
+    int age ;
+    public:
+    person()
+    {
+        name = "Abhishek";
+        age = 24;
+    }
+    public:
+    person( string name ,int age)
+    {
+        this->name = name;
+        this->age = age;
+    }
+    public:
+    void setName(string name)
+    {
+        this->name = name;
+
+    }
+    public:
+    string getName()
+    {
+        return name;
+    }
+    public:
+    void SetAge(int Age)
+    {
+        this->age= age;
+    }
+    public:
+    int getAge()
+    {
+        return age;
+    }
+    public:
+    void display()
+    {
+        cout<<"your name is "<<name<<"\n" ;
+        cout<<"your age is "<<age <<"\n";
+    }
+
+
+};
+
+class Student : public person
+{
+    int percentage;
+    public:
+    public:
+    Student()
+    {
+        this->percentage = 100;
+    }
+    Student(int percentage)
+    {
+        this->percentage ;
+
+    }
+    public:
+    void SetPercentage(int percentage)
+    {
+        this->percentage = percentage;
+    }
+    public:
+    int getPercentage()
+    {
+        return percentage;
+    }
+    public:
+    void Display1()
+    {
+        cout<<"percentage "<<percentage<<"\n";
+    }
+
+};
+class Teacher : public person
+{
+    int salary;
+    public:
+    Teacher()
+    {
+        this->salary = 15000;
+    }
+    public:
+     Teacher(int salary)
+     {
+        this->salary = salary;
+     }
+    public:
+    void setSalary(int salary)
+    {
+        this->salary = salary;
+    }
+    public:
+    int getSalary()
+    {
+        return salary;
+    }
+};
+
+int main()
+{
+    Student s1(100);
+
+    s1.setName("abhishek pankaj jain");
+    s1.SetAge(10);
+    s1.SetPercentage(50);
+    s1.display();
+    s1.Display1();
+
+    
+
+}
+==============================================================================================================
+Assume that the test results of a batch of students are stored in three different
+classes. Class Students are storing the roll number. Class Test stores the marks
+obtained in two subjects and class result contains the total marks obtained in
+the test. The class result can inherit the details of the marks obtained in the
+test and roll number of students. (Multilevel Inheritance)
+
+#include<iostream>
+using namespace std;
+class Student 
+{
+    int RollNo;
+    public:
+    Student()
+    {
+        RollNo =0;
+
+
+    }
+    public:
+    Student(int RollNo)
+    {
+        this->RollNo;
+    }
+    public:
+    void SetRollNo(int RollNo)
+    {
+        this->RollNo = RollNo;
+    }
+    public:
+    int GetRollno()
+    {
+        return RollNo;
+    }
+    public:
+    void display()
+    {
+        cout<<"Roll no is "<<RollNo;
+    }
+
+};
+class Test : public Student
+{
+    int sub1;
+    int sub2;
+    public:
+    Test()
+    {
+        sub1 = 100;
+        sub2 = 100;
+
+    }
+    public:
+    Test(int sub1 , int sub2)
+    {
+        this->sub1 = sub1;
+        this->sub2 = sub2;
+
+    }
+    public:
+    void Setsub1(int sub1)
+    {
+        this-> sub1 = sub1;
+    }
+    public:
+    int getSub1()
+    {
+        return sub1;
+    }
+   
+    public:
+    void SetSub2(int sub2)
+    {
+        this->sub2 = sub2;
+    }
+    public:
+    int getSub2()
+    {
+        return sub2;
+    }
+    
+    public:
+    void display2()
+    {
+       
+       
+        cout<<"this is the sub1 marks "<<sub1;
+        cout<<"this is the sub1 marks "<<sub2;
+
+    }
+
+};
+
+class Marks : public  Test
+{
+    int marks;
+    public:
+    Marks()
+    {
+        marks = 0;
+    }
+    public:
+    Marks(int marks)
+    {
+        this->marks = marks;
+    }
+    public:
+    void SetMarks(int marks)
+    {
+        this->marks = marks;
+    }
+    public:
+    int getMarks()
+    {
+        return marks;
+    }
+    public:
+    void display3(int a , int b)
+    {
+       
+         marks  = a+b;
+        cout<<"total marks"<<marks;
+
+        
+        
+       
+    }
+
+};
+int main()
+{
+    Marks m1;
+    m1.SetRollNo(10);
+    m1.SetSub2(20);
+    m1.Setsub1(20);
+    int a = m1.getSub1();
+    int b= m1.getSub2();
+    m1.display3(a,b);
+
+     
+}
+================================================================================================================
+Write a program to Mathematic operation like Addition, Subtraction,
+Multiplication, Division Of two number using different parameters and
+Function Overloading
+
+#include<iostream>
+using namespace std;
+class calculator
+{
+    public:
+    int add(int a , int b)
+    {
+        return a+b;
+    }
+    public:
+    float add(float  a , float b)
+    {
+        return a+b;
+    }
+    public:
+    int subtraction(int a , int b)
+    {
+        return a-b;
+    }
+    public:
+    int subtraction(float  a , float b)
+    {
+        return a-b;
+    }
+    public:
+    int multiplication(float a , float b)
+    {
+        return a*b;
+    }
+    public:
+    int multiplication(int a , int  b)
+    {
+        return a*b;
+    }
+    public:
+    int division(int a , int  b)
+    {
+        return a/b;
+    }
+    public:
+    int division(float  a , float   b)
+    {
+        return a/b;
+    }
+
+
+};
+int main()
+{
+    calculator c1;
+    cout<<c1.add(10,10);
+    cout<<c1.add(10.5f,10.5f);
+    cout<<c1.division(100,5);
+    cout<<c1.division(100.23f,5.2f);
+    cout<<c1.multiplication(152,152);
+    cout<<c1.multiplication(152.2f,152.2f);
+    cout<<c1.subtraction(10,10);
+    cout<<c1.subtraction(10.23f,10.23f);
+}
+
+====================================================================================================
+Write a Program of Two 1D Matrix Addition using Operator Overloading 
+#include <iostream>
+#include <vector>
+
+class Matrix2D {
+private:
+    std::vector<std::vector<int>> elements;
+
+public:
+    // Constructor to create a 2D matrix with given elements
+    Matrix2D(const std::vector<std::vector<int>>& elements) : elements(elements) {}
+
+    // Overload the '+' operator for matrix addition
+    Matrix2D operator+(const Matrix2D& other) const {
+        if (elements.size() != other.elements.size() ||
+            elements[0].size() != other.elements[0].size()) {
+            throw std::invalid_argument("Matrix sizes do not match for addition.");
+        }
+
+        std::vector<std::vector<int>> result_elements;
+        for (size_t i = 0; i < elements.size(); ++i) {
+            std::vector<int> row;
+            for (size_t j = 0; j < elements[i].size(); ++j) {
+                row.push_back(elements[i][j] + other.elements[i][j]);
+            }
+            result_elements.push_back(row);
+        }
+
+        return Matrix2D(result_elements);
+    }
+
+    // Function to display the elements of the matrix
+    void display() const {
+        for (const auto& row : elements) {
+            for (int element : row) {
+                std::cout << element << " ";
+            }
+            std::cout << std::endl;
+        }
+    }
+};
+
+int main() {
+    std::vector<std::vector<int>> matrix1_elements = {{1, 2}, {3, 4}};
+    std::vector<std::vector<int>> matrix2_elements = {{5, 6}, {7, 8}};
+
+    Matrix2D matrix1(matrix1_elements);
+    Matrix2D matrix2(matrix2_elements);
+
+    std::cout << "Matrix 1:\n";
+    matrix1.display();
+
+    std::cout << "Matrix 2:\n";
+    matrix2.display();
+
+    try {
+        Matrix2D result = matrix1 + matrix2;
+        std::cout << "Result of addition:\n";
+        result.display();
+    } catch (const std::invalid_argument& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    return 0;
+}
+===================================================================================================================
+Write a program to concatenate the two strings using Operator Overloading
+#include <iostream>
+#include <string>
+
+class StringConcatenation {
+private:
+    std::string value;
+
+public:
+    StringConcatenation(const std::string& value) : value(value) {}
+
+    StringConcatenation& concat(const std::string& other) {
+        value += other;
+        return *this;
+    }
+
+    std::string getValue() const {
+        return value;
+    }
+};
+
+int main() {
+    StringConcatenation str1("Hello, ");
+    str1.concat("world!");
+
+    StringConcatenation str2("C++ is ");
+    str2.concat("awesome!");
+
+    std::cout << str1.getValue() << std::endl;
+    std::cout << str2.getValue() << std::endl;
+
+    return 0;
+}
+================================================================================================================
+ Write a program to calculate the area of circle, rectangle and triangle using
+Function Overloading
+ Rectangle: Area * breadth
+ Triangle: ½ *Area* breadth
+ Circle: Pi * Area *Area
+
+#include<iostream>
+using namespace std;
+class Area{
+    public:
+    int Area1(int Area_of_Rectangle_breadth ,int height)
+    {
+        return Area_of_Rectangle_breadth * height;
+    }
+    public:
+    float Area1(float Area_of_Triangle ,float breadth)
+    {
+        return 0.5 * Area_of_Triangle * breadth;
+    }
+    public:
+    int Area1(int Area_of_circle)
+    {
+        return 3.14 * Area_of_circle * Area_of_circle;
+    }
+};
+int main()
+{
+    Area a1;
+    int choice;
+    cout<<"1.Area of the Rectangle 2.Area of the triangle 3.Area of the Circle";
+    cin>>choice;
+    int breadth, height;
+    float breadth1, height1;
+    int circle;
+    switch (choice)
+    {
+        case 1:
+                cout<<"enter a Breadth ";
+                cin>>breadth;
+                cout<<"enter a height ";
+                cin>>height;
+                cout<<a1.Area1(breadth,height);
+                break;
+        case 2:
+                cout<<"enter a Breadth ";
+                cin>>breadth1;
+                cout<<"enter a height ";
+                cin>>height1;
+                cout<<a1.Area1(breadth1,height1);
+                break;
+
+        case 3:
+                cout<<"enter a circle values";
+                cin>>circle;
+                cout<<a1.Area1(circle);
+                break;
+
+        default:
+
+                cout<<" wrong choice ";
+
+                
+
+    }
+    
+  
+   
+}
+==========================================================================================================
+Write a program to swap the two numbers using friend function without
+using third variable 
+#include <iostream>
+using namespace std;
+
+class NumberSwapper {
+private:
+    int num1, num2;
+
+public:
+    NumberSwapper(int n1, int n2) {
+        num1 = n1;
+        num2 = n2;
+    }
+
+    friend void swapNumbers(NumberSwapper &ns);
+    
+    void display() {
+        cout << "Number 1: " << num1 << endl;
+        cout << "Number 2: " << num2 << endl;
+    }
+};
+
+void swapNumbers(NumberSwapper &ns) {
+    ns.num1 = ns.num1 + ns.num2;
+    ns.num2 = ns.num1 - ns.num2;
+    ns.num1 = ns.num1 - ns.num2;
+}
+
+int main() {
+    int num1, num2;
+
+    cout << "Enter first number: ";
+    cin >> num1;
+
+    cout << "Enter second number: ";
+    cin >> num2;
+
+    NumberSwapper ns(num1, num2);
+
+    cout << "Before swapping:" << endl;
+    ns.display();
+
+    swapNumbers(ns);
+
+    cout << "After swapping:" << endl;
+    ns.display();
+}
+===================================================================================================================
+Write a program to find the max number from given two numbers using
+friend function 
+
+#include <iostream>
+using namespace std;
+
+class NumberComparator {
+private:
+    int num1, num2;
+
+public:
+    NumberComparator(int n1, int n2) {
+        num1 = n1;
+        num2 = n2;
+    }
+
+    friend int findMax(const NumberComparator &nc);
+};
+
+int findMax(const NumberComparator &nc) {
+    return (nc.num1 > nc.num2) ? nc.num1 : nc.num2;
+}
+
+int main() {
+    int num1, num2;
+
+    cout << "Enter first number: ";
+    cin >> num1;
+
+    cout << "Enter second number: ";
+    cin >> num2;
+
+    NumberComparator nc(num1, num2);
+
+    int maxNumber = findMax(nc);
+
+    cout << "Maximum number: " << maxNumber << endl;
+
+
+}
+=================================================================================
+WAP to print “Hello World” using C++
+
+
+#include <iostream>
+
+int main() {
+    std::cout << "Hello World" << std::endl;
+    return 0;
+}
+
+=======================================================================
+What is OOP? List OOP concepts ?
+
+Object-Oriented Programming (OOP) is a programming paradigm that uses objects and classes to structure code in a way that models real-world entities, their behavior, and interactions. OOP promotes the modular design of software by organizing data and functions into reusable components, enhancing code readability, maintainability, and scalability.
+
+Key concepts of Object-Oriented Programming include:
+
+Classes and Objects: A class is a blueprint for creating objects, while objects are instances of classes. Classes define the structure and behavior of objects.
+
+Encapsulation: Encapsulation involves bundling data (attributes) and methods (functions) that operate on that data within a single unit, i.e., the class. It restricts access to certain parts of the class, providing data protection.
+
+Inheritance: Inheritance allows a new class (subclass or derived class) to inherit properties and behaviors from an existing class (superclass or base class). It promotes code reuse and the creation of hierarchies.
+
+Polymorphism: Polymorphism enables objects of different classes to be treated as objects of a common superclass through inheritance. It allows different classes to implement methods with the same name but different behaviors.
+
+Abstraction: Abstraction involves simplifying complex reality by modeling classes based on essential characteristics. It hides the unnecessary details while exposing only the relevant information.
+
+===========================================================================================================================================================================================================================================
+What is the difference between OOP and POP? 
+
+Object-Oriented Programming (OOP) and Procedural Programming (POP) are two different programming paradigms that dictate how a program is structured, how data is organized, and how code is executed. Here's a comparison of the two paradigms:
+
+1. Approach:
+
+OOP: Focuses on modeling real-world entities as objects with attributes and behaviors. Encourages encapsulation, abstraction, inheritance, and polymorphism.
+POP: Focuses on defining procedures (functions) that operate on data. Programs are organized around sequences of procedures.
+2. Data and Code:
+
+OOP: Data and code are encapsulated together within objects. Objects hold both data (attributes) and methods (functions).
+POP: Data and code are separated. Data is usually kept in global variables, and functions operate on this data.
+3. Reusability:
+
+OOP: Promotes reusability through inheritance and polymorphism. Classes and objects can be reused in different parts of the program.
+POP: Reusability is limited, as functions are often specific to a particular context.
+4. Code Organization:
+
+OOP: Organizes code into classes, objects, and methods. Emphasizes modularity and encapsulation.
+POP: Organizes code as a sequence of functions or procedures. Less emphasis on modularity.
+
