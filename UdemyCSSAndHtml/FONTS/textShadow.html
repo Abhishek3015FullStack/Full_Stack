@@ -1,11 +1,5 @@
-<!-- 
-    textdecoration-line:none|underline|overline|line-through
-    text-decoration-color:hexadecimal_number
-    text_decoration-style:solid|double|dotted|dashed|wavy;
-above is the text decoration;
+<!-- textshadow : h-shadow v-shadow blur-radius color -->
 
-    
-    deas -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,10 +25,6 @@ above is the text decoration;
         padding: 10px;
         margin: 5px;
         font-weight: normal;
-        text-align: center;
-
-    
-        text-decoration:underline aqua  wavy;
         
 
     }
@@ -46,24 +36,27 @@ above is the text decoration;
     #two{
         /* font-weight:bold; */
         font-weight: lighter;
-        font-style: italic;
-        text-decoration-color: aqua;
-
+        font-style: italic
 
     }
 
     #three
     {
         font-weight: 1200;
-        text-decoration-style: wavy;
     }
     h1{
-        color: #dd1070;
+        text-shadow: 5px,3px,2px,aqua;
     }
-    /* h2{
+    p{
+        line-height: 50px;
+        word-spacing: 10px;   
+        text-shadow: 4px, 6px,4px,red;
 
-        /* text-decoration-line: line-through; */
- 
+        }
+.Abhi{
+
+            text-shadow: 4px, 6px,4px,red;
+        }
     
     </style>
 </head>
@@ -83,7 +76,7 @@ above is the text decoration;
             <h2>abhishek5</h2>
         </div>
 
-        <div id = "two">
+        <div id = "two" class ="fonts">
             <h1>6 to 10</h1>
             <h2>abhishek6</h2>
             <h2>abhishek7</h2>
@@ -92,7 +85,7 @@ above is the text decoration;
             <h2>abhishek10</h2>
         </div>
 
-        <div id = "three">
+        <div id = "three" class="Abhishek">
             <h1>6 to 10</h1>
             <h2>abhishek6</h2>
             <h2>abhishek7</h2>
@@ -110,6 +103,7 @@ above is the text decoration;
             <h2>abhishek10</h2>
         </div>
 
+        <p class="Abhi">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum odio minima amet, non quo corrupti, nostrum debitis excepturi porro consequatur expedita, accusamus earum architecto assumenda nulla. Quis vero tempore minima voluptas. Culpa temporibus praesentium velit libero facere, sint et ab magnam possimus atque ea provident, mollitia quam suscipit quaerat perspiciatis ad iure eos? Consectetur aperiam laborum odit enim numquam culpa fugiat ad placeat ratione. Quo aspernatur necessitatibus aliquid est officia eius facere nam consectetur ut eos? Repellendus est fuga excepturi provident maxime hic facere ad ea sunt vitae harum laudantium perspiciatis beatae tempora exercitationem in reiciendis, itaque temporibus tenetur sapiente consequuntur incidunt mollitia sint! Adipisci, commodi voluptate nostrum eligendi beatae dignissimos iusto sapiente minus sunt, perspiciatis odio nesciunt. Molestiae, deleniti.</p>
     </div>
 </body>
 </html>
