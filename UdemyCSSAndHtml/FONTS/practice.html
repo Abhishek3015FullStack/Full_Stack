@@ -24,9 +24,13 @@
             outline:6px  solid  green;
             /* outline-offset:2px ; */
             box-shadow: 10px 15px 5px 3px black;
-            transition: background-color 2s;
+            transition: background-color 2s ,transform 0.5s;
             font-size: 10px;
-            transition:fontsize 2s    ;
+            transition:fontsize 2s,transform 0.5s    ; 
+            overflow: auto;  /* scrollbar */
+            word-wrap: break-word   ;
+            min-width: 10px;
+            max-width: 1000px; /*when the browser siize is increased or the decreased that time wee used this*/
 
             
         }
@@ -37,8 +41,9 @@
 
             border-color: green;
             transition: border-color 2s;
-            font-size: 5px;
-            transition:font-size 2s;
+            font-size: 15px;
+            transition:font-size 0.5s;
+            transform: scale(1.2);
 
         }
         div{    
@@ -52,7 +57,7 @@
 <body>
     <div id= "states">
         <h1>States of Bharat</h1>
-        <div class="State"><h2>Maharashtra</h2></div>
+        <div class="State"><h2>MaharashtraAbhishekpankajjainAbhishekpankajjainAbhishekpankajjainAbhishekpankajjain</h2></div>
         <div class="State"><h2>Karnataka</h2></div>
         <div class="State"><h2>Goa</h2></div>
         <div class="State"><h2>Gujrat</h2></div>
