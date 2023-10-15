@@ -4,28 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .Signup
-        {
-            background-color: aqua;
-            color: black;
-            height: 40px;
-            width: 1000px;
-        }
-        .input
-        {
-            margin: 10px;
-            
-        }
-    </style>
+    <link href="Form.css" rel="Stylesheet">
 </head>
 <body>
-<div class="A">
-    <form action="" method="post" target="_blank" name="">
-        <div class="Signup"> Sign up</div>
-        <div>Email <input type="email" class="input"><br></div>
-        <div>Password <input type="password" class="input"> </div>       
-    </form>
-</div>  
+    <form>
+<div class="Outer-Div">
+    <div class="SignUP">Sign up</div>
+    <div class="Input">
+        <div class="Email-Label"><label for="EmailInput">Email</label></div>
+        <div class="Email"><input type="email" class="input1" id="EmailInput" value="" placeholder="Username"></div>
+    </div>
+    <div class="Input1">
+        <div class="password-label"><label for="Password">Password</label></div>
+        <div class="Password"><input type="password" class="input1" id="Password" value="" placeholder="Password">
+    </div>
+    <div>
+        <input type="color">
+    </div>
+   <div>
+        <div><label for="DateOfbirth" class="password-label">Date Of birth</label></div>
+        <div><input type="date" class="input1" id="DateOfbirth"></div>
+   </div>
+
+   <div>
+    <div><label for="dateandtiime" class="password-label">Date and time</label></div>
+    <div><input type="datetime-local" class="input1" id="dateandtiime"></div>
+</div>
+
+<div>
+    <div><label for="time" class="password-label"> time</label></div>
+    <div><input type="time" class="input1" id="time"></div>
+</div>
+    
+</div>
+
+<div class="Footer">
+    <input type="submit" value="Sign" class="Submit">
+    <input type="reset" value="Reset"class="Reset">
+</div>
+</form> 
 </body>
 </html>

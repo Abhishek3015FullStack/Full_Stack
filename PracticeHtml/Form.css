@@ -1,0 +1,82 @@
+.Outer-Div
+{
+    background-color: white;
+    height: 490.5px;
+    width: 900px;
+    margin-left:300px;
+    margin-top: 200px;
+    border: 2px;
+    border-color: brown;
+    border-style: groove;
+   box-shadow: 2px 2px 2px 2px grey;
+
+
+}
+.SignUP{
+    background-color: grey;
+    padding: 10px;
+    
+
+}
+.Input
+{
+   float: left;
+}
+.input1
+{
+    margin: 5px;
+    width: 700px;
+    height: 30px;
+    border-radius: 25px 25px 25px 25px; 
+}
+.input1:focus
+{
+    box-shadow: 0px 0px 2px 3px rgb(28, 83, 83);
+    outline: none;
+}
+
+.Email{
+    float: left;
+    border-radius:25px 25px 25px 25px;
+}
+.Email-Label
+{
+    float: left;
+    margin-right: 100px;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.password-label
+{
+    float: left;
+    margin-right: 76px;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.Submit{
+    background-color: aqua;
+    height: 30px;
+    width: 80px;
+    margin-left:750px;
+    padding-top: 4px;
+    margin-top: 5px;
+    border-radius: 25px 25px 25px 25px; 
+    box-shadow: 2px 2px 2px 2px grey;
+    cursor: pointer;
+    transition:background-color 0.6s ;
+
+}
+.Submit:hover
+{
+    background-color: green;
+    transition: background-color 0.6s;
+
+}
+.Footer
+{   
+    height: 40px;
+    width: 900px;
+    margin-top: 210px;
+ background-color: grey;   
+    
+}
