@@ -45,6 +45,7 @@
     margin-right: 100px;
     margin-left: 10px;
     padding-top: 10px;
+    
 }
 .password-label
 {
@@ -79,4 +80,8 @@
     margin-top: 210px;
  background-color: grey;   
     
+}
+label
+{
+    word-wrap: break-word;
 }
