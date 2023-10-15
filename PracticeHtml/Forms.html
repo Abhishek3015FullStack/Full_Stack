@@ -7,12 +7,12 @@
     <link href="Form.css" rel="Stylesheet">
 </head>
 <body>
-    <form>
+    <form action="https://www.geeksforgeeks.org/how-to-validate-pan-card-number-using-regular-expression/" method="post">
 <div class="Outer-Div">
     <div class="SignUP">Sign up</div>
     <div class="Input">
         <div class="Email-Label"><label for="EmailInput">Email</label></div>
-        <div class="Email"><input type="email" class="input1" id="EmailInput" value="" placeholder="Username" autocomplete="off" autofocus="autofocus" required="required" maxlength="10"></div>
+        <div class="Email"><input type="email" class="input1" id="EmailInput" value="" placeholder="Username" autocomplete="off" autofocus="autofocus" required="required" maxlength="10" min="3" title="Ambe Mata" ></div>
     </div>
     <div class="Input1">
         <div class="password-label"><label for="Password">Password</label></div>
@@ -115,7 +115,7 @@
 </div>
 
 <div class="Footer">
-    <input type="submit" value="Sign" class="Submit">
+    <input type="submit" value="Sign" class="Submit" formnovalidate="novalidate"> <!--particular button form tagc -->
     <input type="reset" value="Reset"class="Reset">
 
 </div>
