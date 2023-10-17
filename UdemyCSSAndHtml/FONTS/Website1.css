@@ -9,4 +9,20 @@ header{
     color: antiquewhite;
     text-align: center;
     font-style: italic;
+    width: 100%;
+}
+nav
+{
+    background-color: black;
+    color: white;
+    
+}
+nav ul li a
+{
+    text-decoration: none;
+}
+nav ul li
+{
+    margin-left: 50px;
+    list-style: none;
 }
