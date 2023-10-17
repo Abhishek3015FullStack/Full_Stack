@@ -1,0 +1,82 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header
+{
+    background-color: grey;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+nav{
+    background-color: rgb(3, 10, 8);
+    padding: 15px;
+    
+    
+}
+nav ul
+{
+    list-style-type: none;
+    
+}
+nav ul a
+{   
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    color: wheat;
+    width: 100%;
+}
+nav ul a:hover
+{
+    cursor: pointer;
+    background-color: aqua;
+    transition: background-color 0.6s;
+}
+
+aside{
+background-color:blue;
+
+}
+aside ul
+{
+    list-style: none;
+
+}
+aside ul li a
+{
+    text-decoration: none;
+    padding: 10px 35px;
+    display: inline-block;
+    color: wheat;
+    width: 100%;
+    
+}
+aside ul li a:hover
+{
+    cursor: pointer;
+    background-color: aqua;
+    transition: background-color 0.6s;
+}
+main
+{
+    padding: 20px;
+    min-height: 80vh;
+}
+section.box
+{
+    padding: 10px;
+    margin: 10px;
+}
+footer
+{
+    padding: 10px;
+    background-color: blue;
+    text-align: center;
+    
+    width: 100%;
+    
+}

@@ -1,0 +1,74 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+header
+{
+    background-color: rgb(51, 48, 48);
+    text-align: center;
+    color: aliceblue;
+    width: 100%;
+    
+}
+nav{
+    background-color:blue;
+}
+nav ul
+{
+    list-style: none;
+}
+nav ul li 
+{
+   padding: 5px;
+   
+}
+nav ul li a
+{
+    color: aliceblue;
+    text-decoration: none;
+    padding: 10px;
+}
+.container
+{
+    display: flex;
+}
+
+aside ul 
+{
+    list-style: none;
+}
+aside ul li a
+{
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+aside ul li
+{
+    padding: 10px;
+}
+aside
+{
+    flex: 10;
+    background-color: aqua;
+}
+main
+{
+    flex: 80;
+}
+footer
+{
+    text-align: center;
+    font-size: 35px;
+    background-color: grey;
+
+}
+section h3
+{
+    margin: 5px;    
+}
+section p
+{
+    padding: 5px;
+}
