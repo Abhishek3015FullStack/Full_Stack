@@ -1,23 +1,16 @@
+.container
+{
+    display: flex;
+}
 aside
 {
-    flex: 8;
+    flex:8;
+    width: 100%;
     background-color: aqua;
-    transition: background-color 0.3s;
 }
 main
 {
-     flex: 92;
+    flex: 92;
+    width: 100%;
     background-color: grey;
-}
-.Container
-{
-    display: flex;
-}
-main
-{
-    display: flex;
-    /* flex-direction: column-reverse; */
-    justify-content:flex-start;    
-    align-items: center;
-        /* flex-wrap: wrap; */
 }

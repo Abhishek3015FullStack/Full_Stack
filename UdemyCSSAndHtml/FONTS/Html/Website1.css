@@ -103,14 +103,14 @@ footer h3
     
     border-style: 5px solid black ;
 }
-main
+/* main
 {
     display: flex;
     /* flex-direction: column-reverse; */
-    justify-content:flex-start;    
-    align-items: center;
-        /* flex-wrap: wrap; */
-}
+    /* justify-content:flex-start;    
+    align-items: center; */
+        /* flex-wrap: wrap; 
+} */
 section
 {
     padding: 2px;
