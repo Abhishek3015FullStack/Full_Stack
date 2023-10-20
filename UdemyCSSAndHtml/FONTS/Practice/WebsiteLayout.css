@@ -1,0 +1,23 @@
+aside
+{
+    flex: 8;
+    background-color: aqua;
+    transition: background-color 0.3s;
+}
+main
+{
+     flex: 92;
+    background-color: grey;
+}
+.Container
+{
+    display: flex;
+}
+main
+{
+    display: flex;
+    /* flex-direction: column-reverse; */
+    justify-content:flex-start;    
+    align-items: center;
+        /* flex-wrap: wrap; */
+}
