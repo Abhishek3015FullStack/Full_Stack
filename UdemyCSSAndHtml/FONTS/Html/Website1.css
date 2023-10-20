@@ -1,0 +1,119 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: grey;
+    color: antiquewhite;
+    text-align: center;
+    font-style: italic;
+    width: 100%;
+}
+nav
+{
+    background-color: black;
+    color: white;
+    
+    
+}
+nav ul li a
+{
+    text-decoration: none;
+    
+    
+}
+nav ul li
+{
+    margin-left: 50px;
+    list-style: none;
+    
+    
+    
+}
+.Container
+{
+    display: flex;
+}
+aside
+{
+    
+    flex: 8;
+    background-color: aqua;
+    transition: background-color 0.3s;
+}
+main{
+    flex: 92;
+    background-color: grey;
+}
+aside ul li a
+{
+    text-decoration: none ;
+    padding: 10px;
+    margin: 10px; 
+    letter-spacing: 1px;
+    padding: 10px;  
+}
+aside ul li
+{
+    padding: 10px;
+}
+a:hover
+{
+    cursor: pointer;
+    background-color: orange;
+    transition: background-color 0.3s;
+    box-shadow: 2px 2px 2px 2px black;
+
+}
+main section h3
+{
+    font-size: 25px;
+    text-align: 5px;
+    padding-left: 5px;
+}
+main section p
+{
+    padding-left:5px ;
+}
+footer h3
+{
+    background-color: brown;
+    text-align: center;
+}
+.two
+{
+    order:-1;
+       
+}
+
+.one
+{
+    order:-2;
+    
+}
+.three
+{
+    order:-3;
+    
+}
+.four
+{
+    
+    border-style: 5px solid black ;
+}
+main
+{
+    display: flex;
+    /* flex-direction: column-reverse; */
+    justify-content:flex-start;    
+    align-items: center;
+        /* flex-wrap: wrap; */
+}
+section
+{
+    padding: 2px;
+    border: 1px solid black;
+
+}
