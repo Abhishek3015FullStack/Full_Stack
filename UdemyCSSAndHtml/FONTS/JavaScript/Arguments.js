@@ -1,4 +1,4 @@
-function Ambe(a, b, c,d)
+function Ambe()
 {
     let sum =0;
     for(var i = 0;i<arguments.length;i++)
@@ -17,4 +17,4 @@ function Ambe(a, b, c,d)
 
 }
 
-Ambe(1,2,3,4);
+Ambe(1,2,3,4,7,7,7);

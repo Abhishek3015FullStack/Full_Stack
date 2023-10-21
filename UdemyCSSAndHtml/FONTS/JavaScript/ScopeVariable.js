@@ -1,0 +1,27 @@
+var globalVariable =10;
+let globalVariable1 =102; 
+
+function local1()
+{
+    var Local =100;
+
+    console.log(globalVariable);
+    console.log(globalVariable1);
+    
+}
+local1();
+
+if(1==1)
+{
+    var Local1 =103;
+    let Local2 =104;
+    
+}
+console.log(Local1);
+//console.log(Local2); getting the error 
+
+
+// 1.var is declared inside the if or any block then it is global but inside the function decalaration is local for that function 
+// 2.let like all the variable normal variable values please check the above examples please check  
+// 3.hoisting only for the var variable 
+
