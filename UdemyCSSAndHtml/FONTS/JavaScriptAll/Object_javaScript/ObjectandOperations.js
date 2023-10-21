@@ -19,9 +19,9 @@ var Employee={
      return isElgible;
     }
      
-
+    
 };
-
+console.log(Employee.first_name);
 console.log(Employee.Fullname());
 var elibible = Employee.getPromotion();
 if(elibible==true)
@@ -32,3 +32,19 @@ else
 {
     console.log("kasu nathi");
 }
+
+
+Employee.first_name="Abhishekedit";
+Employee.parenaddress="Dhule";
+console.log(Employee.parenaddress)
+
+console.log(Employee.first_name);
+
+console.log(Employee);
+
+
+Employee.GetAddress = function(){
+    return this.parenaddress
+}
+
+console.log(Employee.GetAddress());
