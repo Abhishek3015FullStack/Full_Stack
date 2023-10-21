@@ -1,1 +1,1 @@
-1
+setTimeout(one, 1000*5);
