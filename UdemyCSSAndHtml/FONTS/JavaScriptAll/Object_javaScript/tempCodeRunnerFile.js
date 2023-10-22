@@ -1,6 +1,14 @@
+function bankDeposit()
+{
+    var currentBalance=100;
+    let deposit=function(DepositAmount)
+    {
+        currentBalance= currentBalance+DepositAmount;
+        return `the balance of the curremnt is ${currentBalance}`;
+    }
+    return deposit();
+}
 
-// console.log(fn);
-// console.log(age1);
-// console.log(email1);
-// console.log(oter);
 
+let ba = bankDeposit();
+console.log(ba(1000));
