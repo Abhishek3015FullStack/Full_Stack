@@ -14,3 +14,4 @@ b:function() {
 console.log(this);
 let b = a.b();
 console.log(b);
+
