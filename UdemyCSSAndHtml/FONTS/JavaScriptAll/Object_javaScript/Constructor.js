@@ -17,3 +17,4 @@ console.log(E1.EmployeeName);
 
 var E2 =Const("b",2);
 console.log(E2.EmployeeName);
+    
