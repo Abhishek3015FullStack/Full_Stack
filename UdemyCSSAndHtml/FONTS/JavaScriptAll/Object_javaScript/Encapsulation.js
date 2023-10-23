@@ -19,4 +19,25 @@ var BankAccountFunction = function()
 let op= BankAccountFunction();
 console.log( op.deposit(110));
 
+let od = BankAccountFunction()
+console.log(od.deposit(1500));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
