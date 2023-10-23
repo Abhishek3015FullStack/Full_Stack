@@ -48,3 +48,17 @@ Employee.GetAddress = function(){
 }
 
 console.log(Employee.GetAddress());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
