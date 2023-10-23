@@ -4,7 +4,7 @@ var Const=function(EmployeeName,salary)
     Employee.EmployeeName=EmployeeName,
     Employee.salary=salary,
 
-    EmployeeGetdata= function()
+    this.EmployeeGetdata= function()
 
     {
         return `${this.Employee.EmployeeName} and salary is ${this.salary}`;
@@ -17,4 +17,5 @@ console.log(E1.EmployeeName);
 
 var E2 =Const("b",2);
 console.log(E2.EmployeeName);
-    
+
+console.log(E1);
