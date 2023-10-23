@@ -22,3 +22,34 @@ for(let prop in student)
 
 console.log(student.Physics);
 console.log(student.math);
+
+
+var customer={
+    name:"abhishek Customer2",
+    age:25,
+    parent:2,
+    city:"dhule",
+    pincode:424001
+
+};
+
+for(var prop in customer)
+{
+    console.log(prop,customer[prop]);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
