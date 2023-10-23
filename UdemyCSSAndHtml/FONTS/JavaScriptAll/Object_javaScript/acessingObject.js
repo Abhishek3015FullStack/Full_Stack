@@ -9,3 +9,14 @@ console.log(customer["age"]);
 
 
 console.log(customer);
+
+
+//pratice
+var Student = {
+name:"abhishek Student",
+age:25
+};
+
+
+console.log(Student.name);
+console.log(Student["name"]);
