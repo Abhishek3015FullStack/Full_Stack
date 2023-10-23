@@ -25,3 +25,28 @@ sd1();
 
 
 
+
+//practice
+
+
+
+
+
+
+var Student ={name:"Student1" ,age:25};
+
+let Functions1 = () =>
+{
+    return (`name is ${Student.name} and age is ${Student.age}`)
+}
+console.log(Functions1());
+
+
+
+
+
+
+
+
+
+
