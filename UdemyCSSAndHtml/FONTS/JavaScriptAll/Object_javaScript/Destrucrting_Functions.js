@@ -7,3 +7,15 @@ let Func = function({name:en, age:sn,...other})
 
 
 Func(Student);  
+
+//practice
+var customer={name:"abhishek" ,age:25};
+
+var a = function({name:en, age:sn})
+{
+    console.log(`${en},${sn}`);
+}
+a(customer);
+
+
+
