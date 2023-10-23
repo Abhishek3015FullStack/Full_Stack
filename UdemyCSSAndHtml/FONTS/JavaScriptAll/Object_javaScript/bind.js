@@ -24,3 +24,36 @@ let b = calculate.bind(Student2);
 
 b(25,253.63,580.63);
 
+
+
+var Student3={name:"abhishek Student1" ,age:25, address:"parent address1", city:"dhule1"};
+
+var Student4={name:"abhishek Student2" ,age:26, address:"parent address2", city:"dhule2"};
+
+var Function1 = function()
+{
+    return `my name is ${this.name} ,and age is ${this.age},and parent address ${this.address} `;
+}
+
+var d = Function1.bind(Student4);
+
+var e = d();
+
+console.log(e);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
