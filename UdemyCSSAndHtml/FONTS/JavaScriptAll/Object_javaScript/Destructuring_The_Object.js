@@ -14,3 +14,41 @@ fn = "sadadada";
 console.log(fn);
 
 console.log(Student);
+
+
+
+//practice
+
+var customer={
+    name:"abhishek",
+    age:25,
+    address:"dhule",
+    city:"dhule",
+    country:"india",
+    pincode:424001
+};
+
+var {name:name1,age:age1,...other}=customer
+
+console.log(name1);
+console.log(age1);
+console.log(other);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
