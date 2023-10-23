@@ -15,3 +15,27 @@ let TotalFunction=function(Subject1,Subject2,Subject3) // here we are not receiv
 TotalFunction.apply(Student2,[10,20,30]);//array as arguement
 
 TotalFunction.call(Stdent1,10,50,30);
+
+
+
+
+
+var customer1={name:"abhishek" ,age:52,parent_address:"dhule",postcode:424001};
+
+var Function2 = function(a,b,c,d)
+{
+      var sub1 = a+b+c+d;
+      console.log(sub1);
+}
+
+Function2.apply(customer1,[0,20,30,40]);
+
+
+
+
+
+
+
+
+
+
