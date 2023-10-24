@@ -1,0 +1,29 @@
+create table city(
+id int ,
+city_name varchar(20),
+lat varchar(20),
+long1 varchar(20),
+country_id int );
+
+insert into city(id,city_name,lat,long1,country_id)values(1,"Berlin",52.520008,13.404954,1),
+(2,"Belgrade",44.787197,20.457273,2),
+(3,"Zagreb",45.815399,15.966568,3),
+(4,"Newyork",40.730610,-73.935242,4),
+(5,"Log Angeles",34.052235,-118.243683,4),
+(6,"Warsaw",52.237049,21.017532,5);
+select * from city;
+
+create table customer(
+id int,
+customer_name varchar(20),
+city_id varchar(20),
+customer_address varchar(20),
+next_call_date date,
+ts_inserted datetime
+);
+alter table customer modify ts_inserted datetime;
+
+INSERT INTO customer (id, customer_name, city_id, customer_address, next_call_date, ts_inserted)
+VALUES (1, 'Jewelry Store', 4, 'Long Street 120', '2020-01-21',now());
+
+select  * from customer;
