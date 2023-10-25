@@ -1,29 +1,29 @@
 class Employee
 {
-     Firstname;
-     LastName;
-     Designation;
-     Salary;
+     #Firstname;
+     #LastName;
+     #Designation;
+     #Salary;
 
      constructor()
      {
         
-        this.Designation ="default";
-        this.Firstname ="default";
-        this.LastName ="default";
-        this.Salary =258;
+        this.#Designation ="default";
+        this.#Firstname ="default";
+        this.#LastName ="default";
+        this.#Salary =258;
 
      }
      GetData()
      {
-        console.log(this.Firstname,this.LastName,this.Designation,this.Salary);
+        console.log(this.#Firstname,this.#LastName,this.#Designation,this.#Salary);
      }
      SetData(Firstname,LastName,Designation,Salary)
      {
-        this.Firstname =Firstname;
-        this.LastName = LastName;
-        this.Designation =Designation;
-        this.Salary =Salary;
+        this.#Firstname =Firstname;
+        this.#LastName = LastName;
+        this.#Designation =Designation;
+        this.#Salary =Salary;
      }
 
 }
