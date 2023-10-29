@@ -32,4 +32,4 @@ console.log(Student)
 var Student1 = new  Student("Abc",42);
 //console.log(Student1.getDetailsOFAS());
 
-console.log(Student1)
+console.log(Student1);
