@@ -3,51 +3,55 @@ class Person
     person_name;
     person_age;
 
-    constructor()
+    Desingation1;
+    constructor(name,age)
     {
-        this.person_name ="Abhishek";
-        this.person_age =10;
+        this.person_age=age;
+        this.person_name=name;
+    }
+    set name1(name)
+    {
+        
+        this.person_name=name;
+    }
+    set Age1(age)
+    {
+        this.person_age =age;
+    }
+    get AgeAndName()
+    {
+        return `${this.person_age}, ${this.person_name}`;
+    }
+    set Designation2(Designation)
+    {
+        this.Desingation1  = Desgination;
+    }
+    get Designation()
+    {
+        return `${this.Desgination} this is from the parent `
+    }
 
-    }
-    set person_name(name)
-    {
-        this.person_name =name;
-    }
-    set person_age(age)
-    {
-        this.person_age = age;
-    }
-    get NameAndAge()
-    {
-        return `${this.person_name} and ${this.person_age}`;
-    }
 }
 class Employee extends Person
 {
-    designation;
-
-    constructor()
+    #desgination;
+    constructor(desgination) 
     {
-        super();
-        this.designation= "jr";
+        super("Abhishek",10);    
+        
+        this.desgination =desgination;
     }
-    set Employeedesignation(design)
+    set Designatio1n(Designation)
+    {   
+        this.desgination=desgination;
+    }
+    get Designation()
     {
-        this.designation =design;
-    }
-    get designayion()
-    {
-        return `${this.designation} this is the desination` ;
-    }
-    get NameAndAge()
-    {
-        return `${this.person_name} and ${this.person_age} and desination is  ${this.designation} from the child class`;
-    }
+        return `${this.desgination} this is child class ${super.Designation}`;
+    }      
 }
 
+var emp1 =new Employee("Abhsiehk");
+emp1.Age1 =10;
+console.log(emp1.Designation);
 
-var a   = new Employee();
-
-a.person_age =50;
-
-console.log(a.NameAndAge);
