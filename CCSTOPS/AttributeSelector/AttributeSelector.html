@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* input {
+            outline: 3px solid rgb(68, 176, 22);
+            border: 3px solid rgb(176, 148, 22);
+        } */
+        /* input[type] {
+            outline: 3px solid rgb(68, 176, 22);
+            border: 3px solid rgb(176, 148, 22);
+        } */
+
+        input[type="text"],
+        input[type="password"] {
+            outline: 3px solid rgb(68, 176, 22);
+            border: 3px solid rgb(176, 148, 22);
+        }
+
+        /* a{
+            font-size: 36px;   
+        } */
+        a[href="http:www.mysite.com"] {
+            font-size: 36px;
+        }
+
+        /* <a> elements with an class containing "example" START */
+        a[class*="example"] {
+            font-size: 2em;
+            color: orangered;
+        }
+
+        /* <a> elements with an class containing "example" END */
+
+
+        /* <a> elements whose class attribute contains the word "logo"  START*/
+        a[class~="example"] {
+            padding: 2px;
+            color: brown;
+        }
+
+        /* <a> elements whose class attribute contains the word "logo"  END*/
+
+
+        /* <a> elements with an href ending ".org", case-insensitive START*/
+        a[href$=".in"] {
+            /* font-style: italic; */
+            background: linear-gradient(orange,white,green);
+        }
+        /* <a> elements with an href ending ".org", case-insensitive END*/
+    </style>
+</head>
+
+<body>
+
+
+    <input type="text" name="" id="">
+    <input type="password" name="" id="">
+    <input type="radio" name="" id="">
+    <input type="submit" name="" id="">
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident beatae eaque tempora reprehenderit minus,
+        iste autem eligendi ab. <a href="http:www.mysite.com">My Site</a> Et provident possimus tenetur numquam ipsum
+        vero, quibusdam corrupti nesciunt ut maiores! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
+        inventore consectetur similique consequatur dolor id vel! Excepturi debitis necessitatibus corporis recusandae
+        perferendis velit, quae neque ducimus reprehenderit inventore saepe ex!</p>
+    <a href="#">Read more</a>
+
+    <br>
+    <a class="myexample" href="#">myexample a[class*="example"] </a>
+    <a class="my-example" href="#">my-example a[class*="example"] </a>
+    <a class="example" href="#">example a[class*="example"] </a>
+    <a class="example other" href="#">example a[class*="example"] </a>
+    <a class="test example other" href="#">example a[class*="example"] </a>
+
+    <br>
+    <a href="web.in">India</a>
+    <a href="web.uk">UK</a>
+    <a href="web.us">US</a>
+
+    <pre>
+    /* &lt;a&gt; elements with a title attribute */
+        a[title] {
+            color: purple;
+        }
+        
+        /* &lt;a&gt; elements with an href matching "https://example.org" */
+        a[href="https://example.org"]
+        {
+            color: green;
+        }
+        
+        /* &lt;a&gt; elements with an href containing "example" */
+        a[href*="example"] {
+            font-size: 2em;
+        }
+        
+        /* &lt;a&gt; elements with an href ending ".org", case-insensitive */
+        a[href$=".org" i] {
+            font-style: italic;
+        }
+        
+        /* &lt;a&gt; elements whose class attribute contains the word "logo" */
+        a[class~="logo"] {
+            padding: 2px;
+        }
+        
+</pre>
+</body>
+
+</html>
