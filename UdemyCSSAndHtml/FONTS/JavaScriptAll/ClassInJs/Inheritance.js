@@ -26,7 +26,7 @@ class Person
     {
         this.Desingation1  = Desgination;
     }
-    get Designation5()
+    get Designation()
     {
         return `${this.Desgination} this is from the parent `
     }
@@ -47,41 +47,11 @@ class Employee extends Person
     }
     get Designation()
     {
-        return `${this.desgination} this is child class`;
+        return `${this.desgination} this is child class ${super.Designation}`;
     }      
 }
 
 var emp1 =new Employee("Abhsiehk");
 emp1.Age1 =10;
 console.log(emp1.Designation);
-
-class Employee extends Person
-{
-    designation;
-
-    constructor()
-    {
-        super();
-        this.designation= "jr";
-    }
-    set Employeedesignation(design)
-    {
-        this.designation =design;
-    }
-    get designayion()
-    {
-        return `${this.designation} this is the desination` ;
-    }
-    get NameAndAge()
-    {
-        return `${this.person_name} and ${this.person_age} and desination is  ${this.designation} from the child class`;
-    }
-}
-
-
-var a   = new Employee();
-
-a.person_age =50;
-
-console.log(a.NameAndAge);
 
