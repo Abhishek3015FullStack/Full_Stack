@@ -10,7 +10,7 @@ class Person
      }
      seData(name ,age )
     {
-        if((name!="undefined" && name!="null"))
+        if((name!="undefined" && name!="null")&&(age<100 && age>0))
         {
             this.#Person_name=name;
             this.#Person_age =age;
@@ -34,6 +34,8 @@ class Person
 
 var Person1 = new Person();
 var a  =Person1.getDataName();
-console.log(a);
+//console.log(a);
 
-Person1.seData("undefined",-10);
+Person1.seData("ssd",10);
+var b =Person1.getDataName();
+console.log(b);
