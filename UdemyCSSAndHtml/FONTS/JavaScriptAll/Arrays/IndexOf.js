@@ -15,7 +15,7 @@ var f =
     e,
     a,
     b
-    ,c,d,e,f,a,b,c,d,e
+    ,c,d,e,f,a,b,c,d,e,a
 
 
 ]
@@ -26,4 +26,4 @@ var g = f.indexOf(e,6);
 console.log(g);
 
 
-console.log(f.lastIndexOf(e));
+console.log(f.lastIndexOf(z));
