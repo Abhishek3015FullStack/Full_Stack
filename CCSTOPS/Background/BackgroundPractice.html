@@ -13,57 +13,67 @@
             padding-left: 50px; /* padding: top right bottom left; */
             margin-top: 100px; /* margin: top right bottom left; */
         }
-        .background_color
+        .background_color /*back ground color*/
         {
             background-color: aqua;
         }
-        .backgroundImage
+        .backgroundImage /*adding the */
         {
-            background-image:url(images.jfif);
+            background-image:url(images.jfif); 
             
             
         }
-        .backgroundAttachement
+        .backgroundAttachement /*attachement is not fixed and scroll two propertise */
         {
             background-image: url(images.jfif);
             background-attachment: fixed;
         }
-        .background_clip
+        .background_clip  /*it means jaha se data shrur hua hai waha se image shuru hogi */
         {
             background-image: url(images.jfif);
-            background-clip: content-box;
+            /* background-clip: content-box; */
+            background-origin:border-box ;
+             /* background-origin:content-box ; */
+             padding-left: 500px;
+             padding-top: 5px;
+             padding-bottom: 5px;
+             padding-right:5px ;
+            /* background-origin:padding-box ;  */
 
         }
-        .background-origin
+        .background-origin /*jaha pixel of the box select kiya hai waha se picture shuru ho gi */
         {
             background-image: url(images.jfif);
-            background-origin: content-box;
+            background-origin: content-box  ;
+            padding-left:50px ;
+            padding-top: 50px;
         }
-        .background-position
+        .background-position /*image ki position se chalu hoga*/
         {
             background-image: url(images.jfif);
             background-position: 500px; /*starting the image from that pixel*/
             padding-left: 500px; 
         }
-        .background-repeat
+        .background-repeat /*background image */
         {
             background-image: url(images.jfif);
             background-position: center center;
             background-repeat: no-repeat;
         }
 
-        .background-size
+        .background-size /**/
         {
             background-image: url(images.jfif);
             background-size: cover;
             background-position: 10px, 10px ; /* horizontal and vertical*/
             
         }
-        .linear-background
+        .linear-background /**/
         {
             background: linear-gradient(orange , white , green);
         }
-        .radial-gradient{
+        .radial-gradient /**/
+        {
            background:radial-gradient(orange,white,green) 
         }
 </style>
