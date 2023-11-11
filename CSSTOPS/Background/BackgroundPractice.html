@@ -7,20 +7,90 @@
 <style>
         .box
         {
-            height: 200px;
-            width: 1890px;
-            border: 2px solid black;
-            padding: 5px;
-            margin-top: 20px;
-        }  
+            height: 100px;
+           
+            border: 20px dashed rgb(30, 139, 139); /* border: border-width border-style border-color;*/
+            padding-left: 50px; /* padding: top right bottom left; */
+            margin-top: 100px; /* margin: top right bottom left; */
+        }
+        .background_color /*back ground color*/
+        {
+            background-color: aqua;
+        }
+        .backgroundImage /*adding the */
+        {
+            background-image:url(images.jfif); 
+            
+            
+        }
+        .backgroundAttachement /*attachement is not fixed and scroll two propertise */
+        {
+            background-image: url(images.jfif);
+            background-attachment: fixed;
+        }
+        .background_clip  /*it means jaha se data shrur hua hai waha se image shuru hogi */
+        {
+            background-image: url(images.jfif);
+            /* background-clip: content-box; */
+            background-origin:border-box ;
+             /* background-origin:content-box ; */
+             padding-left: 500px;
+             padding-top: 5px;
+             padding-bottom: 5px;
+             padding-right:5px ;
+            /* background-origin:padding-box ;  */
+
+        }
+        .background-origin /*jaha pixel of the box select kiya hai waha se picture shuru ho gi */
+        {
+            background-image: url(images.jfif);
+            background-origin: content-box  ;
+            padding-left:50px ;
+            padding-top: 50px;
+        }
+        .background-position /*image ki position se chalu hoga*/
+        {
+            background-image: url(images.jfif);
+            background-position: 500px; /*starting the image from that pixel*/
+            padding-left: 500px; 
+        }
+        .background-repeat /*background image */
+        {
+            background-image: url(images.jfif);
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .background-size /**/
+        {
+            background-image: url(images.jfif);
+            background-size: cover;
+            background-position: 10px, 10px ; /* horizontal and vertical*/
+            
+        }
+        .linear-background /**/
+        {
+            background: linear-gradient(orange , white , green);
+        }
+        .radial-gradient /**/
+        {
+           background:radial-gradient(orange,white,green) 
+        }
 </style>
 </head>
 <body>
-        <div class="box"></div> 
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+        <p> background-color </p>
+        <div class="box background_color">background-color</div> 
+        <div class="box backgroundImage">Back Ground Image</div>
+        <div class="box backgroundAttachement">background Attachement</div>
+        <div class="box background_clip">background_clip</div>
+        <div class="box background-origin">background-origin</div>
+        <div class="box background-position">background-position</div>
+        <div class="box background-repeat">background-repeat</div>
+        <div class="box background-size">background-size</div>
+        <div class="box linear-background">linear-background</div>
+        <div class="box radial-gradient">radial-gradient</div>
+
 </body>
+
 </html>

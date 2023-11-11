@@ -22,4 +22,9 @@ for(var i =0;i<a.length;i++)
 }
 console.log(a.length);
 
-console.log(a.pop());   
+console.log(a.pop(1)); 
+console.log(a.length); 
+
+// for(var i =0;i<a.length;i++)
+// {
+//     console.log(a[i]); }
