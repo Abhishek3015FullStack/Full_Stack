@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <details>
+                    <summary>Boilarplate</summary>
+                    <p>When you are building a new website, it is important to have a good starting foundation. In this article, I
+                        will explain what an HTML 5 boilerplate is and how to create a basic template to use in your projects. </p>
+                    <h2 id="what-is-an-html-5-boilerplate">What is an HTML 5 boilerplate?</h2>
+                    <p>According to <a href="https://en.wikipedia.org/wiki/Boilerplate_code#HTML">Wikipedia</a>, </p>
+                    <blockquote><strong>boilerplate code</strong> or just <strong>boilerplate</strong> are sections of code that are
+                        repeated in multiple places with little to no variation.</blockquote>
+                    <p>A boilerplate in HTML is a template you will add at the start of your project. You should add this
+                        boilerplate to all of your HTML pages. </p>
+                    <h2 id="example-of-html-5-boilerplate">Example of HTML 5 boilerplate</h2>
+                    <p>Let's take a look at a basic example.</p>
+                    <pre class="language-html"
+                        tabindex="0"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML 5 Boilerplate<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>style.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code></pre>
+                    <h3 id="what-is-a-doctype-in-html">What is a doctype in HTML?</h3>
+                    <p>The first line in your HTML code should be the doctype declaration. A doctype tells the browser what version
+                        of HTML the page is written in. </p>
+                    <pre class="language-html"
+                        tabindex="0"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span></code></pre>
+                    <p>If you forget to include this line of code in your file, then some of the HTML 5 tags like
+                        <code>&lt;article&gt;</code>, <code>&lt; footer &gt;</code>, and <code>&lt;header&gt;</code> &nbsp;may not
+                        be supported by the browser.</p>
+                    <h3 id="what-is-the-html-root-element">What is the HTML root element?</h3>
+                    <p>The <code>&lt;html&gt;</code> tag is the top level element of the HTML file. You will nest the
+                        <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tags inside of it.</p>
+                    <pre class="language-html"
+                        tabindex="0"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code></pre>
+                    <p>The <code>lang</code> attribute inside the opening <code>&lt;html&gt;</code> tag sets the language for the
+                        page. It is also good to include it for accessibility reasons, because screen readers will know how to
+                        properly pronounce the text. </p>
+                    <h3 id="what-are-head-tags-in-html">What are head tags in HTML?</h3>
+                    <p>The <code>&lt;head&gt;</code> tags contain information that is processed by machines. Inside the
+                        <code>&lt;head&gt;</code> tags, you will nest metadata which is data that describes the document to the
+                        machine. </p>
+                    <pre class="language-html"
+                        tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML 5 Boilerplate<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>style.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span></code></pre>
+                    <h3 id="what-is-utf-8-character-encoding">What is UTF-8 character encoding?</h3>
+                    <p>UTF-8 is the standard character encoding you should use in your web pages. This will usually be the first
+                        <code>&lt;meta&gt;</code> tag shown in the <code>&lt;head&gt;</code> element.</p>
+                    <pre class="language-html"
+                        tabindex="0"><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+                    <p>According to the <a href="https://www.w3.org/International/questions/qa-choosing-encodings">World Wide Web
+                            Consortium</a>, </p>
+                    <blockquote>A Unicode-based encoding such as UTF-8 can support many languages and can accommodate pages and
+                        forms in any mixture of those languages. Its use also eliminates the need for server-side logic to
+                        individually determine the character encoding for each page served or each incoming form submission.
+                    </blockquote>
+                    <h3 id="what-is-the-viewport-meta-tag-in-html">What is the viewport meta tag in HTML?</h3>
+                    <p>This tag renders the width of the page to the width of the device's screen size. If you have a mobile device
+                        that is 600px wide, then the browser window will also be 600px wide.</p>
+                    <p>The initial-scale controls the zoom level. The value of 1 for the initial-scale prevents the default zoom by
+                        browsers. </p>
+                    <pre class="language-html" tabindex="0"><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    </code></pre>
+                    <h3 id="what-does-x-ua-compatible-mean">What does X-UA-Compatible mean?</h3>
+                    <p>This <code>&lt;meta&gt;</code> tag specifies the document mode for Internet Explorer. <code>IE=edge</code> is
+                        the highest supported mode. </p>
+                    <pre class="language-html" tabindex="0"><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    </code></pre>
+                    <h3 id="what-are-html-title-tags">What are HTML title tags?</h3>
+                    <p>The <code>&lt;title&gt;</code> tag is the title for the web page. This text is shown in the browser's title
+                        bar.</p>
+                    <pre class="language-html" tabindex="0"><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML 5 Boilerplate<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+                    </code></pre>
+                    <figure class="kg-card kg-image-card"><img
+                            src="https://www.freecodecamp.org/news/content/images/2021/07/Screen-Shot-2021-07-30-at-4.15.25-AM.png"
+                            class="kg-image" alt="Screen-Shot-2021-07-30-at-4.15.25-AM" width="600" height="400" loading="lazy">
+                    </figure>
+                    <h3 id="css-stylesheet">CSS stylesheet</h3>
+                    <p>This code will link your custom CSS to the HTML page. &nbsp;<code>rel="stylesheet"</code> defines the
+                        relationship between the HTML file and the external stylesheet. &nbsp;</p>
+                    <pre class="language-html" tabindex="0"><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>style.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    </code></pre>
+                    <h3 id="script-tags-in-html">Script tags in HTML</h3>
+                    <p>External script tags will be placed just before the ending body tag. This is where you can link your external
+                        JavaScript code. </p>
+                    <pre class="language-html" tabindex="0"><code class="language-html">	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                    </code></pre>
+                    <h2 id="conclusion">Conclusion</h2>
+                    <p>You should add an HTML 5 boilerplate to each of your HTML pages. This starter code contains important
+                        information like the doctype, metadata, external stylesheets and script tags. <br></p>
+                    <p> &nbsp;</p>
+                    <p><br></p>
+                    <p><br></p>
+                    <p> </p>
+                    <p><br></p>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details>
+                        <summary>Tag and Element</summary>
+                        <h3>Tag</h3>
+                        <p>p,hr,br,div,sec etc.</p>
+                        <p>tag covered with angular braket generally comes with opening and closing pairs</p>
+                        <p>some of them are null/empty/void tags like br,hr,inp (whoevenr not required to be closed)</p>
+                        <hr>
+
+                        <h3>Elements</h3>
+                        <p>elements is nothing but expansion of tag with its content</p>
+                        <img src="images.png" alt="">
+                        <input type="text" name="" id="">
+                        <p></p>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details>
+                    <summary>Attribute And Propertise</summary>
+                     <!-- This is the HTML Comment for undestand code (reference for other developer or future updates) -->
+                    <h2>Attributes</h2>
+                    <p>Attribute: Attributes are defined by HTML and are used to customize a tag.</p>
+                    <p>works for make changes in tag behaviors</p>
+                    <p> &lt;input type="text" name="" id=""&gt;</p>
+                    <p> <input type="text" name="" id=""></p>
+                    <p> &lt;input type="password" name="" id=""&gt;</p>
+                    <p> <input type="password" name="" id=""></p>
+    
+                    <h2>properties</h2>
+                    <p>Property: In contrast to the attributes, which are defined in HTML, properties belong to the DOM. Since DOM is an object in JavaScript, we can get and set properties.</p>
+                    <p>works for make changes in tag aprieance</p>
+                    <img src="icon.png"  alt="">
+                    <img src="icon.png" width="200px" alt="">
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details>
+                        <summary>Basic Tag</summary>
+                        <p>This is the paragrapgh tag "&lt p &gt"</p>
+                        <p>this is the brr tag for the nextline "&lt br &gt"</p>
+                        <p> this is the h1,h2,h3,h4,h5,h6 this is the for the header</p>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details>
+                        <summary>nested Tag</summary>
+                        This is the Example
+    This is the Example
+    This is the Example
+    This is the Example
+    This is the Example <br>
+    This is the Example <br>
+    This is the Example <br>
+    This is the Example <br>
+    This is the Example <br>
+    <p>This is the Example </p>
+    <p>This is the Example </p>
+    <p>This is the Example </p>
+    <p>This is the Example Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate harum reprehenderit eaque
+        enim consequuntur ducimus amet non dolore, pariatur natus? Illo quae corporis tempora natus, fugit eveniet
+        deleniti porro quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis laborum, nemo esse
+        consequuntur molestias quam corporis a dolore quos velit, ipsa ratione veritatis, assumenda doloremque
+        inventore! Quisquam nisi maiores dolorem!</p>
+    <p>This is the Example Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate harum reprehenderit eaque
+        enim consequuntur ducimus amet non dolore, pariatur natus? Illo quae corporis tempora natus, fugit eveniet
+        deleniti porro quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis laborum, nemo esse
+        consequuntur molestias quam corporis a dolore quos velit, ipsa ratione veritatis, assumenda doloremque
+        inventore! Quisquam nisi maiores dolorem!</p>
+    <p>This is the Example Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate harum reprehenderit eaque
+        enim consequuntur ducimus amet non dolore, pariatur natus? Illo quae corporis tempora natus, fugit eveniet
+        deleniti porro quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis laborum, nemo esse
+        consequuntur molestias quam corporis a dolore quos velit, ipsa ratione veritatis, assumenda doloremque
+        inventore! Quisquam nisi maiores dolorem!</p>
+    <p>This is the Example Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate harum reprehenderit eaque
+        enim consequuntur ducimus amet non dolore, pariatur natus? Illo quae corporis tempora natus, fugit eveniet
+        deleniti porro quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis laborum, nemo esse
+        consequuntur molestias quam corporis a dolore quos velit, ipsa ratione veritatis, assumenda doloremque
+        inventore! Quisquam nisi maiores dolorem!</p>
+
+
+    <p>This is the Example of <b>Bold</b> b tag HTML for highlight/make txt bolder <b>note :</b> Do pratice regularly
+    </p>
+    <p>This is the Example of <strong>Bold</strong> strong HTML5 helps to highlight txt for SEO propspective
+        <strong>TOPS Technologies</strong> is leading company in Ahmedabad
+    </p>
+
+    <p>This is the example of <i> italic</i> i display inline HTML make txt italic like adopted word <i>vagharelo
+            rotlo</i> <i>pizza</i></p>
+    <p>This is the example of <em> italic</em> em display inline HTML5 for emphasis something <i>do practice regularly
+            else you may face problems in future</i></p>
+    <p>This is the example of <cite> italic</cite> cite display inline HTML5 uncertain article </p>
+    <p>This is the example of
+    <address>italic address tag is display block</address>
+    </p>
+
+    <p>This is the example of 2<sup><small>2</small></sup></p>
+    <p>This is the example of H<sub>2</sub>O</p>
+    <p>This is the example of <mark>Mark </mark></p>
+    <p>This is the example of A<big>A </big></p>
+    <p>This is the example of A<small>A </small></p>
+    <p>This is the example of <strike>strike</strike> HTML depricated</p>
+    <p>This is the example of <del>del</del> HTML5 recom</p>
+    <p>This is the example of <u>Underline</u> HTML</p>
+    <p>This is the example of <ins>inseted</ins> HTML5 recom</p>
+    <p>This is the example of <tt>Type writter</tt> HTML </p>
+    <p>This is the example of <code>comp code</code>HTML5 </p>
+    <p>This is the example of 'single qou' </p>
+    <p>This is the example of "double qoute" </p>
+    <blockquote>
+        <p>
+            <q>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim nam id, totam, recusandae fugit error
+                nulla veritatis voluptatum praesentium ipsa ipsum. Commodi et ut sequi corporis doloremque ad iure
+                impedit.</q>
+                            </p>
+                        </blockquote>
+                        <marquee onmouseover="this.stop()" onmouseleave="this.start()" behavior="scroll" direction="">Lorem ipsum dolor sit
+                        amet consectetur adipisicing elit. In quae aliquid
+                        soluta ipsum quisquam voluptates unde rerum dolorum, asperiores recusandae amet earum quibusdam veniam quam
+                        voluptatibus corrupti error doloremque corporis.</marquee>
+
+                        <marquee direction="down" width="250" height="200" behavior="alternate" style="border:solid">
+                        <marquee behavior="alternate"> This text will bounce </marquee>
+                        </marquee>
+
+
+                        <MARQUEE HSPACE=150px VSPACE=150px WIDTH="25%" BGCOLOR=YELLOW>
+                        Howdy there!<P>
+                        Good to see ya!
+                        </MARQUEE>Hi There!
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    <details>
+                            <summary>Block level element</summary>
+                                
+                                <label for="">inline</label>
+                                <label for="">inline</label>
+                                <label for="">inline</label>
+                                <label for="">inline</label>
+                                <div>block</div>
+                                <div>block</div>
+                                <div>block</div>
+                                <div>block</div>
+                                <p>In CSS, content that participates in block layout is called block-level content.</p>
+                                before
+                                <ul>
+                                    <li>test</li>
+                                </ul>
+                                after
+                                div tag this the block level element span tag  
+                    </details>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <details>
+                    <summary>Wrapper tags</summary>
+                    <ol>
+                        <li> &lt;div>&lt;/div> </li>
+                        <li> &lt;p>&lt;/p> </li>
+                        <li> &lt;span>&lt;/span> </li>
+                        <li> &lt;label>&lt;/label> </li>
+                        <li> &lt;section>&lt;/section> </li>
+                        <li> &lt;header>&lt;/header> </li>
+                        <li> &lt;footer>&lt;/footer> </li>
+                        <li> &lt;nav>&lt;/nav> </li>
+                        <li> &lt;aside>&lt;/aside> </li>
+                    </ol>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details>
+                    <summary>List of the block level element</summary>
+                    test 
+                    checking
+                    <p>Test</p>
+                    <p>checking</p>
+                    <h1>Display Block Level elements</h1>
+                    <pre>
+                    < address >
+                        Contact information.
+                        
+                        < article >
+                        Article content.
+                        
+                        < aside >
+                        Aside content.
+                        
+                        < blockquote >
+                        Long ("block") quotation.
+                        
+                        < details >
+                        Disclosure widget.
+                        
+                        < dialog >
+                        Dialog box.
+                        
+                        < dd >
+                        Describes a term in a description list.
+                        
+                        < div >
+                        Document division.
+                        
+                        < dl >
+                        Description list.
+                        
+                        < dt >
+                        Description list term.
+                        
+                        < fieldset >
+                        Field set label.
+                        
+                        < figcaption >
+                        Figure caption.
+                        
+                        < figure >
+                        Groups media content with a caption (see < figcaption >).
+                        
+                        < footer >
+                        Section or page footer.
+                        
+                        < form >
+                        Input form.
+                        
+                        < h1 >, < h2 >, < h3 >, < h4 >, < h5 >, < h6 >
+                        Heading levels 1-6.
+                        
+                        < header >
+                        Section or page header.
+                        
+                        < hgroup >
+                        Groups header information.
+                        
+                        < hr >
+                        Horizontal rule (dividing line).
+                        
+                        < li >
+                        List item.
+                        
+                        < main >
+                        Contains the central content unique to this document.
+                        
+                        < nav >
+                        Contains navigation links.
+                        
+                        < ol >
+                        Ordered list.
+                        
+                        < p >
+                        Paragraph.
+                        
+                        < pre >
+                        Preformatted text.
+                        
+                        < section >
+                        Section of a web page.
+                        
+                        < table >
+                        Table.
+                        
+                        < ul >
+                        Unordered list.
+                    </pre>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details>
+                    <summary>Inline element</summary>
+                    <a href="">Click me</a>
+                    <a href="">Click me</a>
+                    <p>
+                
+                        <a href="">Click me</a>
+                    </p>
+                    <p>
+                
+                        <a href="">Click me</a>
+                    </p>
+                    <p>
+                
+                        <a href="">Click me</a>
+                    </p>
+                    <ul>
+                        <li><a href="/en-US/docs/Web/HTML/Element/a"><code>&lt;a&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/abbr"><code>&lt;abbr&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/acronym"><code>&lt;acronym&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/audio"><code>&lt;audio&gt;</code></a> (if it has visible controls)</li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/b"><code>&lt;b&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/bdi"><code>&lt;bdi&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/bdo"><code>&lt;bdo&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/big"><code>&lt;big&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/br"><code>&lt;br&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/button"><code>&lt;button&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/canvas"><code>&lt;canvas&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/cite"><code>&lt;cite&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/code"><code>&lt;code&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/data"><code>&lt;data&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/datalist"><code>&lt;datalist&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/del"><code>&lt;del&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/dfn"><code>&lt;dfn&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/em"><code>&lt;em&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/embed"><code>&lt;embed&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/i"><code>&lt;i&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/iframe"><code>&lt;iframe&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/input"><code>&lt;input&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/ins"><code>&lt;ins&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/kbd"><code>&lt;kbd&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/label"><code>&lt;label&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/map"><code>&lt;map&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/mark"><code>&lt;mark&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/meter"><code>&lt;meter&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/noscript"><code>&lt;noscript&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/object"><code>&lt;object&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/output"><code>&lt;output&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/picture"><code>&lt;picture&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/progress"><code>&lt;progress&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/q"><code>&lt;q&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/ruby"><code>&lt;ruby&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/s"><code>&lt;s&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/samp"><code>&lt;samp&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/script"><code>&lt;script&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/select"><code>&lt;select&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/slot"><code>&lt;slot&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/small"><code>&lt;small&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/span"><code>&lt;span&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/strong"><code>&lt;strong&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/sub"><code>&lt;sub&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/sup"><code>&lt;sup&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/svg" class="page-not-created" title="This is a link to an unwritten page"><code>&lt;svg&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/template"><code>&lt;template&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/textarea"><code>&lt;textarea&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/time"><code>&lt;time&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/u"><code>&lt;u&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/tt"><code>&lt;tt&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/var"><code>&lt;var&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/video"><code>&lt;video&gt;</code></a></li>
+                        <li><a href="/en-US/docs/Web/HTML/Element/wbr"><code>&lt;wbr&gt;</code></a></li>
+                      </ul>
+                </details>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
