@@ -1,0 +1,271 @@
+            <html lang="en">
+
+              <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Document</title>
+                  <style>
+                      img:hover {
+                          width: 250px;
+                      }
+
+                      input[type='checkbox']:checked {
+                          border: 2px solid rgb(28, 255, 20);
+                          outline: 2px solid rgb(20, 212, 255);
+                      }
+
+                      *:disabled {
+                          background-color: dimgrey;
+                          color: linen;
+                          opacity: 1;
+                      }
+
+                      div:empty {
+                          outline: 2px solid deeppink;
+                          height: 1em;
+                      }
+
+                      @page :first {
+                          margin-left: 50%;
+                          margin-top: 50%;
+                          height: 100vh;
+                      }
+
+                      li:first-child {
+                          border: 2px solid orange;
+                      }
+
+                      input:focus {
+                          background-color: lightblue;
+                      }
+                      input:invalid {
+                background-color: ivory;
+                border: none;
+                outline: 2px solid red;
+                border-radius: 5px;
+              }
+
+              a:visited{
+                  color: green;
+              }
+
+                  </style>
+              </head>
+
+              <body>
+                  <p>A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s).
+                      For example, the pseudo-class :hover can be used to select a button when a user's pointer hovers over the button
+                      and this selected button can then be styled.</p>
+
+                  <input type="text" name="" id="">
+
+                  <input type="text" disabled name="" id="">
+                  <img src="../../WhatisWebsite.png" width="200px" alt="">
+
+                  <a href="#">Click</a>
+                  <a href="https://www.google.com">Google</a>
+                  <a href="https://www.googlesdee.com">googlesdee</a>
+
+                  <input type="checkbox" name="" id="">
+
+                  <input name="email" type="email" value="na@me@example.com" />
+                  <br>
+                  empty
+                  <div id="emptywithspace">
+
+                  </div>
+                  <div contenteditable="" id="emptywithoutspace"></div>
+
+                  <p>Track & field champions:</p>
+                  <ul>
+                      <li>Adhemar da Silva</li>
+                      <li>Wang Junxia</li>
+                      <li>Wilma Rudolph</li>
+                      <li>Babe Didrikson-Zaharias</li>
+                      <li>Betty Cuthbert</li>
+                      <li>Fanny Blankers-Koen</li>
+                      <li>Florence Griffith-Joyner</li>
+                      <li>Irena Szewinska</li>
+                      <li>Jackie Joyner-Kersee</li>
+                      <li>Shirley Strickland</li>
+                      <li>Carl Lewis</li>
+                      <li>Emil Zatopek</li>
+                      <li>Haile Gebrselassie</li>
+                      <li>Jesse Owens</li>
+                      <li>Jim Thorpe</li>
+                      <li>Paavo Nurmi</li>
+                      <li>Sergei Bubka</li>
+                      <li>Usain Bolt</li>
+                  </ul>
+
+
+
+                  <div class="section-content">
+                      <p>Pseudo-classes defined by a set of CSS specifications include the following:</p>
+                      <p>A</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:active"><code>:active</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:any-link"><code>:any-link</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:autofill"><code>:autofill</code></a></li>
+                      </ul>
+                      <p>B</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:blank"><code>:blank</code></a> <abbr class="icon icon-experimental"
+                                  title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                      </ul>
+                      <p>C</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:checked"><code>:checked</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:current"><code>:current</code></a> <abbr class="icon icon-experimental"
+                                  title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                      </ul>
+                      <p>D</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:default"><code>:default</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:defined"><code>:defined</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:dir"><code>:dir()</code></a> <abbr class="icon icon-experimental"
+                                  title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                          <li><a href="/en-US/docs/Web/CSS/:disabled"><code>:disabled</code></a></li>
+                      </ul>
+                      <p>E</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:empty"><code>:empty</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:enabled"><code>:enabled</code></a></li>
+                      </ul>
+                      <p>F</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:first"><code>:first</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:first-child"><code>:first-child</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:first-of-type"><code>:first-of-type</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:fullscreen"><code>:fullscreen</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:future"><code>:future</code></a> <abbr class="icon icon-experimental"
+                                  title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                          <li><a href="/en-US/docs/Web/CSS/:focus"><code>:focus</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:focus-visible"><code>:focus-visible</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:focus-within"><code>:focus-within</code></a></li>
+                      </ul>
+                      <p>H</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:has"><code>:has()</code></a> <abbr class="icon icon-experimental"
+                                  title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                          <li><a href="/en-US/docs/Web/CSS/:host"><code>:host</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:host"><code>:host()</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:host-context"><code>:host-context()</code></a> <abbr
+                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                          <li><a href="/en-US/docs/Web/CSS/:hover"><code>:hover</code></a></li>
+                      </ul>
+                      <p>I</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:indeterminate"><code>:indeterminate</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:in-range"><code>:in-range</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:invalid"><code>:invalid</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:is"><code>:is()</code></a></li>
+                      </ul>
+                      <p>L</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:lang"><code>:lang()</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:last-child"><code>:last-child</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:last-of-type"><code>:last-of-type</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:left"><code>:left</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:link"><code>:link</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:local-link"><code>:local-link</code></a> <abbr
+                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                      </ul>
+                      <p>M</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:modal"><code>:modal</code></a></li>
+                      </ul>
+                      <p>N</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:not"><code>:not()</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:nth-child"><code>:nth-child()</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:nth-of-type"><code>:nth-col()</code></a> <abbr
+                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                          <li><a href="/en-US/docs/Web/CSS/:nth-last-child"><code>:nth-last-child()</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:nth-last-of-type"><code>:nth-last-col()</code></a> <abbr
+                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                          <li><a href="/en-US/docs/Web/CSS/:nth-last-of-type"><code>:nth-last-of-type()</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:nth-of-type"><code>:nth-of-type()</code></a></li>
+                      </ul>
+                      <p>O</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:only-child"><code>:only-child</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:only-of-type"><code>:only-of-type</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:optional"><code>:optional</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:out-of-range"><code>:out-of-range</code></a></li>
+                      </ul>
+                      <p>P</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:past"><code>:past</code></a> <abbr class="icon icon-experimental"
+                                  title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                          <li><a href="/en-US/docs/Web/CSS/:picture-in-picture"><code>:picture-in-picture</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:placeholder-shown"><code>:placeholder-shown</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:paused"><code>:paused</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:playing"><code>:playing</code></a></li>
+                      </ul>
+                      <p>R</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:read-only"><code>:read-only</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:read-write"><code>:read-write</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:required"><code>:required</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:right"><code>:right</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:root"><code>:root</code></a></li>
+                      </ul>
+                      <p>S</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:scope"><code>:scope</code></a></li>
+                          <li><a class="page-not-created"
+                                  title="The documentation about this has not yet been written; please consider contributing!"><code>:state()</code></a>
+                              <abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr>
+                          </li>
+                      </ul>
+                      <p>T</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:target"><code>:target</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:target-within"><code>:target-within</code></a> <abbr
+                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                      </ul>
+                      <p>U</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:user-invalid"><code>:user-invalid</code></a> <abbr
+                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
+                                  <span class="visually-hidden">Experimental</span>
+                              </abbr></li>
+                      </ul>
+                      <p>V</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:valid"><code>:valid</code></a></li>
+                          <li><a href="/en-US/docs/Web/CSS/:visited"><code>:visited</code></a></li>
+                      </ul>
+                      <p>W</p>
+                      <ul>
+                          <li><a href="/en-US/docs/Web/CSS/:where"><code>:where()</code></a></li>
+                      </ul>
+                  </div>
+              </body>
+
+              </html>

@@ -1999,16 +1999,7 @@
         <td>
             <details>
                     <summary>Introduction</summary>
-                      <h2>CSS</h2>
-                      <p>CaseCading StyleSheet</p>
-                      <p>CaseCading => Dependancy</p>
-                      <p>CSS => will helps to beautify out HTML Skeleton/Structure</p>
-                      <h3>way to adopt CSS</h3>
-                      <ol>
-                          <li>Inline [Within tag with style attribute never recommaned]</li>
-                          <li>Internal [within page with style tag not preferabble]</li>
-                          <li>External [with .css extension file and linked with html page by link tag most used and recommned by W3C]</li>
-                      </ol>      
+                      <a href="CSS/CSSFiles/Introduction.html">Introduction</a>      
             </details>
         </td>
       </tr>
@@ -2016,28 +2007,7 @@
         <td>
           <details>
             <summary>Apply CSS</summary>
-                      <html lang="en">
-                      <head>
-                      <meta charset="UTF-8">
-                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                      <title>Document</title>
-                      <style>
-                      h4{
-                          color: orangered;
-                        }
-                      </style>
-                      <link rel="stylesheet" href="style.css">
-                      </head>
-                      <body>
-
-
-                      <h2 style="color: green;">Inline</h2>
-    
-                      <h4>Internal</h4>
-
-                      <h5>External CSS</h5>
-                      </body>
-                      </html>
+            <a href="CSS/CSSFiles/ApplyCss.html">ApplyCss</a>
           </details>
         </td>
       </tr>
@@ -2045,26 +2015,7 @@
         <td>
           <details>
               <summary>Priority</summary>
-                <html lang="en">
-
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>Document</title>
-                        <style>
-                            h2 {
-                                color: green;
-                            }
-                        </style>
-                        <link rel="stylesheet" href="style.css">
-                    </head>
-
-                    <body>
-                        <h2 style="color: orangered;">Testing for the priorities</h2>
-                        <h2>Something</h2>
-                    </body>
-
-                    </html>
+                <a href="CSS/CSSFiles/Priority.html">Priority</a>
           </details>
         </td>
 
@@ -2073,28 +2024,7 @@
         <td>
           <details>
                 <summary>variables</summary>
-                <html lang="en">
-
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Document</title>
-                    <style>
-                        :root {
-                            --main-bg-color: rgb(47, 130, 178);
-                        }
-                        .bg{
-                            background-color: var(--main-bg-color);
-                            height: 200px;
-                        }
-                    </style>
-                </head>
-
-                <body>
-                <div class="bg"></div>
-                </body>
-
-                </html>
+                <a href="CSS/CSSFiles/Variables.html">Variables</a>
           </details>
         </td>
       </tr>
@@ -2102,26 +2032,7 @@
         <td>
           <details>
             <summary>Universal</summary>
-            <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Document</title>
-                    <style>
-                        /* *{
-                            color: palegreen;    
-                        } */
-                    </style>
-                </head>
-                <body>
-                    
-                    <p>Test</p>
-                    <h1>Universal Selector * &#123; &#125;</h1>
-                    <label for="">Label</label>
-                    <p>The universal selector in CSS is the asterisk (*). It's used to select <b>all elements</b> on an HTML page, including elements inside other elements. </p>
-                    <p> The universal selector is usually written as an asterisk followed by a selector. For example, you can use the universal selector to change the color of all the text on a page to red</p>
-                </body>
-                </html>
+            <a href="CSS/CSSFiles/Universal.html">Universal</a>
           </details>
         </td>
       </tr>
@@ -2129,27 +2040,7 @@
         <td>
           <details>
             <summary>Element Type Selector</summary>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Document</title>
-                <style>
-                    h12{
-                        color: rgb(17, 233, 17);    
-                    }
-                    /*  label{ color: rgb(160, 216, 160);background-color: blueviolet; } */
-                </style>
-            </head>
-            <body>
-                
-                <p>Test</p>
-                <h12>Universal Selector * &#123; &#125;</h12>
-                <label for="">Label</label>
-                <p>The universal selector in CSS is the asterisk (*). It's used to select <b>all elements</b> on an HTML page, including elements inside other elements. </p>
-                <p> The universal selector is usually written as an asterisk followed by a selector. For example, you can use the universal selector to change the color of all the text on a page to red</p>
-            </body>
-            </html>
+            <a href="CSS/CSSFiles/Element_type_Selector.html">Element_type_Selector</a>
           </details>
         </td>
       </tr>
@@ -2157,36 +2048,7 @@
         <td>
           <details>
                   <summary>IdSelector</summary>
-                  <html lang="en">
-                  <head>
-                      <meta charset="UTF-8">
-                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                      <title>Document</title>
-                      <style>
-                          /* h1{ color: teal; } */
-                          #tagline{ color: blue; }
-                          /* span{ color: red; } */
-                      </style>
-                  </head>
-                  <body>
-                      
-                      <h1>Site Title</h1>
-                      <span id="tagline">tag line</span>
-                      <h2>Sub title</h2>
-                      <!-- <span id="tagline">tag line</span> never repeat ID -->
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                      <h2>Sub title</h2>
-                      <!-- <span id="tagline">tag line</span>  never repeat ID -->
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                      <h2>Sub title</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                      <h2>Sub title</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                      <h2>Sub title</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                      
-                  </body>
-                  </html>
+                  <a href="CSS/CSSFiles/IdSelector.html">Id Selector</a>
           </details>
         </td>
       </tr>
@@ -2194,36 +2056,7 @@
         <td>
           <details>
                   <summary>Class Selector</summary>
-                      <html lang="en">
-                      <head>
-                          <meta charset="UTF-8">
-                          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                          <title>Document</title>
-                          <style>
-                              .custom-p{
-                                  color: orangered;
-                              }
-                          </style>
-                      </head>
-                      <body>
-                          
-                          <h1>Site Title</h1>
-                          <span id="tagline">tag line</span>
-                          <h2>Sub title</h2>
-                          <p class="custom-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                          <h2>Sub title</h2>
-                          <p class="custom-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                          <h2>Sub title</h2>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                          <h2>Sub title</h2>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                          <h2>Sub title</h2>
-                          <p class="custom-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                          <form action="">
-                              <input type="text" name="" id=""> <span>*</span>
-                          </form>
-                      </body>
-                      </html>
+                  <a href="CSS/CSSFiles/ClassSelector.html">Class Selector</a>
           </details>
         </td>
       </tr>
@@ -2231,100 +2064,7 @@
         <td>
           <details>
             <summary>Decesendants Selector</summary>
-            <html lang="en">
-
-                  <head>
-                      <meta charset="UTF-8">
-                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                      <title>Document</title>
-                      <style>
-                          /* this will remove all anchor underline 
-                          a{
-                              text-decoration: none;
-                          } */
-
-
-                          /* ul.test>li>a { */
-                          ul.test a {
-                              text-decoration: none;
-                          }
-                      </style>
-                  </head>
-
-                  <body>
-                      <header>
-                          <nav>
-                              <ul class="test">
-                                  <li><a href="#">facebook</a></li>
-                                  <li><a href="#">Insta</a></li>
-                                  <li><a href="#">contact</a></li>
-                              </ul>
-                              <ul>
-                                  <li><a href="#">Home</a></li>
-                                  <li><a href="#">About</a></li>
-                                  <li><a href="#">Contact</a></li>
-                              </ul>
-                          </nav>
-                          <ul>
-                              <li><a href="#">Home</a></li>
-                              <li><a href="#">About</a></li>
-                              <li><a href="#">Contact</a></li>
-                          </ul>
-                      </header>
-
-                      <div class="test">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non repellendus eligendi possimus quae? Consequatur, porro omnis <a href="#">Something</a> consequuntur natus animi debitis molestiae iure beatae deserunt cupiditate libero incidunt voluptatibus commodi id?
-                      </div>
-
-
-                      <aside>
-                          <ul>
-                              <li><a href="#">Data</a></li>
-                              <li><a href="#">Data</a></li>
-                              <li><a href="#">Data</a></li>
-                              <li><a href="#">Data</a></li>
-                              <li><a href="#">Data</a></li>
-                          </ul>
-                      </aside>
-
-                      <h1>Site Title</h1>
-                      <span>tag line</span>
-                      <h2>Sub title</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo
-                          voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum
-                          veritatis.</p>
-                      <h2>Sub title</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo
-                          voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum
-                          veritatis.</p>
-                      <h2>Sub title</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo
-                          voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum
-                          veritatis.</p>
-                      <h2>Sub title</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo
-                          voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum
-                          veritatis.</p>
-                      <h2>Sub title</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo
-                          voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum
-                          veritatis.</p>
-                      <form action="">
-                          <input type="text" name="" id=""> <span>*</span>
-                      </form>
-
-                      <footer>
-                          <nav>
-                              <ul>
-                                  <li><a href="#">Home</a></li>
-                                  <li><a href="#">About</a></li>
-                                  <li><a href="#">Contact</a></li>
-                              </ul>
-                          </nav>
-                      </footer>
-
-                    </body>
-                  </html>
+            <a href="CSS/CSSFiles/Descendants.html">Descendants</a>
           </details>
         </td>
       </tr>
@@ -2332,72 +2072,7 @@
         <td>
           <details>
                   <summary>Child Selector</summary>
-                  <html lang="en">
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>Document</title>
-                        <style>
-                            /* header a{
-                                text-decoration: none;
-                            } */
-                            header>nav  a{
-                            /* header>nav>ul>li>a{ */
-                                text-decoration: none;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <header>
-                            <a href="">Logo</a>
-                            <nav>
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </nav>
-                        </header>
-
-
-
-                        <aside>
-                            <ul>
-                                <li><a href="#">Data</a></li>
-                                <li><a href="#">Data</a></li>
-                                <li><a href="#">Data</a></li>
-                                <li><a href="#">Data</a></li>
-                                <li><a href="#">Data</a></li>
-                            </ul>
-                        </aside>
-
-                        <h1>Site Title</h1>
-                        <span>tag line</span>
-                        <h2>Sub title</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                        <h2>Sub title</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                        <h2>Sub title</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                        <h2>Sub title</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                        <h2>Sub title</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                        <form action="">
-                            <input type="text" name="" id=""> <span>*</span>
-                        </form>
-
-                        <footer>
-                            <nav>
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </nav>
-                          </footer>
-                    </body>
-                    </html>
+                  <a href="CSS/CSSFiles/ChildSelector.html">ChildSelector</a>
           </details>
         </td>
       </tr>
@@ -2405,37 +2080,7 @@
         <td>
           <details>
             <summary>Adjacent selectors</summary>
-            <html lang="en">
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      h2+p+span{
-                          background-color: teal;
-                      }
-                  </style>
-              </head>
-              <body>
-                  <h1>Site Title</h1>
-                  <span>tag line</span>
-                  <h2>Sub title</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                  <h2>Sub title</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                  <span>Test</span>
-                  <h2>Sub title</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                  <h2>Sub title</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                  <h2>Sub title</h2>
-                  <span>test</span>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                  <form action="">
-                      <input type="text" name="" id=""> <span>*</span>
-                  </form>
-              </body>
-              </html>
+            <a href="CSS/CSSFiles/Adjacent.html">Adjacents</a>
           </details>
         </td>
       </tr>
@@ -2443,37 +2088,7 @@
         <td>
           <details>
             <summary>General Siblings Selector</summary>
-            <html lang="en">
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      h2~span{
-                          background-color: teal;
-                      }
-                  </style>
-              </head>
-              <body>
-                  <h1>Site Title</h1>
-                  <span>tag line</span>
-                  <h2>Sub title</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                  <h2>Sub title</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                  <span>Test</span>
-                  <h2>Sub title</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                  <h2>Sub title</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                  <h2>Sub title</h2>
-                  <span>test</span>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum unde soluta molestiae, sunt nemo voluptates omnis, quibusdam voluptas numquam ut consectetur nobis magni ullam cupiditate! Est rem laborum veritatis.</p>
-                  <form action="">
-                      <input type="text" name="" id=""> <span>*</span>
-                  </form>
-              </body>
-              </html>
+            <a href="CSS/CSSFiles/General_Siblings.html">General_Siblings</a>
           </details>
         </td>
       </tr>
@@ -2481,35 +2096,7 @@
         <td>
           <details>
             <summary>Groupping Selectors </summary>
-            <html lang="en">
-
-              <head>
-                  <meta charset="UTF-8">
-                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      .heading,h2,div {
-                          font-size: 13px;
-                          margin-block-start: 0;
-                          color: orangered;
-                      }
-                  </style>
-              </head>
-
-              <body>
-                  
-                  
-
-                  <h2 class="heading">Welcome to BOB</h2>
-                  <p>Baat krnese baat banti hai</p>
-                  <h2>Welcome to BOB</h2>
-                  <label for="">testing</label>
-                  <p>Baat krnese baat banti hai</p>
-                  <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta quia omnis magnam nobis, quo obcaecati atque excepturi cumque repudiandae beatae, hic temporibus. Quasi, qui magni sapiente repudiandae consequuntur sunt vitae.</div>
-              </body>
-
-              </html>
+            <a href="CSS/CSSFiles/Groupping.html">Groupping</a>
           </details>
         </td>
       </tr>
@@ -2517,28 +2104,7 @@
         <td>
           <details>
             <summary>Introduction Css Selector</summary>
-            <html lang="en">
-
-              <head>
-                  <meta charset="UTF-8">
-                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-              </head>
-
-              <body>
-                  <p>. => class</p>
-                  <p># => ID</p>
-                  <p>h1,h2,p,div => ElementTypeSelectors</p>
-                  <p>ul.menu a{ text-decoration: none;} / ul#menu a{ text-decoration: none;} => DescendantSelectors</p>
-                  <p>.menu>li>label>a (following hyrarchi) / .menu a => ChildSelectors</p>
-                  <p>.menu>li>label>a / .menu a => ChildSelectors</p>
-                  <p> h2+p => AdjacentSiblingSelectors immidiate next</p>
-                  <p> h2~p => GeneralSiblingSelectors next</p>
-                  <p> h2,p,lable => GroupingSelectors for Multiple selectors</p>
-              </body>
-
-              </html>
+            <a href="CSS/CSSFiles/Introduction_To_CSS.html">Introduction_To_CSS</a>
           </details>
         </td>
       </tr>
@@ -2546,277 +2112,7 @@
         <td>
           <details>
             <summary>Pseudo Introductions</summary>
-            <html lang="en">
-
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      img:hover {
-                          width: 250px;
-                      }
-
-                      input[type='checkbox']:checked {
-                          border: 2px solid rgb(28, 255, 20);
-                          outline: 2px solid rgb(20, 212, 255);
-                      }
-
-                      *:disabled {
-                          background-color: dimgrey;
-                          color: linen;
-                          opacity: 1;
-                      }
-
-                      div:empty {
-                          outline: 2px solid deeppink;
-                          height: 1em;
-                      }
-
-                      @page :first {
-                          margin-left: 50%;
-                          margin-top: 50%;
-                          height: 100vh;
-                      }
-
-                      li:first-child {
-                          border: 2px solid orange;
-                      }
-
-                      input:focus {
-                          background-color: lightblue;
-                      }
-                      input:invalid {
-                background-color: ivory;
-                border: none;
-                outline: 2px solid red;
-                border-radius: 5px;
-              }
-
-              a:visited{
-                  color: green;
-              }
-
-                  </style>
-              </head>
-
-              <body>
-                  <p>A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s).
-                      For example, the pseudo-class :hover can be used to select a button when a user's pointer hovers over the button
-                      and this selected button can then be styled.</p>
-
-                  <input type="text" name="" id="">
-
-                  <input type="text" disabled name="" id="">
-                  <img src="../../WhatisWebsite.png" width="200px" alt="">
-
-                  <a href="#">Click</a>
-                  <a href="https://www.google.com">Google</a>
-                  <a href="https://www.googlesdee.com">googlesdee</a>
-
-                  <input type="checkbox" name="" id="">
-
-                  <input name="email" type="email" value="na@me@example.com" />
-                  <br>
-                  empty
-                  <div id="emptywithspace">
-
-                  </div>
-                  <div contenteditable="" id="emptywithoutspace"></div>
-
-                  <p>Track & field champions:</p>
-                  <ul>
-                      <li>Adhemar da Silva</li>
-                      <li>Wang Junxia</li>
-                      <li>Wilma Rudolph</li>
-                      <li>Babe Didrikson-Zaharias</li>
-                      <li>Betty Cuthbert</li>
-                      <li>Fanny Blankers-Koen</li>
-                      <li>Florence Griffith-Joyner</li>
-                      <li>Irena Szewinska</li>
-                      <li>Jackie Joyner-Kersee</li>
-                      <li>Shirley Strickland</li>
-                      <li>Carl Lewis</li>
-                      <li>Emil Zatopek</li>
-                      <li>Haile Gebrselassie</li>
-                      <li>Jesse Owens</li>
-                      <li>Jim Thorpe</li>
-                      <li>Paavo Nurmi</li>
-                      <li>Sergei Bubka</li>
-                      <li>Usain Bolt</li>
-                  </ul>
-
-
-
-                  <div class="section-content">
-                      <p>Pseudo-classes defined by a set of CSS specifications include the following:</p>
-                      <p>A</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:active"><code>:active</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:any-link"><code>:any-link</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:autofill"><code>:autofill</code></a></li>
-                      </ul>
-                      <p>B</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:blank"><code>:blank</code></a> <abbr class="icon icon-experimental"
-                                  title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                      </ul>
-                      <p>C</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:checked"><code>:checked</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:current"><code>:current</code></a> <abbr class="icon icon-experimental"
-                                  title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                      </ul>
-                      <p>D</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:default"><code>:default</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:defined"><code>:defined</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:dir"><code>:dir()</code></a> <abbr class="icon icon-experimental"
-                                  title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                          <li><a href="/en-US/docs/Web/CSS/:disabled"><code>:disabled</code></a></li>
-                      </ul>
-                      <p>E</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:empty"><code>:empty</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:enabled"><code>:enabled</code></a></li>
-                      </ul>
-                      <p>F</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:first"><code>:first</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:first-child"><code>:first-child</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:first-of-type"><code>:first-of-type</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:fullscreen"><code>:fullscreen</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:future"><code>:future</code></a> <abbr class="icon icon-experimental"
-                                  title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                          <li><a href="/en-US/docs/Web/CSS/:focus"><code>:focus</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:focus-visible"><code>:focus-visible</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:focus-within"><code>:focus-within</code></a></li>
-                      </ul>
-                      <p>H</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:has"><code>:has()</code></a> <abbr class="icon icon-experimental"
-                                  title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                          <li><a href="/en-US/docs/Web/CSS/:host"><code>:host</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:host"><code>:host()</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:host-context"><code>:host-context()</code></a> <abbr
-                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                          <li><a href="/en-US/docs/Web/CSS/:hover"><code>:hover</code></a></li>
-                      </ul>
-                      <p>I</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:indeterminate"><code>:indeterminate</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:in-range"><code>:in-range</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:invalid"><code>:invalid</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:is"><code>:is()</code></a></li>
-                      </ul>
-                      <p>L</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:lang"><code>:lang()</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:last-child"><code>:last-child</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:last-of-type"><code>:last-of-type</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:left"><code>:left</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:link"><code>:link</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:local-link"><code>:local-link</code></a> <abbr
-                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                      </ul>
-                      <p>M</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:modal"><code>:modal</code></a></li>
-                      </ul>
-                      <p>N</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:not"><code>:not()</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:nth-child"><code>:nth-child()</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:nth-of-type"><code>:nth-col()</code></a> <abbr
-                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                          <li><a href="/en-US/docs/Web/CSS/:nth-last-child"><code>:nth-last-child()</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:nth-last-of-type"><code>:nth-last-col()</code></a> <abbr
-                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                          <li><a href="/en-US/docs/Web/CSS/:nth-last-of-type"><code>:nth-last-of-type()</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:nth-of-type"><code>:nth-of-type()</code></a></li>
-                      </ul>
-                      <p>O</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:only-child"><code>:only-child</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:only-of-type"><code>:only-of-type</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:optional"><code>:optional</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:out-of-range"><code>:out-of-range</code></a></li>
-                      </ul>
-                      <p>P</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:past"><code>:past</code></a> <abbr class="icon icon-experimental"
-                                  title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                          <li><a href="/en-US/docs/Web/CSS/:picture-in-picture"><code>:picture-in-picture</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:placeholder-shown"><code>:placeholder-shown</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:paused"><code>:paused</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:playing"><code>:playing</code></a></li>
-                      </ul>
-                      <p>R</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:read-only"><code>:read-only</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:read-write"><code>:read-write</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:required"><code>:required</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:right"><code>:right</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:root"><code>:root</code></a></li>
-                      </ul>
-                      <p>S</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:scope"><code>:scope</code></a></li>
-                          <li><a class="page-not-created"
-                                  title="The documentation about this has not yet been written; please consider contributing!"><code>:state()</code></a>
-                              <abbr class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr>
-                          </li>
-                      </ul>
-                      <p>T</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:target"><code>:target</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:target-within"><code>:target-within</code></a> <abbr
-                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                      </ul>
-                      <p>U</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:user-invalid"><code>:user-invalid</code></a> <abbr
-                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                      </ul>
-                      <p>V</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:valid"><code>:valid</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/:visited"><code>:visited</code></a></li>
-                      </ul>
-                      <p>W</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/:where"><code>:where()</code></a></li>
-                      </ul>
-                  </div>
-              </body>
-
-              </html>
+            <a href="CSS/CSSFiles/Pseudo_Introduction.html">Pseudo_Introduction</a>
           </details>
         </td>
       </tr>
@@ -2824,148 +2120,7 @@
         <td>
           <details>
             <summary>Nth child Pseudo</summary>
-            <html lang="en">
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      table, tr, td,th{
-                          border: 1px solid;
-                      }
-                      thead tr{
-                          background-color: rgba(1, 50, 50, 0.781);
-                          color: white;
-                      }
-                      /* tbody tr:nth-child(even){
-                          background-color: rgba(0, 128, 128, 0.49);
-                      }
-                      tbody tr:nth-child(odd){
-                          background-color: rgba(56, 132, 38, 0.49);
-                      } */
-                      tbody tr:nth-child(4n+1){
-                          background-color: rgba(132, 126, 38, 0.49);
-                          /* border: 1px solid; */
-                      }
-                      tbody tr:nth-child(1n+1){
-                          background-color: rgba(38, 109, 132, 0.49);
-                          /* border: 1px solid; */
-                      }
-                      tbody tr:nth-child(2n+1){
-                          background-color: rgba(132, 38, 43, 0.49);
-                          /* border: 1px solid; */
-                      }
-                      tbody tr:nth-child(3n+1){
-                          background-color: rgba(132, 69, 38, 0.49);
-                          /* border: 1px solid; */
-                      }
-                      tbody tr:nth-child(5n+1){
-                          background-color: rgba(38, 132, 121, 0.49);
-                          /* border: 1px solid; */
-                      }
-                  </style>
-              </head>
-              <body>
-
-
-                  <table class="table">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">First</th>
-                          <th scope="col">Last</th>
-                          <th scope="col">Handle</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </table>
-              </body>
-              </html>
+                <a href="CSS/CSSFiles/Nth_child_Pseudo.html">Nth child Pseudo</a>
           </details>
         </td>
       </tr>
@@ -2973,121 +2128,7 @@
         <td>
           <details>
             <summary>Attribute Selector</summary>
-                            <!DOCTYPE html>
-                <html lang="en">
-
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Document</title>
-                    <style>
-                        /* input {
-                            outline: 3px solid rgb(68, 176, 22);
-                            border: 3px solid rgb(176, 148, 22);
-                        } */
-                        /* input[type] {
-                            outline: 3px solid rgb(68, 176, 22);
-                            border: 3px solid rgb(176, 148, 22);
-                        } */
-
-                        input[type="text"],
-                        input[type="password"] {
-                            outline: 3px solid rgb(68, 176, 22);
-                            border: 3px solid rgb(176, 148, 22);
-                        }
-
-                        /* a{
-                            font-size: 36px;   
-                        } */
-                        a[href="http:www.mysite.com"] {
-                            font-size: 36px;
-                        }
-
-                        /* <a> elements with an class containing "example" START */
-                        a[class*="example"] {
-                            font-size: 2em;
-                            color: orangered;
-                        }
-
-                        /* <a> elements with an class containing "example" END */
-
-
-                        /* <a> elements whose class attribute contains the word "logo"  START*/
-                        a[class~="example"] {
-                            padding: 2px;
-                            color: brown;
-                        }
-
-                        /* <a> elements whose class attribute contains the word "logo"  END*/
-
-
-                        /* <a> elements with an href ending ".org", case-insensitive START*/
-                        a[href$=".in"] {
-                            /* font-style: italic; */
-                            background: linear-gradient(orange,white,green);
-                        }
-                        /* <a> elements with an href ending ".org", case-insensitive END*/
-                    </style>
-                </head>
-
-                <body>
-
-
-                    <input type="text" name="" id="">
-                    <input type="password" name="" id="">
-                    <input type="radio" name="" id="">
-                    <input type="submit" name="" id="">
-
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident beatae eaque tempora reprehenderit minus,
-                        iste autem eligendi ab. <a href="http:www.mysite.com">My Site</a> Et provident possimus tenetur numquam ipsum
-                        vero, quibusdam corrupti nesciunt ut maiores! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
-                        inventore consectetur similique consequatur dolor id vel! Excepturi debitis necessitatibus corporis recusandae
-                        perferendis velit, quae neque ducimus reprehenderit inventore saepe ex!</p>
-                    <a href="#">Read more</a>
-
-                    <br>
-                    <a class="myexample" href="#">myexample a[class*="example"] </a>
-                    <a class="my-example" href="#">my-example a[class*="example"] </a>
-                    <a class="example" href="#">example a[class*="example"] </a>
-                    <a class="example other" href="#">example a[class*="example"] </a>
-                    <a class="test example other" href="#">example a[class*="example"] </a>
-
-                    <br>
-                    <a href="web.in">India</a>
-                    <a href="web.uk">UK</a>
-                    <a href="web.us">US</a>
-
-                    <pre>
-                    /* &lt;a&gt; elements with a title attribute */
-                        a[title] {
-                            color: purple;
-                        }
-                        
-                        /* &lt;a&gt; elements with an href matching "https://example.org" */
-                        a[href="https://example.org"]
-                        {
-                            color: green;
-                        }
-                        
-                        /* &lt;a&gt; elements with an href containing "example" */
-                        a[href*="example"] {
-                            font-size: 2em;
-                        }
-                        
-                        /* &lt;a&gt; elements with an href ending ".org", case-insensitive */
-                        a[href$=".org" i] {
-                            font-style: italic;
-                        }
-                        
-                        /* &lt;a&gt; elements whose class attribute contains the word "logo" */
-                        a[class~="logo"] {
-                            padding: 2px;
-                        }
-                        
-                </pre>
-                </body>
-
-                </html>
+            <a href="CSS/CSSFiles/AttributeSelector.html">Attribute Selector</a>
           </details>
         </td>
       </tr>
@@ -3095,110 +2136,7 @@
         <td>
           <details>
             <summary>Pseudo Elements </summary>
-            <html lang="en">
-
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      h2::after{
-                          content: "~";
-                      }
-                      h2::before{
-                          content: "~";
-                      }
-                      .frst-lt::first-letter{
-                          font-size: 36px;
-                      }
-                      .frst-lt::first-line{
-                          color: olive;
-                      }
-                      .frst-lt::selection{
-                          color: white;
-                          background-color: turquoise;
-                      }
-                      input::placeholder{
-                          color: rgba(255, 68, 0, 0.492);
-                      }
-                  </style>
-              </head>
-
-              <body>
-
-
-                  <h2>Title</h2>
-                  <h2>Title</h2>
-                  <h2>Title</h2>
-                  <h2>Title</h2>
-                  <h2>Title</h2>
-
-                  <input type="text" placeholder="Enter User Name" name="" id="">
-                  <p class="frst-lt">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda fugit doloribus impedit eum, modi at dolorum, officia, voluptatibus in vel omnis quos alias sequi numquam exercitationem! Excepturi facilis nam eum!</p>
-                  <div class="section-content">
-                      <p>Pseudo-elements defined by a set of CSS specifications include the following:</p>
-                      <p>A</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/::after"><code>::after</code></a></li>
-                      </ul>
-                      <p>B</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/::backdrop"><code>::backdrop</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/::before"><code>::before</code></a></li>
-                      </ul>
-                      <p>C</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/::cue"><code>::cue</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/::cue-region"><code>::cue-region</code></a></li>
-                      </ul>
-                      <p>F</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/::first-line"><code>::first-line</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/::file-selector-button"><code>::file-selector-button</code></a></li>
-                      </ul>
-                      <p>G</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/::grammar-error"><code>::grammar-error</code></a> <abbr
-                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                      </ul>
-                      <p>M</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/::marker"><code>::marker</code></a></li>
-                      </ul>
-                      <p>P</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/::part"><code>::part()</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/::placeholder"><code>::placeholder</code></a></li>
-                      </ul>
-                      <p>S</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/::selection"><code>::selection</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/::slotted"><code>::slotted()</code></a></li>
-                          <li><a href="/en-US/docs/Web/CSS/::spelling-error"><code>::spelling-error</code></a> <abbr
-                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                      </ul>
-                      <p>T</p>
-                      <ul>
-                          <li><a href="/en-US/docs/Web/CSS/::target-text"><code>::target-text</code></a> <abbr
-                                  class="icon icon-experimental" title="Experimental. Expect behavior to change in the future.">
-                                  <span class="visually-hidden">Experimental</span>
-                              </abbr></li>
-                      </ul>
-                      <div class="notecard note" id="sect2">
-                          <p><strong>Note:</strong> Browsers support the single colon syntax only for the original four
-                              pseudo-elements: <code>::before</code>, <code>::after</code>, <code>::first-line</code>, and
-                              <code>::first-letter</code>.</p>
-                      </div>
-                  </div>
-
-              </body>
-
-              </html>
+            <a href="CSS/CSSFiles/PseudoElements.html">Pseudo Elements</a>
           </details>
         </td>
       </tr>
@@ -3206,52 +2144,7 @@
         <td>
           <details>
             <summary>BackDrop</summary>
-            <html lang="en">
-
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Document</title>
-                <style>
-                    button {
-                        font-size: 1.2rem;
-                        padding: 5px 15px;
-                    }
-
-                    dialog::backdrop {
-                        background-color: salmon;
-                    }
-                </style>
-            </head>
-
-            <body>
-
-                <button id="showDialogBtn">Show a dialog</button>
-
-                <dialog id="favDialog">
-                    <form method="dialog">
-                        <p>The background shown outside of this dialog is a backdrop.</p>
-                        <button id="confirmBtn">Close the dialog</button>
-                    </form>
-                </dialog>
-                <script>
-                    const showDialogBtn = document.getElementById('showDialogBtn');
-                    const favDialog = document.getElementById('favDialog');
-
-                    showDialogBtn.addEventListener('click', () => favDialog.showModal());
-
-                </script>
-
-            </body>
-
-            </html>
-          </details>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <details>
-            <summary></summary>
+            <a href="CSS/CSSFiles/BackDrop.html">BackDrop</a>
           </details>
         </td>
       </tr>
@@ -3259,111 +2152,7 @@
         <td>
           <details>
             <summary>Background 1</summary>
-            <html lang="en">
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      .box{
-                          height: 200px;
-                          padding: 50px;
-                          margin: 50px;
-                          border: 20px dashed rgba(0, 128, 255, 0.461);
-                      }
-                      .background-color {background-color:aqua}
-                      .background-image { background-color:aqua; background-image: url(images.jfif);}
-                      .background-attachment {
-                          background-color:aqua; 
-                          background-image: url(images.jfif);
-                          background-attachment:fixed ;
-                          /* background-attachment:local ; */
-                          /* background-attachment:scroll ; */
-                      }
-                      .background-clip {
-                          background-color:aqua; 
-                          background-image: url(images.jfif);
-                          /* background-clip: padding-box; */
-                          /* background-clip: border-box; */
-                          background-clip: content-box;
-                          
-                      }
-                      .background-origin {
-                          background-color:aqua; 
-                          background-image: url(images.jfif);
-                          /* background-origin:border-box ; */
-                          background-origin:content-box ;
-                          /* background-origin:padding-box ; */
-                      }
-                      .background-position {
-                          background-color:aqua; 
-                          background-image: url(images.jfif);
-                          /* background-position:0% 20%; */
-                          /* background-position:center 20% ; */
-                          background-position:10px ;
-                      }
-                      .background-repeat {
-                          background-color:aqua; 
-                          background-image: url(images.jfif);
-                          background-position:center center ;
-                          background-repeat:no-repeat ;
-                          /* background-repeat:repeat-x ; */
-                          /* background-repeat:repeat-y ; */
-                      }
-                      .background-size {
-                          background-color:aqua; 
-                          background-image: url(images.jfif);
-                          background-position:center 80% ;
-                          background-repeat:no-repeat ;
-                          /* background-size: contain; */
-                          background-size: cover;
-                      }
-                      .shorthand{
-                        background: url(images.jfif) no-repeat center center /cover; 
-                      }
-                      .linear-gradient{
-                        /* background:linear-gradient(45deg, orange,white,green);  */
-                        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-
-                      }
-                      .radial-gradient{
-                        background:radial-gradient(orange,white,green) 
-                      }
-                  </style>
-              </head>
-              <body>
-
-                  <ul>
-                      <li>background-color</li> 
-                      <li>background-image</li> 
-                      <li>background-attachment</li> 
-                      <li>background-clip</li> 
-                      <li>background-origin</li> 
-                      <li>background-position</li> 
-                      <li>background-repeat</li> 
-                      <li>background-size</li> 
-                      <li>background: repeat scroll 0% 0% / auto padding-box border-box none transparent;</li> 
-                  </ul>
-                  <div class="box background-color"> <h3> background-color</h3></div>
-                  <div class="box background-image"> <h3> background-image</h3></div>
-                  <div class="box background-attachment"> <h3> background-attachment</h3></div>
-                  <div class="box background-clip"> <h3> background-clip</h3></div>
-                  <div class="box background-origin"> <h3> background-origin</h3></div>
-                  <div class="box background-position"> <h3> background-position</h3></div>
-                  <div class="box background-repeat"> <h3> background-repeat</h3></div>
-                  <div class="box background-size"> <h3> background-size</h3></div>
-                  <div class="box shorthand"> <h3>shorthand</h3></div>
-                  <div class="box linear-gradient"> <h3>linear-gradient</h3></div>
-                  <div class="box radial-gradient"> <h3>radial-gradient</h3></div>
-              </body>
-              </html>
-          </details>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <details>
-            <summary></summary>
+            <a href="CSS/CSSFiles/BackGround1.html">BackGround 1</a>
           </details>
         </td>
       </tr>
@@ -3371,58 +2160,7 @@
         <td>
           <details>
             <summary>Fonts1</summary>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Document</title>
-                <style>
-                    .font-family{
-                        font-family:fantasy;
-                    }
-                    .font-size{ 
-                        /* font-size:26px;  */
-                        /* font-size:26pt;  */
-                        /* font-size:1.5em;  */
-                        /* font-size:1.5rem;  */
-                        /* font-size:12vh;  */
-                        /* font-size:12vw;  */
-                        /* font-size:1in;  */
-                    }
-                    .font-stretch{ font-stretch:expanded; }
-                    .font-style{ font-style: oblique 40deg; }
-                    .font-variant{ font-variant:small-caps; }
-                    .font-weight{ font-weight:900; }
-                    .line-height{ background-color: teal; 
-                    /* height: 150px; */
-                    line-height: 150px;
-                    }
-                </style>
-            </head>
-            <body>
-                <ul>
-                    <li> font-family</li>
-                    <li> font-size</li>
-                    <li> font-stretch</li>
-                    <li> font-style</li>
-                    <li> font-variant</li>
-                    <li> font-weight</li>
-                    <li> line-height</li>
-                </ul>
-                <img width="50%" src="SerifvsSansSerifComparisonimage.webp" alt="">
-                <p class="font-family">   font-family font-family:fantasy;</p>
-                <p class="font-size">font-size
-
-                    <table><thead><tr><th>Absolute Unit</th><th style="text-align: center">Description</th><th style="text-align: right">Example</th></tr></thead><tbody><tr><td>px</td><td style="text-align: center">1/96 of 1 inch (96px = 1 inch)</td><td style="text-align: right"><span style="font-size: 12px;">font-size: 12px;</span></td></tr><tr><td>pt</td><td style="text-align: center">1/72 of 1 inch (72pt = 1 inch)</td><td style="text-align: right"><span style="font-size: 12pt;">font-size: 12pt;</span></td></tr><tr><td>pc</td><td style="text-align: center">12pt = 1pc</td><td style="text-align: right"><span style="font-size: 1.2pc;">font-size: 1.2pc;</span></td></tr><tr><td>cm</td><td style="text-align: center">centimeter</td><td style="text-align: right"><span style="font-size: 0.6cm;">font-size: 0.6cm;</span></td></tr><tr><td>mm</td><td style="text-align: center">millimeter (10 mm = 1 cm)</td><td style="text-align: right"><span style="font-size: 4mm;">font-size: 4mm;</span></td></tr><tr><td>in</td><td style="text-align: center">inches</td><td style="text-align: right"><span style="font-size: 0.2in;">font-size: 0.2in;</span></td></tr></tbody></table>
-                </p>
-                <p class="font-stretch">   font-stretch</p>
-                <p class="font-style">font-style</p>
-                <p class="font-variant">   font-variant</p>
-                <p class="font-weight">   font-weight</p>
-                <p class="line-height">   line-height .</p>
-                <p class="line-height">   line-height Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa deserunt soluta voluptatem ex libero ipsum explicabo dolorum ea accusantium quo, nesciunt similique. Vel soluta omnis, doloremque assumenda rem dolor itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ea rerum accusamus exercitationem veniam. Atque magni voluptate ducimus molestias, aliquam vel, ullam sint minima fugiat nihil laborum labore eos quis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, placeat! Alias omnis expedita reiciendis labore eius adipisci nobis facere accusantium harum veritatis, sunt asperiores laborum ipsum consectetur ad explicabo! Minus.</p>
-            </body>
-            </html>
+            <a href="CSS/CSSFiles/Fonts.html">Fonts</a>
           </details>
         </td>
       </tr>
@@ -3430,30 +2168,7 @@
         <td>
           <details>
             <summary>External Fonts</summary>
-            <html lang="en">
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  
-                  <style>
-                      @font-face {
-                          font-family: kuchbhi;
-                          src: url(alex-brush/AlexBrush-Regular.ttf);
-                      }
-                      .customfonts{
-                          font-family: kuchbhi;
-                          font-size: 2rem;
-                          letter-spacing: 2px;
-                      }
-                  </style>
-              </head>
-              <body>
-
-                  <p class="customfonts">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque magni vero earum dolore enim, aspernatur sit odio repudiandae? Optio doloremque porro, commodi quo ipsa consequatur in architecto explicabo facilis sunt!</p>
-                  
-              </body>
-              </html>
+            <a href="CSS/CSSFiles/ExternalFonts.html">ExternalFonts</a>
           </details>
         </td>
       </tr>
@@ -3461,71 +2176,7 @@
         <td>
           <details>
                   <summary>Text</summary>
-                  <html lang="en">
-
-                  <head>
-                      <meta charset="UTF-8">
-                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                      <title>Document</title>
-                      <style>
-                          div[class*='text-align']{ width: 200px; box-shadow: 5px 15px 15px grey; }
-                          .text-align-center{ text-align: center; }
-                          .text-align-end{ text-align: end; }
-                          .text-align-right{ text-align: right; }
-                          .text-align-left{ text-align: left; }
-                          .text-align-start{ text-align: start; }
-                          .text-align-justify{ text-align: justify; }
-                          .btn{
-                              text-decoration: none;
-                              color: rgb(251, 251, 251);
-                              background-color: rgb(44, 15, 15);
-                              padding: 10px 15px;
-                          }
-                          .btn:hover{
-                              box-shadow: 2px 2px 5px rgb(8, 112, 118);
-                          }
-                      </style>
-                  </head>
-
-                  <body>
-                      <ul>
-                          <li> Text Color</li>
-                          <li> Text Alignment</li>
-                          <li> Text Decoration</li>
-                          <li> Removing the Default Underline from Links</li>
-                          <li> Text Transformation</li>
-                          <li> Text Indentation</li>
-                          <li> Letter Spacing</li>
-                          <li> Word Spacing</li>
-                      </ul>
-                      <p style="color: blue;">Text color style="color: blue;"</p>
-                      <h2>text-align-center</h2>  <div class="text-align-center"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, quibusdam repellat molestiae illo doloribus vel aut recusandae laborum autem delectus officia enim accusamus dolorem, amet repudiandae odit ratione sapiente cum. </div>
-                      <h2>text-align-end</h2>  <div class="text-align-end"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, quibusdam repellat molestiae illo doloribus vel aut recusandae laborum autem delectus officia enim accusamus dolorem, amet repudiandae odit ratione sapiente cum. </div>
-                      <h2>text-align-right</h2>  <div class="text-align-right"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, quibusdam repellat molestiae illo doloribus vel aut recusandae laborum autem delectus officia enim accusamus dolorem, amet repudiandae odit ratione sapiente cum. </div>
-                      <h2>text-align-left</h2>  <div class="text-align-left"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, quibusdam repellat molestiae illo doloribus vel aut recusandae laborum autem delectus officia enim accusamus dolorem, amet repudiandae odit ratione sapiente cum. </div>
-                      <h2>text-align-start</h2>  <div class="text-align-start"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, quibusdam repellat molestiae illo doloribus vel aut recusandae laborum autem delectus officia enim accusamus dolorem, amet repudiandae odit ratione sapiente cum. </div>
-                      <h2>text-align-justify</h2>  <div class="text-align-justify"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, quibusdam repellat molestiae illo doloribus vel aut recusandae laborum autem delectus officia enim accusamus dolorem, amet repudiandae odit ratione sapiente cum. </div>
-
-                      <h2>Text Decoration</h2>
-                      <a class="btn" href="#">Click</a>
-                      <p style="text-decoration: line-through;">text line-through</p>
-                      <p style="text-decoration: overline;">text-decoration: overline</p>
-                      <p style="text-decoration: underline;">text-decoration: underline</p>
-                      <p style="text-transform:capitalize;">text-transform:capiTAliZe;</p>
-                      <p style="text-transform:lowercase;">text-traNSform:LOWerCase;</p>
-                      <p style="text-transform:uppercase;">teXT-traNSform:uppercase;</p>
-                      <p style="text-transform:capitalize; text-indent: 100px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et autem odio molestias quo beatae cum, facere ipsa ab laudantium, distinctio non placeat adipisci ducimus hic suscipit quisquam velit quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, molestias doloremque incidunt libero, officia eligendi quae, blanditiis nihil laborum molestiae aliquid quisquam non? Quia, ipsa nisi placeat consequatur ratione enim!</p>
-                      <p style="text-transform:capitalize; text-indent: 100px; letter-spacing: 5px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et autem odio molestias quo beatae cum, facere ipsa ab laudantium, distinctio non placeat adipisci ducimus hic suscipit quisquam velit quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, molestias doloremque incidunt libero, officia eligendi quae, blanditiis nihil laborum molestiae aliquid quisquam non? Quia, ipsa nisi placeat consequatur ratione enim!</p>
-                      <p style="text-transform:capitalize; text-indent: 100px; word-spacing: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et autem odio molestias quo beatae cum, facere ipsa ab laudantium, distinctio non placeat adipisci ducimus hic suscipit quisquam velit quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, molestias doloremque incidunt libero, officia eligendi quae, blanditiis nihil laborum molestiae aliquid quisquam non? Quia, ipsa nisi placeat consequatur ratione enim!</p>
-                      <p style="text-transform:capitalize; text-indent: 100px; word-break: break-all;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et autem odio molestias quo beatae cum, facere ipsa ab laudantium, distinctio non placeat adipisci ducimus hic suscipit quisquam velit quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, molestias doloremque incidunt libero, officia eligendi quae, blanditiis nihil laborum molestiae aliquid quisquam non? Quia, ipsa nisi placeat consequatur ratione enim!</p>
-                      <p style="text-transform:capitalize; text-indent: 100px; word-break: keep-all;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et autem odio molestias quo beatae cum, facere ipsa ab laudantium, distinctio non placeat adipisci ducimus hic suscipit quisquam velit quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, molestias doloremque incidunt libero, officia eligendi quae, blanditiis nihil laborum molestiae aliquid quisquam non? Quia, ipsa nisi placeat consequatur ratione enim!</p>
-                      <p style="text-transform:capitalize; text-indent: 100px; word-break: normal;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta et autem odio molestias quo beatae cum, facere ipsa ab laudantium, distinctio non placeat adipisci ducimus hic suscipit quisquam velit quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, molestias doloremque incidunt libero, officia eligendi quae, blanditiis nihil laborum molestiae aliquid quisquam non? Quia, ipsa nisi placeat consequatur ratione enim!</p>
-                      
-                      <br><br><br><br>
-
-                  </body>
-
-                  </html>
+                  <a href="CSS/CSSFiles/Text.html">Text</a>
           </details>
         </td>
       </tr>
@@ -3533,30 +2184,7 @@
         <td>
           <details>
             <summary>List</summary>
-            <html lang="en">
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      /* ul li{
-                          list-style-type: circle;
-                      } */
-                      ul li{
-                          list-style-image: url(arrow-next-2825.png);
-                      }
-                  </style>
-              </head>
-              <body>
-              <ul>
-                  <li>Test</li>
-                  <li>Test</li>
-                  <li>Test</li>
-              </ul>
-
-                  
-              </body>
-              </html>
+            <a href="CSS/CSSFiles/ListStyle.html">ListStyle</a>
           </details>
         </td>
       </tr>
@@ -3564,67 +2192,7 @@
         <td>
           <details>
             <summary>List Counter</summary>
-            <html lang="en">
-
-              <head>
-                  <meta charset="UTF-8">
-                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      ol {
-                          counter-reset: section;
-                          /* Creates a new instance of the
-                                          section counter with each ol
-                                          element */
-                          list-style-type: none;
-                      }
-
-                      li::before {
-                          counter-increment: section;
-                          /* Increments only this instance
-                                                          of the section counter */
-                          content: counters(section, ".") " ";
-                          /* content:  "~"; */
-                          /* Combines the values of all instances
-                                                        of the section counter, separated
-                                                        by a period */
-                      }
-                  </style>
-              </head>
-
-              <body>
-                  <ol>
-                      <li>item</li> <!-- 1     -->
-                      <li>item <!-- 2     -->
-                          <ol>
-                              <li>item</li> <!-- 2.1   -->
-                              <li>item</li> <!-- 2.2   -->
-                              <li>item <!-- 2.3   -->
-                                  <ol>
-                                      <li>item</li> <!-- 2.3.1 -->
-                                      <li>item</li> <!-- 2.3.2 -->
-                                  </ol>
-                                  <ol>
-                                      <li>item</li> <!-- 2.3.1 -->
-                                      <li>item</li> <!-- 2.3.2 -->
-                                      <li>item</li> <!-- 2.3.3 -->
-                                  </ol>
-                              </li>
-                              <li>item</li> <!-- 2.4   -->
-                          </ol>
-                      </li>
-                      <li>item</li> <!-- 3     -->
-                      <li>item</li> <!-- 4     -->
-                  </ol>
-                  <ol>
-                      <li>item</li> <!-- 1     -->
-                      <li>item</li> <!-- 2     -->
-                  </ol>
-
-              </body>
-
-              </html>
+            <a href="CSS/CSSFiles/ListCounter.html">ListCounter</a>
           </details>
         </td>
       </tr>
@@ -3632,62 +2200,7 @@
         <td>
           <details>
             <summary>Border</summary>
-            <html lang="en">
-              <head>
-                  <meta charset="UTF-8">
-                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      .custom-border{
-                          border-bottom: 2px solid;
-                          /* border-style: dotted; */
-                      }
-                      .border-style-dotted {
-                          border:10px dotted orangered; margin: 30px;  
-                      }
-
-                      .border-style-dashed {
-                          border:10px dashed orangered; margin: 30px;  
-                      }
-
-                      .border-style-solid {
-                          border:10px solid orangered; margin: 30px;  
-                      }
-
-                      .border-style-double {
-                          border:10px double orangered; margin: 30px;  
-                      }
-
-                      .border-style-groove {
-                          border:10px groove orangered; margin: 30px;  
-                      }
-
-                      .border-style-ridge {
-                          border:10px ridge orangered; margin: 30px;  
-                      }
-
-                      .border-style-inset {
-                          border:10px inset orangered; margin: 30px;  
-                      }
-
-                      .border-style-outset {
-                          border:10px outset orangered; margin: 30px;  
-                      }
-                  </style>
-              </head>
-              <body>
-                  <div class="custom-border">Cusotm Border</div>
-                  <div class="border-style-dotted">border-style-dotted</div>
-                  <div class="border-style-dashed">border-style-dashed</div>
-                  <div class="border-style-solid">border-style-solid</div>
-                  <div class="border-style-double">border-style-double</div>
-                  <div class="border-style-groove">border-style-groove</div>
-                  <div class="border-style-ridge">border-style-ridge</div>
-                  <div class="border-style-inset">border-style-inset</div>
-                  <div class="border-style-outset">border-style-outset</div>
-              </body>
-              </html>
+            <a href="CSS/CSSFiles/Border.html">Border</a>
           </details>
         </td>
       </tr>
@@ -3695,82 +2208,7 @@
         <td>
           <details>
             <summary>Outline</summary>
-            <html lang="en">
-
-              <head>
-                  <meta charset="UTF-8">
-                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      .outline-style-dotted {
-                          outline:10px dotted orangered; margin: 30px;  
-                      }
-
-                      .outline-style-dashed {
-                          outline:10px dashed orangered; margin: 30px;  
-                      }
-
-                      .outline-style-solid {
-                          outline:10px solid orangered; margin: 30px;  
-                      }
-
-                      .outline-style-double {
-                          outline:10px double orangered; margin: 30px;  
-                      }
-
-                      .outline-style-groove {
-                          outline:10px groove orangered; margin: 30px;  
-                      }
-
-                      .outline-style-ridge {
-                          outline:10px ridge orangered; margin: 30px;  
-                      }
-
-                      .outline-style-inset {
-                          outline:10px inset orangered; margin: 30px;  
-                      }
-
-                      .outline-style-outset {
-                          outline:10px outset orangered; margin: 30px;  
-                      }
-                  </style>
-              </head>
-
-              <body>
-
-                  <h2>outline Properties</h2>
-                  <ul>
-                      <li> outline-color</li>
-                      <li> outline-style</li>
-                      <li> outline-width</li>
-                  </ul>
-                  <h3>outline-style</h3>
-                  <ul>
-                      /* Keyword values */
-                      <li> outline-style: none;</li>
-                      <li> outline-style: hidden;</li>
-                      <li> outline-style: dotted;</li>
-                      <li> outline-style: dashed;</li>
-                      <li> outline-style: solid;</li>
-                      <li> outline-style: double;</li>
-                      <li> outline-style: groove;</li>
-                      <li> outline-style: ridge;</li>
-                      <li> outline-style: inset;</li>
-                      <li> outline-style: outset;</li>
-
-                  </ul>
-                  <div class="outline-style-dotted">outline-style-dotted</div>
-                  <div class="outline-style-dashed">outline-style-dashed</div>
-                  <div class="outline-style-solid">outline-style-solid</div>
-                  <div class="outline-style-double">outline-style-double</div>
-                  <div class="outline-style-groove">outline-style-groove</div>
-                  <div class="outline-style-ridge">outline-style-ridge</div>
-                  <div class="outline-style-inset">outline-style-inset</div>
-                  <div class="outline-style-outset">outline-style-outset</div>
-              </body>
-
-              </html>
+            <a href="CSS/CSSFiles/OutLine.html">OutLine</a>
           </details>
         </td>
       </tr>
@@ -3778,40 +2216,7 @@
         <td>
           <details>
             <summary>Border vs Outline</summary>
-            <html lang="en">
-              <head>
-                  <meta charset="UTF-8">
-                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      .border-outline{
-                          border: 15px dashed orangered;
-                          outline: 15px dotted rgb(46, 83, 96);
-                      }
-                      a{
-                          margin: 15px;
-                      }
-                      a:hover{
-                          border: 10px double brown;
-                          /* outline: 10px double brown; */
-                      }
-                  </style>
-              </head>
-              <body>
-                  Before Context
-                  <div class="border-outline">
-                      Diffrence between border vs outline
-                  </div>
-                  after Context
-                  <br>
-                  <br>
-                  <br>
-                  <a href="#">Home</a>
-                  <a href="#">About</a>
-                  <a href="#">Contact</a>
-              </body>
-              </html>
+            <a href="CSS/CSSFiles/border_vs_Outline.html">border_vs_Outline</a>
           </details>
         </td>
       </tr>
@@ -3819,43 +2224,7 @@
         <td>
           <details>
             <summary>Border Radius</summary>
-            <html lang="en">
-              <head>
-                  <meta charset="UTF-8">
-                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      label{
-                          border: 2px solid;
-                          padding: 10px;
-                          display: inline-block;
-                          border-radius: 20px;
-                      }
-                      .circle{
-                          background-color: teal;
-                          height: 100px;
-                          width: 100px;
-                          border: 2px solid;
-                          border-radius: 50%;
-                      }
-                      .leaf{
-                          background-color: rgb(6, 99, 193);
-                          height: 100px;
-                          width: 100px;
-                          border: 2px solid;
-                          /* border-radius: 50% 0; */
-                          border-radius: 10px 50px 0px 100px;
-                      }
-                  </style>
-              </head>
-              <body>
-                  
-                  <label for="">Testing</label>
-                  <div class="circle"></div>
-                  <div class="leaf"></div>
-              </body>
-              </html>
+            <a href="CSS/CSSFiles/Border_Radius.html">Border_Radius</a>
           </details>
         </td>
       </tr>
@@ -3863,31 +2232,7 @@
         <td>
           <details>
             <summary>Border Image</summary>
-            <html lang="en">
-
-                <head>
-                    <meta charset="UTF-8">
-                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Document</title>
-                    <style>
-                        .brd-img {
-                            border-style: solid;
-                            border-width: 20px;
-                            border-image: url(border-diamonds.png) 30;
-                            /* border-image: repeating-linear-gradient(30deg, #4d9f0c, #9198e5, #4d9f0c 20px) 60; */
-                            height: 150px;
-                        }
-                    </style>
-                </head>
-
-                <body>
-                    <div class="brd-img">
-                        testing
-                    </div>
-                </body>
-
-                </html>
+            <a href="CSS/CSSFiles/BorderImagee.html">BorderImagee</a>
           </details>
         </td>
       </tr>
@@ -3895,64 +2240,7 @@
         <td>
           <details>
             <summary>Margin And Padding</summary>
-            <html lang="en">
-
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Document</title>
-                    <style>
-                        .box {
-                            border: 2px solid brown;
-                            background-color: gray;
-                            color: white;
-                        }
-
-                        .padding {
-                            padding: 50px;
-                        }
-
-                        .margin {
-                            margin: 50px;
-                        }
-
-                        .margin-top {
-                            margin-top: 50px;
-                        }
-
-                        .margin-bottom {
-                            margin-bottom: 50px;
-                        }
-
-                        .margin-left {
-                            margin-left: 50px;
-                        }
-
-                        .margin-right {
-                            margin-right: 50px;
-                        }
-                        .margin-short{
-                            margin: 5px 50px 20px 60px;
-                        }
-                        .margin-short-xy{
-                            margin: 50px 20px ;
-                        }
-                    </style>
-                </head>
-
-                <body>
-
-                    <div class="box padding">padding</div>
-                    <div class="box margin">margin</div>
-                    <div class="box margin-top">margin-top</div>
-                    <div class="box margin-bottom">margin-bottom</div>
-                    <div class="box margin-left">margin-left</div>
-                    <div class="box margin-right">margin-right</div>
-                    <div class="box margin-short">margin-short top-right-bottom-left</div>
-                    <div class="box margin-short-xy">margin-short margin-short-xy</div>
-                </body>
-
-                </html>
+            <a href="CSS/CSSFiles/MarginAndPadding.html">MarginAndPadding</a>
           </details>
         </td>
       </tr>
@@ -3960,64 +2248,7 @@
         <td>
           <details>
             <summary>padding</summary>
-            <html lang="en">
-
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Document</title>
-                    <style>
-                        .box {
-                            border: 2px solid brown;
-                            background-color: gray;
-                            color: white;
-                        }
-
-                        .padding {
-                            padding: 50px;
-                        }
-
-                        .padding {
-                            padding: 50px;
-                        }
-
-                        .padding-top {
-                            padding-top: 50px;
-                        }
-
-                        .padding-bottom {
-                            padding-bottom: 50px;
-                        }
-
-                        .padding-left {
-                            padding-left: 50px;
-                        }
-
-                        .padding-right {
-                            padding-right: 50px;
-                        }
-                        .padding-short{
-                            padding: 5px 50px 20px 60px;
-                        }
-                        .padding-short-xy{
-                            padding: 50px 20px ;
-                        }
-                    </style>
-                </head>
-
-                <body>
-
-                    <div class="box padding">padding</div>
-                    <div class="box padding">padding</div>
-                    <div class="box padding-top">padding-top</div>
-                    <div class="box padding-bottom">padding-bottom</div>
-                    <div class="box padding-left">padding-left</div>
-                    <div class="box padding-right">padding-right</div>
-                    <div class="box padding-short">padding-short top-right-bottom-left</div>
-                    <div class="box padding-short-xy">padding-short padding-short-xy</div>
-                </body>
-
-                </html>
+            <a href="CSS/CSSFiles/Padding.html">Paddding</a>
           </details>
         </td>
       </tr>
@@ -4025,51 +2256,7 @@
         <td>
           <details>
             <summary>Float for the block Element </summary>
-            <html lang="en">
-
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      .logo {
-                          float: left;
-                          background-color: brown;
-                      }
-
-                      .menu {
-                          float: right;
-                          background-color: teal;
-                      }
-
-                      .social {
-                          float: right;
-                          background-color: olive;
-                      }
-                      .div{
-                          background-color: powderblue;
-                      }
-                  </style>
-              </head>
-
-              <body>
-
-
-                  <header>
-                      <div class="logo">logo</div>
-                      <div class="social">social icon</div>
-                      <nav class="menu"> menu </nav>
-                  </header>
-                  <!-- <br> -->
-                  <section>
-                      <div class="div">
-                          <div class="p">something</div>
-                      </div>
-                  </section>
-
-              </body>
-
-              </html>
+            <a href="CSS/CSSFiles/Float.html">Float</a>
           </details>
         </td>
       </tr>
@@ -4077,59 +2264,7 @@
         <td>
           <details>
             <summary>Clear</summary>
-            <html lang="en">
-
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Document</title>
-                  <style>
-                      header{
-                          background-color: tan;
-                          height: 60px;
-                          line-height: 60px;
-                      }
-                      .logo {
-                          float: left;
-                          background-color: brown;
-                      }
-
-                      .menu {
-                          float: right;
-                          background-color: teal;
-                      }
-
-                      .social {
-                          float: right;
-                          background-color: olive;
-                      }
-                      .div{
-                          background-color: powderblue;
-                      }
-                      .clear{
-                          clear: both;
-                      }
-                  </style>
-              </head>
-
-              <body>
-
-
-                  <header>
-                      <div class="logo">logo</div>
-                      <div class="social">social icon</div>
-                      <nav class="menu"> menu </nav>
-                  </header>
-                  <!-- <br> -->
-                  <section class="clear">
-                      <div class="div">
-                          <div class="p">something</div>
-                      </div>
-                  </section>
-
-              </body>
-
-              </html>
+            <a href="CSS/CSSFiles/Clear.html">Clear</a>
           </details>
         </td>
       </tr>

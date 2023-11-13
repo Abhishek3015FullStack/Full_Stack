@@ -1,0 +1,98 @@
+            <html lang="en">
+              <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Document</title>
+                  <style>
+                      .box{
+                          height: 200px;
+                          padding: 50px;
+                          margin: 50px;
+                          border: 20px dashed rgba(0, 128, 255, 0.461);
+                      }
+                      .background-color {background-color:aqua}
+                      .background-image { background-color:aqua; background-image: url(images.jfif);}
+                      .background-attachment {
+                          background-color:aqua; 
+                          background-image: url(images.jfif);
+                          background-attachment:fixed ;
+                          /* background-attachment:local ; */
+                          /* background-attachment:scroll ; */
+                      }
+                      .background-clip {
+                          background-color:aqua; 
+                          background-image: url(images.jfif);
+                          /* background-clip: padding-box; */
+                          /* background-clip: border-box; */
+                          background-clip: content-box;
+                          
+                      }
+                      .background-origin {
+                          background-color:aqua; 
+                          background-image: url(images.jfif);
+                          /* background-origin:border-box ; */
+                          background-origin:content-box ;
+                          /* background-origin:padding-box ; */
+                      }
+                      .background-position {
+                          background-color:aqua; 
+                          background-image: url(images.jfif);
+                          /* background-position:0% 20%; */
+                          /* background-position:center 20% ; */
+                          background-position:10px ;
+                      }
+                      .background-repeat {
+                          background-color:aqua; 
+                          background-image: url(images.jfif);
+                          background-position:center center ;
+                          background-repeat:no-repeat ;
+                          /* background-repeat:repeat-x ; */
+                          /* background-repeat:repeat-y ; */
+                      }
+                      .background-size {
+                          background-color:aqua; 
+                          background-image: url(images.jfif);
+                          background-position:center 80% ;
+                          background-repeat:no-repeat ;
+                          /* background-size: contain; */
+                          background-size: cover;
+                      }
+                      .shorthand{
+                        background: url(images.jfif) no-repeat center center /cover; 
+                      }
+                      .linear-gradient{
+                        /* background:linear-gradient(45deg, orange,white,green);  */
+                        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+                      }
+                      .radial-gradient{
+                        background:radial-gradient(orange,white,green) 
+                      }
+                  </style>
+              </head>
+              <body>
+
+                  <ul>
+                      <li>background-color</li> 
+                      <li>background-image</li> 
+                      <li>background-attachment</li> 
+                      <li>background-clip</li> 
+                      <li>background-origin</li> 
+                      <li>background-position</li> 
+                      <li>background-repeat</li> 
+                      <li>background-size</li> 
+                      <li>background: repeat scroll 0% 0% / auto padding-box border-box none transparent;</li> 
+                  </ul>
+                  <div class="box background-color"> <h3> background-color</h3></div>
+                  <div class="box background-image"> <h3> background-image</h3></div>
+                  <div class="box background-attachment"> <h3> background-attachment</h3></div>
+                  <div class="box background-clip"> <h3> background-clip</h3></div>
+                  <div class="box background-origin"> <h3> background-origin</h3></div>
+                  <div class="box background-position"> <h3> background-position</h3></div>
+                  <div class="box background-repeat"> <h3> background-repeat</h3></div>
+                  <div class="box background-size"> <h3> background-size</h3></div>
+                  <div class="box shorthand"> <h3>shorthand</h3></div>
+                  <div class="box linear-gradient"> <h3>linear-gradient</h3></div>
+                  <div class="box radial-gradient"> <h3>radial-gradient</h3></div>
+              </body>
+              </html>
