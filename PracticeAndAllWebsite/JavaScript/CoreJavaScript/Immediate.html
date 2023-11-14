@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <pre>
+            function print(m)
+            {
+                console.log(`this is the value is ${m}`);
+            }
+            
+            print((function(){return 10*500})());
+            
+            
+            
+            function printmsg(value)
+            {
+                console.log(`this is value of  the printmsg ${value}`);
+            }
+            
+            printmsg((function(m,n,o){return m*n*o;})(10,10,20));
+            
+        </pre>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <pre>
+            function Curry(a)
+            {
+                 return function(b)
+                 {
+                    return function(c)
+                    {
+                        let result =  a*b*c;
+                        return result;
+                    };
+                 };
+            };
+            
+            let d = Curry(10);
+            let e = d(20);
+            let f = e(30);
+            console.log(f);
+            
+        </pre>
+</body>
+</html>
