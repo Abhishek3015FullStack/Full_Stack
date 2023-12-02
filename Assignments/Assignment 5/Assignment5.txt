@@ -1,0 +1,99 @@
+1.What are the benefits of using CSS? 
+CSS enables consistent styling across multiple web pages. By defining styles once in a CSS file, you can apply those styles to multiple elements throughout the website, ensuring a consistent look and feel.
+CSS supports responsive web design techniques, allowing websites to adapt and display well on different devices and screen sizes. Media queries and flexible layout options enable creating responsive and mobile-friendly designs.
+
+2.What are the disadvantages of CSS? 
+Different web browsers may interpret CSS rules differently, leading to inconsistencies in rendering and layout. Achieving full cross-browser compatibility can be challenging and may require additional code or workarounds.
+Overly complex or inefficient CSS can impact website performance. Large CSS files or excessive use of complex selectors may lead to longer loading times and affect page rendering speed.
+
+3.What is the difference between CSS2 and CSS3? 
+CSS2: Defined the basic box model with properties like width, height, margin, padding, border, etc.
+CSS3: Expanded the box model with features like box-sizing property (content-box and border-box values), allowing more control over how the width and height of elements are calculated.
+
+4.Name a few CSS style components
+color: Sets the text color.
+background-color: Defines the background color of an element.
+font-family: Specifies the font family for text.
+font-size: Determines the size of the font.
+font-weight: Sets the thickness or boldness of the font.
+line-height: Defines the spacing between lines of text.
+
+5.What do you understand by CSS opacity? 
+CSS opacity is a property that specifies the transparency level of an element and its content. 
+It controls the degree to which the content of an element is visible or hidden, allowing you to create translucent or partially transparent elements on a web page.
+A value of 0 represents complete transparency, making the element and its content fully invisible.
+A value of 1 (the default) represents full opacity, indicating that the element and its content are fully visible without any transparency.
+
+6.How can the background color of an element be changed? 
+The background color of an element in HTML and CSS can be changed using the background-color property. 
+This property allows you to specify the color of the background for an HTML element.
+
+7.How can image repetition of the backup be controlled? 
+.A {
+    background-image: url('path/image.jpg');
+    background-repeat: repeat;
+    }
+.b
+    {
+        background-image: url('path/image.jpg');
+        background-repeat: no-repeat;
+    }
+.c
+    {
+        background-image: url('path/image.jpg');
+        background-repeat: repeat-x;
+    }
+.d
+    {
+        background-image: url('path/image.jpg');
+        background-repeat: repeat-y;
+    }
+
+8.What is the use of the background-position property? 
+The background-position property in CSS is used to control the starting position of a background image within its containing element.
+It determines where the background image is placed in relation to the element's padding box
+
+9.Which property controls the image scroll in the background?
+The property that controls the scrolling behavior of a background image in CSS is called background-attachment.
+The background-attachment property defines whether the background image scrolls with the content of the element or remains fixed in place while the content scrolls. It can take the following values:
+scroll: This is the default value. The background image scrolls along with the content when the user scrolls the element.
+fixed: The background image remains fixed in place, irrespective of scrolling. It stays in the same position even when the content is scrolled.
+local: It's less commonly used and often used in SVGs. It scrolls along with the content like scroll, but in the context of SVG, it might indicate local scrolling for the SVG content only.
+
+10.Why should background and color be used as separate properties? 
+color: Defines the text color of an element's content.
+background: Defines various background-related properties like background-color, background-image, background-position, etc.
+
+11.How to center block elements using CSS1? 
+.example-element {
+    width: 50%; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+12.How to maintain the CSS specifications? 
+Minimize the use of !important or excessive style overrides, as they can lead to specificity issues and make it harder to maintain or debug styles.
+Add comments and documentation to CSS code, explaining its purpose, usage, and any dependencies. Tools like style guides or README files can help others understand the CSS architecture.
+
+13.What are the ways to integrate CSS as a web page? 
+Inline
+CSS can be written directly within HTML elements using the style attribute.
+<p style="color: red; font-size: 16px;">Inline Style</p>
+Internal CSS:
+CSS can be written within the <style> tags in the <head> section of an HTML document.
+External CSS:
+Create a separate CSS file (with a .css extension) containing styles and link it to the HTML document using the <link> tag in the <head> section.
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+14.What is embedded style sheets?
+Embedded stylesheets, also known as internal stylesheets, refer to a method of including CSS directly within an HTML document.This approach allows CSS rules to be written within the <style> tags, which are placed in the <head> section of an HTML document.
+
+15.What are the external style sheets? 
+External stylesheets refer to separate CSS files containing style rules that are linked to an HTML document. These CSS files are external to the HTML file and are linked using the <link> element within the <head> section of the HTML document.
+
+16.
+Separation of Concerns:
+Advantage: External stylesheets promote a separation of concerns by keeping HTML and CSS code in separate files. This separation enhances code readability, maintainability, and organization.
+
