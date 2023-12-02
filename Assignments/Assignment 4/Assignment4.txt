@@ -1,0 +1,131 @@
+1 .Are the HTML tags and elements the same thing?
+HTML Tags: Tags are markers that define the start and end of an HTML element and are enclosed by angle brackets (< >). They essentially define the structure and appearance of content within a web page. For instance, <p> represents the start of a paragraph, and </p> represents the end of that paragraph.
+HTML Elements: Elements, on the other hand, consist of the entire structure defined by the start and end tags along with the content between them. An HTML element is comprised of the opening tag, content, and closing tag. For example, the <p> element includes the opening tag, the content (which could be text, images, links, etc.), and the closing </p> tag.
+
+2.What are tags and attributes in HTML? 
+Tags in HTML: Markers enclosed in angle brackets that define the start and end of an element (<tag>)
+Attributes in HTML: Provide additional information or settings for HTML elements, specified within the opening tag with a name and value (attribute="value").
+
+3.What are void elements in HTML? 
+Void elements in HTML are elements that do not have any content or text between opening and closing tags and therefore don't require a closing tag. They are self-closing elements in HTML. Void elements are designed to insert specific types of content or elements into a document and don't have any content of their own.
+Void elements in HTML include tags like <img>, <input>, <br>, <hr>, <meta>, <link>, and <area>. For example:
+<img>: Used for embedding images.
+<input>: Used for various form input fields.
+<br>: Represents a line break.
+<hr>: Represents a thematic break or horizontal rule.
+<meta>: Provides metadata about the HTML document.
+<link>: Specifies relationships between the current document and external resources.
+<area>: Defines areas within an image map.
+
+4.What are HTML Entities? 
+HTML entities are special codes used to display characters that have special meanings in HTML or characters that cannot be easily typed or rendered directly in HTML documents. 
+They are represented by an ampersand (&), followed by a specific code or name, and then closed with a semicolon (;). 
+HTML entities are used to render reserved characters, symbols, non-breaking spaces, accented letters, mathematical symbols, and other characters that might conflict with HTML syntax or may not display correctly in browsers.
+
+&lt; represents the less-than symbol <.
+&gt; represents the greater-than symbol >.
+
+5.What are different types of lists in HTML?
+Ordered Lists (<ol>):Ordered lists are used to present items in a numbered sequence. Each item in an ordered list is automatically numbered by the browser.
+Unordered Lists (<ul>):
+Unordered lists are used to create bulleted lists where each item in the list is preceded by a bullet point or another marker, but they are not specifically numbered.
+Definition Lists (<dl>):
+Definition lists are used to create a list of terms and their definitions. They consist of a series of terms (<dt> - definition term) and their corresponding definitions (<dd> - definition description).
+
+6.What is the ‘class’ attribute in HTML? 
+The class attribute in HTML is an attribute used to assign one or more class names to an HTML element. 
+It allows you to apply a specific class or multiple classes to an element, enabling the element to be styled or targeted by CSS
+
+7.What is the difference between the ‘id’ attribute and the ‘class’ attribute of HTML elements?
+id is unique and should only be used once per page, while class can be used multiple times on different elements.
+Elements with the same class can share styles, whereas elements with unique ids are targeted individually.
+id is typically used when an element needs to be uniquely identified, whereas class is used for applying styles or functionality to multiple elements.
+
+8.What are the various formatting tags in HTML? 
+<b>: Represents bold text.
+<strong>: Indicates strong importance; by default, browsers render this text as bold, but it also carries semantic weight.
+<i>: Represents italic text.
+<em>: Indicates emphasis; browsers typically render this text in italics, but it also carries semantic weight.
+<u>: Represents underlined text. However, this tag has been deprecated in HTML5 as it doesn't indicate semantic meaning, and underlining is often associated with links.
+<s>: Represents text that is no longer relevant or accurate (strikethrough text).
+<strike>: Similar to <s>, it renders text with a strikethrough effect. Both tags have been deprecated in HTML5.
+<sup>: Represents superscript text (text that appears above the normal line).
+<sub>: Represents subscript text (text that appears below the normal line).
+<small>: Represents smaller text, typically used for disclaimers, legal text, or fine print.
+<pre>: Defines preformatted text, which preserves spaces and line breaks exactly as they appear in the HTML code. Useful for displaying code snippets or text with specific formatting.
+<code>: Represents a fragment of computer code. Often used within <pre> to indicate code snippets.
+
+9.How is Cell Padding different from Cell Spacing?
+Cell Padding affects the space between the content of each cell and its border.
+Cell Spacing affects the space between individual cells within the table.
+
+10.How can we club two or more rows or columns into a single row or column in an HTML table? 
+rowspan attribute: It defines the number of rows a cell should span vertically.
+colspan attribute: It defines the number of columns a cell should span horizontally.
+
+11.What is the difference between a block-level element and an inline element? 
+Layout: Block-level elements create a block-level structure with a line break before and after, while inline elements do not create line breaks and flow within the text horizontally.
+Width: Block-level elements occupy the full available width by default, while inline elements occupy only the necessary width for their content.
+Usage: Block-level elements are commonly used for larger structural elements and major sections of a webpage, while inline elements are used for small, inline portions of content or to style parts of the text.
+
+12.How to create a Hyperlink in HTML? 
+
+To create a hyperlink in HTML, you use the <a> (anchor) element, which allows you to link to another web page, a file, or a specific location within the same page. 
+The anchor element requires the href attribute to specify the destination of the link.
+example 
+<a href="https://www.example.com">Visit Example</a>
+
+13.What is the use of an iframe tag? 
+The <iframe> tag in HTML stands for "inline frame" and is used to embed another document or webpage within the current HTML document. 
+It allows you to display content from another source or URL within a specific section of your webpage.
+
+14.What is the use of a span tag? Explain with example? 
+The <span> tag in HTML is an inline element used to apply styles or manipulate small sections of content within a larger block of text or within a document. 
+It doesn't add any visual change or line break by default and is often used with CSS to style specific parts of the content.
+
+15.How to insert a picture into a background image of a web page? 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <style>
+        body {
+            background-image: url('path/to/your/image.jpg'); /* Replace 'path/to/your/image.jpg' with your image file path */
+            background-size: cover; /* Adjusts the image size to cover the entire background */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+</body>
+</html>
+
+16.How are active links different from normal links? 
+Appearance: Normal links have a default appearance defined by the browser or styles, whereas active links have an appearance defined specifically for when they are being actively interacted with (clicked or pressed).
+Timing: Normal links represent the default state before and after interaction, while active links represent the moment when the link is actively being interacted with (during the click or press).
+
+17.What are the different tags to separate sections of text? 
+Heading Tags (<h1> to <h6>)
+Paragraph Tag (<p>)
+Div Tag (<div>)
+Section Tag (<section>)
+Article Tag (<article>)
+
+18.What is SVG? 
+SVG stands for Scalable Vector Graphics. It's an XML-based file format used for describing two-dimensional vector graphics. 
+Unlike raster image formats (like JPEG or PNG) that are based on pixels and can lose quality when scaled or resized, SVGs use mathematical equations to define shapes and paths, allowing them to be scaled to any size without losing quality
+
+19.What is difference between HTML and XHTML?
+HTML: HTML has a more forgiving syntax compared to XHTML. In HTML, elements don't necessarily need to be properly nested or closed. For example, in HTML, it's acceptable to write <p>Hello without closing the paragraph tag (</p>).
+XHTML: XHTML follows stricter XML rules. All elements must be properly nested and closed. For example, in XHTML, the <p> tag must be closed properly with </p>.
+
+20.What are logical and physical tags in HTML?
+Logical tags
+Purpose: Logical tags, also known as semantic or structural tags, are used to define the structure and meaning of content without specifying how it should be displayed.
+Examples: Elements like <header>, <nav>, <main>, <article>, <section>, <footer>, <aside>, <figure>, and others introduced in modern HTML versions represent logical or semantic tags.
+
+Physical Tags:
+Purpose: Physical tags, also known as presentational tags, were used in older versions of HTML to directly specify how content should be presented or formatted.
+Examples: Tags like <b> (bold), <i> (italic), <font>, <strike>, and others were considered physical tags as they dictated the visual appearance of text.
+
