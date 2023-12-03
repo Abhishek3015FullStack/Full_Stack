@@ -1,0 +1,54 @@
+create table country(
+id int primary key ,
+country_name varchar(40),
+country_name_eng varchar(40),
+country_code varchar(40)
+);
+insert into country(id,country_name,country_name_eng,country_code) values (1,"Deutscchland","Germany","DEU"),
+(2,"Srbija","Serbia","SRB"),
+(3,"Hrvastska","Crotia","HRV"),
+(4,"United Statess of america","United Statess of america","USA"),
+(5,"polska","poland","pool"),
+(6,"Esparia","Spain","ESP"),
+(7,"Rossiya","Russia","Rus");
+
+create table city(
+id_city int,
+city_name varchar(40),
+lat decimal(10,6),
+long1 decimal(10,6),
+Country_id int references country(id)
+);
+insert into city(id_city,city_name,lat,long1,Country_id) values(1,"Berlin",52.520008,13.404954,1),
+(2,"Belgrade",44.787197,20.457273,2),
+(3,"Zagrelo",45.815399,15.966568,3),
+(4,"new york",40.730610,-73.935242,4),
+(5,"Los angles",34.052235,-118.243683,4),
+(6,"warsaw",52.237049,21.017532,5);
+
+alter table city add constraint pk primary key (id_city); 
+alter table city Add constraint FK4 foreign key (Country_id ) references country(id);
+
+desc city;
+
+ create table  Customer1(
+ Customer_id int  ,
+ Customer_name varchar(40),
+ city_id int,
+ Customer_address varchar(40),
+ next_call_date date,
+ ts_inserted datetime
+ );
+ insert into Customer1(Customer_id,Customer_name,city_id,Customer_address,next_call_date,ts_inserted)values(1,"jewelary store",4,"Long street 120",curdate(),now());
+ alter table Customer1 add constraint fk5 foreign key (city_id) references city(id_city);
+ alter table Customer1  add constraint pk1 primary key  (Customer_id);
+ select * from Customer1;
+ insert into Customer1(Customer_id,Customer_name,city_id,Customer_address,next_call_date,ts_inserted)values(2,"bakery",1,"kjurlistandam 25",Curdate(),now()),
+ (3,"cafe",1,"taunewzille 44",curdate(),now()),
+ (4,"Restaurent",3,"ulca lpa  15",curdate(),now());
+ -- left join 
+ select * from country left join city on country.id= city.id_city left join Customer1 on city.id_city =Customer1.city_id;
+ 
+ -- inner join
+ select * from country inner join city on country.id= city.id_city inner join Customer1 on city.id_city =Customer1.city_id;
+ 
