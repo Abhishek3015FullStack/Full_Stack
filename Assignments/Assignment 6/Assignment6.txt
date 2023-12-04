@@ -1,0 +1,267 @@
+What do you understand By Database
+A database is an organized collection of structured information or data, typically stored and accessed electronically from a computer system. It is designed to efficiently manage, store, retrieve, and manipulate data, allowing users and applications to interact with it, perform queries, and extract meaningful insights.
+
+What is Normalization?
+Normalization is a database design technique used to organize a database structure efficiently by reducing redundancy and dependency of data. Its primary objective is to create well-structured databases that minimize data duplication and anomalies when storing and manipulating data.
+The normalization process involves breaking down a database into multiple tables and defining relationships between them to ensure data integrity and avoid data anomalies such as insertion, update, and deletion anomalies. It's usually divided into different normal forms, including:
+First Normal Form (1NF): In 1NF, the table structure eliminates duplicate columns from the same table and ensures that each column holds only atomic (indivisible) values. Each attribute contains only a single value from the domain of that attribute.
+Second Normal Form (2NF): 2NF builds upon 1NF by ensuring that all non-key attributes are fully functionally dependent on the entire primary key. It eliminates partial dependencies where part of the primary key determines some attributes but not all.
+Third Normal Form (3NF): 3NF further refines the database design by removing transitive dependencies. It ensures that non-key attributes are not dependent on other non-key attributes within the same table.
+
+What is Difference between DBMS and RDBMS?
+DBMS (Database Management System) and RDBMS (Relational Database Management System) are both systems used for managing databases, but they have some differences in their functionalities and capabilities:
+DBMS: DBMS is a software system that enables users to define, create, maintain, and control access to databases. It provides functionalities for storing, retrieving, and managing data. DBMS may or may not support relationships between data.
+RDBMS: RDBMS is a type of DBMS that manages data based on the relational model. It stores data in tables with rows and columns, and it enforces relationships between tables through the use of keys (primary keys and foreign keys). RDBMS follows the principles of normalization and uses SQL (Structured Query Language) for managing the data.
+
+Data Structure:
+DBMS: In DBMS, data may not be stored in a structured or relational format. It can be hierarchical, network, or object-oriented.
+RDBMS: RDBMS stores data in a structured format using tables. Each table consists of rows (records) and columns (attributes), and tables can be related through keys.
+Relationships:
+
+DBMS: DBMS may or may not support relationships between different sets of data.
+RDBMS: RDBMS explicitly supports the establishment and management of relationships between tables through primary and foreign keys.
+Data Integrity:
+
+DBMS: Data integrity mechanisms might not be as robust compared to RDBMS. It may not enforce strict rules for maintaining data consistency and integrity.
+RDBMS: RDBMS ensures high data integrity by enforcing various constraints (such as primary key, foreign key, unique key constraints) and by following normalization rules to reduce redundancy and inconsistencies.
+
+What is MF Cod Rule of RDBMS Systems?
+Information Rule: All data in the database is to be represented in only one way – by values in a table.
+Guaranteed Access Rule: Each unique piece of data (atomic value) is accessible by specifying the table name, primary key, and column name.
+Systematic Treatment of NULL Values: NULL values are treated uniformly and distinctly from zero or any other value.
+Comprehensive Data Sub-language Rule: The system must support a comprehensive and rich language for defining data integrity constraints, views, queries, and security.
+Integrity Rule: Integrity constraints must be stored in the catalog, alongside data and metadata, and should be enforceable by the system.
+
+What do you understand By Data Redundancy?
+Data redundancy refers to the duplication of data within a database or information system. It occurs when the same piece of data is stored in multiple places or multiple records contain the same information. Redundancy can exist at various levels within a database, such as within a single table, between different tables, or across different databases
+There are two main types of data redundancy:
+Uncontrolled Redundancy: This type of redundancy happens unintentionally or due to poor database design. For example Storing the same information in multiple tables. Repeating the same data in different rows within a table.
+Duplicating data across different databases without synchronization.Controlled Redundancy: In some cases, redundancy might be intentionally introduced to improve performance, enhance data availability, or provide fault tolerance. For instance:
+Creating data backups or replicas to ensure data availability in case of failures.
+Denormalization in which redundant data is intentionally introduced for faster query performance.
+
+What is DDL Interpreter?
+The DDL (Data Definition Language) Interpreter is a component of a Database Management System (DBMS) responsible for processing and executing Data Definition Language statements.
+CREATE: Used to create new database objects like tables, views, indexes, etc.
+ALTER: Modifies the structure of existing database objects.
+DROP: Deletes or removes existing database objects.
+TRUNCATE: Removes all records from a table without removing the table structure.
+RENAME: Renames existing database objects.
+
+What is DML Compiler in SQL?
+In the context of SQL (Structured Query Language) and database management systems, a DML (Data Manipulation Language) Compiler is not a separate component or entity. Instead, DML is a subset of SQL used to manipulate data within a database, and the execution of DML statements is typically handled by the DBMS itself, not a separate compiler.
+SELECT: Retrieves data from one or multiple tables.
+INSERT: Adds new rows of data into a table.
+UPDATE: Modifies existing data in a table.
+DELETE: Removes rows of data from a table.
+
+What is SQL Key Constraints writing an Example of SQL Key Constraints
+SQL key constraints are rules or conditions applied to columns within a table to enforce uniqueness, integrity, and relationships within a database. There are different types of key constraints in SQL, including primary key, unique key, foreign key, and candidate key.
+Primary Key Constraint:
+A primary key constraint uniquely identifies each record in a table and ensures that the column or combination of columns specified as the primary key doesn't contain null values and has unique values.
+
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    DepartmentID INT
+);
+Unique Constraint:
+A unique key constraint ensures that the values in a column or a combination of columns are unique across the table, similar to a primary key, but it can allow null values (excluding the case where a unique constraint is defined on a single column).
+CREATE TABLE Students (
+    StudentID INT UNIQUE,
+    Email VARCHAR(100) UNIQUE
+);
+
+Foreign Key Constraint:
+A foreign key constraint establishes a relationship between two tables, enforcing referential integrity by ensuring that values in a column of one table match values in another table's primary key or unique key column.
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+
+What is save Point? How to create a save Point write a Query?
+A savepoint in a database is a marker or point within a transaction that allows you to roll back to that specific point without rolling back the entire transaction. It's a feature provided by most relational database management systems (RDBMS) that enables you to create intermediate points in a transaction to which you can later roll back if needed, instead of rolling back the entire transaction.
+Creating the save point  ->SAVEPOINT my_savepoint;
+Rollback to save point  ->ROLLBACK TO SAVEPOINT my_savepoint;
+What is trigger and how to create a Trigger in SQL?
+Triggers can be used to enforce business rules, maintain data integrity, log changes, or automate certain tasks. They execute automatically when a specified event occurs on the associated table, based on the defined trigger conditions.
+CREATE TRIGGER trigger_name
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE}
+ON table_name
+FOR EACH ROW
+BEGIN
+    -- Trigger body: SQL statements to be executed when the trigger conditions are met
+    -- You can perform actions like inserting into other tables, updating values, etc.
+END;
+
+1. Create Table Name : Student and Exam
+create table  Student(
+Rollno int primary key,
+Name varchar(20),
+Branch varchar(40)
+);
+
+create table Exam(
+Rollno int references Student(Rollno),
+S_code varchar(20),
+Marks varchar(20),
+P_code varchar(20)
+);
+select * from Exam ;
+
+alter table Exam Add constraint FK foreign key (Rollno) references Student(Rollno);
+desc Student;
+insert into Student(Rollno,Name,Branch) values (1,"Jay","Computer Science"),
+(2,"Suhani","Electronic And Comp"),
+(3,"Abhishek","Eletronic And Comp");
+select * from Student;
+desc exam;
+insert into Exam(Rollno,S_code,Marks,P_code) values(1,"CS11","50","CS"),
+(1,"CS12","60","CS"),
+(2,"EC101","66","EC"),
+(2,"EC102","70","EC"),
+(3,"EC101","45","EC"),
+(3,"EC102","50","EC");
+
+2. Create table given below
+create table Person(
+First_name varchar(20),
+Last_name varchar(20),
+Address varchar(50),
+City varchar(50),
+Age int
+);
+desc Person;
+insert into Person(First_name,last_name,Address,City,Age) values ("Mickey","Mouse","123 fantasy way","Anaheim",73),
+("Bat","Man","321 cavern ave","GOTHAM",54),
+("Wonder","woman","987 Truth way","Paradise",39),
+("Donald","Duck","555 Quad Street","Mallard",65),
+("Bugs","Bunny","567 carrot Street","Rascal",58),
+("Wiley","Coyote","999 Acme way","Canyon",61),
+("Cat","Women","234 perfect Street","hair ball",32),
+("Tweety","Bird","543","Itotalaw",28);
+select * from person;
+
+3. Create table given below: Employee and Incentive
+create table Employee(
+Employee_id int auto_increment primary key,
+First_name varchar(20),
+Last_name varchar(20),
+Salary long,
+joining_date datetime,
+Department varchar(20)
+);
+
+desc Employee;
+insert into Employee(First_name,Last_name,Salary,joining_date,Department) values ("John","Abraham",100000,now(),"Banking"),
+("Micheal","clark",80000,now(),"Insurance"),
+("Roy","Thomsan",700000,now(),"Banking"),
+("Tom","jose",600000,now(),"Insurance"),
+("Jerry","pinto",650000,now(),"Insurance"),
+("philip","mathew",750000,now(),"Services"),
+("TestName1","123",650000,now(),"Services"),
+("TestName2","Lname%",60000,now(),"Insurance");
+select * from employee;
+truncate table employee;
+
+create table Incentive(
+Employee_ref_id int,
+Incentive_date datetime,
+Incentive_amount long
+);
+desc Incentive;
+
+alter table Incentive add constraint fk1 foreign key (Employee_ref_id) references  Employee(Employee_id);
+
+insert into Incentive(Employee_ref_id,Incentive_date,Incentive_amount) values (1,now(),5000),
+(2,now(),3000),
+(3,now(),4000),
+(1,now(),4500),
+(2,now(),3500);
+
+select * from Incentive;
+
+a) Get First_Name from employee table using Tom name “Employee Name”.
+select First_name from Employee where first_name="Tom";
+b) Get FIRST_NAME, Joining Date, and Salary from employee table.
+select First_name,joining_date,salary from Employee;
+
+Get all employee details from the employee table order by First_Name Ascending and Salary descending? Get all employee details from the employee table order by First_Name Ascending and Salary descending?
+
+select * from Employee 
+order by First_name asc,
+Salary desc;
+
+d) Get employee details from employee table whose first name contains ‘J’.
+select * from Employee where First_name like '%J%';
+e) Get department wise maximum salary from employee table order by salary ascending?
+SELECT department, Max(salary) AS max_salary
+FROM Employee
+GROUP BY department
+ORDER BY max_salary ASC;
+
+
+f) Select first_name, incentive amount from employee and incentives table for those employees who have incentives and incentive amount greater than 3000
+SELECT e.first_name, i.Incentive_amount AS incentives_amount
+FROM Employee e
+INNER JOIN Incentive i ON e.employee_id = i.employee_ref_id
+WHERE i.Incentive_amount > 3000;
+
+g) Create After Insert trigger on Employee table which insert records in view table
+create table Employee1(
+Employee_id int ,
+First_name varchar(20),
+Last_name varchar(20),
+Salary long,
+joining_date datetime,
+Department varchar(20)
+);
+alter table Employee1 add column employee_count int primary key auto_increment;
+insert into Employee(First_name,Last_name,Salary,joining_date,Department) values ("John","Abraham",100000,now(),"Banking");
+select * from Employee;
+
+-- CREATE DEFINER=`root`@`localhost` TRIGGER `employee_AFTER_INSERT` AFTER INSERT ON `employee` FOR EACH ROW BEGIN
+-- insert into Employee1(Employee_id,First_name,Last_name,Salary,joining_date,Department)
+-- values(new.Employee_id,new.First_name,new.Last_name,new.Salary,new.joining_date,Department);
+-- END
+
+
+
+
+
+Create table given below: Salesperson and Customer
+create table salesperson(
+ SNo int primary key ,
+ SName varchar(40),
+ City varchar(40),
+ Comm decimal(10,3)
+ );
+ select * from salesperson;
+ 
+drop table Customer;
+ create table Customer(
+ CNM int primary key ,
+ Cname varchar(40),
+ city varchar(40),
+ Rating int,
+ SNO int
+ );
+a) All orders for more than $1000.
+select * from orders where order_amount > 1000;
+
+b) Names and cities of all salespeople in London with commission above 0.12
+select SName ,city from salesperson where city='london' And Comm =0.12;
+
+c) All salespeople either in Barcelona or in London
+select * from salesperson where city='london' or city='barcelona';
+
+d) All salespeople with commission between 0.10 and 0.12. 
+select * from salesperson where comm >=0.10  and comm <=0.12;
+
+e) All customers excluding those with rating <= 100 unless they are located in Rome
+select * from Customer where rating >=100 or (rating<=100 and city="roe");
+
+
