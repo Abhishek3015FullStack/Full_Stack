@@ -93,7 +93,153 @@ Embedded stylesheets, also known as internal stylesheets, refer to a method of i
 15.What are the external style sheets? 
 External stylesheets refer to separate CSS files containing style rules that are linked to an HTML document. These CSS files are external to the HTML file and are linked using the <link> element within the <head> section of the HTML document.
 
-16.
+16.What are the advantages and disadvantages of using external style sheets? 
 Separation of Concerns:
 Advantage: External stylesheets promote a separation of concerns by keeping HTML and CSS code in separate files. This separation enhances code readability, maintainability, and organization.
+Dependency on External File: If the external style sheet fails to load or there are issues with the server hosting it, it can affect the appearance and functionality of all linked pages.
 
+17.What is the meaning of the CSS selector? 
+Element Selector: Targets HTML elements by their name. For instance, to target all <p> elements:
+Class Selector: Targets elements with a specific class attribute. For example, to target elements with the class "example":
+ID Selector: Targets an element with a specific ID attribute. For instance, to target an element with the ID "main":
+Attribute Selector: Targets elements with a specific attribute or attribute value. For example, to target all <a> elements with a "target" attribute:
+
+
+18.What are the media types allowed by CSS? 
+all: This is the default media type and applies to all devices.
+print: Intended for printers or print preview. Styles specified for this media type will be used when printing the document.
+screen: Used for computer screens, tablets, smartphones, or any other screen-based device. This is the default style sheet for most web pages.
+speech: Intended for screen readers or speech synthesizers. Styles for this media type are used when content is read aloud.
+
+19.What is the rule set? 
+Selector: This part of the rule set specifies which HTML elements the styling rules should apply to. Selectors can target elements based on their type (tag name), class, ID, attributes, or other criteria.
+Declaration Block: This is enclosed within curly braces {} and contains one or more declarations. Each declaration consists of a property and a value, separated by a colon (:) and ended with a semicolon (;)
+
+20.create the layouts 
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container
+        {
+            height:1000px; 
+            width: 100%;
+            background-color: white;
+            align-items: center;
+        }
+        .upper
+        {
+            height:50%; 
+            width: 100%;
+            background-color: white;
+            /* <!-- border: 5px solid black;--> */
+            display: flex;
+        }
+        .lower
+        {
+            height:50%; 
+            width: 100%;
+            background-color: white;
+            /* <!-- border: 5px solid black;--> */
+            display: flex;
+        }
+        .Small
+        {
+            height: 324px;
+            width: 325px;
+            border: 5px solid black;
+            margin-left: 80px;
+            margin-top: 19px;
+            box-shadow: 10px 10px 10px 10px rgb(150, 155, 155);
+            
+        }
+        .black
+        {
+            height: 50%;
+            width: 100%;
+            background-color: rgb(107, 104, 104);
+            
+        }
+        .white
+        {
+            height: 43%;
+            width: 100%;
+            background-color: white;
+        }
+        .button
+        {
+            margin-top: 72px;
+            background-color: aliceblue;
+            margin-left: 0;
+        }
+        .black h1
+        {
+            margin-top: 0px; 
+            font-size: 24px; 
+            color: white;
+            padding-top: 50px;
+            text-align: center; 
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="upper">
+            <div class="Small">
+                <div class="black"> <h1>Thumbnail</h1> </div>
+                <div class="white"><p>The wider card which is supporting the text This is the wider card which is supporting the text</p>
+                    <input type="button" value="view" class="button">
+                    <input type="button" value="Edit" class="button">
+                </div>
+            </div>
+            <div class="Small">
+                <div class="black"><h1>Thumbnail</h1></div>
+                <div class="white"><p>The wider card which is supporting the text This is the wider card which is supporting the text</p>
+                    <input type="button" value="view" class="button">
+                    <input type="button" value="Edit" class="button">
+                </div>
+            </div>
+            <div class="Small">
+                <div class="black"><h1>Thumbnail</h1></div>
+                <div class="white"><p>The wider card which is supporting the text This is the wider card which is supporting the text</p>
+                    <input type="button" value="view" class="button">
+                    <input type="button" value="Edit" class="button">
+                </div>
+            </div>
+        </div>
+       <div class="upper">
+        <div class="Small">
+            <div class="black"><h1>Thumbnail</h1></div>
+            <div class="white"><p>The wider card which is supporting the text This is the wider card which is supporting the text</p>
+                <input type="button" value="view" class="button">
+                <input type="button" value="Edit" class="button">
+            </div>
+        </div>
+
+        <div class="Small">
+            <div class="black"><h1>Thumbnail</h1></div>
+            <div class="white"><p>The wider card which is supporting the text This is the wider card which is supporting the text</p>
+                <input type="button" value="view" class="button">
+                <input type="button" value="Edit" class="button">
+            </div>
+        </div>
+
+        <div class="Small">
+            <div class="black"><h1>Thumbnail</h1></div>
+            <div class="white"><p>The wider card which is supporting the text This is the wider card which is supporting the text</p>
+                <input type="button" value="view" class="button">
+                <input type="button" value="Edit" class="button">
+            </div>
+        </div>
+       </div> 
+    </div>
+</body>
+</html>
