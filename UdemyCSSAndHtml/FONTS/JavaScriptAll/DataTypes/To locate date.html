@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = new Date();
+        var b = a.toLocaleDateString(); //mm dd yyyy
+        console.log(b);
+        var c =a.toLocaleTimeString();//hh::mm:ss am and pm like that format 
+        console.log(c);
+
+        var d = a.getTime(); // it will give the output in milliseconds from the 17/1/1970 and till today 
+        console.log(d);
+
+        var e = a.getDay(); // week ka konsa din chal raha hai  mondaay =1 tuesdaye ->2
+        console.log(e);
+
+        var f = a.getDate(); // give only the date 6 7 8 
+        console.log(f);
+
+        var g = a.getMonth() //for the month start from the 0 to 11;
+        console.log(g);
+
+        var h = a.getFullYear(); // give the  year only likie thye 2022,023 like that 
+        console.log(h);
+        
+    </script>
+</body>
+</html>
