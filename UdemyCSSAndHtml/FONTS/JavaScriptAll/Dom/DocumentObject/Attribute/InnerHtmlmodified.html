@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .after
+            {
+                background-color: rgb(27, 216, 153) ;
+            }
+
+            .before
+            {
+                background-color: rgb(192, 224, 7) ;
+            }
+    </style>
+</head>
+<body>
+    <h1>Abhishek</h1>
+    <p id="abhishek" name="Abhi1"  class="Abhihek_class">Abhishek paragraph 1</p>
+    <p name="Abhi2" class="Abhihek_class">Abhishek paragraph 2</p>
+    <p name="Abhi3" class="Abhihek_class">Abhishek paragraph 3</p>
+    <p name="Abhi4" class="Abhihek_class">Abhishek paragraph 4</p>
+    <p name="Abhi5" class="Abhihek_class">Abhishek paragraph 5</p>
+    <p name="Abhi6" class="Abhihek_class">Abhishek paragraph 6</p>
+
+    <script>
+            document.getElementById("abhishek").innerHTML ="Abhisehk modified";
+            console.log( document.getElementById("abhishek"));
+            var a = 1;
+            if(a==0)
+            {
+                document.getElementById("abhishek").classList.add("after");  //we canadd the css class on it by using this method
+            }
+            else
+            {
+                document.getElementById("abhishek").style.backgroundColor ="red";
+            }
+            
+    </script>
+
+</body>
+</html>
