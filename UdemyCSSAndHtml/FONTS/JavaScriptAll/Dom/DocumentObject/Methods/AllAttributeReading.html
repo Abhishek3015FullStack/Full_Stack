@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <img  height ="500px" width="150px" alt="" src="" id ="150"> 
+
+    <script>
+
+            console.log(document.getElementById("150").attributes);
+            console.log(document.getElementById("150").attributes.length);
+            var a = document.getElementById("150").attributes;
+            var b = document.getElementById("150").attributes.length;
+            
+            for(var i = 0;i<a.length;i++)
+            {
+                console.log(a[i].name);
+                console.log(a[i].value);
+            }
+    </script>
+</body>
+</html>
