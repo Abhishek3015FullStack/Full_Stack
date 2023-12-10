@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
+    <input type ="radio" id="rb1" name="abhi" >
+    <input type ="radio" id="rb1" name="abhi">
+    <input type ="radio" id="rb1" name="abhi">
+    <input type ="radio" id="rb1" name="abhi">
     
+    <script>
+            document.getElementById("rb1").addEventListener("change",sample);
+            // document.getElementById("rb2").addEventListener("change",sample);
+            // document.getElementById("rb3").addEventListener("change",sample);
+            // document.getElementById("rb4").addEventListener("change",sample);3
+
+            function sample()
+        {
+            var a = document.getElementsById("rb1").value;
+            console.log(a);
+            
+        }
+    </script>
 </body>
 </html>
