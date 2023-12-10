@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="2">
+    <p id= "1">Abhishek</p>
+    <script>
+            document.getElementById("1").addEventListener("contextmenu", sample);
+            document.getElementById("2").addEventListener("contextmenu", sample);
+            function sample(event)
+            {
+                event.preventDefault();
+                console.log("context menu "+new Date().toLocaleTimeString()); // right that time open 
+            }
+    </script>
+    
+</body>
+</html>
