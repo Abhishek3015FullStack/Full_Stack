@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="price" id ="price">
+    <input type="text" name="Tax" id ="Tax">
+    <input type="button" id="calculate" name="calculate" value="Calculate">
+    <input type="text" id="total">
+
+    <script>
+            document.getElementById("calculate").addEventListener("click",Calculations);
+            function Calculations()
+            {
+               var a = Number(document.getElementById("price").value);
+               var b = Number(document.getElementById("Tax").value);
+               var c = a+b;
+               document.getElementById("total").value= c;
+               console.log(c);
+              
+            }
+    </script>
+    
+</body>
+</html>

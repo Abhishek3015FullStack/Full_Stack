@@ -11,7 +11,10 @@
             document.getElementById("Abhishek1").addEventListener("dblclick", abhi);
             function abhi()
             {
-                document.getElementById("Abhishek1").innerHTML += "Abhishek by function" // double click function
+                var a = document.getElementById("Abhishek1");
+                a.innerHTML += "Abhishek by function" ;// double click function
+                a.style.backgroundColor= "red";
+
             }
     </script>
 </body>
