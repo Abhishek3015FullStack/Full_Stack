@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #para1
+        {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type = "text" id="txt1">
+    <p id="para1">Abhshek</p>
+
+    <script>
+            document.getElementById("txt1").addEventListener("focus", sample);
+            document.getElementById("txt1").addEventListener("blur", sample1);
+            function sample()
+            {
+               document.getElementById("para1").style.display ="inline";
+            }
+            function sample1()
+            {
+                document.getElementById("para1").style.display ="none";
+            }
+
+    </script>
+    
+</body>
+</html>
