@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .abhi
+        {
+            background-color: red;
+        }
+        .abhi1
+        {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <p id= "Abhi1" style="height: 500px; width: 100%;">Abhishek 1</p>
+    <p id= "Abhi2">Abhishek 2</p>
+    <p id= "Abhi3">Abhishek 3</p>
+    <p id= "Abhi4">Abhishek 4</p>
+    <script>
+        document.getElementById("Abhi1").addEventListener("mouseover" , sample1)
+        document.getElementById("Abhi1").addEventListener("mouseout" , sample2)
+
+        function sample1()
+        {
+            console.log("mouse hover 1")
+            document.getElementById("Abhi1").setAttribute("class","abhi");
+        }
+        function sample2()
+        {
+            console.log("mouse Out")
+            document.getElementById("Abhi1").setAttribute("class","abhi1");
+        }
+    </script>
+</body>
+</html>

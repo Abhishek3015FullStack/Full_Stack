@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Source:<input type="text" id="txt1">
+    Destination:<input type="text" id="txt2" disabled ="disabled">
+
+    <script>
+            document.getElementById("txt1").addEventListener("keyup",sample);
+            function sample()
+            {
+                var a = Number(document.getElementById("txt1").value);
+                var c = a*20/100;
+                document.getElementById("txt2").value = c;
+
+            }
+
+    </script>
+
+
+</body>
+</html>
