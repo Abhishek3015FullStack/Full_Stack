@@ -1,0 +1,206 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:Hardik;
+    
+    box-sizing: border-box;
+    
+}
+@font-face {
+    font-family: Hardik;
+    src: url(TenorSans-Regular.ttf);
+}
+.container{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* left: 200px; */
+    
+    /* width: 1500px; */
+    border: 1px brown solid;
+    /* margin-left:38px ; */
+    /* background-image: url(./pexels-jana-kukebal-6496462.jpg); */
+    /* background-image: url(./Blu.jpg); */
+    /* background-color:rgb(238, 245, 255); */
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+
+
+
+
+
+    /* -webkit-gradient (linear, left bottom, right top, from(#6d327c), color-stop(#485DA6), color-stop(#00a1ba), color-stop(#00BF98), to(#36C486));
+    background-image:-webkit-linear-gradient(left bottom, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486);
+    background-image:-o-linear-gradient(left bottom, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486);
+    background-image:linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486); */
+    
+    /* .gradient .rotate{-webkit-transform:rotate(95deg);-ms-transform:rotate(95deg);transform:rotate(95deg);}
+    -webkit-gradient (linear, left bottom, right top, from(#38438b), color-stop(#944b94), color-stop(#d75a88), color-stop(#ff7e71), color-stop(#ffb25f), to(#ffeb68));background-image:-webkit-linear-gradient(left bottom, #38438b, #944b94, #d75a88, #ff7e71, #ffb25f, #ffeb68);
+    background-image:-o-linear-gradient(left bottom, #38438b, #944b94, #d75a88, #ff7e71, #ffb25f, #ffeb68);
+    background-image:linear-gradient(to right top, #38438b, #944b94, #d75a88, #ff7e71, #ffb25f, #ffeb68);
+			 */
+		
+			
+			
+			
+}
+h1{
+
+    text-align: center;
+}
+table, tr, th{
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: rgb(145, 5, 5);
+    color:white;
+    padding: 5px;   
+}
+.view {
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: rgb(145, 5, 5);
+    color:white;
+    padding: 5px;   
+    
+}
+.Edit{
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: rgb(145, 5, 5);
+    color:white;
+    padding: 5px;   
+
+}
+.heart {
+    
+        text-decoration: none;
+        color: black;
+        position: relative;
+        font-size: 20px;
+        top: 20px;
+        left: 350px;
+}   
+
+.questions{
+    margin: 30px;
+    background-color:none;
+}
+ 
+.q6ans{
+    background-color: rgb(255, 255, 255);
+    color: rgb(126, 11, 134);;
+}
+.q7a1 img{
+    background-repeat:repeat; 
+    background-image: url(images.jpg);
+      
+}
+.q7a2 img{
+    background-image: url(images.jpg);
+    background-repeat:no-repeat;  
+
+}
+.box{
+    width:300px;
+    margin:2rem auto;
+    background-color: rgb(255, 255, 255);
+    color: rgb(134, 0, 0);
+}
+
+.layout{
+    background-color: whitesmoke;
+   /* width: 600px; */
+}
+.thumb{
+    display: flex;
+}
+.lay-tr{
+    display: flex;
+}
+.pd1{
+    margin: 10px;
+    background-color: rgb(213, 213, 213);
+    border: none;
+    width: 1000px;
+    
+}
+.thumbnail{
+    background-color: black;
+    color: black;
+    font-weight: 700;
+    /* width: 200px; */
+    padding: 80px;
+    text-align: center;
+    background-image: url(./images/bg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.imf{
+    margin: 20px;
+
+}
+.btn{
+    margin-top: 15px;
+    /* margin-left: 108px; */
+}
+strong {
+    color: rgb(20, 92, 20);
+    font-size: 15px;
+    text-decoration: underline;    
+}
+.hr {
+    border: 2px solid black;
+    width: 1495px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* left: 239px; */
+}
+.Name{
+    position: relative;
+    left: 25rem;
+}
+
+body {
+    padding: 30px;
+
+}
+.heading4{
+    position: relative;
+    left: 50px;
+}
+.para{
+    position: relative;
+    left: 50px;
+}
+.Syntax{
+    text-decoration: underline;
+    
+
+}
+.tab{
+     position: relative;
+    left: 50px; 
+    
+}
+code{
+    font-size: 1rem;
+}
+@media (max-width: 1000px) {
+    
+    .container {
+        width: 90%; 
+        margin: 0 auto; 
+    }
+
+    
+    
+}
+
+
+@media (min-width: 769px) {
+
+    .container {
+        width: 80%; 
+    }    
+}
+
