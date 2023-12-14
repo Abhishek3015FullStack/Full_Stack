@@ -6,12 +6,45 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
+   
             <input type ="text" id ="txt1">
             <input type="text" id="txt2">
+            <button value="submit" id ="btn1">Submit</button>
 
-            <button value="submit">Submit</button>
-            
-    </form>
+            <table id = "Abhishek">
+                    <tr>
+                            <th>RollNo</th>
+                            <th>Name</th>
+                    </tr>
+                    
+            </table>
+
+            <script>     
+                        document.getElementById("btn1").addEventListener("click", sample);
+                        function sample(event)
+                        {
+                            let a = document.getElementById("txt1").value;
+                            let b = document.getElementById("txt2").value;
+                            
+                            let tr = document.createElement("tr");
+                            let td1= document.createElement("td");
+                            let td2= document.createElement("td");
+
+                            tr.appendChild(td1);
+                            tr.appendChild(td2);
+
+                            td1.innerHTML =a;
+                            td2.innerHTML =b;
+
+                            document.getElementById("Abhishek").appendChild(tr);
+                            
+                            document.getElementById("txt1").value = "";
+                            document.getElementById("txt2").value = "";
+                           
+                        }
+            </script>
+
+
+   
 </body>
 </html>
