@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .td
+        {
+            background-color: red;
+            color: black;
+        }
+    </style>
 </head>
 <body>
    
@@ -29,12 +36,15 @@
                             let tr = document.createElement("tr");
                             let td1= document.createElement("td");
                             let td2= document.createElement("td");
-
+                            
                             tr.appendChild(td1);
                             tr.appendChild(td2);
 
                             td1.innerHTML =a;
                             td2.innerHTML =b;
+
+                            td1.classList.add("td");
+                            td2.classList.add("td");
 
                             document.getElementById("Abhishek").appendChild(tr);
                             
