@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout</title>
+    <style>
+       .grid-container 
+    {
+        display: grid;
+        
+        grid-template-columns: repeat(3, 0fr); /* Creates 3 columns with equal width */
+        grid-gap: 10px; /* Gap between grid items */
+    }
+
+    .item 
+        {
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+
+        }
+        .item1
+        {
+            grid-row: span 3;
+            grid-template-columns: 100px , 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item item1">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item ">Item 6</div>  
+        
+        <!-- Add more grid items as needed -->
+    </div>
+</body>
+</html>
+
