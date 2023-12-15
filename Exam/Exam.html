@@ -46,8 +46,8 @@
 </head>
 <body>
    
-            <input type ="text" id ="txt1">
-            <input type="text" id="txt2">
+            <input type ="text" id ="txt1" required>
+            <input type="text" id="txt2" required>
             <button value="submit" id ="btn1">Submit</button>
 
             <table id = "Abhishek">
@@ -65,28 +65,54 @@
                         {
                             let a = document.getElementById("txt1").value;
                             let b = document.getElementById("txt2").value;
-                            
-                            let tr = document.createElement("tr");
-                            let td1= document.createElement("td");
-                            let td2= document.createElement("td");
-                            
-                            tr.appendChild(td1);
-                            tr.appendChild(td2);
-
-                            td1.innerHTML =a;
-                            td2.innerHTML =b;
 
                             
 
-                            // tr.classList.add("tr")
-
-                           tr.setAttribute("class",tr);
-
-                            document.getElementById("Abhishek").appendChild(tr);
                             
-                            document.getElementById("txt1").value = "";
-                            document.getElementById("txt2").value = "";
+                            if((a.trim() !="" && b.trim() !=""))
+                            {
+                                    let tr = document.createElement("tr");
+                                    let td1= document.createElement("td");
+                                    let td2= document.createElement("td");
+                                    
+                                    tr.appendChild(td1);
+                                    tr.appendChild(td2);
+
+                                    td1.innerHTML =a;
+                                    td2.innerHTML =b;
+
+                                    
+
+                                    // tr.classList.add("tr")
+
+                                    tr.setAttribute("class",tr);
+
+                                    document.getElementById("Abhishek").appendChild(tr);
+                                    
+                                    document.getElementById("txt1").value = "";
+                                    document.getElementById("txt2").value = ""
+                            }
                            
+                        }
+
+
+                        function ASscii(c)
+                        {
+                            var e;
+                            for(let i =0;i<c.length();i++)
+                            {
+                               let d = c.charAt(i);
+                               let ascii = d.charCodeAt()
+                               if( (ascii>=65 && ascii<=90) ||(ascii>=97 && ascii<=122) )
+                               {
+                                     e = true;
+                               }
+                               else
+                               {
+                                    e= false
+                                    break;
+                               }
+                            }
                         }
             </script>
 
