@@ -65,10 +65,11 @@
                         {
                             let a = document.getElementById("txt1").value;
                             let b = document.getElementById("txt2").value;
-                            debugger
+                            
                             var f = ASscii(a)  
+                            var g = ASscii(b)  
 
-                            if(f==true)
+                            if(f==true && g==true)
                             {
                                     if((a.trim() !="" && b.trim() !=""))
                                     {
@@ -94,6 +95,10 @@
                                             document.getElementById("txt1").value = "";
                                             document.getElementById("txt2").value = ""
                                     }
+                                }
+                                else
+                                {
+                                    alert("not correct data ");
                                 }
                            
                         }
