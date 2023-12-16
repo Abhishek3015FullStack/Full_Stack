@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+          
+
+            int Integer =10;
+            String StringVariable ="Abhishek";
+            Boolean BooleanVariable =true;
+            long LongVariable =1231313213212355;
+
+
+            Console.Write(Integer +"\n"); 
+            Console.Write(StringVariable + "\n");
+            Console.Write(BooleanVariable + "\n");
+            Console.Write(LongVariable + "\n");
+            Console.ReadKey();
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+}
