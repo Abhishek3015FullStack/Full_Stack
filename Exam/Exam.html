@@ -37,10 +37,10 @@
             text-align: center;
             margin-top: 10px, 10px;
         }
-        .nana
+       /* .nana
         {
 
-        }
+        }*/
 
     </style>
 </head>
@@ -56,7 +56,7 @@
                             <th>RollNo</th>
                             <th>Name</th>
                     </tr>
-                </center>s
+                </center>
             </table>
 
             <script>     
@@ -65,33 +65,36 @@
                         {
                             let a = document.getElementById("txt1").value;
                             let b = document.getElementById("txt2").value;
+                            debugger
+                            var f = ASscii(a)  
 
-                            
-
-                            
-                            if((a.trim() !="" && b.trim() !=""))
+                            if(f==true)
                             {
-                                    let tr = document.createElement("tr");
-                                    let td1= document.createElement("td");
-                                    let td2= document.createElement("td");
-                                    
-                                    tr.appendChild(td1);
-                                    tr.appendChild(td2);
+                                    if((a.trim() !="" && b.trim() !=""))
+                                    {
+                                            let tr = document.createElement("tr");
+                                            let td1= document.createElement("td");
+                                            let td2= document.createElement("td");
+                                        
+                                            
+                                            tr.appendChild(td1);
+                                            tr.appendChild(td2);
 
-                                    td1.innerHTML =a;
-                                    td2.innerHTML =b;
+                                            td1.innerHTML =a;
+                                            td2.innerHTML =b;
 
-                                    
+                                            
 
-                                    // tr.classList.add("tr")
+                                            // tr.classList.add("tr")
 
-                                    tr.setAttribute("class",tr);
+                                            tr.setAttribute("class",tr);
 
-                                    document.getElementById("Abhishek").appendChild(tr);
-                                    
-                                    document.getElementById("txt1").value = "";
-                                    document.getElementById("txt2").value = ""
-                            }
+                                            document.getElementById("Abhishek").appendChild(tr);
+                                            
+                                            document.getElementById("txt1").value = "";
+                                            document.getElementById("txt2").value = ""
+                                    }
+                                }
                            
                         }
 
@@ -99,7 +102,7 @@
                         function ASscii(c)
                         {
                             var e;
-                            for(let i =0;i<c.length();i++)
+                            for(let i =0;i<c.length;i++)
                             {
                                let d = c.charAt(i);
                                let ascii = d.charCodeAt()
@@ -113,6 +116,7 @@
                                     break;
                                }
                             }
+                            return e;
                         }
             </script>
 

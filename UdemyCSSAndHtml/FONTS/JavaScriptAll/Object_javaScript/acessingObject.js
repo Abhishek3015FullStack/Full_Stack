@@ -19,4 +19,5 @@ age:25
 
 
 console.log(Student.name);
+console.log(Student.age);
 console.log(Student["name"]);

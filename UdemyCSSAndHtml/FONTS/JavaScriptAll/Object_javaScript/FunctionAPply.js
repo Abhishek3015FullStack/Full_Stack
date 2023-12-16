@@ -17,9 +17,6 @@ TotalFunction.apply(Student2,[10,20,30]);//array as arguement
 TotalFunction.call(Stdent1,10,50,30);
 
 
-
-
-
 var customer1={name:"abhishek" ,age:52,parent_address:"dhule",postcode:424001};
 
 var Function2 = function(a,b,c,d)
@@ -29,13 +26,3 @@ var Function2 = function(a,b,c,d)
 }
 
 Function2.apply(customer1,[0,20,30,40]);
-
-
-
-
-
-
-
-
-
-
