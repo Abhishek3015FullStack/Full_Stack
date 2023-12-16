@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Write your name \n"); // for the write on the console 
+            String a = Console.ReadLine(); // assign the value in the variable 
+            Console.Write(a); // print the value in the console
+            Console.ReadKey(); // console ko rokane ke liye 
+            String a = Console.Read(); //giving the ascii code please check 
+
+
+        }
+    }
+}
