@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        
+            int e = 0;
+            double f = 10000;
+            e = Convert.ToInt16(f);
+            String g = Convert.ToString(e);
+            Console.Write("Convert to String");
+            Console.Write(g);
+            Console.ReadKey();
+
+        }
+    }
+}
