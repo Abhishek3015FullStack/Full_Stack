@@ -37,6 +37,10 @@
             text-align: center;
             margin-top: 10px, 10px;
         }
+        #Master
+        {
+            width: 100%;
+        }
        /* .nana
         {
 
@@ -45,8 +49,93 @@
     </style>
 </head>
 <body>
-        <form action="" method="post">
+    <div>
 
-        </form>
+
+            <label for="First_name1">First_name</label>
+            <input type="text" name="First_name" id="First_name1" value ="" required><br><br><br>
+
+            <label for="Last_name">Last_name</label>
+            <input type="text" name="Last_name" id="Last_name1" value ="" required><br><br><br>
+
+            <label for="Male">Gender</label>
+            <input type="radio" name="Gender" id="Male" value ="Male" checked>
+            <input type="radio" name="Gender" id="FeMale" value ="FeMale" >
+            <input type="radio" name="Gender" id="trans" value ="Trans" ><br><br><br>
+
+            <label for="Country">Country</label>
+            <select id="Country">
+                <option>Select</option>
+                <option id="India" name="Country1">India</option>
+                <option id="USA" name="Country1">USA</option>
+                <option id="UK" name="Country1">UK</option>
+            </select><br><br><br>
+
+            <label for="State">State</label>
+            <select id="State">
+                    <option>Select</option>
+                    <option id="Maharashtra" name="State1">Maharashtra</option>
+                    <option id="Gujraat" name="State1">Gujraat</option>
+                    <option id="Rajasthan" name="State1">Rajasthan</option>
+            </select><br><br><br>
+
+            <label for="City">City</label    >
+            <select id="City">
+                <option>Select</option>
+                <option id="Dhule" name="City1">Dhule</option>
+                <option id="Navapur" name="City1" > Navapur</option>
+                <option id="Surat" name="City1">Surat</option>
+            </select><br><br><br>
+
+            <label for="Singing">Hobbies</label><br>
+            <input type="checkbox" name="Singing" id="Hobbies" value="Singing">Singing<br><br>
+            <input type="checkbox" name="Singing" id="Hobbies" value="Dancing">Dancing<br><br>
+            <input type="checkbox" name="Singing" id="Hobbies" value="Cricket">Cricket<br><br>
+            <input type="checkbox" name="Singing" id="Hobbies" value="Travelling">Travelling<br><br>
+            <input type="checkbox" name="Singing" id="Hobbies" value="Drivering">Drivering<br><br>
+
+
+            <input type="submit" name="Submit" value="Submit" id="Submit1">
+    </div>            
+    <div>
+            <table border="1" cellspacing="1" id="Master">
+                    <tr>
+                            <th>First_name</th>
+                            <th>Last_name</th>
+                            <th>Gender</th>
+                            <th>Country</th>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>Hobbies</th>
+                            <th>Action</th>
+                    </tr>
+
+            </table>
+    </div>
+            
+      
+
+        <script>
+                document.getElementById("Submit1").addEventListener("click" ,sample);
+                function sample()
+                {
+                    console.log(document.getElementById("First_name1").value);
+                    console.log(document.getElementById("Last_name1").value);
+                    var Gender = document.querySelector('input[name="Gender"]:checked').value;
+                    console.log(Gender);
+
+                    console.log(document.getElementById("Country").value);
+                    console.log(document.getElementById("State").value);
+                    console.log(document.getElementById("City").value);
+
+                   
+                    var hobbies = document.querySelectorAll('input[name="Singing"]:checked');
+                    hobbies.forEach(function (checkbox)
+                    {   
+                        console.log(checkbox.value);
+                    });
+                    
+                }
+        </script>
 </body>
 </html>
