@@ -1,0 +1,30 @@
+﻿Details
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <table>
+                <tr>
+                        <th>ItemsId</th>
+                        <th>Product name</th>
+                        <th>Price </th>
+
+                </tr>
+                <tr>
+                    <td>@ViewBag.Macthing.ItemsId</td>
+                    <td>@ViewBag.Macthing.ItemsName</td>
+                    <td>@ViewBag.Macthing.ItemsPrice</td>
+                </tr>
+        </table>
+    </div>
+</body>
+</html>

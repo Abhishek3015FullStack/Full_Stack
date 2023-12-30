@@ -1,0 +1,32 @@
+﻿ItemsId
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <table>
+                <tr>
+                    <th>ItemsId</th>
+                    <th>ItemsName</th>
+                    <th>ItemsPrice</th>
+                </tr>
+                @foreach (var a in ViewBag.Products)
+                {
+                       <tr>
+                            <td><a href="/Items/Details/@a.ItemsId">@a.ItemsId</a></td>
+                            <td><a href="/Items/Details/@a.ItemsId"> @a.ItemsName</a></td>
+                            <td><a href="/Items/Details/@a.ItemsId"> @a.ItemsPrice</a></td>
+                       </tr>
+                }
+        </table>
+    </div>
+</body>
+</html>
