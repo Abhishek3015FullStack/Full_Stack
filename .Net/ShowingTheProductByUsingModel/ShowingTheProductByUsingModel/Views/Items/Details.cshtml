@@ -1,4 +1,7 @@
 ﻿Details
+@model ShowingTheProductByUsingModel.Models.Items
+
+
 @{
     Layout = null;
 }
@@ -20,9 +23,9 @@
 
                 </tr>
                 <tr>
-                    <td>@ViewBag.Macthing.ItemsId</td>
-                    <td>@ViewBag.Macthing.ItemsName</td>
-                    <td>@ViewBag.Macthing.ItemsPrice</td>
+                    <td>@Model.ItemsId</td>
+                    <td>@Model.ItemsName</td>
+                    <td>@Model.ItemsPrice</td>
                 </tr>
         </table>
     </div>

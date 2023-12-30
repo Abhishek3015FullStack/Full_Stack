@@ -19,9 +19,8 @@ namespace ShowingTheProductByUsingModel.Controllers
                 new Items(){ItemsId=3, ItemsName="Abhishek3",ItemsPrice=5253}
 
             };
-            ViewBag.Products = items1;
-
-            return View();
+           
+            return View(items1);
         }
         public ActionResult Details(int id)
         {
@@ -39,8 +38,8 @@ namespace ShowingTheProductByUsingModel.Controllers
                     matchingProduct = a;
                 }
             }
-            ViewBag.Macthing = matchingProduct;
-            return View();
+           
+            return View(matchingProduct);
         }
     }
 }

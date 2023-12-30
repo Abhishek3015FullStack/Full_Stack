@@ -1,4 +1,6 @@
-﻿ItemsId
+﻿@model List<ShowingTheProductByUsingModel.Models.Items>
+
+ItemsId
 @{
     Layout = null;
 }
@@ -18,7 +20,7 @@
                     <th>ItemsName</th>
                     <th>ItemsPrice</th>
                 </tr>
-                @foreach (var a in ViewBag.Products)
+                @foreach (var a in Model)
                 {
                        <tr>
                             <td><a href="/Items/Details/@a.ItemsId">@a.ItemsId</a></td>
