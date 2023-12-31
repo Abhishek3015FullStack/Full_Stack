@@ -1,0 +1,36 @@
+﻿@model List<Model.Models.Products>
+
+
+@{
+    Layout = null;
+}
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <table>
+                <tr>
+                    <th>ProductId</th>
+                    <th>ProductName</th>
+                    <th>ProductPrice</th>
+                </tr>
+                @foreach (var a in Model)
+                {
+                    <tr>
+                            <td><a href="/home/Details?id=@a.ProductId">@a.ProductId</a></td>
+                            <td>@a.ProductName</td>
+                            <td>@a.ProductPrice</td>
+
+                    </tr>
+                }
+
+        </table>
+    </div>
+</body>
+</html>
