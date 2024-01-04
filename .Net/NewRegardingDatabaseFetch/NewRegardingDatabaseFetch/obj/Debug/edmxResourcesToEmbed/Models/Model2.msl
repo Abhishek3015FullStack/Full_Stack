@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AbhishekModel1StoreContainer" CdmEntityContainer="AbhishekEntities1">
+    <EntitySetMapping Name="Ambe_Mata">
+      <EntityTypeMapping TypeName="AbhishekModel1.Ambe_Mata">
+        <MappingFragment StoreEntitySet="Ambe_Mata">
+          <ScalarProperty Name="Bhakt" ColumnName="Bhakt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="AbhishekModel1.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

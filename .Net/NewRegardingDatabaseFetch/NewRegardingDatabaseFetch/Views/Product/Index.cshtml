@@ -1,0 +1,16 @@
+﻿@model List<NewRegardingDatabaseFetch.Models.Product>
+    <table>
+            <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Price</td>
+            </tr>
+        @foreach(var item in Model)
+        { 
+            <tr>
+                    <td>@item.id</td>
+                    <td>@item.name</td>
+                    <td>@item.price</td>
+            </tr>
+        }
+    </table>
