@@ -1,0 +1,26 @@
+﻿@model RetriveFromDatabase.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>details</title>
+</head>
+<body>
+    <div> 
+        <h1>Product Id</h1>
+        <h1>@Model.productId</h1>
+
+        <h1>Product Name</h1>
+        <h1>@Model.productName</h1>
+
+        <h1>Product Price</h1>
+        <h1>@Model.productPrice</h1>
+    </div>
+    <a href="/home/index">Back to Details</a>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        
+            <input type = "text" id ="1">
+            <input type = "text" id ="2">
+            <input type="button" id = "3" value="submit ">
+
+    </form>
+    <script>
+           
+            document.getElementById("3").addEventListener("click",sample)
+            
+            function sample()
+            {
+                var  a = document.getElementById("1").value;
+                var b = document.getElementById("2").value;
+                // console.log(a);
+                // console.log(b);
+
+                var c = {
+                    firstValue: a,
+                    SecondValue:b
+                    
+                };
+                console.log(c.firstValue);
+                console.log(c.SecondValue);
+
+
+
+                document.getElementById("1").value = "";
+                document.getElementById("2").value = "";
+
+            }
+    </script>
+</body>
+</html>

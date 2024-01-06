@@ -1,0 +1,31 @@
+﻿@model List<RetriveFromDatabase.Models.Brand>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index1</title>
+</head>
+<body>
+    <div> <table>
+            <tr>
+                    <th>brandId</th>
+                    <th>brandName</th>
+                    <th>BrandPrice</th>
+            </tr>
+        @foreach (var item in Model)
+        {
+               <tr>
+                   <td>@item.BrandId</td>
+                   <td>@item.BrandName</td>
+                   <td>@item.Price</td>
+               </tr>
+        }
+        </table>
+    </div>
+</body>
+</html>

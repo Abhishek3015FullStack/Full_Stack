@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.34112.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetriveFromDatabase", "RetriveFromDatabase\RetriveFromDatabase.csproj", "{0706AEE6-8A02-47A7-8E9D-07417ECDE7CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0706AEE6-8A02-47A7-8E9D-07417ECDE7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0706AEE6-8A02-47A7-8E9D-07417ECDE7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0706AEE6-8A02-47A7-8E9D-07417ECDE7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0706AEE6-8A02-47A7-8E9D-07417ECDE7CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E75AB0F3-DC10-41E9-B42D-D765A5C8C036}
+	EndGlobalSection
+EndGlobal

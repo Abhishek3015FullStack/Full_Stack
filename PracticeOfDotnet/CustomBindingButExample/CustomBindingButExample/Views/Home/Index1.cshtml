@@ -1,0 +1,30 @@
+﻿@model  CustomBindingButExample.Models.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index1</title>
+</head>
+<body>
+   
+        <tabel>
+               <tr>
+                   <th>StudentID    </th>
+                   <td>@Model.StudentID</td> <br/>
+
+                   <th>StudentName </th>
+                   <td>@Model.StudentName</td><br />
+
+                   <th>Address </th>
+                   <td>@Model.Address</td><br />
+               </tr>
+
+        </tabel>
+   
+</body>
+</html>

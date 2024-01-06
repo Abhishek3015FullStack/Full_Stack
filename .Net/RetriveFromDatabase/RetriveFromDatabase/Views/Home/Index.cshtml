@@ -1,0 +1,58 @@
+﻿@model List<RetriveFromDatabase.Models.Product>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        table {
+            cellspacing:0px;
+            border:5px solid black;
+        }
+        /*td {
+                border: 5px solid black;
+        }*/   
+        tr {
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        <h1><a href="/Home/Index1">Brand</a></h1>
+
+        <div>
+            <form action="/home/index" >
+                <label>Search</label>
+                <input type="text" value="@ViewBag.search" name="search"/>
+                <input type="submit"  value="Submit"/>
+            </form>
+
+
+        </div>
+        <table>
+            <tr>
+                <th>PrdouctID</th>
+                <th>PrdouctName</th>
+                <th>productPrice</th>
+            </tr>
+            @foreach (var a in Model)
+            {
+            <tr>
+                <td><a href="/home/details?id=@a.productId">@a.productId</a></td>
+                <td>@a.productName</td>
+                <td>@a.productPrice</td>
+
+
+            </tr>
+            }
+        </table>
+    </div>
+
+</body>
+</html>
