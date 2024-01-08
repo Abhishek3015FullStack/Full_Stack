@@ -1,0 +1,44 @@
+﻿@model List<InsertDataInDatabase.Models.Product>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <a href="/product/AddProduct">AddProduct</a>
+
+        
+    </div>
+    <div>
+            <table>
+                    <tr>
+                            <td>Product id</td>
+                            <td>Product Name</td>
+                            <td>Product price</td>
+                            <td>Active</td>
+                            <td>type</td>
+                            <td>date</td>
+                    </tr>
+                @foreach (var item in Model)
+                {
+                      <tr>
+                            <td>@item.productId</td>
+                            <td>@item.productName</td>
+                            <td>@item.productPrice</td>
+                            <td>@item.Active</td>
+                            <td>@item.date</td>
+                            <td>@item.Type</td>
+                            <td><a href="/product/edit?id=@item.productId">Edit</a></td>
+                      </tr>
+                }
+            </table>
+    </div>
+</body>
+</html>

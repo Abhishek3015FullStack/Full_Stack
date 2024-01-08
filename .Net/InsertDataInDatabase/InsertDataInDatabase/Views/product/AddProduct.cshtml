@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddProduct</title>
+</head>
+<body>
+    <div> 
+        <form action="/product/AddProduct" method="post">
+                <input type="text" name="productId" />
+                <input type="text" name="productname" />
+                <input type="text" name="productPrice" />
+                <input type="checkbox" name="active" />
+                <select name="Type">
+                        <option>Cloths</option>
+                        <option>Fashion</option>
+                        
+                </select>
+                <input type="date"  name="date"/>  
+                <input type="submit" name="submit" value="Submit" /> 
+                
+        </form>
+    </div>
+</body>
+</html>
