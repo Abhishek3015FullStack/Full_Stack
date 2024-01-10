@@ -1,0 +1,35 @@
+﻿@model List<InsertandRetrive.Models.Product>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <table cellspacing:"1px" border="1px">
+                <tr>
+                        <th>Id</th>
+                        <th>Product name</th>
+                        <th>Price</th>
+                </tr>
+            @foreach(var item in Model)
+            {
+                <tr>
+                        <td>@item.id</td>
+                        <td>@item.name</td>
+                        <td>@item.price</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div>
+            <a href="/product/add">insert</a>
+    </div>
+</body>
+</html>

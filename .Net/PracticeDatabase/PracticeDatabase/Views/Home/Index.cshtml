@@ -1,0 +1,30 @@
+﻿@model List<PracticeDatabase.Models.Product>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>name </td>
+            <td>price</td>
+        </tr>
+        @foreach(var item in Model)
+        { 
+            <tr>
+                    <td>@item.id</td>
+                    <td>@item.name</td>
+                    <td>@item.price</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
