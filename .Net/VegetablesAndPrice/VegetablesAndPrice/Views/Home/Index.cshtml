@@ -1,0 +1,32 @@
+﻿@model List<VegetablesAndPrice.Models.Vegies>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <table>
+               <tr>
+                    <th>id</th>
+                   <th>name</th>
+                   <th>price</th>
+               </tr>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                            <td>@item.id</td>
+                            <td>@item.name</td>
+                            <td>@item.price</td>
+                    </tr>
+                }
+        </table>
+    </div>
+</body>
+</html>
