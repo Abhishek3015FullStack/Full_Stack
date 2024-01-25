@@ -13,7 +13,7 @@ namespace InsertandRetrive.Controllers
         public ActionResult Index()
         {
             DbContext1 a1 = new DbContext1();
-            List<Product> l1 = a1.product.ToList();
+            List<Product> l1 = a1.products.ToList();
             return View(l1);
         }
     }

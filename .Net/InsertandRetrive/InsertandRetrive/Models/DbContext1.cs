@@ -12,6 +12,6 @@ namespace InsertandRetrive.Models
         public DbContext1():base("AmbeMata")
         { 
         }
-        public DbSet<Product> product { get; set; }
+        public DbSet<Product> products { get; set; }
     }
 }

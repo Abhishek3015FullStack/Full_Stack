@@ -19,7 +19,7 @@ namespace InsertandRetrive.Controllers
         public ActionResult add(Product p1)
         {
             DbContext1 a1 = new DbContext1();
-            a1.product.Add(p1);
+            a1.products.Add(p1);
             a1.SaveChanges();
 
 
