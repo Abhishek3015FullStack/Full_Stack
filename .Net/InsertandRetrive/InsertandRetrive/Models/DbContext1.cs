@@ -8,9 +8,10 @@ namespace InsertandRetrive.Models
 {
     
     public class DbContext1:DbContext
-    {
+    {   
         public DbContext1():base("AmbeMata")
-        { 
+        {  
+
         }
         public DbSet<Product> products { get; set; }
     }
