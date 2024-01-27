@@ -1,0 +1,36 @@
+﻿@model List<FullAndFinalApplication.Models.Product>
+
+{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <table>
+            <tr>
+                 <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+               
+            </tr>
+            @foreach(var a in Model)
+            {
+                <tr>
+                        <td>@a.Product_id</td>
+                        <td>@a.Product_name</td>
+                        <td><a href="/home/ProductById?pid=@a.Pid">@a.Product_price</a></td>
+                        <td><a href="/home/deleteRecords?pid=@a.Pid">delete</a></td>
+                </tr>
+            }
+        </table>
+        <a href="/home/InsertData">Insert the data</a>
+    </div>
+</body>
+</html>

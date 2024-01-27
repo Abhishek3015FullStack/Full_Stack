@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AbhishekNewModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Category_id" />
+    </Key>
+    <Property Name="CId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category_id" Type="Int32" Nullable="false" />
+    <Property Name="Category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Category_price" Type="Int32" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Products__Catego__7C4F7684" FromRole="Categorys" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Product_id" />
+    </Key>
+    <Property Name="Pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_id" Type="Int32" Nullable="false" />
+    <Property Name="Product_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Product_price" Type="Int32" />
+    <Property Name="Category_id" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Products__Catego__7C4F7684" FromRole="Products" ToRole="Categorys" />
+  </EntityType>
+  <Association Name="FK__Products__Catego__7C4F7684">
+    <End Role="Categorys" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorys">
+        <PropertyRef Name="Category_id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="Category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AbhishekNewEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorys" EntityType="Self.Category" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <AssociationSet Name="FK__Products__Catego__7C4F7684" Association="Self.FK__Products__Catego__7C4F7684">
+      <End Role="Categorys" EntitySet="Categorys" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,24 @@
+﻿@model FullAndFinalApplication.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>InsertData</title>
+</head>
+<body>
+    <div>
+        <form action="/home/InsertData" method="post">
+            <input type="text" name="Product_id"  placeholder="Product_id"/>
+            <input type="text" name="Product_name"  placeholder="Product_name"/>
+            <input type="text" name="Product_price" placeholder="Product_price"/>
+            <input type="text" name="Category_id" placeholder="Category_id"/>
+            <input type="submit"/>
+        </form>
+    </div>
+</body>
+</html>
