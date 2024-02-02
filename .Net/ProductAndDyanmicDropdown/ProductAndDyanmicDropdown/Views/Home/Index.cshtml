@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+
+            </tr>
+            @foreach (var a in Model)
+            {
+                <tr>
+                    <td>@a.Product_id</td>
+                    <td>@a.Product_name</td>
+                    <td><a href="/home/ProductById?pid=@a.Pid">@a.Product_price</a></td>
+                    <td>@a.cat.Category_name</td>
+                    <td>@a.cat.Category_id</td>
+                    <td>@a.cat.Category_price</td>
+                    <td><button type="button" onclick="location.href='/home/deleteRecords?pid=@a.Pid'">Delete</button></td>
+                </tr>
+            }
+        </table>
+        <a href="/home/InsertData">Insert the data</a>
+        <a href="/home/Category">Category Display</a>
+    </div>
+</body>
+</html>

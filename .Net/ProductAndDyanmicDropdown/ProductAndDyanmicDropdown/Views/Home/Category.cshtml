@@ -1,0 +1,35 @@
+﻿@model List<ProductAndDyanmicDropdown.Models.Category>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Category</title>
+</head>
+<body>
+    <div> 
+        <table>
+                <tr>
+                       <th>Id</th>
+                        <th>name</th>
+                        <th>price</th>
+                </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                        <td>@item.Category_id</td>
+                        <td>@item.Category_name</td>
+                        <td>@item.Category_price</td>
+                        <td>@item.Product_id</td>
+                        <td></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

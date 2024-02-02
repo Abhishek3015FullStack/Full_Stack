@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <div>
+        <label for="nameField">Name</label>
+        <input type="text" name="First name"  id="nameField" onblur="checking()">
+        <span id="nameError"></span>
+    </div>
+
+    <div>
+        <label for="Lastname">Last Name</label>
+        <input type="text" name="Lastname"  id="LastName" onblur="LastName()">
+        <span id="LastnameError"></span>
+    </div>
+
+
+        <input type="submit">
+
+    </form>
+    <script>
+            function checking()
+            {
+                    var name = document.getElementById("nameField").value;
+                    // alert(name);
+
+                    var nameCheck =/^[a-zA-Z ]+$/;
+
+                    if(nameCheck.test(name))
+                    {
+
+                    }
+                    else
+                    {
+                        document.getElementById("nameError").innerHTML ="name is incorrect ";
+                        return false ;
+                    }
+            }
+            function LastName()
+            {
+                debugger
+                var LastNameCheck = /^[a-zA-Z]+$/;
+                var LastName1 = document.getElementById("LastName").value();
+                if(LastNameCheck.test(LastName1))
+                {
+
+                }
+                else
+                {
+                    document.getElementById("LastnameError").innerHTML="Number is showing ";
+                    return false;
+                }
+
+            }
+    </script>
+</body>
+</html>

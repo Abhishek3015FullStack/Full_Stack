@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ProductById</title>
+</head>
+<body>
+    <div>
+        <form action="/home/updateRecord" method="post">
+            <input type="text" value="@Model.Product_id" name="Product_id" />
+            <input type="text" value="@Model.Product_name" name="Product_name" />
+            <input type="text" value="@Model.Product_price" name="Product_price" />
+            <input type="text" value="@Model.Category_id" name="Category_id" />
+            <input type="hidden" value="@Model.Pid" name="Pid" />
+            <input type="submit" value="Submit" />
+
+        </form>
+    </div>
+</body>
+</html>

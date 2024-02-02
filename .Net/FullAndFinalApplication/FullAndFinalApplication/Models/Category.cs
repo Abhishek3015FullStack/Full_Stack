@@ -15,7 +15,7 @@ namespace FullAndFinalApplication.Models
         public string Category_name { get; set; }
         public int Category_price { get; set; }
 
-       
+       public virtual ICollection<Product> Products { get; set; }
         
     }
 }

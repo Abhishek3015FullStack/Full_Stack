@@ -1,0 +1,149 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="A1">
+      
+
+    </div><br />
+
+   
+
+    <div id="A3">
+        <br />
+        <br /><p>Abhishek 2</p><br />
+    </div>
+    <div id="A2">
+        <button id="Hide">Hide</button>
+    </div>
+    <div>
+            <p id="CssiSchanging">Css is change afetr click on the button of the css adding and multiple classes as well please check </p>
+            <button id="Css">CSS Adding </button>
+    </div>
+    <div>
+        <button id="color">Color</button>
+        <button id="white">white</button> <br />
+        <br />
+        <img src="https://media.istockphoto.com/id/1404885250/photo/mahabaleshwar-and-panchagani-nature-and-hill-areas.jpg?s=1024x1024&w=is&k=20&c=fQykGjPmlabwiSYYgvanP97qMZD7dT_8v81iGqWdimU=" id="Abhsiehk" />
+        <button id="HideImage">HideImage</button>
+        <button id="ShowImage">ShowImage</button>
+
+    </div>
+
+    <div>
+        <ul>
+            <li>Abhishek 1</li>
+            <li>Abhishek 2</li>
+            <li>Abhishek 3</li>
+            <li>Abhishek 4</li>
+            <li>Abhishek 5</li>
+            <li>Abhishek 6</li>
+            <li>Abhishek 7</li>
+
+
+        </ul>
+        <button id="Even">Even</button>
+
+        <button id="Odd">Odd</button>
+
+        <button id="lastChild">lastChild</button>
+
+
+        <button id="Firstchild">Firstchild</button>
+
+        <button id="ThirdChild">ThirdChild</button>
+
+    </div>
+
+    <script>
+
+        var a = 0;
+        $(document).ready(function () {
+            $('#A1').text("Abhishek");
+
+
+            $('#Hide').click(function () {
+
+                if (a == 0) {
+                    $('p:first').hide();
+                    a = 1;
+                }
+                else {
+                    $('p:first').show();
+                    a = 0;
+                }
+
+
+
+
+
+            });
+
+            $('#Css').click(function () {
+                $('#CssiSchanging').css({ "color": "white", "background-color": "green" })
+            });
+
+
+            $('#color').click(function () {
+
+
+                $('*').css("backgroundColor", "blue");
+            });
+
+
+            $('#white').click(function () {
+                $('*').css("background-color", "white")
+            });
+
+
+
+            $('#HideImage').click(function () {
+                $('#Abhsiehk').hide("slow");
+            });
+
+
+            $('#ShowImage').click(function () {
+                $('#Abhsiehk').show("slow");
+            });
+
+
+            $('#Even').click(function () {
+                $('li:even').css("color", "red");
+            });
+
+
+            $('#Odd').click(function () {
+                $('li:odd').css("color", "green");
+            });
+
+
+            $('#lastChild').click(function () {
+                debugger
+                $('li:last-child').css("background-color", "green");
+            });
+
+            $('#Firstchild').click(function () {
+                $('li:first-child').css("background-color", "green");
+            });
+
+            $('#ThirdChild').click(function () {
+                $('li:nth-child(3)').css("color", "blue");
+            });
+
+        });
+    </script>
+    
+    </script>
+</body>
+</html>

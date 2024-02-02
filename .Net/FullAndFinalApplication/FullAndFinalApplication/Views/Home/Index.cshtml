@@ -22,12 +22,13 @@
             </tr>
             @foreach(var a in Model)
             {
-                <tr>
-                        <td>@a.Product_id</td>
-                        <td>@a.Product_name</td>
-                        <td><a href="/home/ProductById?pid=@a.Pid">@a.Product_price</a></td>
-                        <td><a href="/home/deleteRecords?pid=@a.Pid">delete</a></td>
-                </tr>
+            <tr>
+                <td>@a.Product_id</td>
+                <td>@a.Product_name</td>
+                <td><a href="/home/ProductById?pid=@a.Pid">@a.Product_price</a></td>
+                <td></td>
+                <td><button type="button" onclick="location.href='/home/deleteRecords?pid=@a.Pid'">Delete</button></td>
+            </tr>
             }
         </table>
         <a href="/home/InsertData">Insert the data</a>

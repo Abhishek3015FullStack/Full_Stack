@@ -14,7 +14,13 @@
     <div>
         <form action="/home/InsertData" method="post">
             <input type="text" name="Product_id"  placeholder="Product_id"/>
-            <input type="text" name="Product_name"  placeholder="Product_name"/>
+            <!--<input type="text" name="Product_name"  placeholder="Product_name"/>-->
+            <select name="Product_name">
+                <option value="Product1" name>Product 1</option>
+                <option value="Product2">Product 2</option>
+            </select>
+
+
             <input type="text" name="Product_price" placeholder="Product_price"/>
             <input type="text" name="Category_id" placeholder="Category_id"/>
             <input type="submit"/>

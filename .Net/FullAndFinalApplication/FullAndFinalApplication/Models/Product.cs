@@ -16,6 +16,7 @@ namespace FullAndFinalApplication.Models
         public int Product_price { get; set; }
         public int Category_id { get; set; }
         public int Pid { get; set; }
+        public virtual Category cat { set; get; }
 
       
     }

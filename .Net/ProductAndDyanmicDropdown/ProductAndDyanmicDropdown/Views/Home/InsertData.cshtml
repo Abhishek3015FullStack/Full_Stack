@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>InsertData</title>
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+</head>
+<body>
+    <div>
+        <form action="/home/InsertData" method="post">
+            <input type="text" name="Product_id" placeholder="Product_id" />
+            <!--<input type="text" name="Product_name"  placeholder="Product_name"/>-->
+            <select name="Product_name">
+                <option value="Product1" name>Product 1</option>
+                <option value="Product2">Product 2</option>
+            </select>
+
+            <select>
+                    <option>Please select</option>
+                    @foreach (var a in ViewBag.category)
+                    {
+                        <option> <input type="checkbox" />@a.Category_name</option>
+                    }
+            </select>
+
+            <input type="text" name="Product_price" placeholder="Product_price" />
+            <input type="text" name="Category_id" placeholder="Category_id" />
+            <input type="submit" />
+        </form>
+    </div>
+</body>
+</html>
