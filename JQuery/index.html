@@ -89,25 +89,41 @@
                     $(' .Blue,.red').show("slow");
                 });
                 
-                $('#checkingKeyup').keypress(function(event)
+                $('#checkingKeyup').keyup(function(event)
                 {
-                    var checkingKeyup1 = document.getElementById("checkingKeyup").value;
-                    var regx = /^[A-Za-z]$/;
-                    if(event.keyCode==13 && (regx.test(checkingKeyup1)))
+                    
+                    var a = regex();
+                    var regx = /^[A-Za-z]+$/;
+                    if(event.keyCode==13 && a== true)
                     {
                        
                         $('#checkingKeyup').css({"background-color":"green"});
+                       
+
                     }
-                    else
-                    {
-                        document.getElementById("").innerHTML= "wrong input";
-                    }
+                
                 });
 
+                
                 //key up -> jab key press hoke upar aayegi tab wo function call hoga
                 //key press -> jab wo key press hogi usi ke sath function call hoga 
                 //key down -> jab wo key down jayega tab usi ke sath function call hoga
+                function regex()
+                {
+                    var checkingKeyup1 = document.getElementById("checkingKeyup").value;
+                    var regx = /^[A-Za-z]+$/;
+                    if(regx.test(checkingKeyup1))
+                    {
+                        document.getElementById("ErrorForID").innerHTML= " ";
+                        return true;
+                    }
+                    else
+                    {
+                        document.getElementById("ErrorForID").innerHTML= "Wrong input is added ";
+                        return false;
+                    }
 
+                }
 
 
             });
