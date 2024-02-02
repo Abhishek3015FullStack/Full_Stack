@@ -31,10 +31,17 @@
             <span id="EmailError"></span>
     </div>
 
+    <div>
+        <label for= "PasswordValidation">Password</label>
+        <input type="text" name="PasswordValidation" id= "PasswordValidation" onblur="PasswordValidation1()">
+        <span id="PasswordValidationError"></span>
+    </div>
+
         <input type="submit">
 
     </form>
     <script>
+         
         
             function checking()
             {
@@ -81,7 +88,7 @@
             function ContactNumberValidation()
             {
                 debugger
-                var ContactNumberChecking = /^[0-9]{10}$/
+                var ContactNumberChecking = /^[0-9]{10,12}$/
                 var ContactNumber = document.getElementById("ContactNumber").value;
                 if(ContactNumber!=null)
                 {
@@ -96,18 +103,44 @@
                     }
                 }
             }
+            
             function EmailErrorValidation()
             {
-                debugger
-                var EmailChecking = /^[a-zA-Z0-9_]@[a-zA-Z]{2,10}.[a-zA-Z]{0,3}.[a-zA-Z]$/
+                
+                var EmailChecking = /^[a-zA-Z.]{3,30}@[A-Za-z]{3,10}.[a-zA-Z]{2,10}.[A-Za-z]{2,10}$/;
                 var Email1 = document.getElementById("Email").value;
                 if(Email1!=null)
                 {
-                    document.getElementById("EmailError").innerHTML=" ";
+                    
+                    if(EmailChecking.test(Email1))
+                    {
+                        document.getElementById("EmailError").innerHTML=" ";
+                    }
+                    else
+                    {
+                        
+                        document.getElementById("EmailError").innerHTML="Email is not Valid";
+                    }
                 }
-                else
+
+                
+            }
+            
+            function PasswordValidation1()
+            {
+                debugger
+                var passwordFields = document.getElementById("PasswordValidation").value;
+                var PasswordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*_])[A-Za-z0-9!@#$%^&*()_+]{8,}$/
+                if(passwordFields!=null)
                 {
-                    document.getElementById("EmailError").innerHTML="please insert the valid email ";
+                    if(PasswordRegex .test(passwordFields))
+                    {
+                        document.getElementById("PasswordValidationError").innerHTML=" ";
+                    }
+                    else
+                    {
+                        document.getElementById("PasswordValidationError").innerHTML="wrong Password";
+                    }
                 }
             }
     </script>
