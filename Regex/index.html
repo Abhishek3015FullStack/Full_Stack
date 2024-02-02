@@ -15,39 +15,60 @@
 
     <div>
         <label for="Lastname">Last Name</label>
-        <input type="text" name="Lastname"  id="LastName" onblur="LastName()">
+        <input type="text" name="Lastname"  id="LastName" onblur="LastNamefields()">
         <span id="LastnameError"></span>
     </div>
+    <div>
+            <label for="Contact">Conatct number</label>
+            <input type="text" name="Contact" id ="ContactNumber" onblur="ContactNumberValidation()">
+            <span id="ContactError"></span>
 
+    </div>
+
+    <div>
+            <label for="Email">Email</label>
+            <input type="text" name="Email" id="Email" onblur="EmailErrorValidation()"/>
+            <span id="EmailError"></span>
+    </div>
 
         <input type="submit">
 
     </form>
     <script>
+        
             function checking()
             {
+                    
                     var name = document.getElementById("nameField").value;
+                   
+                    if(name!=null)
+                    {
                     // alert(name);
 
-                    var nameCheck =/^[a-zA-Z ]+$/;
+                        var nameCheck =/^[a-zA-Z ]+$/;
 
-                    if(nameCheck.test(name))
-                    {
-
-                    }
-                    else
-                    {
-                        document.getElementById("nameError").innerHTML ="name is incorrect ";
-                        return false ;
+                        if(nameCheck.test(name))
+                        {
+                            document.getElementById("nameError").innerHTML =" ";
+                            return true;
+                        }
+                        else
+                        {
+                            
+                            document.getElementById("nameError").innerHTML ="name is incorrect ";
+                            return false ;
+                        }
                     }
             }
-            function LastName()
+            function LastNamefields()
             {
-                debugger
+                
                 var LastNameCheck = /^[a-zA-Z]+$/;
-                var LastName1 = document.getElementById("LastName").value();
+                var LastName1 = document.getElementById("LastName").value;
                 if(LastNameCheck.test(LastName1))
-                {
+                { 
+                    document.getElementById("LastnameError").innerHTML =" ";
+                    return true;
 
                 }
                 else
@@ -56,6 +77,38 @@
                     return false;
                 }
 
+            }
+            function ContactNumberValidation()
+            {
+                debugger
+                var ContactNumberChecking = /^[0-9]{10}$/
+                var ContactNumber = document.getElementById("ContactNumber").value;
+                if(ContactNumber!=null)
+                {
+                    var contact = document.getElementById("ContactNumber").value;
+                    if(ContactNumberChecking.test(contact))
+                    {
+                        document.getElementById("ContactError").innerHTML=" ";
+                    }
+                    else
+                    {
+                        document.getElementById("ContactError").innerHTML="not the indian number ";
+                    }
+                }
+            }
+            function EmailErrorValidation()
+            {
+                debugger
+                var EmailChecking = /^[a-zA-Z0-9_]@[a-zA-Z]{2,10}.[a-zA-Z]{0,3}.[a-zA-Z]$/
+                var Email1 = document.getElementById("Email").value;
+                if(Email1!=null)
+                {
+                    document.getElementById("EmailError").innerHTML=" ";
+                }
+                else
+                {
+                    document.getElementById("EmailError").innerHTML="please insert the valid email ";
+                }
             }
     </script>
 </body>
