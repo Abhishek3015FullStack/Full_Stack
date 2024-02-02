@@ -43,12 +43,18 @@
         <div class="Blue"></div>
         <div class="Blue"></div>
         <div class="Blue"></div>
-        <div class="red"></div>
+        <div class="red"></div> 
         <div class="red"></div>
         <div class="red"></div>
         </div>
         <div id="ClickEventUnderstanding">
             <button id="ClickEventUnderstanding" value="Click">Click</button>
+        </div>
+
+        <div>
+            <lable for="checkingTheKeyEvent">Name</lable>
+            <input type="text" name="checkingTheKeyEvent" id="checkingKeyup">
+            <span id="ErrorForID"></span>
         </div>
         <script>
             $(document).ready(function(){
@@ -83,6 +89,26 @@
                     $(' .Blue,.red').show("slow");
                 });
                 
+                $('#checkingKeyup').keypress(function(event)
+                {
+                    var checkingKeyup1 = document.getElementById("checkingKeyup").value;
+                    var regx = /^[A-Za-z]$/;
+                    if(event.keyCode==13 && (regx.test(checkingKeyup1)))
+                    {
+                       
+                        $('#checkingKeyup').css({"background-color":"green"});
+                    }
+                    else
+                    {
+                        document.getElementById("").innerHTML= "wrong input";
+                    }
+                });
+
+                //key up -> jab key press hoke upar aayegi tab wo function call hoga
+                //key press -> jab wo key press hogi usi ke sath function call hoga 
+                //key down -> jab wo key down jayega tab usi ke sath function call hoga
+
+
 
             });
         </script>
