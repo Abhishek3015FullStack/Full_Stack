@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .main{
+
+            display: flex;
+        }
+        .red{
+            height:450px;
+            width: 200px;
+            background-color: red;
+        }
+        .blue{
+            height:450px;
+            width: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="red"></div>
+        <div class="blue"></div>
+        <div class="red"></div>
+        <div class="blue"></div>
+        <div class="red"></div>
+        <div class="blue"></div>
+    </div>
+    <button id="AS">Submit</button>
+    <script>
+            $(document).ready(function()
+            {
+                $('#AS').click(function()
+                {
+                    
+                    $('.main').toggle('slow');
+                });
+            });
+    </script>
+</body>
+</html>

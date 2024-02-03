@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <form>
@@ -27,7 +28,7 @@
 
     <div>
             <label for="Email">Email</label>
-            <input type="text" name="Email" id="Email" onblur="EmailErrorValidation()"/>
+            <input type="text" name="Email" id="Email"/>
             <span id="EmailError"></span>
     </div>
 
@@ -87,7 +88,7 @@
             }
             function ContactNumberValidation()
             {
-                debugger
+                
                 var ContactNumberChecking = /^[0-9]{10,12}$/
                 var ContactNumber = document.getElementById("ContactNumber").value;
                 if(ContactNumber!=null)
@@ -104,31 +105,31 @@
                 }
             }
             
-            function EmailErrorValidation()
-            {
+            // function EmailErrorValidation()
+            // {
                 
-                var EmailChecking = /^[a-zA-Z.]{3,30}[@]{1}[A-Za-z]{3,10}[.]{1}[a-zA-Z]{2,10}.[A-Za-z]{2,10}$/;
-                var Email1 = document.getElementById("Email").value;
-                if(Email1!=null)
-                {
+            //     var EmailChecking = /^[a-zA-Z.]{3,30}[@]{1}[A-Za-z]{3,10}[.]{1}[a-zA-Z]{2,10}.[A-Za-z]{2,10}$/;
+            //     var Email1 = document.getElementById("Email").value;
+            //     if(Email1!=null)
+            //     {
                     
-                    if(EmailChecking.test(Email1))
-                    {
-                        document.getElementById("EmailError").innerHTML=" ";
-                    }
-                    else
-                    {
+            //         if(EmailChecking.test(Email1))
+            //         {
+            //             document.getElementById("EmailError").innerHTML=" ";
+            //         }
+            //         else
+            //         {
                         
-                        document.getElementById("EmailError").innerHTML="Email is not Valid";
-                    }
-                }
+            //             document.getElementById("EmailError").innerHTML="Email is not Valid";
+            //         }
+            //     }
 
                 
-            }
+            // }
             
             function PasswordValidation1()
             {
-                debugger
+                
                 var passwordFields = document.getElementById("PasswordValidation").value;
                 var PasswordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*_])[A-Za-z0-9!@#$%^&*()_+]{8,}$/
                 if(passwordFields!=null)
@@ -142,7 +143,55 @@
                         document.getElementById("PasswordValidationError").innerHTML="wrong Password";
                     }
                 }
+
+              
             }
+            $(document).ready(function()
+                {
+                    
+                    $('#Email').focus(function()
+                    {
+                        var EmailChecking = /^[a-zA-Z.]{3,30}[@]{1}[A-Za-z]{3,10}[.]{1}[a-zA-Z]{2,10}.[A-Za-z]{2,10}$/;
+                        var Email1 = document.getElementById("Email").value;
+                        if(Email1!=null)
+                        {
+                            
+                            if(EmailChecking.test(Email1))
+                            {
+                                document.getElementById("EmailError").innerHTML=" ";
+                            }
+                            else
+                            {
+                                
+                                document.getElementById("EmailError").innerHTML="Email is not Valid";
+                            }
+                        }
+                    });
+
+
+                    
+                    $('#Email').blur(function()
+                    {
+                        var EmailChecking = /^[a-zA-Z.]{3,30}[@]{1}[A-Za-z]{3,10}[.]{1}[a-zA-Z]{2,10}.[A-Za-z]{2,10}$/;
+                        var Email1 = document.getElementById("Email").value;
+                        if(Email1!=null)
+                        {
+                            
+                            if(EmailChecking.test(Email1))
+                            {
+                                document.getElementById("EmailError").innerHTML=" ";
+                            }
+                            else
+                            {
+                                
+                                document.getElementById("EmailError").innerHTML="Email is not Valid";
+                            }
+                        }
+                    });
+
+
+
+                });
     </script>
 </body>
 </html>
