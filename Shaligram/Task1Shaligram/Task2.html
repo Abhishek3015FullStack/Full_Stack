@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+    
+
+        .inter-uniquifier {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings:"slnt" 0;
+        }
+        .container
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 15% 30% 30% 30% 10%;   
+            gap:20px;
+            min-height: 70vh;
+        }
+        .Header
+        {
+           grid-column-start: 2;
+           grid-column-end: 5;
+           /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+
+        }
+        .center
+        {
+            text-align: center;
+            justify-content: center;
+
+        }
+        .Section1
+        {
+            grid-column-start: 2;
+            grid-column-end: 5;
+            /* border: 2px solid black; */
+            background-color:  #F5C0AC;
+            font-family: Inter;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 230px;
+            letter-spacing: 0em;
+            text-align: center;
+;
+        }
+        .blank1
+        {
+          
+            /* border: 2px solid black; */
+        }
+        .blank2
+        {
+          
+            /* border: 2px solid black; */
+        }
+        .Aside
+        {
+            grid-row-start: 3;
+            grid-row-end: 5;
+            grid-column-start: 2;
+            /* border: 2px solid black; */
+            background-color: #DBCFCF;
+            font-family: Inter;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 405px;
+            letter-spacing: 0em;
+            text-align: center;
+        }
+        .Section3
+        {
+            grid-column-start: 3;
+            grid-column-end: 5;
+            /* border: 2px solid black; */
+            background-color: #D9D9D9;
+            font-family: Inter;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 293px;
+            letter-spacing: 0em;
+            text-align: center;
+
+        }
+        .Section4
+        {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            /* border: 2px solid black; */
+            background-color: #E2E2E2;
+            font-family: Inter;
+            font-size: 29px;
+            font-weight: 700;
+            line-height: 245px;
+            letter-spacing: 0em;
+            text-align: center;
+
+
+        }
+
+        .Section5
+        {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            /* border: 2px solid black; */
+            background-color: #E2E2E2;
+            font-family: Inter;
+            font-size: 29px;
+            font-weight: 700;
+            line-height: 239px;
+            letter-spacing: 0em;
+            text-align: center;
+
+        }
+        .footer
+        {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            /* border: 2px solid black; */
+            background-color: black;
+            /* height: 53px; */
+            /* margin-top: 100px; */
+            display: flex;
+            /* justify-content: center; */
+
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .Images
+        {
+            top:26px;
+            padding: 26px;
+
+        }
+        ul li
+        {
+            display: inline-block;
+            align-items: end;
+            padding: 5px;
+
+
+        }
+        ul li a 
+        {
+            text-decoration: none;
+            color: black;
+            font-family: Inter;
+            font-size: 30px;
+            font-weight: 300;
+            line-height: 30px;
+            letter-spacing: 0em;
+            text-align: left;
+
+        }
+        .anchorBold
+        {
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .Ul
+        {
+            margin-top: 20px;
+        }
+        .Rights
+        {
+            text-align: start;
+            color: white;
+            /* padding-left: 257px;
+            padding-top: 10px; */
+            line-height: 100px; 
+            margin-left: 368px;
+            font-size: 30px;
+
+            
+        }
+        .facebook
+        {
+            height: 50px;
+            width: 50px;
+        }
+        .whatsapp
+        {
+            
+        }
+        a
+        {
+            font :Inter;
+        }
+        .ParentLogo
+        {
+            justify-content: end;
+        }
+       img
+       {
+        float: right;
+       } 
+       .Logos
+       {
+        line-height: 100px;
+        flex-wrap: wrap;
+        padding: 33px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 313px;
+       }
+       .LogosImage
+       {
+            padding:5px;
+            margin-right: 10px;
+       }
+
+       @media only screen and (min-width:500) and (max-width:1200) {
+
+        .Header
+        {
+            grid-column-start: 1;
+            grid-column-end: 2;  
+
+        }
+        .footer
+        {
+            grid-column-start: 1;
+            grid-column-end: 1;
+
+
+        }
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Header">
+            <div class="Images"><img src="shaligramLogo.png" ></div>
+            <div>
+                <ul class="Ul">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a class="anchorBold" href="#">Account</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="Section1 center">Section1</div>
+        <div class="Aside center">Aside</div>
+        <div class="Section3 center">Section3</div>
+        <div class="Section4 center">Section4</div>
+        <div class="Section5 center">Section5</div>
+        <div class="footer">
+            <div class="Rights">
+                Copyright all rights reserved
+            </div>
+            
+                <div class="Logos">
+                      <img src="facebook (2).png" class="LogosImage" >
+                   <img src="Linkdin.png" class="LogosImage">
+                     <img src="twitter.png" class="LogosImage"> 
+                     <img src="whatsapp.png" class="whatsapp LogosImage">
+                </div>
+        
+        </div>
+    </div>
+</body>
+</html>

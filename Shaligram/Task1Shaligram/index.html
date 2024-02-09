@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .container
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 25% 25% 25% 25%;
+            gap:10px;
+            min-height: 100vh;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        .header
+        {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            border: 2px solid black;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .Section
+        {
+            padding-top:10px ;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            border: 2px solid black;
+            margin-top: 10px;
+
+        }
+        .aside
+        {
+             grid-row-start: 3;
+             grid-row-end: 5;
+             border: 2px solid black;
+             
+        }
+
+        .Section5
+        {   
+            grid-column-start: 2;
+            grid-column-end: 4;
+            border: 2px solid black;
+        }
+        .Section6
+        {
+            border: 2px solid black;
+        }
+        .Section7
+        {
+            border: 2px solid black;
+        }
+        .footer
+        {
+            grid-column-start: 1;
+            grid-column-end: 4;     
+            border: 2px solid black;
+            min-height: 10vh;
+        }
+        ul li a
+        {
+            
+                 
+        }
+        ul li
+        {
+            padding: 10px;
+            display: inline-block;
+        }
+        ul
+        {
+            
+            margin: 0px;
+        }
+        .Links
+        {
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="Links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                </ul>
+        </div>
+        </div>
+        <div class="Section">Section</div>
+        <div class="aside">Aside</div>
+        <div class="Section5">Section5</div>
+        <div class="Section6">Section6</div>
+        <div class="Section7">Section7</div>
+        <div class="footer">footer</div>
+    </div>
+    <div>
+        <img src="icons8-facebook-50.png">
+    </div>
+</body>
+</html>

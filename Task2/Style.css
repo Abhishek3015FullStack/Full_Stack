@@ -1,0 +1,795 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+s .flex-container {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    /* height: 17vh;
+    width: 274vh; */
+
+
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    float: left;
+
+}
+
+.AllLinksCSS {
+    padding: 0 20px;
+    text-decoration: none;
+    color: black;
+    font-family: Poppins;
+
+}
+
+.Visited {
+    color: rgb(105, 155, 202);
+
+}
+
+.a:visited {
+    color: rgb(105, 155, 202);
+}
+
+.Highlight {
+    background-color: #F17C21;
+
+    padding: 9px;
+    color: white;
+    /* border: 2px solid green; */
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px grey;
+    border: none;
+}
+
+.Section1 {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #235EA9CC;
+    height: 690px;
+
+
+
+}
+
+.books {
+    float: right;
+    height: auto;
+    margin-top: 132px;
+    width: 100%;
+    margin-bottom: 87px;
+
+}
+
+.ReadMore {
+    background-color: #F17C21;
+    padding: 16px;
+    color: white;
+    margin: 1rem;
+    border: none;
+    font-size: larger;
+}
+
+/* img
+{
+    float: right;
+} */
+.Information {
+    padding-top: 12.25rem;
+    color: white;
+}
+
+.Section {
+    display: flex;
+    /* justify-content: center;
+    align-items: normal; */
+    /* border: 2px black solid; */
+    margin-top: 56px;
+    margin-bottom: 42px;
+}
+
+.First {
+    Width: 296px;
+    Height: 390px;
+    /* border: 2px solid blue; */
+    margin-right: 22px;
+    background-color: #F17C21B2;
+    text-align: center;
+}
+
+.Second {
+    Width: 296px;
+    Height: 390px;
+    /* border: 2px solid blue; */
+    background-color: #FF2263B2;
+    ;
+    margin-right: 22px;
+
+}
+
+.Third {
+    Width: 296px;
+    Height: 390px;
+    /* border: 2px solid blue; */
+    background-color: #2346A0B2;
+
+    margin-right: 22px;
+}
+
+.Four {
+    Width: 296px;
+    Height: 390px;
+    /* border: 2px solid blue; */
+    background-color: #989B10B2;
+
+    margin-right: 22px;
+}
+
+.Cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 240px;
+    margin-right: 350px;
+    flex-wrap: wrap;
+
+
+}
+
+.InfoInCards {
+    text-align: center;
+    padding-top: 27px;
+    /* border-bottom:#FFFFFF 1px solid; */
+    color: white;
+
+
+
+}
+
+.Paragraph {
+    text-align: center;
+    color: white;
+    margin-top: 41px;
+}
+
+hr {
+    margin-left: 77px;
+    margin-right: 81px;
+}
+
+.BestClasses {
+    text-align: center;
+
+
+}
+
+.h3tag {
+    color: #FFFFFF;
+    padding-top: 13px;
+
+}
+
+.SectionNow {
+    background-color: #235EA9CC;
+    height: 600px;
+    width: 100%;
+}
+
+.Five {}
+
+.cardsTransparent {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.Orange {
+    color: #F17C21;
+}
+
+.Offer {
+    background-color: #F7F7F7;
+    height: 700px;
+    width: 100%;
+}
+
+.Center {
+    text-align: center;
+    font-family: Poppins;
+    font-size: 30;
+    font-weight: 700;
+    padding-top: 36px;
+}
+
+.Starter {
+    /* height: 285px; */
+    width: 219px;
+    padding: 13px 17px;
+    /* border: 2px solid black; */
+    margin-top: 88px;
+    margin-left: 10px;
+    text-align: center;
+    box-shadow: 0.5px 0.5px 0.5px 1px rgb(238, 232, 232);
+}
+
+.Pro {
+    height: 312px;
+    width: 219px;
+    /* border: 2px solid black; */
+    margin-top: 56px;
+    margin-left: 10px;
+    border: 2px solid #F17C21;
+    box-shadow: 0.5px 0.5px 0.5px 1px rgb(238, 232, 232);
+
+}
+
+.Cards1 {
+    display: flex;
+    margin-left: 482px;
+    flex-wrap: wrap;
+
+
+}
+
+.Bussiness {
+    /* height: 285px; */
+    width: 219px;
+    /* border: 2px solid black; */
+    margin-top: 88px;
+    margin-left: 10px;
+    text-align: center;
+    box-shadow: 0.5px 0.5px 0.5px 1px rgb(238, 232, 232);
+    padding: 13px 36px;
+}
+
+.EnterPrise {
+    /* height: 285px; */
+    width: 219px;
+    /* border: 2px solid black; */
+    margin-top: 88px;
+    margin-left: 10px;
+    text-align: center;
+    border: 2px solid #F17C21;
+    background-color: rgb(243, 230, 230);
+    padding: 16px 12px;
+
+}
+
+.ButtonColor {
+    background-color: white;
+    padding: 11px 16px;
+    border-radius: 5px;
+    font-size: large;
+
+}
+
+.colorRecommend {
+    height: 36px;
+    background-color: #F17C21;
+    color: white;
+    text-align: center;
+
+}
+
+.AfterRecommend {
+    text-align: center;
+    background-color: rgb(243, 230, 230);
+
+}
+
+.ButtonColorNew {
+    background-color: #F17C21;
+    padding: 5px;
+    border-radius: 5px;
+
+
+}
+
+.ButtonColorNew1 {
+    background-color: #F17C21;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px solid black;
+    color: white;
+}
+
+.Call {
+    height: 500px;
+    background-color: #235EA9CC;
+
+}
+
+/* .Action
+{
+    line-height: 100px;
+
+} */
+.CallTo {
+    padding-top: 145px;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins';
+    font-size: 50px;
+}
+
+.ParaLorem {
+    padding-top: 26px;
+    text-align: center;
+    color: white;
+}
+
+.ButtonColorNew12 {
+    background-color: white;
+    color: #F17C21;
+    padding: 21px;
+    border-radius: 5px;
+    margin-left: 874px;
+    margin-top: 30px;
+}
+
+.Circle {
+    height: 500px;
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+
+}
+
+#Email {
+    color: white;
+    height: 53px;
+    width: 373px;
+    background-color: #000000;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-top: -22px;
+    padding-top: 0px;
+    padding-right: 28px;
+    padding-top: 10px;
+
+
+}
+
+/* .SubScribe
+{
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: #000000;
+} */
+#SubscribeButton {
+    /* padding: 24px; */
+    background-color: #F17C21;
+    color: white;
+    margin-left: -119px;
+    /* padding-bottom: 16px; */
+    border-radius: 5px;
+    margin-top: -25px;
+    /* padding-top: 28px; */
+    margin-top: -14px;
+    padding: 18px 52px 4px 0px;
+    text-align: center;
+    /* font-family: 'Poppins';
+    font-size: 13px; */
+
+
+}
+
+.Emailvalid {
+    padding-top: 289px;
+}
+
+.Abhishek1 {
+    padding-top: 200px;
+
+}
+
+/* .icons .Linked i {
+    padding: 5px;
+
+
+
+
+
+} */
+
+#Whatsapp {
+    padding: 9px;
+    font-size: x-large;
+    /* background: #F17C21; */
+    border-radius: 40px;
+    margin: 1px 5px 0px 10px;
+    color: white;
+}
+
+#instagram {
+    padding: 9px;
+    font-size: x-large;
+    background: #F17C21;
+    border-radius: 40px;
+    margin: 1px 5px 0px 10px;
+}
+
+#facebook {
+    padding: 9px;
+    font-size: x-large;
+    background: #F17C21;
+    border-radius: 40px;
+    margin: 1px 5px 0px 10px;
+}
+
+#youtube {
+    padding: 9px;
+    font-size: x-large;
+    background: #F17C21;
+    border-radius: 40px;
+    margin: 1px 5px 0px 10px;
+}
+
+.monthly {
+    margin-left: 854px;
+    border-radius: 21px;
+    background-color: #F17C21;
+    padding: 5px;
+}
+
+.Yearly {
+
+    border-radius: 21px;
+    background-color: white;
+    padding: 5px;
+
+}
+
+.Buttonsofmonth {
+    margin-left: 831px;
+    margin-top: 20px;
+
+
+
+}
+
+.switch-wrapper {
+    position: relative;
+    display: inline-flex;
+    padding: 6px;
+    border: 1px solid lightgrey;
+    margin-bottom: 40px;
+    border-radius: 30px;
+    background: var(--white);
+}
+
+.switch-wrapper [type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.switch-wrapper [type="radio"]:checked#monthly~label[for="monthly"],
+.switch-wrapper [type="radio"]:checked#yearly~label[for="yearly"] {
+    color: var(--white);
+}
+
+.switch-wrapper [type="radio"]:checked#monthly~label[for="monthly"]:hover,
+.switch-wrapper [type="radio"]:checked#yearly~label[for="yearly"]:hover {
+    background: transparent;
+}
+
+.switch-wrapper [type="radio"]:checked#monthly+label[for="yearly"]~.highlighter {
+    transform: none;
+}
+
+.switch-wrapper [type="radio"]:checked#yearly+label[for="monthly"]~.highlighter {
+    transform: translateX(100%);
+}
+
+.switch-wrapper label {
+    font-size: 16px;
+    z-index: 1;
+    min-width: 100px;
+    line-height: 32px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: color 0.25s ease-in-out;
+}
+
+.switch-wrapper label:hover {
+    background: var(--lightgray);
+}
+
+.switch-wrapper .highlighter {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    border-radius: 30px;
+    background: var(--darkgreen);
+    transition: transform 0.25s ease-in-out;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap");
+
+:root {
+    --white: white;
+    --gray: #999;
+    --lightgray: whitesmoke;
+    --darkgreen: #2a9d8f;
+    --popular: #ffdd40;
+    --starter: #f73859;
+    --essential: #00aeef;
+    --professional: #ff7f45;
+}
+
+
+
+/* SWITCH STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.switch-wrapper {
+    position: relative;
+    display: inline-flex;
+    padding: 4px;
+    border: 1px solid lightgrey;
+    margin-bottom: 40px;
+    border-radius: 30px;
+    background: var(--white);
+}
+
+.switch-wrapper [type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.switch-wrapper [type="radio"]:checked#monthly~label[for="monthly"],
+.switch-wrapper [type="radio"]:checked#yearly~label[for="yearly"] {
+    color: var(--white);
+}
+
+.switch-wrapper [type="radio"]:checked#monthly~label[for="monthly"]:hover,
+.switch-wrapper [type="radio"]:checked#yearly~label[for="yearly"]:hover {
+    background: transparent;
+}
+
+.switch-wrapper [type="radio"]:checked#monthly+label[for="yearly"]~.highlighter {
+    transform: none;
+}
+
+.switch-wrapper [type="radio"]:checked#yearly+label[for="monthly"]~.highlighter {
+    transform: translateX(100%);
+}
+
+.switch-wrapper label {
+    font-size: 16px;
+    z-index: 1;
+    min-width: 100px;
+    line-height: 32px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: color 0.25s ease-in-out;
+}
+
+.switch-wrapper label:hover {
+    background: var(--lightgray);
+}
+
+.switch-wrapper .highlighter {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    border-radius: 30px;
+    background: var(--darkgreen);
+    transition: transform 0.25s ease-in-out;
+}
+
+.HoverFive:hover {}
+
+.ButtonColor:hover {
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+}
+
+.ReadMore:hover {
+    background-color: #643007;
+    cursor: pointer;
+}
+
+.ButtonColorNew12:hover {
+    background-color: #F17C21;
+    color: white;
+    cursor: pointer;
+
+}
+
+#Whatsapp:hover {
+    cursor: pointer;
+}
+
+#instagram {
+    cursor: pointer;
+}
+
+#facebook {
+    cursor: pointer;
+}
+
+#youtube:hover {
+    cursor: pointer;
+}
+
+ul li a:hover {
+    cursor: pointer;
+}
+
+.Highlight:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.ParentSubscribe {
+    display: flex;
+}
+
+.StarterForRecommend {
+    /* height: 285px; */
+    width: 219px;
+    padding: 13px 17px;
+    /* border: 2px solid black; */
+    /* margin-top: 88px; */
+    /* we have to specify the margin after adding the div tag*/
+    margin-left: 10px;
+    text-align: center;
+    box-shadow: 0.5px 0.5px 0.5px 1px rgb(238, 232, 232);
+    background-color: rgb(243, 230, 230);
+}
+
+.ButtonColorRecommend {
+    background-color: #F17C21;
+    padding: 11px 16px;
+    border-radius: 5px;
+    font-size: large;
+
+
+}
+
+.RecommendColor {}
+
+.Recommended {
+    margin-top: 83px;
+    width: 220px;
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+    background-color: #F17C21;
+    padding: 8px 2px 2px 1px;
+
+}
+
+.parrentEmail {
+
+    display: flex;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.ButtonOfSubscribe {
+    margin: 0px 0px 0px 79px;
+    padding: 7px 26px 11px 27px;
+    background-color: #F17C21;
+    border-radius: 5px;
+    color: white;
+
+
+}
+
+#parentEmailNew {
+    font-family: 'Poppins';
+    text-align: center;
+    margin-top: 6px;
+
+}
+
+h3tagPro {}
+
+.Font {
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.borderBottomClass {
+    position: relative;
+}
+
+.borderBottomClass::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 2px solid white;
+    width: 115px;
+    margin: 55px 58px -4px 79px;
+
+
+}
+.Linkeds
+{
+    background-color: #F17C21;
+    border-radius: 31px;
+    padding: -2px 46px 0px 0px;
+    margin: 0px 5px 0px 0px;
+
+}
+#WhatsappAfter
+{
+    font-size: 31px;
+    padding-top: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+}
+.LindsforFacebok
+{
+    
+    background-color: #F17C21;
+    border-radius: 118px;
+    padding: 1px 6px 0px 8px;
+    margin: 0px 5px 0px 0px;
+
+}
+#facebookNEw
+{
+    font-size: 21px;
+    padding-top: 13px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+}
+#InstagramAfter
+{
+    font-size: 31px;
+    padding-top: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+}
+#youtubeAfter
+{
+    font-size: 31px;
+    padding-top: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+
+}

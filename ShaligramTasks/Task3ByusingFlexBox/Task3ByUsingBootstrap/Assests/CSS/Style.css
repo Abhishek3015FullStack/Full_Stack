@@ -1,0 +1,149 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.colorblack
+{
+    background-color: black;
+}
+.listStyleCLass
+{
+    list-style-type: none;
+}
+.Anchorheading  
+{
+    color: white;
+}
+.borderClass
+{
+    border: 2px solid black;
+}
+
+
+.sidebarcss
+{
+    height: 30rem;
+    /* padding: 0px 0px 0px 0px !important; */
+    background-color:#FFCCCC;
+    
+
+ 
+     
+}
+
+
+.section3
+{
+    height: 16rem;
+  
+    
+
+}
+.section4
+{
+    height: 16rem;
+}
+
+.colortext
+{
+    color: white !important;;
+}
+.removespaace
+{
+    /* padding: 0px 0px 0px 0px !important; */
+}
+.backgroundcolosection3
+{
+    background-color:#D7BDBD;
+    
+}
+.backgroundcolosection4
+{
+    background-color: #E1FFC3;
+    
+}
+.backgroundcolosection5
+{
+    background-color: #77DFF5;
+
+}
+.backgroundcolosection6
+{   
+    background: #D7D4BD;
+}
+.blackColor
+{
+    background-color: black;
+    height: 9rem;
+    width: 100%;
+}
+.Sidebar
+{
+    height: 29rem;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar
+{
+    background-color:#FFCCCC;
+    
+}
+.section5
+{
+    height: 16rem;
+}
+.section6
+{
+    height: 16rem;
+}
+
+
+.Section3
+{
+    height: 16rem;
+}
+.Section4
+{
+    height: 16rem;
+}
+.Sidebar
+{
+    height: 31.5rem;
+    background-color:#FFCCCC;
+
+}
+
+.Footer
+{
+    color: white;
+
+}
+
+.section1
+{
+    height: 15rem;
+
+    /* padding: 0px 0px 0px 0px !important ; */
+    background-color: #FFD4C7;
+    width: 100%;
+
+}
+.section2
+{
+    height: 15rem;
+    background-color:#BAB9E2;
+    width: 100%;
+    
+}
+
+.inter{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+  }
+ 

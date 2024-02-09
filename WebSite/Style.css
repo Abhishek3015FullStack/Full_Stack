@@ -1,0 +1,116 @@
+*{
+    margin:0;
+    padding: 2px;
+    box-sizing: content-box;
+}
+
+header
+{
+    text-align: center;
+    padding: 10px;
+    background-color: grey;
+
+
+}
+
+nav
+{
+    background-color: black;
+    padding: 27px;
+}
+aside
+{
+    margin: 10px 0px 0px 0px ;
+    width: 20%;
+    padding-left: 20px;
+    overflow: hidden;
+    
+
+}
+section
+{
+    margin: 10px 0px 0px 0px ;
+    width: 80%;
+    overflow: hidden;
+}
+footer
+{
+    background-color: black;
+    padding: 25px;
+    text-align: center;
+    display: block;
+    color: white;
+   
+}
+main
+{
+    display: flex;
+
+}
+a
+{
+    margin: 10px;
+    padding: 5px ;
+    display: inline-block;
+}
+#HideTheSideBar
+{
+    padding: 5px,5px,5px,5px;
+}
+li
+{
+    display: inline-block;
+    color: aliceblue;
+    text-decoration: none;
+    list-style: none;
+
+}
+nav ul li a
+{
+    text-decoration: none;
+    color: white;
+}
+a
+{
+    text-decoration: none;
+    
+}
+main aside a
+{
+    color: black;
+}
+.cards
+{
+    margin-top: 44px;
+    height: 189px;
+    width: 151px;
+    box-shadow: 5px 5px 5px 5px grey;
+    overflow: auto;
+   
+
+
+}
+.image
+{
+   align-items: center;
+}
+@media screen and (max-width:600px)
+{
+    aside, section{
+        width: 100%;
+    }
+
+    .cards
+{
+    margin-top: 11px;
+    height: 189px;
+    width: 151px;
+    box-shadow: 5px 5px 5px 5px grey;
+    overflow: auto;
+    
+    margin-bottom: 10px;
+
+
+}
+
+}

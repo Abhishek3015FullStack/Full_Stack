@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding-top: 80px; /* To center the text vertically */
+  position: relative; /* Required for absolute positioning */
+}
+
+.text, .hidden-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  opacity: 0; /* Initially hide the text */
+}
+
+.box:hover .hidden-text {
+  opacity: 1; /* Show the text on hover */
+}
+
+    </style>
+</head>
+<body>
+   
+        <div class="box">
+          <img src="../Image/2.jpg">
+          <p class="hidden-text">Text to show on hover</p>
+        </div>
+   
+      
+</body>
+</html>
