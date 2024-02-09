@@ -1,0 +1,304 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <form onsubmit="OnFormSubmit()">
+        <label for="Product_Id">Product_Id</label>
+        <input type="text" name="Product_Id" id="Product_Id" >
+
+        <label for="Product_Name">Product_Name</label>
+        <input type="text" name="Product_Name" id="Product_Name" >
+
+
+        <label for="Product_price">Product_price</label>
+        <input type="text" name="Product_price" id="Product_price" >
+
+        <input type="submit" name="submit" value="submit">
+        
+        
+    </form>
+
+
+    <table id="AllList">
+            <tr>
+                    <th>Product_Id</th>
+                    <th>Product_Name</th>
+                    <th>Product_price</th>
+                    <th>Action</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+    </table>
+
+
+
+<script>
+    debugger
+    var SelectedRow = null;
+        function OnFormSubmit()
+        {
+            debugger
+            if(SelectedRow==null)
+            {
+                var Fromdata1 = readFormData();
+                debugger
+                InsertData1(Fromdata1);
+            }
+            else
+            {
+
+            }
+        }
+
+        function readFormData()
+        {
+            var Product= {}
+            Product["Product_Id"] = document.getElementById("Product_Id").value;
+            Product["Product_Name"] = document.getElementById("Product_Name").value;
+            Product["Product_price"] = document.getElementById("Product_price").value;
+            return Product;
+        }
+
+        function InsertData1(data)
+        {
+            var table = document.getElementById("AllList").getElementsByTagName("tbody")[0];
+            var newRow = table.insertRow(table.length);
+
+            var cell1 = newRow.insertCell(0);
+            cell1.innerHTML = data.Product_Id;
+
+            var cell2 = newRow.insertCell(1);
+            cell2.innerHTML = data.Product_Name;
+
+            var cell3  = newRow.insertCell(2);
+            cell3.innerHTML = data.Product_price;
+
+
+            var cell4  = newRow.insertCell(3);
+            cell4.innerHTML = '<button>Edit</button> <button>Delete</button>';
+
+        }
+</script>
+ 
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <form onsubmit="OnFormSubmit()" >
+        <label for="Product_Id">Product_Id</label>
+        <input type="text" name="Product_Id" id="Product_Id" >
+
+        <label for="Product_Name">Product_Name</label>
+        <input type="text" name="Product_Name" id="Product_Name" >
+
+        <label for="Product_price">Product_price</label>
+        <input type="text" name="Product_price" id="Product_price" >
+
+        <input type="submit" name="submit" value="Submit" onclick="OnFormSubmit()">
+    </form>
+
+    <table id="AllList">
+        <thead>
+            <th>Product_Id</th>
+            <th>Product_Name</th>
+            <th>Product_price</th>
+            <th>Action</th>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+
+        var SelectedRow = null;
+       
+
+        function OnFormSubmit()
+         {
+            var Formdata1= readFormData();
+            event.preventDefault();
+            if (SelectedRow == null) 
+            {
+               
+                
+                InsertData1(Formdata1);
+                
+            }
+            else 
+            {
+                debugger
+                UpdateRecord(Formdata1);
+            }
+        }
+
+        function readFormData() {
+            var Formdata = {};
+            Formdata["Product_Id"] = document.getElementById("Product_Id").value;
+            Formdata["Product_Name"] = document.getElementById("Product_Name").value;
+            Formdata["Product_price"] = document.getElementById("Product_price").value;
+            
+            return Formdata;
+        }
+
+        function InsertData1(data) {
+            var table = document.getElementById("AllList").getElementsByTagName("tbody")[0];
+            var newRow = table.insertRow(table.length);
+
+            var cell1 = newRow.insertCell(0);
+            cell1.innerHTML = data.Product_Id;
+
+            var cell2 = newRow.insertCell(1);
+            cell2.innerHTML = data.Product_Name;
+
+            var cell3 = newRow.insertCell(2);
+            cell3.innerHTML = data.Product_price;
+
+            var cell4 = newRow.insertCell(3);
+            cell4.innerHTML = `<button onClick='OnEdit(this)'>Edit</button> <button onClick='OnDelete(this)'>Delete</button>`
+
+            document.getElementById("Product_Id").value = "";
+            document.getElementById("Product_Name").value="";
+            document.getElementById("Product_price").value="";
+
+        }
+        function OnEdit(td)
+        {
+            debugger
+            SelectedRow = td.parentElement.parentElement;
+            var a = document.getElementById('Product_Id').value = SelectedRow.cells[0].innerHTML;
+            var b  =document.getElementById('Product_Name').value = SelectedRow.cells[1].innerHTML;
+            var c = document.getElementById('Product_price').value = SelectedRow.cells[2].innerHTML;
+
+        }
+
+        function UpdateRecord(Formdata1)
+        {
+
+            SelectedRow.cells[0].innerHTML =Formdata1.Product_Id;
+            SelectedRow.cells[1].innerHTML = Formdata1.Product_Name;
+            SelectedRow.cells[2].innerHTML = Formdata1.Product_price;
+            SelectedRow = null;
+
+        }
+        function OnDelete(td)
+        {
+            if(confirm("do you want to the delete?"))
+            {
+                row= td.parentElement.parentElement;
+                document.getElementById('AllList').deleteRow(row.rowIndex);
+            }
+            resetForm();
+        }
+        function resetForm()
+        {
+            document.getElementById("Product_Id").value = "";
+            document.getElementById("Product_Name").value="";
+            document.getElementById("Product_price").value="";
+        }
+
+    </script>
+ 
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <form onsubmit="OnFormSubmit()" >
+        <label for="Product_Id">Product_Id</label>
+        <input type="text" name="Product_Id" id="Product_Id" >
+
+        <label for="Product_Name">Product_Name</label>
+        <input type="text" name="Product_Name" id="Product_Name" >
+
+        <label for="Product_price">Product_price</label>
+        <input type="text" name="Product_price" id="Product_price" >
+
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <table id="AllList">
+        <thead>
+            <th>Product_Id</th>
+            <th>Product_Name</th>
+            <th>Product_price</th>
+            <th>Action</th>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var SelectedRow = null;
+
+        function OnFormSubmit() {
+            event.preventDefault();
+            if (SelectedRow == null) {
+                debugger
+                var Fromdata1 = readFormData();
+                InsertData1(Fromdata1);
+            } else {
+                UpdateRecord(Fromdata1);
+            }
+        }
+
+        function readFormData() {
+            var Product = {};
+            Product["Product_Id"] = document.getElementById("Product_Id").value;
+            Product["Product_Name"] = document.getElementById("Product_Name").value;
+            Product["Product_price"] = document.getElementById("Product_price").value;
+            return Product;
+        }
+
+        function InsertData1(data) {
+            var table = document.getElementById("AllList").getElementsByTagName("tbody")[0];
+            var newRow = table.insertRow(table.length);
+
+            var cell1 = newRow.insertCell(0);
+            cell1.innerHTML = data.Product_Id;
+
+            var cell2 = newRow.insertCell(1);
+            cell2.innerHTML = data.Product_Name;
+
+            var cell3 = newRow.insertCell(2);
+            cell3.innerHTML = data.Product_price;
+
+            var cell4 = newRow.insertCell(3);
+            cell4.innerHTML = `<button onClick='OnEdit(this)'>Edit</button> <button>Delete</button>`;
+        }
+
+        function OnEdit(td) {
+            SelectedRow = td.parentElement.parentElement;
+            document.getElementById('Product_Id').value = SelectedRow.cells[0].innerHTML;
+            document.getElementById('Product_Name').value = SelectedRow.cells[1].innerHTML;
+            document.getElementById('Product_price').value = SelectedRow.cells[2].innerHTML;
+        }
+
+        function UpdateRecord(data) {
+            SelectedRow.cells[0].innerHTML = data.Product_Id;
+            SelectedRow.cells[1].innerHTML = data.Product_Name;
+            SelectedRow.cells[2].innerHTML = data.Product_price;
+            SelectedRow = null; // Reset SelectedRow after updating
+        }
+    </script>
+ 
+</body>
+</html> -->
