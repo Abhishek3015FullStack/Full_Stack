@@ -3,9 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Assets/bootstrap/bootstrap.min.css">
+    <link href="Assets/CSS/Style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="wrapper">
+        <div class="body-overlay"></div>
+        <!-- Side bar for the data-->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3><img src="" class="img-fluid"/><span>Dabang</span></h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" class="dashboard"><i class="material-icons"></i><span>Dashboard</span></a>
+                </li>
+
+                <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                    <a href="#">Leaderboard</a>
+                </li>
+
+                <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                    <a href="#">Order</a>
+                </li>
+
+                <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                    <a href="#">Products</a>
+                </li>
+
+                <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                    <a href="#">Sales Report</a>
+                </li>
+
+                <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                    <a href="#">Messages</a>
+                </li>
+
+                <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                    <a href="#">Setting</a>
+                </li>
+
+                <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                    <a href="#">Sign Out</a>
+                </li>
+
+
+
+
+
+            </ul>
+        </nav>
+        <!-- Page content -->
+        <div id="content">
+            <!-- Top --navigation -design -->
+            <div class="top-navbar">
+                <nav class="navbar navbar-expand-lg">
+                    <button type="button" id="sidebar-collapse" class="d-xl-block d-lg-block d-md-none d-none">
+                        <span class="material-icons">arrow_back_ios</span>
+                    </button>
+
+                    <a class="navbar-brand" href="#">dashboard</a>
+                    <button class="d-inline-block d-lg-none ml-auto more-button" data-toggle="collapse"
+                    data-targe="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle">
+                    <span class="material-icons">more_vert</span>
+                    </button>
+                   
+                </nav>
+            </div>
+
+            <div class="main-content">
+                <div class="col-lg-3 col"></div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
 </body>
 </html>
