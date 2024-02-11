@@ -23,6 +23,8 @@
 
     <!--google material icon-->
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -44,7 +46,7 @@
             <ul class="list-unstyled components">
                 <li class="active">
                     <a href="#" class="dashboard"><img src="img/DashboardIcons.png" class="img-fluid" /><span
-                            style="margin: 0px 0px 0px 10px;">Dashboard</span></a>
+                            style="margin: 0px 0px 0px 10px; color:white; border-radius: 21px;">Dashboard</span></a>
                 </li>
 
                 <div class="small-screen navbar-display">
@@ -164,21 +166,12 @@
                                 </li>
                                 <!--Code inserted dropdown-->
                      
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                                          Dropdown
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                          <li><button class="dropdown-item" type="button">Action</button></li>
-                                          <li><button class="dropdown-item" type="button">Another action</button></li>
-                                          <li><button class="dropdown-item" type="button">Something else here</button></li>
-                                        </ul>
-                                      </div>
+                                   
                                     <!--Code inserted dropdown-->
                                 
                                 <li class="dropdown nav-item active">
                                     <a href="#" class="nav-link" data-toggle="dropdown">
-                                        <img src="img/NotificationsSidebar.png" height="10px" width="10px">
+                                        <img src="img/NotificationsSidebar.png" height="auto" width="100%">
                                         <!-- <span class="material-icons">notifications</span>
 								   <span class="notification">4</span> -->
                                     </a>
@@ -199,6 +192,36 @@
                                     </ul>
                                 </li>
 
+
+                                <li>
+                                    <img src="img/DashboardImageProfile.png" height="auto" width="100%"> 
+                                </li>
+                                  
+                                <li class="dropdown nav-item active">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 10px; width: 10px;     height: 67px;
+                                    width: 161px;
+                                    background-color: white; color: black;"></button>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">You have 5 new messages</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">You're now friend with Mike</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Wish Mary on her birthday!</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">5 warnings in Server Console</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+
+
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
                                         <span class="material-icons" style="color: black;">settings</span>
@@ -214,20 +237,84 @@
             <div class="main-content">
 
 
-                <!--code inserted-->
-
+                <!--code inserted 11-2-2024-->
+                <div class="container-fluid p-4">
                 <div class="row">
                     <div class="col-lg-8 py-2">
                         <div class="col-lg-12 border new">
                             <div class="d-flex justify-content-between align-items-center" style="margin: 13px;">
                                 <div>Today's Sales</div>
-                                <div><a> <img src="Exports.png"></a></div>
+                                <div><a> <img src="img/Exports.png"></a></div>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center" style="margin: 39px;">
-                                <div class="insidecards firstColumnbackground">Section1</div>
-                                <div class="insidecards SecondColumnbackground">Section2</div>
-                                <div class="insidecards ThirdColumnbackground">Section3</div>
-                                <div class="insidecards fourColumnbackground">Section4</div>
+                            <div class="d-flex justify-content-between align-items-center" style="margin: 60px;">
+                                <div class="row">
+        
+                                    <div class="col-lg-3 col-sm-12 col-md-6">
+                                        <div class="insidecards firstColumnbackground" style="margin: 0px 267px 10px 0px;">
+                                            <div class="Parents">
+                                                <div><img src="img/Icon (1).png" style="padding: 30px 0px 21px 7px;"></div>
+                                                <div style="padding: 0px 0px 0px 6px;     font-weight: 700;">
+                                                    <h5>$1K</h5>
+                                                </div>
+                                                <div><span style="padding: 0px 0px 0px 7px;">Total Sales</span> </div>
+                                                <div>
+                                                    <p style="    font-size: small;color: #514fcd;padding: 5px 0px 0px 5px;    margin: -2px 0px 0px 2px;     ">+8%
+                                                        from
+                                                        yesterday</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6">
+                                        <div class="insidecards SecondColumnbackground" style="margin: 0px 0px 12px 0px;">
+                                            <div class="Parents">
+                                                <div><img src="img/Icon2.png" style="padding: 30px 0px 21px 7px;"></div>
+                                                <div style="padding: 0px 0px 0px 6px;     font-weight: 700;">
+                                                    <h5>300</h5>
+                                                </div>
+                                                <div><span style="padding: 0px 0px 0px 7px;">Total Order</span> </div>
+                                                <div>
+                                                    <p style="    font-size: small;color: #514fcd;padding: 5px 0px 0px 5px; margin: -2px 0px 0px 2px;">+5%
+                                                        from yesterday</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6">
+                                        <div class="insidecards ThirdColumnbackground" style="margin: 0px 0px 12px 0px;">
+                                            <div class="Parents">
+                                                <div><img src="img/Icon3.png" style="padding: 30px 0px 21px 7px;"></div>
+                                                <div style="padding: 0px 0px 0px 6px;font-weight: 700;">
+                                                    <h5>5</h5>
+                                                </div>
+                                                <div><span style="padding: 0px 0px 0px 7px;">Product Sold</span></div>
+                                                <div>
+                                                    <p style="    font-size: small;color: #514fcd;padding: 5px 0px 0px 5px; margin: -2px 0px 0px 2px;">
+                                                        +1.2%
+                                                        from
+                                                        yesterday</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-12 col-md-6">
+                                        <div class="insidecards fourColumnbackground" style="margin: 0px 0px 12px 0px;">
+                                            <div class="Parents">
+                                                <div><img src="img/Icon4.png" style="padding: 30px 0px 21px 7px;"></div>
+                                                <div style="padding: 0px 0px 0px 6px;     font-weight: 700;">
+                                                    <h5>8</h5>
+                                                </div>
+                                                <div><span style="padding: 0px 0px 0px 7px;">New Customers</span></div>
+                                                <div>
+                                                    <p style="    font-size: small;color: #514fcd;padding: 5px 0px 0px 5px; margin: -2px 0px 0px 2px;">
+                                                        0.5%
+                                                        from
+                                                        yesterday</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -237,321 +324,257 @@
                         </div>
                     </div>
                 </div>
-
-                <!--code inserted-->
-
+        
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6 cardsEdit">
-                        <div class="card card-stats">
-                            <div class="card-header">
-                                <div class="icon icon-warning">
-                                    <span class="material-icons">equalizer</span>
-                                </div>
+                    <div class="col-lg-6 col-sm-12 py-2">
+                        <div class="col-lg-12 col-sm-12 new border">
+                            <div>
+                                <h2 style="margin: 18px 0px 14px 22px;">Vistors List</h2>
                             </div>
-                            <div class="card-content">
-                                <p class="category"><strong>Visits</strong></p>
-                                <h3 class="card-title">70,340</h3>
-                            </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons text-info">info</i>
-                                    <a href="#pablo">See detailed report</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="card card-stats">
-                            <div class="card-header">
-                                <div class="icon icon-rose">
-                                    <span class="material-icons">shopping_cart</span>
-
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p class="category"><strong>Orders</strong></p>
-                                <h3 class="card-title">102</h3>
-                            </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">local_offer</i> Product-wise sales
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="card card-stats">
-                            <div class="card-header">
-                                <div class="icon icon-success">
-                                    <span class="material-icons">
-                                        attach_money
-                                    </span>
-
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p class="category"><strong>Revenue</strong></p>
-                                <h3 class="card-title">$23,100</h3>
-                            </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">date_range</i> Weekly sales
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="card card-stats">
-                            <div class="card-header">
-                                <div class="icon icon-info">
-
-                                    <span class="material-icons">
-                                        follow_the_signs
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p class="category"><strong>Followers</strong></p>
-                                <h3 class="card-title">+245</h3>
-                            </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">update</i> Just Updated
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row ">
-                    <div class="col-lg-7 col-md-12">
-                        <div class="card" style="min-height: 485px">
-                            <div class="card-header card-header-text">
-                                <h4 class="card-title">Employees Stats</h4>
-                                <p class="category">New employees on 15th December, 2016</p>
-                            </div>
-                            <div class="card-content table-responsive">
-                                <table class="table table-hover">
-                                    <thead class="text-primary">
+                            <div class="table-responsive" style="    padding: 0px 0px 21px 0px;">
+                                <table class="table">
+                                    <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Salary</th>
-                                            <th>Country</th>
+                                            <th class="HeaderStyle">#</th>
+                                            <th class="HeaderStyle">Name</th>
+                                            <th class="HeaderStyle">Join Date</th>
+                                            <th class="HeaderStyle">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Bob Williams</td>
-                                            <td>$23,566</td>
-                                            <td>USA</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Mike Tyson</td>
-                                            <td>$10,200</td>
-                                            <td>Canada</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Tim Sebastian</td>
-                                            <td>$32,190</td>
-                                            <td>Netherlands</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Philip Morris</td>
-                                            <td>$31,123</td>
-                                            <td>Korea, South</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Minerva Hooper</td>
-                                            <td>$23,789</td>
-                                            <td>South Africa</td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td>Hulk Hogan</td>
-                                            <td>$43,120</td>
-                                            <td>Netherlands</td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td>Angelina Jolie </td>
-                                            <td>$12,140</td>
-                                            <td>Australia</td>
-                                        </tr>
-                                    </tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Stephen P.Osborn</td>
+                                        <td>17 Jan,2023</td>
+                                        <td>
+                                            <button  style="border: none; background-color: white;"> <img src="img/Edit.png"></button>
+                                            <button style="border: none; background-color: white;"> <img src="img/Delete.png">  </button> 
+                                        </td>
+                                    
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>Odessa G. Mettler</td>
+                                        <td>13 Feb,2023</td>
+                                        <td>
+                                            <button  style="border: none; background-color: white;"> <img src="img/Edit.png"></button>
+                                            <button style="border: none; background-color: white;"> <img src="img/Delete.png">  </button> 
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>Judith H.Richards</td>
+                                        <td>13 Feb,2023</td>
+                                        <td>
+                                            <button  style="border: none; background-color: white;"> <img src="img/Edit.png"></button>
+                                            <button style="border: none; background-color: white;"> <img src="img/Delete.png">  </button> 
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>04</td>
+                                        <td>Jack B.Perez</td>
+                                        <td>10 Feb,2023</td>
+                                        <td>
+                                            <button  style="border: none; background-color: white;"> <img src="img/Edit.png"></button>
+                                            <button style="border: none; background-color: white;"> <img src="img/Delete.png">  </button> 
+                                        </td>
+                                       
+        
+                                    </tr>
+                                    <tr></tr>
+                                    <tr></tr>
+                                    <tr></tr>
+                                    <tr></tr>
+                                    <tr>
+                                        <td>05</td>
+                                        <td>Chris B.Ryant</td>
+                                        <td>10,Feb 2023</td>
+                                        <td>
+                                            <button  style="border: none; background-color: white;"> <img src="img/Edit.png"></button>
+                                            <button style="border: none; background-color: white;"> <img src="img/Delete.png">  </button> 
+                                        </td>
+                                      
+                                    </tr>
+                                </table>
+                                <div>
+                                    <span>
+                                        <a class="d-flex justify-content-center align-items-center" style="color: blue;">Read
+                                            More</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 py-2">
+                        <div class="col-lg-12 col-sm-12 new border" style="  padding: 4px 0px 30px 0px;">
+                            <div>
+                                <h2 style="margin: 18px 0px 14px 22px;">Top Products</h2>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th style="padding: 11px 186px 0px 10px;">Popularity</th>
+                                        <th>Sales</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-bottom: 24px;
+                                        padding-top: 11px;">01</td>
+                                        <td style="    padding-bottom: 32px;
+                                        padding-top: 10px;">Home Decor Range</td>
+                                        <td>
+                                            <div class="progress" style="margin: 8px 0px 0px 0px;     height: 4px;">
+                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 45%"
+                                                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p
+                                                style="height: 31px;width: 59px;border: 1px solid black;background-color: #F0F9FF;color: #0095FF;text-align: center;border-radius: 14px;     margin: 0px 0px -8px 0px;">
+                                                45%</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-bottom: 24px;
+                                        padding-top: 11px;">02</td>
+                                        <td style="    padding-bottom: 32px;
+                                        padding-top: 10px;">Disney Princess Pink Bag 18</td>
+                                        <td>
+                                            <div class="progress" style="margin: 8px 0px 0px 0px;     height: 4px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 29%"
+                                                    aria-valuenow="29" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p
+                                                style="height: 31px;width: 59px;border: 1px solid black;background-color: #F0F9FF;color: #0095FF;text-align: center;border-radius: 14px;     margin: 0px 0px -8px 0px;">
+                                                29%</p>
+                                        </td>
+        
+                                    </tr>
+        
+                                    <tr>
+                                        <td style="padding-bottom: 24px;
+                                        padding-top: 11px;">03</td>
+                                        <td style="    padding-bottom: 32px;
+                                        padding-top: 10px;">Bathroom Essentials</td>
+                                        <td>
+                                            <div class="progress" style="margin: 8px 0px 0px 0px;     height: 4px;">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 18%"
+                                                    aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p
+                                                style="height: 31px;width: 59px;border: 1px solid black;background-color: #F0F9FF;color: #0095FF;text-align: center;border-radius: 14px;     margin: 0px 0px -8px 0px;">
+                                                18%</p>
+                                        </td>
+        
+                                    </tr>
+        
+                                    <tr>
+                                        <td style="padding-bottom: 24px;
+                                        padding-top: 11px;">04</td>
+                                        <td style="    padding-bottom: 32px;
+                                        padding-top: 10px;">Apple SmartWatches</td>
+                                        <td>
+                                            <div class="progress" style="margin: 8px 0px 0px 0px;     height: 4px;">
+                                                <div class="progress-bar" role="progressbar" style="width:25%"
+                                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p
+                                                style="height: 31px;width: 59px;border: 1px solid black;background-color: #F0F9FF;color: #0095FF;text-align: center;border-radius: 14px;     margin: 0px 0px -8px 0px;">
+                                                25%</p>
+                                        </td>
+        
+                                    </tr>
+        
+        
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <!-- Code Inserted -->
-
-
-                    <!--Code Inserted -->
-                    <div class="col-lg-5 col-md-12">
-                        <div class="card" style="min-height: 485px">
-                            <div class="card-header card-header-text">
-                                <h4 class="card-title">Activities</h4>
-                            </div>
-                            <div class="card-content">
-                                <div class="streamline">
-                                    <div class="sl-item sl-primary">
-                                        <div class="sl-content">
-                                            <small class="text-muted">5 mins ago</small>
-                                            <p>Williams has just joined Project X</p>
-                                        </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 py-2">
+                        <div class="col-lg-12 col-sm-12 new border">
+                            <div>
+                                <h2 style="padding: 6px 7px 2px 11px;">Main Products</h2>
+                                <div class="tab" style="border-bottom: 1px solid beige;">
+                                    <button class="tablinks" onclick="openCity(event, 'London')" >Product-1</button>
+                                    <button class="tablinks" onclick="openCity(event, 'Paris')">Product-2</button>
+                                </div>
+        
+                                <div id="London" class="tabcontent">
+                                    <div class="Parent d-flex">
+                                        <div><img src="Product-1.png" style="margin: 3px 50px 10px 1px;"></div>
+                                        <div>There are many variations of passages and Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Quos aspernatur et, aliquam quisquam ratione quam alias adipisci
+                                            soluta dolores quis molestiae sint suscipit iure molestias nobis quae atque modi?
+                                            Blanditiis!</div>
                                     </div>
-                                    <div class="sl-item sl-danger">
-                                        <div class="sl-content">
-                                            <small class="text-muted">25 mins ago</small>
-                                            <p>Jane has sent a request for access to the project folder</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item sl-success">
-                                        <div class="sl-content">
-                                            <small class="text-muted">40 mins ago</small>
-                                            <p>Kate added you to her team</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item">
-                                        <div class="sl-content">
-                                            <small class="text-muted">45 minutes ago</small>
-                                            <p>John has finished his task</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item sl-warning">
-                                        <div class="sl-content">
-                                            <small class="text-muted">55 mins ago</small>
-                                            <p>Jim shared a folder with you</p>
-                                        </div>
-                                    </div>
-                                    <div class="sl-item">
-                                        <div class="sl-content">
-                                            <small class="text-muted">60 minutes ago</small>
-                                            <p>John has finished his task</p>
+                                </div>
+        
+                                <div id="Paris" class="tabcontent">
+                                    <div class="Parent d-flex">
+                                        <div><img src="Product-1.png" style="margin: 3px 50px 10px 1px;"></div>
+                                        <div>There are many variations of passages and Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Quos aspernatur et, aliquam quisquam ratione quam alias adipisci
+                                            soluta dolores quis molestiae sint suscipit iure molestias nobis quae atque modi?
+                                            Blanditiis
+                                            There are many variations of passages and Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Quos aspernatur et, aliquam quisquam ratione quam alias adipisci
+                                            soluta dolores quis molestiae sint suscipit iure molestias nobis quae atque modi?
+                                            Blanditiis!
+        
                                         </div>
                                     </div>
                                 </div>
+                                <script>
+                                    function openCity(evt, cityName) {
+                                        var i, tabcontent, tablinks;
+                                        tabcontent = document.getElementsByClassName("tabcontent");
+                                        for (i = 0; i < tabcontent.length; i++) {
+                                            tabcontent[i].style.display = "none";
+                                        }
+                                        tablinks = document.getElementsByClassName("tablinks");
+                                        for (i = 0; i < tablinks.length; i++) {
+                                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                                        }
+                                        document.getElementById(cityName).style.display = "block";
+                                        evt.currentTarget.className += " active";
+                                    }
+                                </script>
                             </div>
-
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-3 col-sm-12 py-2">
+                        <div class="col-lg-12 col-sm-12 new border">
+                            <section >Map</section>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-3 col-sm-12 py-2">
+                        <div class="col-lg-12 col-sm-12 new border">
+                            <section >Bar</section>
                         </div>
                     </div>
                 </div>
-                <!--Code inserted-->
+                <!--code inserted 11-2-2024-->
 
-                <div class="row ">
-                    <div class="col-lg-7 col-md-12">
-                        <div class="card" style="min-height: 485px">
-                            <div class="card-header card-header-text">
-                                <h4 class="card-title">Employees Stats</h4>
-                                <p class="category">New employees on 15th December, 2016</p>
-                            </div>
-                            <div class="card-content table-responsive">
-                                <table class="table table-hover">
-                                    <thead class="text-primary">
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Salary</th>
-                                            <th>Country</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Bob Williams</td>
-                                            <td>$23,566</td>
-                                            <td>USA</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Mike Tyson</td>
-                                            <td>$10,200</td>
-                                            <td>Canada</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Tim Sebastian</td>
-                                            <td>$32,190</td>
-                                            <td>Netherlands</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Philip Morris</td>
-                                            <td>$31,123</td>
-                                            <td>Korea, South</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Minerva Hooper</td>
-                                            <td>$23,789</td>
-                                            <td>South Africa</td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td>Hulk Hogan</td>
-                                            <td>$43,120</td>
-                                            <td>Netherlands</td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td>Angelina Jolie </td>
-                                            <td>$12,140</td>
-                                            <td>Australia</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+               
 
 
                     <!--Code inserted-->
 
 
-                    <footer class="footer">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <nav class="d-flex">
-                                        <ul class="m-0 p-0">
-                                            <li>
-                                                <a href="#">
-                                                    Home
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    Company
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    Portfolio
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    Blog
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="copyright d-flex justify-content-end"> &copy 2021 Design by
-                                        <a href="#">Vishweb Design</a> BootStrap Admin Dashboard
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
+                
 
                 </div>
 
@@ -559,8 +582,8 @@
 
             </div>
         </div>
-
-
+    </div>
+</div>
 
 
 

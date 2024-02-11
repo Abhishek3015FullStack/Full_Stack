@@ -6,7 +6,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
      color: #555e58;
 	 text-transform:capitalize;
-	text-rendering: optimizeLegibility !important;
+	 text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
 	 font-weight: 400;
 	 margin:0px;
@@ -187,7 +187,8 @@ a:focus {
 
 #sidebar ul li.active>a{
     color: #333;
-    background-color: rgba(200, 200, 200, 0.2);
+    background-color: #5D5FEF;
+
 }
 
 #sidebar ul li a:hover{
@@ -213,7 +214,7 @@ a:focus {
 #sidebar ul li a {
     padding: 10px;
 	line-height: 30px;
-	border-radius:5px;
+	border-radius:24px;
     font-size: 15px;
 	position:relative;
     font-weight: 400;
@@ -310,7 +311,7 @@ a:focus {
 .navbar-nav > li.active{
    color: #FFFFFF;
    border-radius:4px;
-    background-color: rgba(0, 0, 0, 0.08);  
+    background-color: rgba(12, 11, 11, 0.08);  
  }
 
 .navbar-nav > li > a {
@@ -776,37 +777,108 @@ footer .copyright {
     background-color: aqua;
 } */
 
-.new
+
+.border1 {
+    border-radius: 5px;
+
+}
+
+.Abhishek {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.Abhishke2 {
+    background-color: grey;
+}
+
+.Abhishek3 {
+    background-color: white;
+}
+
+/* body
 {
+background-color: aqua;
+} */
+
+.new {
     border-radius: 23px;
     background-color: white;
-    height: 388px;
+ 
 }
-.insidecards
-{
-    height: 184px;
+
+.insidecards {
+    height: 191px;
     width: 180px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    border-radius: 33px;
 
 
 
 }
-.firstColumnbackground
-{
+
+.firstColumnbackground {
     background: #FFE2E5;
 
 }
-.SecondColumnbackground
-{
+
+.SecondColumnbackground {
     background-color: #FFF4DE;
 
 }
-.ThirdColumnbackground
-{
+
+.ThirdColumnbackground {
     background-color: #DCFCE7;
 }
-.fourColumnbackground
-{
+
+.fourColumnbackground {
     background-color: #F3E8FF;
 
+}
+
+
+.HeaderStyle {
+    padding: 3px 123px 13px 3px;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    /* border: 1px solid #ccc;
+background-color: #f1f1f1; */
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 48px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background: #5D5FEF;
+
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    /* border: 1px solid #ccc; */
+    border-top: none;
+}
+*:hover
+{
+    background-color: none;
 }
