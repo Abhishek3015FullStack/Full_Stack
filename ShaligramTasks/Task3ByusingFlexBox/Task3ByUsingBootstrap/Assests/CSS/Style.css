@@ -147,3 +147,14 @@
       "slnt" 0;
   }
  
+  body{
+    font-family: "Inter",sans-serif;
+   }
+   .whitekcolor
+{
+color: white!important;
+}
+.backgroundColor
+{
+background-color: black;
+}   
