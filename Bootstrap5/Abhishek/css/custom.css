@@ -1,0 +1,652 @@
+*{
+	line-height: 1.8;
+    font-family: 'Poppins', sans-serif;
+    color: #555e58;
+	margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+button{
+	cursor:pointer;
+}
+
+ul{
+	padding: 0;
+	margin:0px;
+	list-style: none;
+}
+
+
+.border1
+{
+    border-radius: 5px;
+  
+}
+.Abhishek
+{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.Abhishke2
+{
+    background-color: grey;
+}
+.Abhishek3
+{
+    background-color: white;
+}
+
+
+.border1 {
+    border-radius: 5px;
+
+}
+
+.Abhishek {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.Abhishke2 {
+    background-color: grey;
+}
+
+.Abhishek3 {
+    background-color: white;
+}
+
+
+
+.new {
+    border-radius: 23px;
+    background-color: white;
+ 
+}
+
+.insidecards {
+    height: 191px;
+    width: 180px;
+  
+    border-radius: 33px;
+
+
+
+}
+
+.firstColumnbackground {
+    background: #FFE2E5;
+
+}
+
+.SecondColumnbackground {
+    background-color: #FFF4DE;
+
+}
+
+.ThirdColumnbackground {
+    background-color: #DCFCE7;
+}
+
+.fourColumnbackground {
+    background-color: #F3E8FF;
+
+}
+.tab {
+    overflow: hidden;
+
+}
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 48px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+.tab button:hover {
+    background-color: #ddd;
+}
+.tab button.active {
+    background: #5D5FEF;
+}
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+
+    border-top: none;
+}
+#DasbhoardNameCss
+{
+    margin: 0px 0px 0px 10px; 
+    color:white; 
+    border-radius: 21px;
+    font-weight: 600;
+    
+}
+#LeaderBoardCss
+{
+    margin: 1px 16px 1px 17px;
+}
+#OrderCss
+{
+    margin: 1px 16px 1px 14px;
+}
+#Product
+{
+    margin: 1px 16px 1px 22px;
+}
+#Sales
+{
+    margin: 1px 16px 1px 14px;
+}
+#Messages
+{
+    margin: 1px 16px 1px 14px;
+}
+#Setting
+{
+    margin: 1px 16px 1px 14px;
+}
+#signout
+{
+    margin: 1px 16px 1px 14px;
+}
+
+#Product2
+{
+    margin: 3px 50px 10px 1px;
+}
+#Product1
+{
+    margin: 3px 50px 10px 1px;
+}
+#ProductsMain
+{
+    padding: 6px 7px 2px 11px;
+}
+#Progrss4
+{
+    height: 31px;width: 59px;
+    border: 1px solid black;
+    background-color: #F0F9FF;
+    color: #0095FF;
+    text-align: center;
+    border-radius: 14px;     
+    margin: 0px 0px -8px 0px;
+}
+#Progress4Parent
+{
+    margin: 8px 0px 0px 0px;     
+    height: 4px;
+}
+#AppleSmartWatches
+{
+    padding-bottom: 32px;
+    padding-top: 10px;
+}
+#Parent04
+{
+        padding-bottom: 24px;
+        padding-top: 11px;
+}
+#Progress3
+{
+    height: 31px;
+    width: 59px;
+    border: 1px solid black;
+    background-color: #F0F9FF;
+    color: #0095FF;
+    text-align: center;
+    border-radius: 14px;     
+    margin: 0px 0px -8px 0px;
+}
+
+#Progress3Parent
+{
+    margin: 8px 0px 0px 0px;     
+    height: 4px;
+}
+#BathroomEssentials
+{
+    padding-bottom: 32px;
+    padding-top: 10px;
+}
+#Progress3parent03
+{
+    padding-bottom: 24px;
+    padding-top: 11px;
+}
+#Progress2
+{
+    height: 31px;
+    width: 59px;
+    border: 1px solid black;
+    background-color: #F0F9FF;
+    color: #0095FF;
+    text-align: center;
+    border-radius: 14px;     
+    margin: 0px 0px -8px 0px;
+}
+#Progress2Parent
+{
+    margin: 8px 0px 0px 0px;     
+    height: 4px;
+}
+#Disney
+{
+    padding-bottom: 32px;
+    padding-top: 10px;
+}
+#Progress2Bar2
+{
+    padding-bottom: 24px;
+    padding-top: 11px;
+}
+#Progress1
+{
+    height: 31px;
+    width: 59px;
+    border: 1px solid black;
+    background-color: #F0F9FF;
+    color: #0095FF;
+    text-align: center;
+    border-radius: 14px;     
+    margin: 0px 0px -8px 0px;
+}
+#Progress1Parent
+{
+    margin: 8px 0px 0px 0px;     
+    height: 4px;
+}
+#HomeDecor
+{
+    padding-bottom: 32px;
+    padding-top: 10px;
+}
+#Progress1Parent1
+{
+    padding-bottom: 24px;
+    padding-top: 11px;
+}
+
+#Popularity
+{
+    padding: 11px 186px 0px 10px;
+}
+
+#TopProducts
+{
+    margin: 18px 0px 14px 22px;
+}
+#MainParentProgress
+{
+    padding: 4px 0px 0px 0px;
+}
+#ReadMore
+{
+     color: blue;
+     padding: 35px 0px 6px 0px;
+}
+#Delete5
+{
+ border: none; 
+ background-color: white;
+}
+ #Edit5
+ {
+     border: none;
+      background-color: white; 
+ }   
+ #Delete4
+ {
+     border: none; 
+     background-color: white;
+ }
+ #Edit4
+ {
+     border: none; background-color: white;
+ }
+ #Delete3
+ {
+     border: none; 
+     background-color: white;
+ }
+ #Edit3
+ {
+     border: none; 
+     background-color: white;
+ }
+ #Delete2
+ {
+     border: none; 
+     background-color: white;
+ }
+ #Edit2
+ {
+     border: none; 
+     background-color: white;
+ }
+ #Delete1
+ {
+     border: none; 
+     background-color: white; 
+ }   
+ #Edit1
+ {
+     border: none; background-color: white;
+ }
+ #TableForData
+ {
+     padding: 0px 0px 21px 0px;
+ }
+ #NewCustomersId
+ {
+        font-size: small;
+        color: #514fcd;
+        padding: 5px 0px 0px 5px; 
+        margin: -2px 0px 0px 2px;
+ }
+ #NewCustomers
+ {
+     padding: 0px 0px 0px 7px;
+ }
+ #NewCustomers2
+ {
+     padding: 0px 0px 0px 6px;     
+     font-weight: 700;
+ }
+ #ImageNewCutsomers
+ {
+     padding: 30px 0px 21px 7px;
+ }
+ #NewCustomers3
+ {
+     margin: 0px 0px 12px 0px;
+ }
+ #Productsold1
+ {
+         font-size: small;
+         color: #514fcd;
+         padding: 5px 0px 0px 5px; 
+         margin: -2px 0px 0px 2px;
+ }
+ #Productsold2
+ {
+     padding: 0px 0px 0px 7px;
+ }
+ #ProductSold3
+ {
+     padding: 0px 0px 0px 6px;
+     font-weight: 700;
+ }
+ #Productsold4
+ {
+     padding: 30px 0px 21px 7px;
+ }
+ #Product5
+ {
+     margin: 0px 0px 12px 0px;
+ }
+ #TotalOrder1
+ {
+         font-size: small;
+         color: #514fcd;
+         padding: 5px 0px 0px 5px; 
+         margin: -2px 0px 0px 2px;
+ }
+ #TotalOrder2
+ {
+     padding: 0px 0px 0px 7px;
+ }
+ #TotalOrder3
+ {
+     padding: 0px 0px 0px 6px;     
+     font-weight: 700;
+ }
+ #TotalOrders4
+ {
+     padding: 30px 0px 21px 7px;
+ }
+ #TotalOrder5
+ {
+     margin: 0px 0px 12px 0px;
+ }
+ #TotalSales1
+ {
+        font-size: small;
+        color: #4079ED;
+        font-weight:500 ;
+        padding: 5px 0px 0px 5px;    
+        margin: -2px 0px 0px 2px;
+ }
+ #TotalSales2
+ {
+     padding: 0px 0px 0px 7px;
+ }
+ #TotalSales3
+ {
+     padding: 0px 0px 0px 6px;     
+     font-weight: 700;
+ }
+ #Totalsales4
+ {
+    padding: 19px 0px 18px 17px;
+ }
+ 
+ #TotalSales5
+ {
+     margin: 0px 267px 10px 0px;
+ }
+.wrapper {
+	position: relative;
+    width:100%;
+	overflow:auto;
+}
+#sidebar {
+    position:fixed;
+	height:100vh!important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index:11;
+    width: 260px;
+	overflow:auto;
+    background: #FFFFFF;
+    box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+#sidebar .sidebar-header {
+    padding:20px;
+	background-color:#ffffff;
+	border-bottom:1px solid #eee;
+}
+
+.sidebar-header h3{
+	color:#333;
+	font-size:21px;
+	margin:0px;
+	font-weight:600;
+}
+
+.sidebar-header h3 img{
+	width:45px;
+	margin-right:10px;
+}
+
+#sidebar ul li{
+	padding:2px 7px;
+}
+
+#sidebar ul li.active>a{
+    color: #333;
+    background-color: #5D5FEF;
+
+}
+#sidebar ul li a {
+    padding: 10px;
+	line-height: 30px;
+	border-radius:24px;
+    font-size: 15px;
+	position:relative;
+    font-weight: 400;
+    display: block;
+}
+#sidebar ul li a i {
+    position: relative;
+    margin-right: 10px;
+    top: 5px;
+	color: #555555;
+    margin-left: 10px;
+}
+#content {
+	position: relative;
+    transition: all 0.3s;
+	background-color: #EEEEEE;
+}
+.top-navbar{
+	width:100%;
+	z-index:9;
+	position:relative;
+}
+.main-content{
+	padding:10px 20px 0px 20px;
+	position: relative;
+    width: 100%;
+}
+.navbar{
+    background-color: white;
+    color: black;
+}
+
+
+.navbar button{
+	background-color:transparent;
+	border:none;
+}
+
+
+#sidebarCollapse{
+	border-radius:50%;
+	width:45px;
+	height:45px;
+	text-align:center;
+	line-height:45px;
+	margin-right:20px;
+	border:none;
+    color: #FFFFFF;
+    background-color:white;
+}
+
+.table > thead > tr > th {
+    border-bottom-width: 1px;
+    font-size: 16px;
+    font-weight: 400;
+}
+#sidebar.show-nav,.body-overlay.show-nav{
+	transform:translatex(0%);
+	opacity:1;
+	display:block;
+	visibility:visible;
+	z-index:15;
+}
+
+@media only screen and (min-width:992px){
+	#sidebar.active {
+    width:80px;
+	height:100%!important;
+	position:absolute!important;
+	overflow:visible!important;
+	top:0!important;
+	z-index:666;
+	float:left!important;
+    bottom: 0!important;
+}
+
+
+#sidebar.active .sidebar-header h3 span {
+   display:none;
+   transition:all 0.5s ease;
+}
+
+#sidebar.active ul li a span{
+    display:none;
+	transition:all 0.5s ease;
+}
+
+
+#content {
+    width: calc(100% - 260px);
+    position: relative;
+    float: right;
+    transition: all 0.3s;
+    background-color: #EEEEEE;
+}  
+
+#content.active {
+    width: calc(100% - 80px);
+} 
+
+#sidebar.active .menu {
+    position: absolute;
+    left: 81px;
+    background-color: white;
+    width: 180px;
+    height: auto;
+    margin: 5px 0;
+    top: 0;
+    border: 1px solid #dcd9d9;
+    z-index: 4;
+}                                                                                                                                                                                                              
+}
+
+
+@media only screen and (min-width:992px){
+.dropdown-menu {
+    border: 0;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    visibility: visible;
+	transition: all 150ms linear;
+    display: block;
+	min-width:15rem;
+	right: 0;
+    left: auto;
+    opacity: 1;
+}
+	
+}
+
+
+
+@media only screen and (max-width:992px){
+#sidebar {
+    position:fixed;
+    top: 0;
+    bottom:0;
+    z-index: 10;
+    width: 260px;
+	transform:translatex(-100%);
+	box-shadow:none!important;
+}	
+
+.body-overlay{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:none;
+	visibility:hidden;
+	opacity:0;
+	z-index:3;
+	transition: all 150ms linear;
+	background-color:rgba(0,0,0,0.5);
+}
+}
+
+
+
+
+
+
