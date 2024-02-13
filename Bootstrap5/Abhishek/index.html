@@ -1,39 +1,43 @@
 <!doctype html>
-<html   >
+<html>
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek</title>
-     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>  
+    <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
 </head>
 <style>
-.accordianpadding
-{
-    padding: 0px!important;
-}
-body{
-    font-family: 'Poppins', sans-serif;
-}
+    .accordianpadding {
+        padding: 0px !important;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
 </style>
 
 <body>
     <div class="wrapper">
         <div class="body-overlay"></div>
-        <!-- Sidebar  -->
+
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3><img src="img/logo1.png" class="img-fluid" /><span>Dabang</span></h3>
             </div>
-            <ul class="list-unstyled components">
+            <ul class="list-unstyled">
                 <li class="active">
-                    <a href="#" class="dashboard"><img src="img/DashboardIcons.png" class="img-fluid" /><span
-                            id="DasbhoardNameCss">Dashboard</span></a>
+                    <a href="#" class="dashboard"> <i class="fa-solid fa-chart-pie"
+                            style="font-size: x-large; color: white;"></i>
+                        <span id="DasbhoardNameCss">Dashboard</span></a>
                 </li>
 
                 <div class="small-screen navbar-display">
@@ -42,42 +46,52 @@ body{
                 </div>
 
                 <li class="">
-                    <a href="#"><img src="img/LeaderboardIcons.png"><span id="LeaderBoardCss">Leaderboard</span></a>
+                    <a href="#"> <i class="fa-solid fa-chart-line" style="font-size: x-large;"></i><span
+                            id="LeaderBoardCss">Leaderboard</span></a>
                 </li>
 
                 <li class="">
-                    <a href="#"><img src="img/shopping-cart.png"><span id="OrderCss">order</span></a>
+                    <a href="#"> <i class="fa-solid fa-cart-shopping" style="font-size: x-large;"></i> <span
+                            id="OrderCss">order</span></a>
                 </li>
 
                 <li class="">
-                    <a href="#"><img src="img/Bag.png"><span id="Product">Product</span></a>
+                    <a href="#"> <i class="fa-solid fa-bag-shopping" style="font-size: x-large;"></i> <span
+                            id="Product">Product</span></a>
                 </li>
 
                 <li class="">
-                    <a href="#"><img src="img/SalesReport.png"><span id="Sales">Sales
-                            Report</span></a>
+                    <a href="#"> <i class="fa-solid fa-chart-line" style="font-size: x-large;"></i> <span
+                            id="Sales">SalesReport</span></a>
                 </li>
 
                 <li class="">
-                    <a href="#"><img src="img/Messages.png"><span id="Messages">Messages</span></a>
+                    <a href="#"> <i class="fa-solid fa-message" style="font-size: x-large;"></i> <span
+                            id="Messages">Messages</span></a>
                 </li>
 
                 <li class="">
-                    <a href="#"><img src="img/Settings.png"><span id="Setting">Setting</span></a>
+                    <a href="#"> <i class="fa-solid fa-gear" style="font-size: x-large;"></i> <span
+                            id="Setting">Setting</span></a>
                 </li>
 
 
                 <li class="">
-                    <a href="#"><img src="img/Sign Out Icon.png"><span id="signout">Sign
+                    <a href="#"> <i class="fa-solid fa-right-from-bracket" style="font-size: x-large;"></i> <span
+                            id="signout">Sign
                             Out</span></a>
                 </li>
 
                 <li>
-                    <div style="height: 239px;width: 214px;background-image: linear-gradient(#5D5FEF,#9fa0e9);margin: 96px 4px 6px 9px; border-radius: 38px;" id="ImagesBllueColor">
-                            <img src="img/Logo12.png" style="padding: 11px 0px 0px 72px;">
-                            <p style="padding: 7px 0px 0px 55px;color: white;">Dabang Pro</p>
-                            <p style="padding: 0px 0px 0px 32px;color: white;">Get access to all <br>features on tetumbas</p>
-                            <button style="padding: 6px 12px 8px 11px;margin: 0px 0px 49px 61px;border-radius: 15px;background-color: white;color: #5D5FEF; border: none;">Get pro</button>
+                    <div style="height: 239px;width: 214px;background-image: linear-gradient(#5D5FEF,#9fa0e9);margin: 96px 4px 6px 9px; border-radius: 38px;"
+                        id="ImagesBllueColor">
+                        <img src="img/Logo12.png" style="padding: 11px 0px 0px 72px;">
+                        <p style="padding: 7px 0px 0px 55px;color: white;">Dabang Pro</p>
+                        <p style="padding: 0px 0px 0px 32px;color: white;">Get access to all <br>features on tetumbas
+                        </p>
+                        <button
+                            style="padding: 6px 12px 8px 11px;margin: 0px 0px 49px 61px;border-radius: 15px;background-color: white;color: #5D5FEF; border: none;">Get
+                            pro</button>
                     </div>
 
                 </li>
@@ -85,7 +99,7 @@ body{
         </nav>
 
         <div id="content">
-               
+
             <div class="top-navbar">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
@@ -95,71 +109,96 @@ body{
                                 <img src="img/DashboardButtonslider.png">
                             </button>
                         </div>
-                      
+
 
 
                         <button class="d-inline-block d-lg-none ml-auto more-button" type="button"
                             data-bs-toggle="collapse" data-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                           
+
                             <img src="img/DashboardButtonslider.png">
                         </button>
 
                         <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none"
                             id="navbarSupportedContent">
-                            
+
                             <div class="formSearchA">
-                               
+
+                            </div>
+                        </div>
+                        <!-- dropdown and upper side bar-->
+                        <div class="Main_parent_dropdown d-flex">
+
+                        </div>
+                        <div class="search_barParent d-flex ">
+                            <div class="d-sm-none d-md-none d-lg-block d-flex justify-content-center align-items-center d-none"
+                                style="position: relative;">
+                                <input type="search"
+                                    style="width: 363px;margin: 10px 78px 0px 0px;border-radius: 9px;height: 40px;background: #F9FAFB; border:none"
+                                    placeholder="       Search here...">
+                                <div> <i class="fa-solid fa-magnifying-glass"
+                                        style=" margin: -28px 27px -50px 6px; position: absolute;"></i></div>
+
+                            </div>
+                            <div class="">
+                                <i class="fa-solid fa-bell" style="font-size: x-large;margin: 15px 32px 0px 0px;"></i>
+                            </div>
+                            <div class="d-flex">
+                                <div class="ImageOfProfile"><img src="img/ProfileImage.png"></div>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: white; margin: 0px 36px 0px 0px; color:black">
+                                        Abhishek
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#"
+                                                style="border-bottom: 1px solid #DCDCDC">Profile</a></li>
+                                        <li><a class="dropdown-item" href="#"
+                                                style="border-bottom: 1px solid #DCDCDC">My Account</a></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    </ul>
+                                    <div>
+                                        <p style="margin: 0px 6px 0px 26px;">Admin</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: black;">
-                          Dropdown button
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="d-sm-none d-md-none d-lg-block d-flex justify-content-center align-items-center">
-                        <input type="search" >
-                    </div>
-                  
-                    <div>
-                        <i class="fa-solid fa-bell"></i>
-                    </div>
+                    <!-- dropdown and upper side bar -->
                 </nav>
-                
+
             </div>
 
 
             <div class="main-content">
 
 
-              
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-8 py-2">
-                            <div class="col-lg-12 border new">
-                                <div class="d-flex justify-content-between align-items-center" style="margin: 13px;">
-                                    <div style="font-weight: 600; font-size: x-large;">Today's Sales</div>
 
-                                    <div><a> <img src="img/Exports.png"></a></div>
+                <div class="container-fluid py-2">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12 col-sm-12 py-2">
+                            <div class="col-lg-12 border new">
+                                
+                                <div class="d-flex justify-content-between align-items-center" style="margin: 13px;">
+                                    <div>
+                                        <h3 style="font-weight: 600;font-size: x-large;padding: 0px 0px 0px 23px;">Today's Sales</h3>
+                                        <p style="color: #737791;padding: 0px 0px 0px 23px;">Sales Summary</p>
+                                    </div>
+
+                                    <div><a> <img src="img/Exports.png" id="ExportsImage"></a></div>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center" style="margin: 60px;">
                                     <div class="row">
 
                                         <div class="col-lg-3 col-sm-12 col-md-6">
-                                            <div class="insidecards firstColumnbackground" id="TotalSales5">
-                                                <div class="Parents">
+                                            <div class="insidecards firstColumnbackground col-sm-12" id="TotalSales5">
+                                                <div class="Parents ">
                                                     <div><img src="img/Icon (1).png" id="Totalsales4"></div>
                                                     <div id="TotalSales3">
-                                                        <h5 style="padding: 0px 0px 0px 7px; font-weight: 600;">$1K</h5>
+                                                        <h5 style="padding: 0px 0px 0px 12px; font-weight: 600;">$1K</h5>
                                                     </div>
-                                                    <div><span id="TotalSales2" style="font-weight: 500;">Total
-                                                            Sales</span> </div>
+                                                    <div><span id="TotalSales2" style="font-weight: 500;padding: 0px 0px 0px 15px;">Total Sales</span> </div>
                                                     <div>
                                                         <p id="TotalSales1">+8%
                                                             from
@@ -168,12 +207,12 @@ body{
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-sm-12 col-md-6">
-                                            <div class="insidecards SecondColumnbackground" id="TotalOrder5">
+                                        <div class="col-lg-3 col-md-6 col-sm-12">
+                                            <div class="insidecards SecondColumnbackground col-sm-12" id="TotalOrder5">
                                                 <div class="Parents">
                                                     <div><img src="img/Icon2.png" id="TotalOrders4"></div>
                                                     <div id="TotalOrder3">
-                                                        <h5>300</h5>
+                                                        <h5 style="font-weight: 600;padding: 0px 0px 0px 12px;">300</h5>
                                                     </div>
                                                     <div><span id="TotalOrder2">Total Order</span> </div>
                                                     <div>
@@ -184,11 +223,11 @@ body{
                                             </div>
                                         </div>
                                         <div class="col-lg-3 col-sm-12 col-md-6">
-                                            <div class="insidecards ThirdColumnbackground" id="Product5">
+                                            <div class="insidecards ThirdColumnbackground col-sm-12" id="Product5">
                                                 <div class="Parents">
                                                     <div><img src="img/Icon3.png" id="Productsold4"></div>
                                                     <div id="ProductSold3">
-                                                        <h5>5</h5>
+                                                        <h5 style="padding: 0px 0px 0px 12px;font-weight: 600;">5</h5>
                                                     </div>
                                                     <div><span id="Productsold2">Product Sold</span></div>
                                                     <div>
@@ -201,11 +240,11 @@ body{
                                             </div>
                                         </div>
                                         <div class="col-lg-3 col-sm-12 col-md-6">
-                                            <div class="insidecards fourColumnbackground" id="NewCustomers3">
+                                            <div class="insidecards fourColumnbackground col-sm-12" id="NewCustomers3">
                                                 <div class="Parents">
                                                     <div><img src="img/Icon4.png" id="ImageNewCutsomers"></div>
                                                     <div id="NewCustomers2">
-                                                        <h5>8</h5>
+                                                        <h5 style="padding: 0px 0px 0px 12px;font-weight: 600;">8</h5>
                                                     </div>
                                                     <div><span id="NewCustomers">New Customers</span></div>
                                                     <div>
@@ -218,44 +257,58 @@ body{
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                
+                            </div>
+
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 col-md-12 col-sm-12" style="    padding: 10px 0px 0px 11px;">
                             <div class="col-lg-12 py-4 border new">
-                                <div><h4 style="margin: 13px 16px 18px 9px;">Visitors Insights</h4></div>
+                                <div>
+                                    <h3 style="font-weight: 600;
+                                    font-size: x-large;
+                                    padding: 0px 0px 0px 23px;     margin: 0px 0px 0px 12px;">Visitors Insights</h3>
+                                </div>
                                 <div class="accordion accordianpadding" id="accordionExample" style="padding: 0px; ">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingOne" style="padding: 13px 39px 0px 33px;">
+                                    <div class="accordion-item" style="border: 0px solid white;">
+                                        <h2 class="accordion-header" id="headingOne"
+                                            style="padding: 13px 39px 0px 33px;">
                                             <button class="accordion-button Accordian" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                                aria-expanded="true" aria-controls="collapseOne" id="Accordian" style="background-color: #5D5FEF; color: white;border-radius: 17px;">
+                                                aria-expanded="true" aria-controls="collapseOne" id="Accordian"
+                                                style="background-color: #5D5FEF; color: white;border-radius: 8px 8px 0px 0px;">
                                                 Lorem Ipsum
                                             </button>
                                         </h2>
                                         <div id="collapseOne" class="accordion-collapse collapse show"
                                             aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body" style="padding: 4px 10px 0px 53px;">
-                                                <strong>This is the first item's accordion body.</strong> It is shown by
-                                                default, until the collapse plugin adds the appropriate classes that we
-                                                use to style eachThis is <br>the first item's accordion body.</strong> It is shown by
-                                                default,Abhishek
-                                                <code>.accordion-body</code>, though the transition does limit overflow.
+                                            <div class="accordion-body"
+                                                style="padding: 4px 10px 9px 11px;
+                                                border: 1px solid #5D5FEF;
+                                                margin: 0px 53px 0px 47px;
+                                                font-weight: 400;
+                                            ">
+                                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in 
+                                                a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+                                                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, 
+                                                looked up one of the more obscure Latin words, consectetulooked up one of the more obscure Latin words, consectetu
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingTwo" style="padding: 5px 39px 3px 33px;">
+                                    <div class="accordion-item" style="border: 0px solid white;">
+                                        <h2 class="accordion-header" id="headingTwo"
+                                            style="padding: 5px 39px 3px 33px;">
                                             <button class="accordion-button collapsed Accordian" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                aria-expanded="false" aria-controls="collapseTwo" id="Accordian2" style="background-color: #5D5FEF; color: white;border-radius: 17px;">
+                                                aria-expanded="false" aria-controls="collapseTwo" id="Accordian2"
+                                                style="background-color: #5D5FEF;color: white;border-radius: 8px 8px 0px 0px;">
                                                 Lorem Ipsum
                                             </button>
                                         </h2>
                                         <div id="collapseTwo" class="accordion-collapse collapse"
                                             aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body" style="    border-radius: 17px;     border-radius: 17px;
-                                            padding: 6px 46px 1px 46px;">
+                                            <div class="accordion-body"
+                                                style="padding: 4px 10px 0px 11px;border: 1px solid #5D5FEF;margin: 0px 53px 0px 47px;">
                                                 <strong>This is the second item's accordion body.</strong> It is hidden
                                                 by default, until the collapse plugin adds the appropriate classes that
                                                 the
@@ -275,283 +328,311 @@ body{
                         <!--Code inserted-->
                     </div>
                 </div>
-            
 
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 py-2">
-                    <div class="col-lg-12 col-sm-12 new border">
-                        <div>
-                            <h2 style="margin: 18px 0px 14px 22px;">Vistors List</h2>
-                        </div>
-                        <div class="table-responsive" id="TableForData" style="padding: 0px 0px 0px 32px;">
-                            <table class="table p-4">
-                                <thead>
+
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 col-md-12 py-2">
+                        <div class="col-lg-12 col-sm-12 col-md-12 new border">
+                            <div>
+                                <h2 style="font-weight: 600;
+                                font-size: x-large;
+                                padding: 20px 0px 19px 23px;
+                                margin: 0px 0px 0px 12px;">Vistors List</h2>
+                            </div>
+                            <div class="table-responsive" id="TableForData" style="padding: 0px 0px 0px 32px;">
+                                <table class="table p-4">
+
                                     <tr>
                                         <th class="HeaderStyle">#</th>
                                         <th class="HeaderStyle">Name</th>
                                         <th class="HeaderStyle">Join Date</th>
                                         <th class="HeaderStyle">Actions</th>
                                     </tr>
-                                </thead>
-                                <tr>
-                                    <td>01</td>
-                                    <td>Stephen P.Osborn</td>
-                                    <td>17 Jan,2023</td>
-                                    <td>
-                                        <button id="Edit1"> <img src="img/Edit.png"></button>
-                                        <button id="Delete1"> <img src="img/Delete.png"> </button>
-                                    </td>
 
-                                </tr>
-                                <tr>
-                                    <td>02</td>
-                                    <td>Odessa G. Mettler</td>
-                                    <td>13 Feb,2023</td>
-                                    <td>
-                                        <button id="Edit2"> <img src="img/Edit.png"></button>
-                                        <button id="Delete2"> <img src="img/Delete.png"> </button>
-                                    </td>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Stephen P.Osborn</td>
+                                        <td>17 Jan,2023</td>
+                                        <td>
+                                            <button id="Edit1"> <i class="fa-solid fa-pencil"
+                                                    style="color: deepskyblue; margin: 0px 10px 0px 0px;"> </i> </button>
+                                            <button id="Delete1"> <i class="fa-solid fa-trash" style="color: red;"></i>
+                                            </button>
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td>03</td>
-                                    <td>Judith H.Richards</td>
-                                    <td>13 Feb,2023</td>
-                                    <td>
-                                        <button id="Edit3"> <img src="img/Edit.png"></button>
-                                        <button id="Delete3"> <img src="img/Delete.png"> </button>
-                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>Odessa G. Mettler</td>
+                                        <td>13 Feb,2023</td>
+                                        <td>
+                                            <button id="Edit2"> <i class="fa-solid fa-pencil"
+                                                    style="color: deepskyblue; margin: 0px 10px 0px 0px;"> </i> </button>
+                                            <button id="Delete2"> <i class="fa-solid fa-trash" style="color: red;"></i>
+                                            </button>
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td>04</td>
-                                    <td>Jack B.Perez</td>
-                                    <td>10 Feb,2023</td>
-                                    <td>
-                                        <button id="Edit4"> <img src="img/Edit.png"></button>
-                                        <button id="Delete4"> <img src="img/Delete.png"> </button>
-                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>Judith H.Richards</td>
+                                        <td>13 Feb,2023</td>
+                                        <td>
+                                            <button id="Edit3"> <i class="fa-solid fa-pencil"
+                                                    style="color: deepskyblue; margin: 0px 10px 0px 0px;"> </i></button>
+                                            <button id="Delete3"> <i class="fa-solid fa-trash"
+                                                    style="color: red;"></i></button>
+                                        </td>
 
-
-                                </tr>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr>
-                                    <td>05</td>
-                                    <td>Chris B.Ryant</td>
-                                    <td>10,Feb 2023</td>
-                                    <td>
-                                        <button id="Edit5"> <img src="img/Edit.png"></button>
-                                        <button id="Delete5"> <img src="img/Delete.png"> </button>
-                                    </td>
-
-                                </tr>
-                            </table>
-                            <div>
-                                <span>
-                                    <a class="d-flex justify-content-center align-items-center" id="ReadMore">Read
-                                        More</a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-12 py-2">
-                    <div class="col-lg-12 col-sm-12 new border" id="MainParentProgress">
-                        <div>
-                            <h2 id="TopProducts">Top Products</h2>
-                        </div>
-                        <div class="table-responsive" style="padding: 3px 13px 4px 23px!important;">
-                            <table class="table">
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th id="Popularity">Popularity</th>
-                                    <th>Sales</th>
-                                </tr>
-                                <tr>
-                                    <td id="Progress1Parent1">01</td>
-                                    <td id="HomeDecor">Home Decor Range</td>
-                                    <td>
-                                        <div class="progress" id="Progress1Parent">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 45%"
-                                                aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p id="Progress1">
-                                            45%</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td id="Progress2Bar2">02</td>
-                                    <td id="Disney">Disney Princess Pink Bag 18</td>
-                                    <td>
-                                        <div class="progress" id="Progress2Parent">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 29%"
-                                                aria-valuenow="29" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p id="Progress2">29%</p>
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-                                    <td id="Progress3parent03">03</td>
-                                    <td id="BathroomEssentials">Bathroom Essentials</td>
-                                    <td>
-                                        <div class="progress" id="Progress3Parent">
-                                            <div class="progress-bar bg-info" role="progressbar" style="width: 18%"
-                                                aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p id="Progress3">18%</p>
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-                                    <td id="Parent04">04</td>
-                                    <td id="AppleSmartWatches">Apple SmartWatches</td>
-                                    <td>
-                                        <div class="progress" id="Progress4Parent">
-                                            <div class="progress-bar" role="progressbar" style="width:25%"
-                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p id="Progrss4">
-                                            25%</p>
-                                    </td>
-
-                                </tr>
+                                    </tr>
+                                    <tr>
+                                        <td>04</td>
+                                        <td>Jack B.Perez</td>
+                                        <td>10 Feb,2023</td>
+                                        <td>
+                                            <button id="Edit4"> <i class="fa-solid fa-pencil"
+                                                    style="color: deepskyblue; margin: 0px 10px 0px 0px;"> </i></button>
+                                            <button id="Delete4"> <i class="fa-solid fa-trash"
+                                                    style="color: red;"></i></button>
+                                        </td>
 
 
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                    </tr>
+                                    <tr></tr>
+                                    <tr></tr>
+                                    <tr></tr>
+                                    <tr></tr>
+                                    <tr>
+                                        <td>05</td>
+                                        <td>Chris B.Ryant</td>
+                                        <td>10,Feb 2023</td>
+                                        <td>
+                                            <button id="Edit5"> <i class="fa-solid fa-pencil"
+                                                    style="color: deepskyblue; margin: 0px 10px 0px 0px;"> </i></button>
+                                            <button id="Delete5"> <i class="fa-solid fa-trash"
+                                                    style="color: red;"></i></button>
+                                        </td>
 
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 py-2">
-                    <div class="col-lg-12 col-sm-12 new border">
-                        <div>
-                            <h2 id="ProductsMain">Main Products</h2>
-                            <div class="tab" style="border-bottom: 1px solid beige;">
-                                <button class="tablinks" onclick="openCity(event, 'London')" id="Product-1">Product-1</button>
-                                <button class="tablinks" onclick="openCity(event, 'Paris')" id="Product-2">Product-2</button>
-                            </div>
-
-                            <div id="London" class="tabcontent">
-                                <div class="Parent d-flex">
-                                    <div style="text-align: left; margin: 0px 48px 0px 28px;"><img src="img/dummy-image-square 1.png" height="auto" width="100%" id="Product1" ></div>
-                                    <div style="text-align: left;">There are many variations of passages and Lorem ipsum dolor sit amet
-                                        consectetur<br>
-                                        adipisicing elit. Quos aspernatur et, aliquam quisquam ratione quam alias
-                                        adipisciAbhishek
-                                        soluta dolores quis molestiae sint suscipit iure molestias nobis quae atque
-                                        modi?<br>
-                                     
-                                       <div><button style="margin: 18px 0px 14px 0px;padding: 10px 13px 10px 18px;background-color: #5D5FEF;color: white;border: none;">Readmore</button></div>
-                                    </div> 
+                                    </tr>
+                                </table>
+                                <div>
+                                    <span>
+                                        <a class="d-flex justify-content-center align-items-center" id="ReadMore">Read
+                                            More</a>
+                                    </span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 col-md-12 py-2">
+                        <div class="col-lg-12 col-sm-12 col-md-12 new border" id="MainParentProgress">
+                            <div>
+                                <h4 id="TopProducts" style="font-weight: 600;font-size: x-large;     margin: 18px 0px 19px 22px;" >Top Products</h2>
+                            </div>
+                            <div class="table-responsive" style="padding: 3px 77px 4px 23px!important;">
+                                <table class="table">
+                                    <tr class="lineHeightProblem">
+                                        <th class="HeaderStyle">#</th>
+                                        <th class="HeaderStyle">Name</th>
+                                        <th id="Popularity" class="HeaderStyle">Popularity</th>
+                                        <th class="HeaderStyle">Sales</th>
+                                    </tr>
+                                    <tr class="lineHeightProblem">
+                                        <td id="Progress1Parent1">01</td>
+                                        <td id="HomeDecor">Home Decor Range</td>
+                                        <td>
+                                            <div class="progress" id="Progress1Parent">
+                                                <div class="progress-bar bg-primary " role="progressbar"
+                                                    style="width: 45%" aria-valuenow="45" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p id="Progress1" style="padding: 0px 0px 33px 0px;border: 1px solid #0095FF;">45%</p>
+                                        </td>
+                                    </tr>
+                                    <tr class="lineHeightProblem">
+                                        <td id="Progress2Bar2">02</td>
+                                        <td id="Disney">Disney Princess Pink Bag 18</td>
+                                        <td>
+                                            <div class="progress" id="Progress2Parent">
+                                                <div class="progress-bar colorClass" role="progressbar"
+                                                    style="width: 29%" aria-valuenow="29" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p id="Progress2" style="padding: 0px 0px 33px 0px; border: none;" >29%</p>
+                                        </td>
 
-                            <div id="Paris" class="tabcontent">
-                                <div class="Parent d-flex">
-                                    <div style="text-align: left; margin: 0px 48px 0px 28px;"><img src="img/dummy-image-square 1.png" id="Product2" height="auto" width="100%"></div>
-                                    <div style="text-align: left;">There are many variations of passages and Lorem ipsum dolor sit amet
-                                        consectetur<br>consecteturQuos aspernatur et, aliquam quisquam ratione quam alias<br>
-                                        adipisicing elit. Quos aspernatur et, aliquam quisquam ratione quam alias
-                        
-                                        modi?<br>
-                                        <div><button style="margin: 18px 0px 14px 0px;padding: 10px 13px 10px 18px;background-color: #5D5FEF;color: white;border: none;">Readmore</button></div>
+                                    </tr>
 
+                                    <tr class="lineHeightProblem">
+                                        <td id="Progress3parent03">03</td>
+                                        <td id="BathroomEssentials">Bathroom Essentials</td>
+                                        <td>
+                                            <div class="progress" id="Progress3Parent">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 18%"
+                                                    aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p id="Progress3" style="margin-bottom: 0px!important; padding: 0px 0px 33px 0px; border: none;">18%</p>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr class="lineHeightProblem">
+                                        <td id="Parent04">04</td>
+                                        <td id="AppleSmartWatches">Apple SmartWatches</td>
+                                        <td>
+                                            <div class="progress" id="Progress4Parent">
+                                                <div class="progress-bar" role="progressbar" style="width:25%"
+                                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p id="Progrss4" style="padding: 0px 0px 33px 0px;border: none;">
+                                                25%</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr></tr>
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 col-md-12 py-2 ">
+                        <div class="col-lg-12 col-sm-12 col-md-12 new border">
+                            <div>
+                                <h2 id="ProductsMain" style="font-weight: 600;
+                                font-size: x-large;
+                                margin: 14px 0px 5px 16px;">Main Products</h2>
+                                <div class="tab" style="border-bottom: 1px solid beige;">
+                                    <button class="tablinks" onclick="openCity(event, 'London')"
+                                        id="Product-1">Product-1</button>
+                                    <button class="tablinks" onclick="openCity(event, 'Paris')"
+                                        id="Product-2">Product-2</button>
+                                </div>
+
+                                <div id="London" class="tabcontent">
+                                    <div class="Parent d-flex">
+                                        <div style="text-align: left; margin: 0px 48px 0px 28px;"><img
+                                                src="img/dummy-image-square 1.png" height="auto" width="100%"
+                                                id="Product1"></div>
+                                        <div style="text-align: left;">There are many variations of passages and Lorem
+                                            ipsum dolor sit amet
+                                            consectetur<br>
+                                            adipisicing elit. Quos aspernatur et, aliquam quisquam ratione quam alias
+                                            adipisciAbhishek
+                                            soluta dolores quis molestiae sint suscipit iure molestias nobis quae atque
+                                            modi?<br>
+
+                                            <div><button
+                                                    style="margin: 18px 0px 14px 0px;padding: 10px 13px 10px 18px;background-color: #5D5FEF;color: white;border: none;">Readmore</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div id="Paris" class="tabcontent">
+                                    <div class="Parent d-flex">
+                                        <div style="text-align: left; margin: 0px 48px 0px 28px;"><img
+                                                src="img/dummy-image-square 1.png"  height="auto"
+                                                width="100%" ></div>
+                                        <div style="text-align: left;">There are many variations of passages and Lorem
+                                            ipsum dolor sit amet
+                                            consectetur<br>consecteturQuos aspernatur et, aliquam quisquam ratione quam
+                                            alias<br>
+                                            adipisicing elit. Quos aspernatur et, aliquam quisquam ratione quam alias
+
+                                            modi?<br>
+                                            <div><button
+                                                    style="margin: 18px 0px 14px 0px;padding: 10px 13px 10px 18px;background-color: #5D5FEF;color: white;border: none;">Readmore</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    function openCity(evt, cityName) {
+
+                                        var i, tabcontent, tablinks;
+                                        tabcontent = document.getElementsByClassName("tabcontent");
+                                        for (i = 0; i < tabcontent.length; i++) {
+                                            tabcontent[i].style.display = "none";
+                                        }
+                                        tablinks = document.getElementsByClassName("tablinks");
+                                        for (i = 0; i < tablinks.length; i++) {
+                                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                                        }
+                                        document.getElementById(cityName).style.display = "block";
+                                        evt.currentTarget.className += " active";
+
+                                        abhishek(cityName)
+
+                                    }
+
+                                    function abhishek(cityname) {
+
+                                        if (cityname == 'London') {
+
+                                            var element = document.getElementById("Product-1");
+                                            var element3 = document.getElementById("Product-2")
+                                            element.style.color = "white";
+                                            element3.style.color = "black";
+                                        }
+                                        else {
+
+                                            var element1 = document.getElementById('Product-2');
+                                            var element4 = document.getElementById("Product-1");
+                                            element1.style.color = "white";
+                                            element4.style.color = "black";
+                                        }
+                                    }
+                                </script>
                             </div>
-                            <script>
-                                function openCity(evt, cityName) {
-                                    
-                                    var i, tabcontent, tablinks;
-                                    tabcontent = document.getElementsByClassName("tabcontent");
-                                    for (i = 0; i < tabcontent.length; i++) {
-                                        tabcontent[i].style.display = "none";
-                                    }
-                                    tablinks = document.getElementsByClassName("tablinks");
-                                    for (i = 0; i < tablinks.length; i++) {
-                                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                                    }
-                                    document.getElementById(cityName).style.display = "block";
-                                    evt.currentTarget.className += " active";
-                                    
-                                    abhishek(cityName)
+                        </div>
+                    </div>
 
-                                }
+                    <div class="col-lg-3 col-sm-12 col-md-12 py-2">
+                        <div class="col-lg-12 col-sm-12 new border">
+                            <h4 style="padding: 10px 0px 0px 26px;font-weight: 600;">Sales Mapping By Country</h4>
+                            <div>
+                                <img src="img/world 1.png" height="auto" width="82%" style="margin: 73px 0px 0px 22px;">
+                            </div>
+                        </div>
+                    </div>
 
-                                function abhishek(cityname)
-                                {
-                                    
-                                    if (cityname=='London')
-                                    {
-                                        
-                                        var element = document.getElementById("Product-1");
-                                        var element3 = document.getElementById("Product-2")
-                                        element.style.color="white";
-                                        element3.style.color="black";
-                                    }
-                                    else
-                                    {
-                                        
-                                        var element1 = document.getElementById('Product-2');
-                                        var element4 = document.getElementById("Product-1");
-                                        element1.style.color ="white";
-                                        element4.style.color = "black";
-                                    }
-                                }
-                            </script>
+                    <div class="col-lg-3 col-sm-12 col-md-12 py-2">
+                        <div class="col-lg-12 col-sm-12 col-md-12 new border">
+                            <h4 style="margin: 8px 22px -8px 32px;font-weight: 600;">Volumes Vs Service Level</h4>
+                            <div class="d-flex justify-content-evenly align-items-between">
+                                <div><img src="img/1.png" style="margin: 57px 0px 0px 0px;"></div>
+                                <div><img src="img/2.png" style="margin: 29px 0px 0px 0px;"></div>
+                                <div><img src="img/3.png" style="margin: 57px 0px 0px 0px ;"></div>
+                                <div><img src="img/4.png" style="margin: 68px 0px 0px 0px;"></div>
+                                <div><img src="img/5.png" style="margin: 97px 0px 0px 0px;"></div>
+                                <div><img src="img/6.png" style="margin: 89px 0px 0px 0px"></div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-center align-items-center"><img
+                                    src="img/Group 1000002757.png"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-sm-12 py-2">
-                    <div class="col-lg-12 col-sm-12 new border">
-                        <h4 style="padding: 10px 0px 0px 32px;">Sales Mapping By Country</h4>
-                        <div>
-                            <img src="img/world 1.png" height="auto" width="82%" style="margin: 73px 0px 0px 22px;">
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-3 col-sm-12 py-2">
-                    <div class="col-lg-12 col-sm-12 new border">
-                        <h4 style="margin: 8px 22px -8px 32px;">Volumes Vs Service Level</h4>
-                        <div class="d-flex justify-content-evenly align-items-between">
-                            <div><img src="img/1.png" style="margin: 57px 0px 0px 0px;"></div>
-                            <div><img src="img/2.png" style="margin: 29px 0px 0px 0px;"></div>
-                            <div><img src="img/3.png" style="margin: 57px 0px 0px 0px ;"></div>
-                            <div><img src="img/4.png" style="margin: 68px 0px 0px 0px;"></div>
-                            <div><img src="img/5.png" style="margin: 97px 0px 0px 0px;"></div>
-                            <div><img src="img/6.png" style="margin: 89px 0px 0px 0px"></div>
-                        </div>
-                        <hr>
-                        <div class="d-flex justify-content-center align-items-center"><img src="img/Group 1000002757.png"></div>
-                    </div>
-                </div>
+
             </div>
-
-
 
         </div>
 
-</div>
-
     </div>
     </div>
 
@@ -561,10 +642,10 @@ body{
 
 
 
-  
-    
-  
-   
+
+
+
+
     <!-- <script src="js/popper.min.js"></script> -->
 
 
