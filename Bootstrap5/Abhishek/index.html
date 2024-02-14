@@ -5,20 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek</title>
-    <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Assest/css/Style.css">
+    <link rel="stylesheet" href="Assest/Bootstrap/bootstrap-5.3.2-dist/css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
+    <!-- <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script> -->
+    <script src="Assest/Bootstrap/bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
 </head>
 <style>
-    .accordianpadding {
+    /* .accordianpadding {
         padding: 0px !important;
-    }
+    } */
 
     body {
         font-family: 'Poppins', sans-serif;
@@ -31,7 +29,7 @@
 
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3><img src="img/logo1.png" class="img-fluid" /><span>Dabang</span></h3>
+                <h3><img src="Assest/img/logo1.png" class="img-fluid" /><span>Dabang</span></h3>
             </div>
             <ul class="list-unstyled">
                 <li class="active">
@@ -46,52 +44,49 @@
                 </div>
 
                 <li class="">
-                    <a href="#"> <i class="fa-solid fa-chart-line" style="font-size: x-large;"></i><span
-                            id="LeaderBoardCss">Leaderboard</span></a>
+                    <a href="#" class="HoverClass"> <i class="fa-solid fa-chart-line fontSixeforLeaderAndother"></i><span
+                            id="LeaderBoardCss" class="hoverspan">Leaderboard</span></a>
                 </li>
 
                 <li class="">
-                    <a href="#"> <i class="fa-solid fa-cart-shopping" style="font-size: x-large;"></i> <span
-                            id="OrderCss">order</span></a>
+                    <a href="#" class="HoverClass"> <i class="fa-solid fa-cart-shopping fontSixeforLeaderAndother"></i> <span
+                            id="OrderCss" class="hoverspan">order</span></a>
                 </li>
 
                 <li class="">
-                    <a href="#"> <i class="fa-solid fa-bag-shopping" style="font-size: x-large;"></i> <span
-                            id="Product">Product</span></a>
+                    <a href="#" class="HoverClass"> <i class="fa-solid fa-bag-shopping fontSixeforLeaderAndother"></i> <span
+                            id="Product" class="hoverspan">Product</span></a>
                 </li>
 
                 <li class="">
-                    <a href="#"> <i class="fa-solid fa-chart-line" style="font-size: x-large;"></i> <span
-                            id="Sales">SalesReport</span></a>
+                    <a href="#" class="HoverClass"> <i class="fa-solid fa-chart-line fontSixeforLeaderAndother"></i> <span
+                            id="Sales" class="hoverspan">SalesReport</span></a>
                 </li>
 
                 <li class="">
-                    <a href="#"> <i class="fa-solid fa-message" style="font-size: x-large;"></i> <span
-                            id="Messages">Messages</span></a>
+                    <a href="#" class="HoverClass"> <i class="fa-solid fa-message fontSixeforLeaderAndother"></i> <span
+                            id="Messages" class="hoverspan">Messages</span></a>
                 </li>
 
                 <li class="">
-                    <a href="#"> <i class="fa-solid fa-gear" style="font-size: x-large;"></i> <span
-                            id="Setting">Setting</span></a>
+                    <a href="#" class="HoverClass"> <i class="fa-solid fa-gear fontSixeforLeaderAndother"></i> <span
+                            id="Setting" class="hoverspan">Setting</span></a>
                 </li>
 
 
                 <li class="">
-                    <a href="#"> <i class="fa-solid fa-right-from-bracket" style="font-size: x-large;"></i> <span
-                            id="signout">Sign
+                    <a href="#" class="HoverClass"> <i class="fa-solid fa-right-from-bracket fontSixeforLeaderAndother"></i> <span
+                            id="signout" class="hoverspan">Sign
                             Out</span></a>
                 </li>
 
                 <li>
-                    <div style="height: 239px;width: 214px;background-image: linear-gradient(#5D5FEF,#9fa0e9);margin: 96px 4px 6px 9px; border-radius: 38px;"
+                    <div class="GetaccesstoAll" 
                         id="ImagesBllueColor">
-                        <img src="img/Logo12.png" style="padding: 11px 0px 0px 72px;">
-                        <p style="padding: 7px 0px 0px 55px;color: white;">Dabang Pro</p>
-                        <p style="padding: 0px 0px 0px 32px;color: white;">Get access to all <br>features on tetumbas
-                        </p>
-                        <button
-                            style="padding: 6px 12px 8px 11px;margin: 0px 0px 49px 61px;border-radius: 15px;background-color: white;color: #5D5FEF; border: none;">Get
-                            pro</button>
+                        <img src="Assest/img/Logo12.png"  class="LogoImageCss">
+                        <p class="dabangPro">Dabang Pro</p>
+                        <p class="Getaccess">Get access to all <br>features on tetumbas</p>
+                        <button class="GetPro">Getpro</button>
                     </div>
 
                 </li>
@@ -106,7 +101,7 @@
                         <div>
                             <button type="button" id="sidebarCollapse" class="d-xl-block d-lg-block d-md-mone d-none">
 
-                                <img src="img/DashboardButtonslider.png">
+                                <img src="Assest/img/DashboardButtonslider.png">
                             </button>
                         </div>
 
@@ -116,7 +111,7 @@
                             data-bs-toggle="collapse" data-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
-                            <img src="img/DashboardButtonslider.png">
+                            <img src="Assest/img/DashboardButtonslider.png">
                         </button>
 
                         <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none"
@@ -127,24 +122,38 @@
                             </div>
                         </div>
                         <!-- dropdown and upper side bar-->
+
+                        
+                        <!--  -->
                         <div class="Main_parent_dropdown d-flex">
 
                         </div>
                         <div class="search_barParent d-flex ">
-                            <div class="d-sm-none d-md-none d-lg-block d-flex justify-content-center align-items-center d-none"
-                                style="position: relative;">
+                            <div>
+                                <div class="d-md-none d-sm-block d-lg-none d-flex justify-content-center align-items-center" style="    margin: 11px 14px 15px 0px;">
+                                    <i class="fa-solid fa-magnifying-glass d-lg-block d-md-block d-sm-none" style="    font-size: x-large;
+                                    margin: 0px 0px 0px 0px;"></i>
+                                </div>
+                            
+                            <div class="d-sm-none d-md-block d-lg-block d-flex justify-content-center align-items-center d-none"style="position: relative;">
                                 <input type="search"
                                     style="width: 363px;margin: 10px 78px 0px 0px;border-radius: 9px;height: 40px;background: #F9FAFB; border:none"
                                     placeholder="       Search here...">
                                 <div> <i class="fa-solid fa-magnifying-glass"
                                         style=" margin: -28px 27px -50px 6px; position: absolute;"></i></div>
 
+                                    
                             </div>
-                            <div class="">
-                                <i class="fa-solid fa-bell" style="font-size: x-large;margin: 15px 32px 0px 0px;"></i>
+                        </div>
+                            <div class="" >
+                                <div class="d-flex" style="position: relative;"><i class="fa-solid fa-bell" style="font-size: x-large;margin: 15px 32px 0px 0px; "></i>
+                                    <div style="position: absolute;">
+                                <i class="fa-regular fa-circle redDotCss"></i></div>
+
+                            </div>
                             </div>
                             <div class="d-flex">
-                                <div class="ImageOfProfile"><img src="img/ProfileImage.png"></div>
+                                <div class="ImageOfProfile"><img src="Assest/img/ProfileImage.png"></div>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"
                                         id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
@@ -182,11 +191,11 @@
                                 
                                 <div class="d-flex justify-content-between align-items-center" style="margin: 13px;">
                                     <div>
-                                        <h3 style="font-weight: 600;font-size: x-large;padding: 0px 0px 0px 23px;">Today's Sales</h3>
-                                        <p style="color: #737791;padding: 0px 0px 0px 23px;">Sales Summary</p>
+                                        <h3 class="TodaysSales">Today's Sales</h3>
+                                        <p class="Sales_Summary">Sales Summary</p>
                                     </div>
 
-                                    <div><a> <img src="img/Exports.png" id="ExportsImage"></a></div>
+                                    <div><a> <img src="Assest/img/Exports.png" id="ExportsImage"></a></div>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center" style="margin: 60px;">
                                     <div class="row">
@@ -194,11 +203,11 @@
                                         <div class="col-lg-3 col-sm-12 col-md-6">
                                             <div class="insidecards firstColumnbackground col-sm-12" id="TotalSales5">
                                                 <div class="Parents ">
-                                                    <div><img src="img/Icon (1).png" id="Totalsales4"></div>
+                                                    <div><img src="Assest/img/Icon (1).png" id="Totalsales4"></div>
                                                     <div id="TotalSales3">
-                                                        <h5 style="padding: 0px 0px 0px 12px; font-weight: 600;">$1K</h5>
+                                                        <h5 class="A1K">$1K</h5>
                                                     </div>
-                                                    <div><span id="TotalSales2" style="font-weight: 500;padding: 0px 0px 0px 15px;">Total Sales</span> </div>
+                                                    <div><span id="TotalSales2"class="Total_Sales">Total Sales</span> </div>
                                                     <div>
                                                         <p id="TotalSales1">+8%
                                                             from
@@ -210,9 +219,9 @@
                                         <div class="col-lg-3 col-md-6 col-sm-12">
                                             <div class="insidecards SecondColumnbackground col-sm-12" id="TotalOrder5">
                                                 <div class="Parents">
-                                                    <div><img src="img/Icon2.png" id="TotalOrders4"></div>
+                                                    <div><img src="Assest/img/Icon2.png" id="TotalOrders4"></div>
                                                     <div id="TotalOrder3">
-                                                        <h5 style="font-weight: 600;padding: 0px 0px 0px 12px;">300</h5>
+                                                        <h5  class="A300">300</h5>
                                                     </div>
                                                     <div><span id="TotalOrder2">Total Order</span> </div>
                                                     <div>
@@ -225,9 +234,9 @@
                                         <div class="col-lg-3 col-sm-12 col-md-6">
                                             <div class="insidecards ThirdColumnbackground col-sm-12" id="Product5">
                                                 <div class="Parents">
-                                                    <div><img src="img/Icon3.png" id="Productsold4"></div>
+                                                    <div><img src="Assest/img/Icon3.png" id="Productsold4"></div>
                                                     <div id="ProductSold3">
-                                                        <h5 style="padding: 0px 0px 0px 12px;font-weight: 600;">5</h5>
+                                                        <h5  class="A5">5</h5>
                                                     </div>
                                                     <div><span id="Productsold2">Product Sold</span></div>
                                                     <div>
@@ -242,9 +251,9 @@
                                         <div class="col-lg-3 col-sm-12 col-md-6">
                                             <div class="insidecards fourColumnbackground col-sm-12" id="NewCustomers3">
                                                 <div class="Parents">
-                                                    <div><img src="img/Icon4.png" id="ImageNewCutsomers"></div>
+                                                    <div><img src="Assest/img/Icon4.png" id="ImageNewCutsomers"></div>
                                                     <div id="NewCustomers2">
-                                                        <h5 style="padding: 0px 0px 0px 12px;font-weight: 600;">8</h5>
+                                                        <h5 class="A8">8</h5>
                                                     </div>
                                                     <div><span id="NewCustomers">New Customers</span></div>
                                                     <div>
@@ -265,29 +274,21 @@
                         <div class="col-lg-4 col-md-12 col-sm-12" style="    padding: 10px 0px 0px 11px;">
                             <div class="col-lg-12 py-4 border new">
                                 <div>
-                                    <h3 style="font-weight: 600;
-                                    font-size: x-large;
-                                    padding: 0px 0px 0px 23px;     margin: 0px 0px 0px 12px;">Visitors Insights</h3>
+                                    <h3 class="Visitors_Insights">Visitors Insights</h3>
                                 </div>
-                                <div class="accordion accordianpadding" id="accordionExample" style="padding: 0px; ">
+                                <div class="accordion accordianpadding AccordianButtonFirst" id="accordionExample" style="padding: 0px; ">
                                     <div class="accordion-item" style="border: 0px solid white;">
                                         <h2 class="accordion-header" id="headingOne"
                                             style="padding: 13px 39px 0px 33px;">
-                                            <button class="accordion-button Accordian" type="button"
+                                            <button class="accordion-button Accordian AccordianButtonFirst" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                                aria-expanded="true" aria-controls="collapseOne" id="Accordian"
-                                                style="background-color: #5D5FEF; color: white;border-radius: 8px 8px 0px 0px;">
+                                                aria-expanded="true" aria-controls="collapseOne" id="Accordian">
                                                 Lorem Ipsum
                                             </button>
                                         </h2>
                                         <div id="collapseOne" class="accordion-collapse collapse show"
                                             aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body"
-                                                style="padding: 11px 10px 15px 11px;
-                                                border: 1px solid #5D5FEF;
-                                                margin: 0px 53px 0px 47px;
-                                                font-weight: 400; font-size: 12px;
-                                            ">
+                                            <div class="accordion-body AccordianBodyFirst">
                                                 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in 
                                                 a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
                                                 Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, 
@@ -302,17 +303,16 @@
                                     <div class="accordion-item" style="border: 0px solid white;">
                                         <h2 class="accordion-header" id="headingTwo"
                                             style="padding: 5px 39px 3px 33px;">
-                                            <button class="accordion-button collapsed Accordian" type="button"
+                                            <button class="accordion-button collapsed Accordian AcrodianButton2" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                aria-expanded="false" aria-controls="collapseTwo" id="Accordian2"
-                                                style="background-color: #5D5FEF;color: white;border-radius: 8px 8px 0px 0px;">
+                                                aria-expanded="false" aria-controls="collapseTwo" id="Accordian2">
                                                 Lorem Ipsum
                                             </button>
                                         </h2>
                                         <div id="collapseTwo" class="accordion-collapse collapse"
                                             aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body"
-                                                style="padding: 4px 10px 0px 11px;border: 1px solid #5D5FEF;margin: 0px 53px 0px 47px;">
+                                            <div class="accordion-body AccrodianBody2"
+                                                >
                                                 <strong>This is the second item's accordion body.</strong> It is hidden
                                                 by default, until the collapse plugin adds the appropriate classes that
                                                 the
@@ -338,10 +338,7 @@
                     <div class="col-lg-6 col-sm-12 col-md-12 py-2">
                         <div class="col-lg-12 col-sm-12 col-md-12 new border">
                             <div>
-                                <h2 style="font-weight: 600;
-                                font-size: x-large;
-                                padding: 20px 0px 19px 23px;
-                                margin: 0px 0px 0px 12px;">Vistors List</h2>
+                                <h2 class="Vistors_List">Vistors List</h2>
                             </div>
                             <div class="table-responsive" id="TableForData" style="padding: 0px 0px 0px 32px;">
                                 <table class="table p-4">
@@ -358,9 +355,8 @@
                                         <td>Stephen P.Osborn</td>
                                         <td>17 Jan,2023</td>
                                         <td>
-                                            <button id="Edit1"> <i class="fa-solid fa-pencil"
-                                                    style="color: deepskyblue; margin: 0px 10px 0px 0px;"> </i> </button>
-                                            <button id="Delete1"> <i class="fa-solid fa-trash" style="color: red;"></i>
+                                            <button id="Edit1"> <i class="fa-solid fa-pencil EditButtonCss"> </i> </button>
+                                            <button id="Delete1"> <i class="fa-solid fa-trash DeleteButtonCss"></i>
                                             </button>
                                         </td>
 
@@ -370,9 +366,8 @@
                                         <td>Odessa G. Mettler</td>
                                         <td>13 Feb,2023</td>
                                         <td>
-                                            <button id="Edit2"> <i class="fa-solid fa-pencil"
-                                                    style="color: deepskyblue; margin: 0px 10px 0px 0px;"> </i> </button>
-                                            <button id="Delete2"> <i class="fa-solid fa-trash" style="color: red;"></i>
+                                            <button id="Edit2"> <i class="fa-solid fa-pencil EditButtonCss"> </i> </button>
+                                            <button id="Delete2"> <i class="fa-solid fa-trash DeleteButtonCss"></i>
                                             </button>
                                         </td>
 
@@ -382,10 +377,8 @@
                                         <td>Judith H.Richards</td>
                                         <td>13 Feb,2023</td>
                                         <td>
-                                            <button id="Edit3"> <i class="fa-solid fa-pencil"
-                                                    style="color: deepskyblue; margin: 0px 10px 0px 0px;"> </i></button>
-                                            <button id="Delete3"> <i class="fa-solid fa-trash"
-                                                    style="color: red;"></i></button>
+                                            <button id="Edit3"> <i class="fa-solid fa-pencil EditButtonCss"> </i></button>
+                                            <button id="Delete3"> <i class="fa-solid fa-trash DeleteButtonCss"></i></button>
                                         </td>
 
                                     </tr>
@@ -394,10 +387,8 @@
                                         <td>Jack B.Perez</td>
                                         <td>10 Feb,2023</td>
                                         <td>
-                                            <button id="Edit4"> <i class="fa-solid fa-pencil"
-                                                    style="color: deepskyblue; margin: 0px 10px 0px 0px;"> </i></button>
-                                            <button id="Delete4"> <i class="fa-solid fa-trash"
-                                                    style="color: red;"></i></button>
+                                            <button id="Edit4"> <i class="fa-solid fa-pencil EditButtonCss"> </i></button>
+                                            <button id="Delete4"> <i class="fa-solid fa-trash DeleteButtonCss"></i></button>
                                         </td>
 
 
@@ -411,18 +402,15 @@
                                         <td>Chris B.Ryant</td>
                                         <td>10,Feb 2023</td>
                                         <td>
-                                            <button id="Edit5"> <i class="fa-solid fa-pencil"
-                                                    style="color: deepskyblue; margin: 0px 10px 0px 0px;"> </i></button>
-                                            <button id="Delete5"> <i class="fa-solid fa-trash"
-                                                    style="color: red;"></i></button>
+                                            <button id="Edit5"> <i class="fa-solid fa-pencil EditButtonCss"> </i></button>
+                                            <button id="Delete5"> <i class="fa-solid fa-trash DeleteButtonCss"></i></button>
                                         </td>
 
                                     </tr>
                                 </table>
                                 <div>
                                     <span>
-                                        <a class="d-flex justify-content-center align-items-center" id="ReadMore">Read
-                                            More</a>
+                                        <a class="d-flex justify-content-center align-items-center" id="ReadMore">Read More</a>
                                     </span>
                                 </div>
                             </div>
@@ -431,7 +419,7 @@
                     <div class="col-lg-6 col-sm-12 col-md-12 py-2">
                         <div class="col-lg-12 col-sm-12 col-md-12 new border" id="MainParentProgress">
                             <div>
-                                <h4 id="TopProducts" style="font-weight: 600;font-size: x-large;     margin: 18px 0px 19px 22px;" >Top Products</h2>
+                                <h4 id="TopProducts" class="Top_products" >Top Products</h2>
                             </div>
                             <div class="table-responsive" style="padding: 3px 77px 4px 23px!important;">
                                 <table class="table">
@@ -452,7 +440,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <p id="Progress1" style="padding: 0px 0px 33px 0px;border: 1px solid #0095FF;">45%</p>
+                                            <p id="Progress1" class="progressbar1colorandOthercss">45%</p>
                                         </td>
                                     </tr>
                                     <tr class="lineHeightProblem">
@@ -466,7 +454,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <p id="Progress2" style="padding: 0px 0px 33px 0px; border: 1px solid #00E58F; background-color: #F0FDF4;" >29%</p>
+                                            <p id="Progress2"  class="Progressbar2CssandOthers">29%</p>
                                         </td>
 
                                     </tr>
@@ -481,7 +469,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <p id="Progress3" style="margin-bottom: 0px!important; padding:0px 0px 33px 0px; border: 1px solid #884DFF; background-color: #FBF1FF; color: #884DFF;">18%</p>
+                                            <p id="Progress3"  class="ProgressBar3CssandOther">18%</p>
                                         </td>
 
                                     </tr>
@@ -496,8 +484,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <p id="Progrss4" style="padding: 0px 0px 33px 0px;border: 1px solid #FF8F0D; background-color:#FEF6E6; color:#FF8F0D ">
-                                                25%</p>
+                                            <p id="Progrss4" class="Progress4barCssandOther">25%</p>
                                         </td>
 
                                     </tr>
@@ -514,12 +501,10 @@
                     <div class="col-lg-6 col-sm-12 col-md-12 py-2 ">
                         <div class="col-lg-12 col-sm-12 col-md-12 new border">
                             <div>
-                                <h2 id="ProductsMain" style="font-weight: 600;
-                                font-size: x-large;
-                                margin: 14px 0px 5px 16px;">Main Products</h2>
-                                <div class="tab" style="border-bottom: 1px solid beige;">
-                                    <button class="tablinks" onclick="openCity(event, 'London')"
-                                        id="Product-1" style="margin: 0px 0px 0px 24px;">Product-1</button>
+                                <h2 id="ProductsMain" class="Main_Products">Main Products</h2>
+                                <div class="tab Product1Tab">
+                                    <button class="tablinks Product1ButtonClass" onclick="openCity(event, 'London')"
+                                        id="Product-1">Product-1</button>
                                     <button class="tablinks" onclick="openCity(event, 'Paris')"
                                         id="Product-2">Product-2</button>
                                 </div>
@@ -527,7 +512,7 @@
                                 <div id="London" class="tabcontent">
                                     <div class="Parent d-flex">
                                         <div style="text-align: left; margin: 0px 48px 0px 28px;"><img
-                                                src="img/dummy-image-square 1.png" height="auto" width="100%"
+                                                src="Assest/img/dummy-image-square 1.png" height="auto" width="100%"
                                                 id="Product1"></div>
                                         <div style="text-align: left;">There are many variations of passages and Lorem
                                             ipsum dolor sit amet
@@ -547,7 +532,7 @@
                                 <div id="Paris" class="tabcontent">
                                     <div class="Parent d-flex">
                                         <div style="text-align: left; margin: 0px 48px 0px 28px;"><img
-                                                src="img/dummy-image-square 1.png"  height="auto"
+                                                src="Assest/img/dummy-image-square 1.png"  height="auto"
                                                 width="100%" ></div>
                                         <div style="text-align: left;">There are many variations of passages and Lorem
                                             ipsum dolor sit amet
@@ -606,27 +591,27 @@
 
                     <div class="col-lg-3 col-sm-12 col-md-12 py-2">
                         <div class="col-lg-12 col-sm-12 new border">
-                            <h4 style="padding: 10px 0px 0px 26px;font-weight: 600;">Sales Mapping By Country</h4>
+                            <h4  class="Sales_Mapping_By_Country">Sales Mapping By Country</h4>
                             <div>
-                                <img src="img/world 1.png" height="auto" width="82%" style="margin: 73px 0px 0px 22px;">
+                                <img src="Assest/img/world 1.png" height="auto" width="82%" style="margin: 73px 0px 0px 22px;">
                             </div>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-sm-12 col-md-12 py-2">
                         <div class="col-lg-12 col-sm-12 col-md-12 new border">
-                            <h4 style="margin: 8px 22px -8px 32px;font-weight: 600;">Volumes Vs Service Level</h4>
+                            <h4  class="VolumesVsServiceLevel">Volumes Vs Service Level</h4>
                             <div class="d-flex justify-content-evenly align-items-between">
-                                <div><img src="img/1.png" style="margin: 57px 0px 0px 0px;"></div>
-                                <div><img src="img/2.png" style="margin: 29px 0px 0px 0px;"></div>
-                                <div><img src="img/3.png" style="margin: 57px 0px 0px 0px ;"></div>
-                                <div><img src="img/4.png" style="margin: 68px 0px 0px 0px;"></div>
-                                <div><img src="img/5.png" style="margin: 97px 0px 0px 0px;"></div>
-                                <div><img src="img/6.png" style="margin: 89px 0px 0px 0px"></div>
+                                <div><img src="Assest/img/1.png" class="Img1"></div>
+                                <div><img src="Assest/img/2.png" class="Img2"></div>
+                                <div><img src="Assest/img/3.png" class="Img3"></div>
+                                <div><img src="Assest/img/4.png" class="Img4"></div>
+                                <div><img src="Assest/img/5.png" class="Img5"></div>
+                                <div><img src="Assest/img/6.png" class="Img6"></div>
                             </div>
                             <hr>
                             <div class="d-flex justify-content-center align-items-center"><img
-                                    src="img/Group 1000002757.png"></div>
+                                    src="Assest/img/Group 1000002757.png"></div>
                         </div>
                     </div>
                 </div>
