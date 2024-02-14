@@ -5,31 +5,12 @@
     padding:0px;
     box-sizing: border-box;
 }
-
- /* #CardsData
-{
-    display: flex;
-    flex-wrap: wrap;
-} */
-.hoevrClass:hover
-{
-    background-color: white;
-}
-/* i:hover
-{
-       background-color: white;
-} */
-.box
-{
-    height: 188px;
-    width: 207px;
-}
 .redDotCss
 {
     font-size: xx-small;
     margin: 9px 0px 0px 14px;
     background-color: red;
-    border-radius: 5px;
+border-radius: 5px;
 }
 .Sales_Mapping_By_Country
 {
@@ -211,7 +192,6 @@
 .fontSixeforLeaderAndother
 {
     font-size: x-large;
-
 }
 .HoverClass:hover
 {
@@ -721,7 +701,7 @@ ul{
  }
  #TotalSales2
  {
-     padding: 0px 0px 0px 15px;
+     padding: 0px 0px 0px 7px;
  }
  #TotalSales3
  {
