@@ -13,9 +13,18 @@
   background-image: url("../img/flowbite--angle-top-solid.svg")!important;
 }
 
-.colorClass
+.colorClass2
 {
-    background-color: #00E58F;
+    background-color: #00E58F!important;
+}
+.colorClass3
+{
+    background-color: #884DFF!important;
+
+}
+.colorClass4
+{
+    background-color: #FF8F0D!important;
 }
 
 .lineHeightProblem
@@ -225,7 +234,7 @@ ul{
 } */
 #Progress3
 {
-    height: 31px;
+    height: 35px;
     width: 59px;
     border: 1px solid black;
     background-color: #F0F9FF;
