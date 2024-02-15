@@ -7,79 +7,407 @@
     <title>Document</title>
     <link rel="stylesheet" href="Assest/css/Style.css">
     <link rel="stylesheet" href="Assest/Bootstrap/bootstrap-5.3.2-dist/css/bootstrap.css">
-    <script src="Assest/Bootstrap/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <div class="container-fluid">
-        <!--Navigation bar code Start-->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <header class="header_wrapper">
+        <div class="container">
+            <!--Navigation bar code Start-->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <img src="Assest/img/Logo (1).png" height="auto" class="img-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-evenly" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0 menu-navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">Feature</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Product</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Testimonial</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">FAQ</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <div> <button class="btn" type="submit">Search</button></div>
+                            <div> <button class="btn bg-success" type="submit">Search</button></div>
+                        </form>
+                    </div>
+                </div>
+
+            </nav>
+    </header>
+    <!--Navigation bar code ends-->
+    <!-- corosoul is starteed-->
+    <section id="home" class="home">
+        <div class="banner_wrapper wrapper">
             <div class="container">
-                <img src="Logo.png" height="auto">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Service</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="#">Feature</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Product</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Testimonial</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">FAQ</a>
-                        </li>
-                        <li>
-                            <div class="d-flex justify-content-around align-items-center">
-                                <form class="d-flex" role="search">
-                                    <button class="btn " type="submit" style="padding: 0px 0px 0px 0px;">Search</button>
-                                    <button class="btn bg-success" type="submit">Search</button>
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="row align-items-center">
+                    <!--code inserted -->
 
-                </div>
+                </div><!--code inserted-->
             </div>
-        </nav>
-        <!--Navigation bar code ends-->
-        <!-- corosoul is starteed-->
-        <div class="row">
-            <!--Corosoul effect there needed-->
         </div>
+    </section> <!--section of the data-->
 
-    </div><!--Container fluid-->
 
-    <div class="container-fluid">
-        <div class="row">
+<section id="about">
+    <div class="container">
+        <div class="row align-items-center">
             <div class="col-lg-12">
-                <div class="row">
-
-                </div>
-
+                <h1 style="text-align: center;">Our clients</h1>
+                <p style="text-align: center;">We have been working with the some Fortune 500+ clients</p>
             </div>
-
+        </div>
+        <div class="row mb-5">
+            <div class="col-lg-12 d-flex justify-content-evenly mt-4 flex-wrap">
+                <img src="Assest/img/client1Logo.png" class="image-fluid p-3">
+                <img src="Assest/img/Client2Logo.png" height="auto" class="image-fluid p-3">
+                <img src="Assest/img/Client3Logo.png" height="auto" class="image-fluid p-3">
+                <img src="Assest/img/Client4Logo.png" height="auto" class="image-fluid p-3">
+                <img src="Assest/img/Client5Logo.png" height="auto" class="image-fluid p-3">
+                <img src="Assest/img/Client6Logo.png" height="auto" class="image-fluid p-3">
+                <img src="Assest/img/Client7Logo.png" height="auto" class="image-fluid p-3">
+            </div>
         </div>
     </div>
 
+</section>
+
+<section id="about" class="mt-5">
+    <div class="container mt-5">
+        <div class="row align-items-center mt-5">
+            <div class="col-lg-12">
+                <h2 style="text-align: center;">Manage your Entire community <br>in a Single System</h2>
+                <p style="text-align: center;">Who is Nextcent suitable for?</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row d-flex justify-content-evenly">
+                        <div class="col-lg-4 p-2">
+                            <div class="cards">
+                                <img src="Assest/img/MembershipIcon.png" width="auto" class="" style="padding: 0px 0px 0px 102px;">
+                                <h3 style="text-align: center;">Membership <br>orgnization</h3>
+                                <p style="text-align: center;">Our membership management software <br>provides full automation of<br> membership renewals and payments</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-2">
+                            <div class="cards ">
+                                <img src="Assest/img/MembershipIcon.png" width="auto" class="" style="padding: 0px 0px 0px 102px;">
+                                <h3 style="text-align: center;">Membership <br>orgnization</h3>
+                                <p style="text-align: center;">Our membership management software <br>provides full automation of<br> membership renewals and payments</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 p-2">
+                            <div class="cards ">
+                                <img src="Assest/img/MembershipIcon.png" width="auto" class="" style="padding: 0px 0px 0px 102px;">
+                                <h3 style="text-align: center;">Membership <br>orgnization</h3>
+                                <p style="text-align: center;">Our membership management software <br>provides full automation of<br> membership renewals and payments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
 
+    <section id="About"> <!--Mobile half image-->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-mb-0 mb-5">
+                    <div class="position-relative">
+                        <img src="Assest/img/mobileHalf1.png">
+                    </div>
 
-    <script src="bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+                </div> <!--col 6 div ends-->
+                <div class="col-md-6 text-center text-md-start col-sm-12">
+
+                    <h1>The Unseen of Spending three years at Pixelfrade</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo saepe molestiae ad praesentium
+                        accusantium soluta? Eveniet cum commodi, dolore dolores ut nesciunt quae facere suscipit ab
+                        saepe enim maiores dicta!</p>
+                    <button class="main-btn">Learn more</button>
+                </div><!--cols end div 2-->
+            </div><!--Row ends-->
+        </div> <!--container ends-->
+    </section> <!-- section ends-->
+
+    <section id="Achievments" class="Achievments-Wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-mb-0 mb-5" style="height: 100%;">
+                    <div class="position-relative">
+                        <h2>Helping a Local</h2>
+                        <h2>Bussiness reinvent Itseld</h2>
+                        <p>We reached here with our hard work dedication</p>
+                    </div>
+                </div>
+                <div class="col-md-6" style="height: 100%;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="MemberWrapper d-flex flex-wrap">
+                                <div class="px-2">
+                                    <img src="Assest/img/MemberIcon.png" height="auto" width="100%">
+                                </div>
+                                <div>
+                                    <h4>2,245,341</h4>
+                                    <p>Members</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="ClubWrapper d-flex">
+                                <div class="px-2">
+                                    <img src="Assest/img/Clubs.png" height="auto" width="100%">
+                                </div>
+                                <div>
+                                    <h4>46,328</h4>
+                                    <p>Clubs</p>
+                                </div>
+                            </div> <!--club wrapper is closed-->
+                        </div>
+                    </div> <!--first row is ended -->
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="EvenBookingWrapper d-flex">
+                                <div class="px-2">
+                                    <img src="Assest/img/EventBooking.png" height="auto" width="100%">
+                                </div>
+                                <div>
+                                    <h4>8,28,867</h4>
+                                    <p>Event Bookings</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="PayementWrapper d-flex ">
+                                <div class="px-2"><img src="Assest/img/Vector (6)payement.png" height="auto"
+                                        width="100%"></div>
+                                <div>
+                                    <h4>1,926,436</h4>
+                                    <p>Payments</p>
+                                </div>
+                            </div> <!--Payement wrapper div is closed -->
+                        </div><!--column is closed -->
+                    </div> <!--Second row is ended -->
+                </div> <!--Main cloumn is closed -->
+            </div><!--row is closed-->
+        </div><!--conatiner is closed-->
+    </section> <!--Section closed-->
+
+
+
+    <section id="About" class="mt-5"> <!--Mobile half image-->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-mb-0 mb-5">
+                    <div class="position-relative">
+                        <img src="Assest/img/CalenderImage.png">
+                    </div>
+
+                </div> <!--col 6 div ends-->
+                <div class="col-md-6 text-center text-md-start col-sm-12">
+
+                    <h1>How to Design your site footer like we did </h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo saepe molestiae ad praesentium
+                        accusantium soluta? Eveniet cum commodi, dolore dolores ut nesciunt quae facere suscipit ab
+                        saepe enim maiores dicta!</p>
+                    <button class="main-btn">Learn more</button>
+                </div><!--cols end div 2-->
+            </div><!--Row ends-->
+        </div> <!--container ends-->
+    </section> <!-- section ends-->
+
+
+
+
+    <section id="About" class="mt-5"> <!--Mobile half image-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mb-mb-0 mb-5 col-sm-12s">
+                    <div class="position-relative">
+                        <img src="Assest/img/TeslaIcon.png" height="10%" width="100%">
+                    </div>
+
+                </div> <!--col 6 div ends-->
+                <div class="col-md-7 text-start text-md-start col-sm-12 mt-2 " style="height: 100%;">
+                    <p>Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus
+                        tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in,
+                        gravida enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie,
+                        nec molestie mi blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla
+                        sodales. Suspendisse eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque
+                        malesuada enim sapien, vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget
+                        efficitur libero condimentum id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.
+                        e eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque
+                        malesuada enim sapien, vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget
+                        efficitur libero condimentum id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.
+                        e eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque
+                        malesuada enim sapien, vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget
+                        malesuada enim sapien, vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget
+
+
+                    </p>
+                    <h1>Tim Smith</h1>
+                    <p>British Dragon Boat Racing Association</p>
+                    <div class="teslaIconParent"><!--Ima-->
+                        <div class="d-flex align-items-end mt-5 flex-wrap">
+                            <div class="px-3 py-2"> <img src="Assest/img/TeslaLogo1.png" height="auto"></div>
+                            <div class="px-3 py-2"><img src="Assest/img/Teslalogo2.png" height="auto"></div>
+                            <div class="px-3 py-2"><img src="Assest/img/TeslaLogo3.png" height="auto"></div>
+                            <div class="px-3 py-2"><img src="Assest/img/TeslaLogo4.png" height="auto"></div>
+                            <div class="px-3 py-2"><img src="Assest/img/TeslaLogo5.png" height="auto"></div>
+                            <div class="px-3 py-2"><img src="Assest/img/TeslaLogo6.png" height="auto"></div>
+                            <div class="px-3 py-2"><a href="#">Meet All Customers</a></div>
+                            <!--more items-->
+
+
+                        </div> <!--Tesla icon parent ends -->
+                    </div><!--cols end div 2-->
+                </div><!--Row ends-->
+            </div> <!--container ends-->
+    </section> <!-- section ends-->
+
+
+    <section id="About" class="mt-5">
+        <div class="container">
+            <div class="row text-center text-md-left ">
+                <div class="col-lg-12 col-md-12">
+                    <div class="text-center">
+                        <h2>Caring is the new marketing</h2>
+                        <p>The Nexcent blog is the best place to read about the latest membership insights, trends and
+                            more. See who's joining the community, read about how our community are increasing their
+                            membership income and lot's more.</p>
+                    </div>
+                </div> <!--col ends-->
+            </div> <!-- row -->
+            <div class="row">
+                <div class="col-lg-12 flex-wrap">
+                    <div class="d-flex ">
+                        <div class="col-lg-4 minimum">
+                            <div class="abhishke">
+                                <img src="Assest/img/oldman.png">
+                            </div>
+                            <div class="" style="top: 213px;left: 43px;"> <!--White is ongoing here-->
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 card minimum">
+                            <div class="abhishke">
+                                <img src="Assest/img/oldman.png">
+                            </div>
+                            <div class="cards" style="top: 213px;left: 43px;"> <!--White is ongoing here-->
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 card minimum">
+                            <div class="abhishke">
+                                <img src="Assest/img/oldman.png">
+                            </div>
+                            <div class="cards Cardrelative" style="top: 213px;left: 43px;"> <!--White is ongoing here-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!--Container Ends-->
+    </section><!--caring is the new marketing-->
+
+
+    <section id="About" class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mt-4 mb-4">
+                        <h1 class="mt-5 mb-5">Pellentesque Suscipit <br>fringilia libero eu</h1>
+                        <button class="mt-2 mb-1">Get Demo</button>
+                    </div> <!-- text center-->
+                </div> <!--Col ends-->
+            </div> <!--row ends -->
+        </div><!--Container ends -->
+    </section> <!--Container ends-->
+
+    <section id="footer" class="mt-5 bg-success footerLi">
+        <div class="container pb-3">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mt-5 col-sm-12">
+                    <img src="Assest/img/Logo (1).png" class="" style="padding: 0px 0px 40px 0px;">
+                    <p>copyright @2020 Nextcent ltd<br>All rights Reserved </p>
+                    <ul class="d-flex">
+                        <li class="p-2 list_Style_custom"><a><i class="fa-brands fa-instagram"></i></a></li>
+                        <li class="p-2 list_Style_custom"><a><i class="fa-brands fa-chrome"></i></a></li>
+                        <li class="p-2 list_Style_custom"><a><i class="fa-brands fa-twitter"></i></a></li>
+                        <li class="p-2 list_Style_custom"><a><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mt-5 col-sm-6">
+                    <h3>Company</h3>
+                    <ul class="list-unstyled">
+                        <li class="p-2 list_Style_custom"><a>About us</a></li>
+                        <li class="p-2 list_Style_custom"><a>Blog</a></li>
+                        <li class="p-2 list_Style_custom"><a>contact Us</a></li>
+                        <li class="p-2 list_Style_custom"><a>Pricing</a></li>
+                        <li class="p-2 list_Style_custom"><a>Testimonials</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6 mb-4 mt-5 col-sm-6">
+                    <h3>Support</h3>
+                    <ul class="list-unstyled">
+                        <li class="p-2 list_Style_custom"><a>Help Center</a></li>
+                        <li class="p-2 list_Style_custom"><a>Terms Of services</a></li>
+                        <li class="p-2 list_Style_custom"><a>Legal</a></li>
+                        <li class="p-2 list_Style_custom"><a>Privacy policy</a></li>
+                        <li class="p-2 list_Style_custom"><a>Status</a></li>
+                    </ul>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6 mb-4 mt-5 col-sm-12">
+                    <h3>Stay Up to date</h3>
+                    <div class="form-group mb-4">
+                        <input type="email" class="form-control bg-transparent" placeholder="Enter your email here">
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <script src="Assest/Bootstrap/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
 </body>
 
 </html>
