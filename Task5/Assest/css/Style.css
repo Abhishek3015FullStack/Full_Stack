@@ -466,14 +466,4 @@ input[type="email"]::placeholder {
         }
     }
 
-    @media only screen and (min-width: 1440px)
-    {  
-    }
-
-    @media only screen and (min-width: 2520px)
-    {   
-        .cardsForThe320px{
-
-
-        }
-    }
+   

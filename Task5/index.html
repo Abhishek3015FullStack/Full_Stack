@@ -72,12 +72,12 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active data-bs-interval=10000">
                             <div class="row align-items-center"><!--ROW START -->
-                                <div class="col-lg-8 col-md-8 col-sm-12">
+                                <div class="col-lg-8 col-md-8 col-sm-12  order-sm-2 order-lg-1 order-md-1">
                                     <h1>Lessons and insights<br><span>From 8 Years</span></h1>
                                     <p>where to grow your bussiness as a photoGrapher site or Social Media </p>
                                     <button type="button" class="btn btn-outline-success">Register</button>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12"><!--col start-->
+                                <div class="col-lg-4 col-md-4 col-sm-12 md-order-1 order-sm-1"><!--col start-->
                                     <img src="Assest/img/CorosoulSecondImage.png" class="d-block w-100" alt="..."
                                         height="10%" width="100%">
                                 </div><!--col ENd-->
@@ -85,12 +85,12 @@
                         </div>
                         <div class="carousel-item">
                             <div class="row align-items-center"><!--ROW START -->
-                                <div class="col-lg-8 col-md-8 col-sm-12">
+                                <div class="col-lg-8 col-md-8 col-sm-12 order-sm-2 order-lg-1 order-md-1">
                                     <h1>Lessons and insights<br><span>From 8 Years</span></h1>
                                     <p>where to grow your bussiness as a photoGrapher site or Social Media </p>
                                     <button type="button" class="btn btn-outline-success">Register</button>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12"><!--col start-->
+                                <div class="col-lg-4 col-md-4 col-sm-12 order-sm-2 order-lg-1 order-md-1"><!--col start-->
                                     <img src="Assest/img/CorosoulSecondImage.png" class="d-block w-100" alt="..."
                                         height="10%" width="100%">
                                 </div><!--col ENd-->
@@ -98,12 +98,12 @@
                         </div>
                         <div class="carousel-item">
                             <div class="row align-items-center"><!--ROW START -->
-                                <div class="col-lg-8 col-md-8 col-sm-12">
+                                <div class="col-lg-8 col-md-8 col-sm-12 order-sm-2 order-lg-1 order-md-1">
                                     <h1>Lessons and insights<br><span>From 8 Years</span></h1>
                                     <p>where to grow your bussiness as a photoGrapher site or Social Media </p>
                                     <button type="button" class="btn btn-outline-success">Register</button>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12"><!--col start-->
+                                <div class="col-lg-4 col-md-4 col-sm-12 order-sm-2 order-lg-1 order-md-1"><!--col start-->
                                     <img src="Assest/img/CorosoulSecondImage.png" class="d-block w-100" alt="..."
                                         height="10%" width="100%">
                                 </div><!--col ENd-->
@@ -509,7 +509,7 @@
     var e=0;
     var f= 0;
     var intervalId = setInterval(function() {
-        if (i >= 2452) {
+        if (i >= 25000) {
             clearInterval(intervalId); // Stop the interval when i reaches 2452
         } else {
             a.innerText = i;
@@ -517,22 +517,11 @@
             c.innerText =i;
             d.innerText=i++;
         }
-    }, 1000); // 1000 milliseconds (1 second) interval
+    }, 10); // 1000 milliseconds (1 second) interval
 }
 
 
-function count1() {
-    var a = document.getElementById('Number2');
-    var b = document.getElementById()
-    var i = 0;
-    var intervalId = setInterval(function() {
-        if (i >= 4200) {
-            clearInterval(intervalId); // Stop the interval when i reaches 2452
-        } else {
-            a.innerText = i++;
-        }
-    }, 1000); // 1000 milliseconds (1 second) interval
-}
+
 
 window.onload = count;
 
