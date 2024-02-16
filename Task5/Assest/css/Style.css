@@ -309,22 +309,14 @@ input[type="email"]::placeholder {
 }
 .background_radius
 {
-    background: grey;
+    background: #201c1c;
     padding: 10px 13px 10px 13px;
     border-radius: 77px;
     font-size: smaller;
 }
 
 
-/* .card
-{
-    border-radius: 0.625rem!important;
-    background-color: white !important;
-    box-shadow: 0.5084rem 1.1419rem 2.5rem 0 rgb(0, 0, 0 / 8%)!important;
-    transition: all 0.4s!important;
-    border:0!important;
-    height: 100%;
-} */
+
 @keyframes movebounce{
     0%{
         transform: translateY(0);
