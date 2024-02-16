@@ -3,6 +3,40 @@
     padding: 0px;
     box-sizing: border-box;   
 }
+.OnhovershouldShow:hover
+{
+    opacity: 1;
+}
+a:hover
+{
+    color: #4CAF4F!important;
+}
+a{
+    cursor: pointer;
+    
+}
+ul li a:hover
+{
+    color: #4CAF4F;
+}
+a:hover
+{
+    color: #4CAF4F;
+}
+#Demo:hover
+{
+    background-color:#4CAF4F;
+    color: white;
+}
+.whitecolorText
+{
+    color: white;
+}
+.footerfontAwesome
+{
+    font-size: x-large!important;
+}
+
 .cards{
     height: 266px;
     background-color: white;
@@ -11,25 +45,86 @@
     box-shadow: 1px 1px 1px rgb(235, 221, 221);
     width: 70%;
 }
+.readmore
+{
+    list-style: none;
+    text-decoration: none;
+    color: #4CAF4F;
+    font-weight: 500;
+
+}
+#British
+{
+    color: #89939E;
+}
+#TimSmith
+{
+    color: #4CAF4F;
+}
+#helpingaLocal
+{
+    color: #4CAF4F;
+}
+/* .carousel-control-next-icon {
+    background-image: url(../img/right-arrow.png)!important;
+}
+
+.carousel-control-prev-icon {
+    background-image: url(../img/left-arrow.png)!important;
+} */
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box !important;
+    flex: 0 1 auto !important;
+    width: 11px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin-right: 3px !important;
+    margin-left: 3px !important;
+    text-indent: -999px !important;
+    cursor: pointer !important;
+    background-color: #fff !important;
+    background-clip: padding-box !important;
+    border: none !important;
+    border-top: 1px solid transparent!important;
+    border-bottom: 10px solid black !important;
+    opacity: 0.5 !important;
+    transition: opacity 0.6s ease!important;
+    border-radius: 103px!important;
+}
+
+.card1
+{
+    height: 149px;
+    width: 300px;
+    background-color: #F5F7FA;
+    box-shadow: 5px 5px 1px rgb(237 234 234);
+    margin: 0px 0px 0px 26px;
+    top: 195px;
+    opacity: 0;
+   
+
+}
 
 
 
 .list_Style_custom
 {
-    margin-bottom: 5rem;
+    /* margin-bottom: 5rem; */
     font-size: 0.87rem;
+    color: white;
 }
 .ulCustom
 {
     list-style: none;
 }
 
-a
+/* a
 {
     color: white!important;
 
 
-}
+} */
 
 .minimum
 {
@@ -66,7 +161,8 @@ a
 }
 #Achievments
 {
-    background-color: rgb(194, 184, 184);
+    background-color:#F5F7FA;
+
     background-size: cover;
 }
 .navbar.header-scrolled
@@ -108,7 +204,7 @@ a
 .header_wrapper .nav-item .nav-link:hover,
 .header_wrapper .nav-item .nav-link:focus
 {
-    color:aqua;
+    color:#4CAF4F
 
 }
 a{
@@ -207,7 +303,20 @@ p{
     color: grey;
     line-height: 1.625rem;
 }
-.card
+input[type="email"]::placeholder {
+    color: white;
+
+}
+.background_radius
+{
+    background: grey;
+    padding: 10px 13px 10px 13px;
+    border-radius: 77px;
+    font-size: smaller;
+}
+
+
+/* .card
 {
     border-radius: 0.625rem!important;
     background-color: white !important;
@@ -215,7 +324,7 @@ p{
     transition: all 0.4s!important;
     border:0!important;
     height: 100%;
-}
+} */
 @keyframes movebounce{
     0%{
         transform: translateY(0);
@@ -297,3 +406,82 @@ p{
         
     }  
 }
+
+@media only screen and (min-width: 455px) {
+
+    .cardsMemberResponsive
+    {
+        padding: 0px 0px 0px 0px;
+        margin: 0px 24px 0px 95px;
+    }
+    .LearnMoreButton
+    {
+        padding: 19px 16px 14px 20px;
+        margin: 0px 0px 17px 213px;
+    }
+    .MembershipResponsive
+    {
+        padding: 0px 0px 0px 126px;
+    }
+    /* .cardswiththeCollapse
+    {
+            position: absolute;
+        height: 143px;
+        font-size: medium;
+        margin: -56px 22px 0px 17px;
+        width: 246px;
+} */
+    }
+
+
+
+
+    @media only screen and (min-width: 375px)
+    {   
+        .cardsForThe375px{
+            width:109%;
+
+        }
+        .cardsiCon375px{
+            padding: 0px 0px 21px 143px;
+        }
+    }
+        
+
+    @media only screen and (min-width: 450px)
+    {   
+        .cardsForThe375px{
+            width: 70%;
+        }
+    }
+    
+    @media only screen and (min-width: 768px)
+    {   
+/*                      
+        *{
+            font-size: small;
+          
+            white-space: wrap;
+        } */
+
+       
+    }
+  
+    @media only screen and (min-width: 1024px)
+    {   
+        .cardsForThe320px{
+
+        }
+    }
+
+    @media only screen and (min-width: 1440px)
+    {  
+    }
+
+    @media only screen and (min-width: 2520px)
+    {   
+        .cardsForThe320px{
+
+
+        }
+    }
