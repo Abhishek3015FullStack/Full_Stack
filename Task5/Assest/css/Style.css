@@ -433,8 +433,23 @@ input[type="email"]::placeholder {
     }
     }
 
+
+    @media only screen and (max-width:302px) {
+        .cardMax
+    {
+        display: none;
+    }
+    }
+
     
     @media only screen and (max-width:316px) {
+        .cardMax
+    {
+        display: none;
+    }
+    }
+
+    @media only screen and (max-width:274px) {
         .cardMax
     {
         display: none;

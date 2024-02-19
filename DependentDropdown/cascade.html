@@ -1,0 +1,150 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <form>
+        <div>
+            <select id="dpdlCountry">
+                <option selected>Choose Country</option>
+                <option value="India">India</option>
+                <option value="US">US</option>
+            </select>
+        </div>
+
+        <div>
+            <select id="dpdlState">
+                <option selected>Choose State</option>
+
+            </select>
+        </div>
+
+        <div>
+            <select id="dpdlCity">
+                <option selected>Choose City</option>
+
+            </select>
+        </div>
+    </form>
+    <script>
+        var StateList = [
+            { Country: "India", State: "Maharashtra" },
+            { Country: "US", State: "Los Angles" }
+        ]
+
+        var CityList = [{ State: "Maharashtra", City: "dhule" },
+        { State: "Los_Angles", city: "London" }
+        ]
+
+        $('#dpdlCountry').change(function () {
+            $('#dpdlState').html("<option selected>Choose State</option>");
+            $('#dpdlCity').html("<option selected>Choose City</option>");
+            const states = StateList.filter(m => m.Country == $('#dpdlCountry').val());
+            states.forEach(element => {
+                const option = "<option val='" + element.State + "'>" + element.State + "</option>";
+                $('#dpdlState').append(option);
+            });
+        });
+
+
+        $('#dpdlState').change(function()
+            {
+                debugger
+                $('#dpdlCity').html("<option selected>Choose City</option>");
+                const States = CityList.filter(m=>m.State == $('#dpdlState').val());
+                States.forEach(element => {
+                    const  option = "<option val='"+element.City+"'>"+element.City+"</option>";
+                    $('#dpdlCity').append(option);
+                });
+            }
+        );
+
+
+
+
+
+    </script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+        <select id="Country">
+            <option>Select Country</option>
+            <option>India</option>
+            <option>US</option>
+        </select>
+
+        <select id="State">
+            <option>Select State</option>
+        </select>
+
+
+        <select id="City">
+            <option>Select City</option>
+        </select>
+
+
+    </form>
+
+    <script>
+
+        var Liststate=[
+            {Country:"India" ,State:"Maharashtra"},
+            {Country:"US", State:"Los Angles"}
+        ];
+
+        var Listcity= [
+            {State:"Maharashtra",City:"Dhule"},
+            {State:"Los Angles" ,City:"London"}
+        ];
+
+        $('document').ready(function()
+        {
+            $('#Country').change(function()
+            {
+                $('#State').html("<option selected>Select State</option>");
+                $('#City').html("<option selected>Select City</option>");
+
+                const CountryName = Liststate.filter(m=>m.Country == $('#Country').val());
+
+                CountryName.forEach(element => {
+                    const states = "<option val'"+element.State+"'>"+element.State+ "</option>";
+                    $('#State').append(states);
+                })
+
+            $('#State').change(function()
+            {
+                $('#City').html("<option selected> Select City </option>");
+                const State = Listcity.filter(m=>m.State == $('#State').val());
+                State.forEach(element =>
+                {
+                    const option= "<option val'"+element.City +"'>"+element.City+"</option>";
+                    $('#City').append(option);
+                })
+                
+
+            })
+
+
+            });
+        })
+    </script>
+</body>
+</html>
