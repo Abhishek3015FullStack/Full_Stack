@@ -426,6 +426,21 @@ input[type="email"]::placeholder {
     }
 
 
+    @media only screen and (max-width:374px) {
+        .cardMax
+    {
+        display: none;
+    }
+    }
+
+    
+    @media only screen and (max-width:316px) {
+        .cardMax
+    {
+        display: none;
+    }
+    }
+
 
 
     @media only screen and (min-width: 375px)
