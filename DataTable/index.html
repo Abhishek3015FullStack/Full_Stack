@@ -34,13 +34,13 @@
   </tbody>
 </table>
 
-<!-- Modal for editing -->
+<!-- Modal for editing and inserting -->
 <div id="editModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h2>Edit Row</h2>
-    <input type="text" id="editColumn1" placeholder="Enter new value for Column 1">
-    <input type="text" id="editColumn2" placeholder="Enter new value for Column 2">
+    <h2 id="modalTitle">Add Row</h2>
+    <input type="text" id="editColumn1" placeholder="Enter value for Column 1">
+    <input type="text" id="editColumn2" placeholder="Enter value for Column 2">
     <button id="saveEdit">Save</button>
   </div>
 </div>
@@ -71,11 +71,22 @@
       var rowData = dataArray[rowIndex];
 
       // Populate modal with current row data
+      $('#modalTitle').text('Edit Row');
       $('#editColumn1').val(rowData.column1);
       $('#editColumn2').val(rowData.column2);
 
       // Show the modal
-      $('#editModal').show();
+      $('#editModal').show().attr('data-index', rowIndex);
+    });
+
+    // Insert button click handler
+    $('#insertBtn').click(function() {
+      // Reset modal fields
+      $('#modalTitle').text('Add Row');
+      $('#editColumn1, #editColumn2').val('');
+
+      // Show the modal
+      $('#editModal').show().removeAttr('data-index');
     });
 
     // Close modal when the close button or outside the modal is clicked
@@ -89,19 +100,24 @@
       }
     });
 
-    // Save edited data
+    // Save edited/inserted data
     $('#saveEdit').click(function() {
-      var rowIndex = $('.editBtn').closest('tr').attr('data-index');
+      var rowIndex = $('#editModal').attr('data-index');
       var newData = {
         column1: $('#editColumn1').val(),
         column2: $('#editColumn2').val()
       };
 
-      // Update dataArray with edited data
-      dataArray[rowIndex] = newData;
-
-      // Update table with edited data
-      table.row(rowIndex).data([newData.column1, newData.column2, '<button class="editBtn">Edit</button>', '<button class="deleteBtn">Delete</button>']).draw(false);
+      if (rowIndex === undefined) {
+        // Insert new row
+        dataArray.push(newData);
+        var rowNode = table.row.add([newData.column1, newData.column2, '<button class="editBtn">Edit</button>', '<button class="deleteBtn">Delete</button>']).draw(false).node();
+        $(rowNode).attr('data-index', table.rows().count() - 1); // Set a data attribute to keep track of the index
+      } else {
+        // Edit existing row
+        dataArray[rowIndex] = newData;
+        table.row(rowIndex).data([newData.column1, newData.column2, '<button class="editBtn">Edit</button>', '<button class="deleteBtn">Delete</button>']).draw(false);
+      }
 
       // Close the modal
       $('#editModal').hide();

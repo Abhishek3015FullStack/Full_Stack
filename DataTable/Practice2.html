@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+    <table id="Mytable">
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+    </table>
+
+    <input type="text" id="FirstName">
+    <input type="text" id="SecondName">
+    <input type="button" value="save" id="saveButton" class=".save">
+
+    <script>
+        var dataArray = [
+            { Column1: "Abhishek1", Column2: "Abhishek1" },
+            { Column1: "Abhishek2", Column2: "Abhishek2" },
+            { Column1: "Abhishek3", Column2: "Abhishek3" }
+
+
+        ];
+        var SelectRow = null;
+
+        $(document).ready(function () {
+            var table = $('#Mytable').DataTable();
+            dataArray.forEach(function (item) {
+                var rowNode = table.row.add([item.Column1, item.Column2, '<button class="Edit">Edit</button>', '<button class="Delete">Delete</button>']).draw(false).node();
+                $(rowNode).attr('data-index', table.rows().count() - 1);
+            })
+
+            $('#Mytable').on('click', '.Edit', function () {
+                var rowIndex = $(this).closest('tr').attr('data-index');
+                var rowData = dataArray[rowIndex];
+                $('#FirstName').val(rowData.Column1);
+                $('#SecondName').val(rowData.Column2);
+                SelectRow = rowIndex;
+
+            })
+
+
+            $(document).on('click', '#saveButton', function () {
+                debugger
+                var newData = { Column1: $('#FirstName').val(), Column2: $('#SecondName').val() }
+
+                if (SelectRow == null) {
+                    dataArray.push(newData);
+                    var rowNode = table.row.add([newData.Column1, newData.Column2, '<button class="Edit">Edit</button>', '<button class="Delete">Delete</button>']).draw(false).node();
+                    $(rowNode).attr('data-index', table.rows().count() - 1);
+
+                }
+                else {
+                    dataArray[SelectRow] = newData;
+                    table.row(SelectRow).data([newData.Column1, newData.Column2, '<button class="Edit">Edit</button>', '<button class="Delete">Delete</button>']).draw(false);
+
+                }
+            })
+
+            $('#Mytable').on('click', ".Delete", function () {
+                var rowIndex = $(this).closest('tr').attr('data-index');
+
+                if (confirm("Are you want to delete the element")) {
+                    table.row(rowIndex).remove().draw(false);
+                    dataArray(rowIndex).splice(rowIndex, 1);
+
+                }
+            })
+
+
+
+        });
+    </script>
+</body>
+
+</html>
