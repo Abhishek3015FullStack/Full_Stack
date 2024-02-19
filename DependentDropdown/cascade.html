@@ -100,6 +100,13 @@
             <option>Select City</option>
         </select>
 
+        <input type="text" id="DynamicDropdownMaker">
+
+
+        <select id="DynamicDropdown">
+            <option>Select</option>
+        </select>
+
 
     </form>
 
@@ -108,6 +115,7 @@
         var Liststate=[
             {Country:"India" ,State:"Maharashtra"},
             {Country:"US", State:"Los Angles"}
+
         ];
 
         var Listcity= [
@@ -128,6 +136,7 @@
                     const states = "<option val'"+element.State+"'>"+element.State+ "</option>";
                     $('#State').append(states);
                 })
+            });
 
             $('#State').change(function()
             {
@@ -142,8 +151,33 @@
 
             })
 
+            $('#DynamicDropdownMaker').keypress(function(event)
+            {
+                var a= [
+                    {value:"Data1"},
+                    {value:"Data2"}
 
-            });
+                ];
+                
+                if(event.keyCode==13)
+                {
+                    event.preventDefault()
+                    debugger
+                    var b = $('#DynamicDropdownMaker').val();
+
+                    $('#DynamicDropdownMaker').val("");
+                    debugger
+                    a.push({value: b})
+                    a.forEach(element => {
+                        debugger
+                        const option = "<option value='" + element.value + "'>" + element.value + "</option>"; // Corrected syntax for creating <option> elements
+                        $('#DynamicDropdown').append(option);
+                    })
+                }
+            })
+
+
+           
         })
     </script>
 </body>
