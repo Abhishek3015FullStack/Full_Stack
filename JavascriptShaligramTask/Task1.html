@@ -5,142 +5,251 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <script src="Task1Main.js"></script> -->
 </head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgb(190 222 231 / 99%);
+    }
+
+    .table>:not(caption)>*>* {
+        background-color: rgb(190 222 231 / 99%) !important;
+    }
+</style>
 
 <body>
-    <label for="FirstName">First Name</label>
-    <input type="text" id="FirstName">
+
+    <div class="container">
+        <div class="">
+            <h1 class="d-flex justify-content-center align-items-center">Student Form</h1>
+        </div>
+        <div class="row mt-5 gt-4">
+            <div class="col-lg-4 col-sm-12">
+                <label for="FirstName" class="form-label">FirstName</label>
+                <input type="text" class="form-control" id="FirstName" value="Krunal">
+            </div>
+
+            <div class="col-lg-4 col-sm-12">
+                <label for="LastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="LastName" value="Dhote">
+            </div>
+
+            <div class="col-lg-4 col-sm-12">
+                <label for="DateOfBirth" class="form-label">DateOfBirth</label>
+                <input type="text" class="form-control" id="DateOfBirth" placeholder="Date of Birth"
+                    onfocus="changeInputType(this, 'date')" value="10/09/2001">
+            </div>
+        </div>
+
+        <div class="row mt-5 gt-4">
+            <div class="col-lg-4 col-sm-12">
+                <label for="Email" class="form-label">Email</label>
+                <input type="text" class="form-control" id="Email" value="krunal.d@shaligraminfotech.com">
+            </div>
+
+            <div class="col-lg-4 col-sm-12">
+                <label for="Address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="Address" value="Amravati">
+            </div>
+
+            <div class="col-lg-4 col-sm-12">
+                <label for="GraduationYear" class="form-label">Graduation</label>
+                <input type="text" class="form-control" id="GraduationYear" placeholder="YYYY-MM"
+                    onfocus="changeInputType(this, 'month')" value="June 2023">
+            </div>
+        </div>
+        <hr>
+        <h1 class="mt-5 mb-4">Education</h1>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="table-responsive">
+                    <table class="table" style="background-color: none;" id="tableMy">
+                        <thead>
+                            <tr>
+                                <th scope="col">Degree/board</th>
+                                <th scope="col">School/College</th>
+                                <th scope="col">Start date</th>
+                                <th scope="col">Passout year</th>
+                                <th scope="col">Percentage</th>
+                                <th scope="col">backLog</th>
+                                <th scope="col"><button class="Add" style="background-color: black;border-radius: 41px;padding:0px 4px 0px 1px"><i
+                                            class="fa-solid fa-plus" style="padding: 0px 3px 0px 3px;
+                                            border-radius: 45px;
+                                            color: white;
+                                            margin: 0px 0px 2px 0px;
+                                            "></i></button></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" value="10th" class="form-control"></td>
+                                <td><input type="text" value="N.T.R High School" class="form-control"></td>
+                                <td><input type="text" value="June 2016" class="form-control"
+                                        onfocus="changeInputType(this, 'month')" placeholder="MM-YY"></td>
+                                <td><input type="text" value="May 2017" class="form-control"
+                                        onfocus="changeInputType(this, 'month')" placeholder="MM-YY" ></td>
+                                <td><input type="text" value="82.60" class="form-control"></td>
+                                <td><input type="text" value="0" class="form-control"></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" value="12th" class="form-control"></td>
+                                <td><input type="text" value="M.F.Warud" class="form-control"></td>
+                                <td><input type="text" value="June 2018" class="form-control"
+                                        onfocus="changeInputType(this, 'month')" placeholder="MM-YY"></td>
+                                <td><input type="text" value="May 2019" class="form-control"
+                                        onfocus="changeInputType(this, 'month')" placeholder="MM-YY"></td>
+                                <td><input type="text" value="63.54" class="form-control"></td>
+                                <td><input type="text" value="0" class="form-control"></td>
+                                <td></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center"><button id="getValues"
+                style="background: aliceblue; border: none; padding: 3px 7px 3px 9px;">Submit</button></div>
+        <div class="table-responsive">
+            <table class="table mt-5 mb-5 table-responsive table-sm" style="background-color: none;" id="MySecondTable">
+                <thead>
+                    <tr>
+                        <th scope="col">FirstName</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">DateOfBirth</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">GraduationYear</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 
-    <label for="LastName">Last Name</label>
-    <input type="text" id="LastName">
 
-
-    <label for="DateOfBirth">Date Of Birth</label>
-    <input type="date" id="DateOfBirth">
-
-
-    <label for="Email">Email</label>
-    <input type="Email" id="Email">
-
-
-    <label for="Address">Address</label>
-    <input type="Address" id="Address">
-
-    <label for="GraduationYear">Graduation Year</label>
-    <input type="date" id="GraduationYear">
-
-
-
-
-
-
-
-
-
-
-    <table id="tableMy">
-        <thead>
-            <tr>
-                <th>Degree/board</th>
-                <th>School/College</th>
-                <th>Start date</th>
-                <th>Passout year</th>
-                <th>Percentage</th>
-                <th>backLog</th>
-                <th><button class="Add">Add</button></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><input type="text" value="1" ></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-    <button id="getValues">Get All Values</button>
-
-
-
-    <table id="MySecondTable">
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Date of Birth</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th></th>
-                
-            </tr>
-            <tbody>
-
-            </tbody>
-
-        </thead>
-    </table>
 
     <script>
-        $(document).ready(function () {
-            $('#tableMy').on('click', ".Add", function () {
-                var newRow = $('<tr>').insertAfter($('#tableMy tbody tr:nth-child(2)'));
-                newRow.append('<td><input type="text"></td>');
-                newRow.append('<td><input type="text"></td>');
-                newRow.append('<td><input type="text"></td>');
-                newRow.append('<td><input type="date"></td>');
-                newRow.append('<td><input type="text"></td>');
-                newRow.append('<td><input type="text"></td>');
-                newRow.append('<td><button class="Delete">Delete</button></td>');
-            });
+        document.addEventListener("DOMContentLoaded", function () {
+            var addButtons = document.querySelectorAll('.Add');
+            var deleteButtons = document.querySelectorAll('.Delete');
+            var getValuesButton = document.getElementById('getValues');
 
-            $('#tableMy').on('click', '.Delete', function () {
-                $(this).closest('tr').remove();
-            });
+            addButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var newRow = document.createElement('tr');
+                    var tableBody = document.querySelector('#tableMy tbody');
+                    var cells = [
+                        '<td><input type="text" class="form-control"></td>',
+                        '<td><input type="text" class="form-control"></td>',
+                        '<td><input type="text" class="form-control" placeholder="MM-YY"></td>',
+                        '<td><input type="text" class="form-control" placeholder="MM-YY"></td>',
+                        '<td><input type="text" class="form-control"></td>',
+                        '<td><input type="text" class="form-control"></td>',
+                        '<td><button class="Delete" style="background-color: black; padding:0px 05px 0px 5px;border-radius:18px "><i class="fa-solid fa-minus" style="color:white"></i></button></td>'
+                    ];
 
-            $('#getValues').click(function () {
-                var rowData = [];
-                $('#tableMy tbody tr').each(function () {
-                    var row = {};
-                    $(this).find('input').each(function () {
-                        debugger
-                        var fieldName = $(this); 
-                        var value = $(this).val();
-                        row[fieldName] = value;
+                    newRow.innerHTML = cells.join('');
+                    tableBody.insertBefore(newRow, tableBody.children[2]);
+
+
+
+
+                    var deleteButton = newRow.querySelector('.Delete');
+                    deleteButton.addEventListener('click', function () {
+                        newRow.remove();
                     });
-                    rowData.push(row);
+
+
                 });
+            });
+
+            deleteButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    
+                    this.closest('tr').remove();
+                });
+            });
+
+            getValuesButton.addEventListener('click', function () {
+                var rowData = [];
+                var tableRows = document.querySelectorAll('#tableMy tbody tr');
+
+                tableRows.forEach(function (row) {
+                    var rowDataItem = {};
+                    var inputs = row.querySelectorAll('input');
+                    var fieldNames = ["Degree/board", "School/College", "Start date", "Passout year", "Percentage", "backLog"];
+
+                    inputs.forEach(function (input, index) {
+                        var value = input.value;
+                        var fieldName = fieldNames[index];
+                        rowDataItem[fieldName] = value;
+                    });
+
+                    rowData.push(rowDataItem);
+                });
+
                 console.log(rowData);
-                debugger
-                var FirstName = $('#FirstName').val();
-                var LastName = $('#LastName').val();
-                var DateOfBirth = $('#DateOfBirth').val();
-                var Email  = $('#Email').val();
-                var Address = $('#Address').val();
-                var GraduationYear = $('#GraduationYear').val();
-
-                var Row = "<tr><td>"+FirstName+"</td>"+"<td>"+LastName+"</td>"+"<td>"+DateOfBirth+"</td>"+"<td>"+Email+"</td>"+"<td>"+Address+"</td>"+"<td>"+GraduationYear+"</td></tr>"
-                $('#MySecondTable tbody').append(Row);
-
                 
+                var FirstName = document.getElementById('FirstName').value;
+                var LastName = document.getElementById('LastName').value;
+                var DateOfBirth = document.getElementById('DateOfBirth').value;
+                var Email = document.getElementById('Email').value;
+                var Address = document.getElementById('Address').value;
+                var GraduationYear = document.getElementById('GraduationYear').value;
 
+                var newRow = document.createElement('tr');
+                var cells = [
+                    document.createElement('td'),
+                    document.createElement('td'),
+                    document.createElement('td'),
+                    document.createElement('td'),
+                    document.createElement('td'),
+                    document.createElement('td')
+                ];
+
+             
+                cells[0].textContent = FirstName;
+                cells[1].textContent = LastName;
+                cells[2].textContent = DateOfBirth;
+                cells[3].textContent = Email;
+                cells[4].textContent = Address;
+                cells[5].textContent = GraduationYear;
+
+              
+                cells.forEach(function (cell) {
+                    newRow.appendChild(cell);
+                });
+
+          
+                document.getElementById('MySecondTable').querySelector('tbody').appendChild(newRow);
             });
         });
+
+        function changeInputType(input, type) {
+            input.type = type;
+        }
+
+        function showData() {
+
+        }
     </script>
 </body>
 
