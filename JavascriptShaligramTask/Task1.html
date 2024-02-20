@@ -1,52 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
-
 <body>
-    <button id="Submit">Submit</button>
-    How are you
-    <div id="Abhishke"></div>
-
-<label>Abhishek</label><input type="text">
-<label>Abhishek</label><input type="text">
-    <button id="Show">Show</button>
-
-
+    <table id="tableMy">
+        <thead>
+            <tr>
+                <th>Degree/board</th>
+                <th>School/College</th>
+                <th>Start date</th>
+                <th>Passout year</th>
+                <th>Percentage</th>
+                <th>backLog</th>
+                <th><button class="Add">Add</button></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="getValues">Get All Values</button>
 
     <script>
-        $(document).ready(function () {
-            $('#Submit').click(function () {
-                $('#Abhishke').append('<label>Abhishek</label><input type="text"><button class="Delete">Delete</button><br>');
+        $(document).ready(function()
+        {
+            $(document).on('click',".Add",function()
+            {
+                var newRow = $('<tr>').insertAfter($('#tableMy tbody tr:nth-child(2)'));
+                newRow.append('<td><input type="text"></td>');
+                newRow.append('<td><input type="text"></td>');
+                newRow.append('<td><input type="text"></td>');
+                newRow.append('<td><input type="text"></td>');
+                newRow.append('<td><input type="text"></td>');
+                newRow.append('<td><input type="text"></td>');
+                newRow.append('<td><button class="Delete">Delete</button></td>');
             });
 
-            $(document).on('click', '.Delete', function () {
-                $(this).prevAll('input:first').remove(); // Remove input field
-                $(this).prev('label').remove(); // Remove label
-                $(this).remove(); // Remove delete button
+            $('#tableMy').on('click','.Delete',function()
+            {
+                $(this).closest('tr').remove();
             });
 
-            // Function to display data
-            function displayData() {
-                var data = [];
-                $('#Abhishke input[type="text"]').each(function () {
-                    data.push($(this).val());
+            $('#getValues').click(function() {
+                var rowData = [];
+                $('#tableMy tbody tr').each(function() {
+                    var row = {};
+                    $(this).find('input').each(function() {
+                        var fieldName = $(this).closest('td').prevAll().length; // Get the column index as the field name
+                        var value = $(this).val();
+                        row[fieldName] = value;
+                    });
+                    rowData.push(row);
                 });
-                console.log(data);
-               
-            }
-
-            // Call displayData function when submit button is clicked
-            $('#Show').click(function () {
-                displayData();
+                console.log(rowData);
             });
         });
     </script>
 </body>
-
 </html>
