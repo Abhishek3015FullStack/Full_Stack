@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
+
 <body>
+    <label for="FirstName">First Name</label>
+    <input type="text" id="FirstName">
+
+
+    <label for="LastName">Last Name</label>
+    <input type="text" id="LastName">
+
+
+    <label for="DateOfBirth">Date Of Birth</label>
+    <input type="date" id="DateOfBirth">
+
+
+    <label for="Email">Email</label>
+    <input type="Email" id="Email">
+
+
+    <label for="Address">Address</label>
+    <input type="Address" id="Address">
+
+    <label for="GraduationYear">Graduation Year</label>
+    <input type="date" id="GraduationYear">
+
+
+
+
+
+
+
+
+
+
     <table id="tableMy">
         <thead>
             <tr>
@@ -22,7 +55,7 @@
         </thead>
         <tbody>
             <tr>
-                <td><input type="text" value="1"></td>
+                <td><input type="text" value="1" ></td>
                 <td><input type="text" value="1"></td>
                 <td><input type="text" value="1"></td>
                 <td><input type="text" value="1"></td>
@@ -42,13 +75,30 @@
         </tbody>
     </table>
     <button id="getValues">Get All Values</button>
-    
+
+
+
+    <table id="MySecondTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Birth</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th></th>
+                
+            </tr>
+            <tbody>
+
+            </tbody>
+
+        </thead>
+    </table>
 
     <script>
-        $(document).ready(function()
-        {
-            $(document).on('click',".Add",function()
-            {
+        $(document).ready(function () {
+            $('#tableMy').on('click', ".Add", function () {
                 var newRow = $('<tr>').insertAfter($('#tableMy tbody tr:nth-child(2)'));
                 newRow.append('<td><input type="text"></td>');
                 newRow.append('<td><input type="text"></td>');
@@ -59,25 +109,39 @@
                 newRow.append('<td><button class="Delete">Delete</button></td>');
             });
 
-            $('#tableMy').on('click','.Delete',function()
-            {
+            $('#tableMy').on('click', '.Delete', function () {
                 $(this).closest('tr').remove();
             });
 
-            $('#getValues').click(function() {
+            $('#getValues').click(function () {
                 var rowData = [];
-                $('#tableMy tbody tr').each(function() {
+                $('#tableMy tbody tr').each(function () {
                     var row = {};
-                    $(this).find('input').each(function() {
-                        var fieldName = $(this).closest('td').prevAll().length; // Get the column index as the field name
+                    $(this).find('input').each(function () {
+                        debugger
+                        var fieldName = $(this); 
                         var value = $(this).val();
                         row[fieldName] = value;
                     });
                     rowData.push(row);
                 });
                 console.log(rowData);
+                debugger
+                var FirstName = $('#FirstName').val();
+                var LastName = $('#LastName').val();
+                var DateOfBirth = $('#DateOfBirth').val();
+                var Email  = $('#Email').val();
+                var Address = $('#Address').val();
+                var GraduationYear = $('#GraduationYear').val();
+
+                var Row = "<tr><td>"+FirstName+"</td>"+"<td>"+LastName+"</td>"+"<td>"+DateOfBirth+"</td>"+"<td>"+Email+"</td>"+"<td>"+Address+"</td>"+"<td>"+GraduationYear+"</td></tr>"
+                $('#MySecondTable tbody').append(Row);
+
+                
+
             });
         });
     </script>
 </body>
+
 </html>
