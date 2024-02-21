@@ -1,197 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
+
 <body>
     <form>
-    <div>
-        <label for="nameField">Name</label>
-        <input type="text" name="First name"  id="nameField" onblur="checking()">
-        <span id="nameError"></span>
-    </div>
+        <div>
+            <label for="nameField">Name</label>
+            <input type="text" name="First name" id="nameField" onblur="checking()">
+            <span id="nameError"></span>
+        </div>
 
-    <div>
-        <label for="Lastname">Last Name</label>
-        <input type="text" name="Lastname"  id="LastName" onblur="LastNamefields()">
-        <span id="LastnameError"></span>
-    </div>
-    <div>
+        <div>
+            <label for="Lastname">Last Name</label>
+            <input type="text" name="Lastname" id="LastName" onblur="LastNamefields()">
+            <span id="LastnameError"></span>
+        </div>
+        <div>
             <label for="Contact">Conatct number</label>
-            <input type="text" name="Contact" id ="ContactNumber" onblur="ContactNumberValidation()">
+            <input type="text" name="Contact" id="ContactNumber" onblur="ContactNumberValidation()">
             <span id="ContactError"></span>
 
-    </div>
+        </div>
 
-    <div>
+        <div>
             <label for="Email">Email</label>
-            <input type="text" name="Email" id="Email"/>
+            <input type="text" name="Email" id="Email" />
             <span id="EmailError"></span>
-    </div>
+        </div>
 
-    <div>
-        <label for= "PasswordValidation">Password</label>
-        <input type="text" name="PasswordValidation" id= "PasswordValidation" onblur="PasswordValidation1()">
-        <span id="PasswordValidationError"></span>
-    </div>
+        <div>
+            <label for="PasswordValidation">Password</label>
+            <input type="text" name="PasswordValidation" id="PasswordValidation" onblur="PasswordValidation1()">
+            <span id="PasswordValidationError"></span>
+        </div>
 
-        <input type="submit">
+        <input type="submit" value="Save" onClick="OnAbhishek()">
 
     </form>
     <script>
-         
-        
-            function checking()
-            {
-                    
-                    var name = document.getElementById("nameField").value;
-                   
-                    if(name!=null)
-                    {
-                    // alert(name);
 
-                        var nameCheck =/^[a-zA-Z ]+$/;
+        function OnAbhishek() {
+            
+        }
 
-                        if(nameCheck.test(name))
-                        {
-                            document.getElementById("nameError").innerHTML =" ";
-                            return true;
-                        }
-                        else
-                        {
-                            
-                            document.getElementById("nameError").innerHTML ="name is incorrect ";
-                            return false ;
-                        }
-                    }
-            }
-            function LastNamefields()
-            {
-                
-                var LastNameCheck = /^[a-zA-Z]+$/;
-                var LastName1 = document.getElementById("LastName").value;
-                if(LastNameCheck.test(LastName1))
-                { 
-                    document.getElementById("LastnameError").innerHTML =" ";
+
+        function checking() {
+
+            var name = document.getElementById("nameField").value;
+
+            if (name != null) {
+                // alert(name);
+
+                var nameCheck = /^[a-zA-Z ]{3,30}+$/;
+
+                if (nameCheck.test(name)) {
+                    document.getElementById("nameError").innerHTML = " ";
                     return true;
-
                 }
-                else
-                {
-                    document.getElementById("LastnameError").innerHTML="Number is showing ";
+                else {
+
+                    document.getElementById("nameError").innerHTML = "name is incorrect ";
                     return false;
                 }
+            }
+        }
+        function LastNamefields() {
+
+            var LastNameCheck = /^[a-zA-Z]+$/;
+            var LastName1 = document.getElementById("LastName").value;
+            if (LastNameCheck.test(LastName1)) {
+                document.getElementById("LastnameError").innerHTML = " ";
+                return true;
 
             }
-            function ContactNumberValidation()
-            {
-                
-                var ContactNumberChecking = /^[0-9]{10,12}+$/
-                var ContactNumber = document.getElementById("ContactNumber").value;
-                if(ContactNumber!=null)
-                {
-                    var contact = document.getElementById("ContactNumber").value;
-                    if(ContactNumberChecking.test(contact))
-                    {
-                        document.getElementById("ContactError").innerHTML=" ";
-                    }
-                    else
-                    {
-                        document.getElementById("ContactError").innerHTML="not the indian number ";
-                    }
+            else {
+                document.getElementById("LastnameError").innerHTML = "Number is showing ";
+                return false;
+            }
+
+        }
+        function ContactNumberValidation() {
+
+            var ContactNumberChecking = /^[0-9]{10,12}+$/
+            var ContactNumber = document.getElementById("ContactNumber").value;
+            if (ContactNumber != null) {
+                var contact = document.getElementById("ContactNumber").value;
+                if (ContactNumberChecking.test(contact)) {
+                    document.getElementById("ContactError").innerHTML = " ";
+                }
+                else {
+                    document.getElementById("ContactError").innerHTML = "not the indian number ";
                 }
             }
-            
-            // function EmailErrorValidation()
-            // {
-                
-            //     var EmailChecking = /^[a-zA-Z.]{3,30}[@]{1}[A-Za-z]{3,10}[.]{1}[a-zA-Z]{2,10}.[A-Za-z]{2,10}$/;
-            //     var Email1 = document.getElementById("Email").value;
-            //     if(Email1!=null)
-            //     {
-                    
-            //         if(EmailChecking.test(Email1))
-            //         {
-            //             document.getElementById("EmailError").innerHTML=" ";
-            //         }
-            //         else
-            //         {
-                        
-            //             document.getElementById("EmailError").innerHTML="Email is not Valid";
-            //         }
-            //     }
+        }
 
-                
-            // }
-            
-            function PasswordValidation1()
-            {
-                
-                var passwordFields = document.getElementById("PasswordValidation").value;
-                var PasswordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*_])[A-Za-z0-9!@#$%^&*()_+]{8,}$/
-                if(passwordFields!=null)
-                {
-                    if(PasswordRegex .test(passwordFields))
-                    {
-                        document.getElementById("PasswordValidationError").innerHTML=" ";
+        // function EmailErrorValidation()
+        // {
+
+        //     var EmailChecking = /^[a-zA-Z.]{3,30}[@]{1}[A-Za-z]{3,10}[.]{1}[a-zA-Z]{2,10}.[A-Za-z]{2,10}$/;
+        //     var Email1 = document.getElementById("Email").value;
+        //     if(Email1!=null)
+        //     {
+
+        //         if(EmailChecking.test(Email1))
+        //         {
+        //             document.getElementById("EmailError").innerHTML=" ";
+        //         }
+        //         else
+        //         {
+
+        //             document.getElementById("EmailError").innerHTML="Email is not Valid";
+        //         }
+        //     }
+
+
+        // }
+
+        function PasswordValidation1() {
+
+            var passwordFields = document.getElementById("PasswordValidation").value;
+            var PasswordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*_])[A-Za-z0-9!@#$%^&*()_+]{8,}$/
+            if (passwordFields != null) {
+                if (PasswordRegex.test(passwordFields)) {
+                    document.getElementById("PasswordValidationError").innerHTML = " ";
+                }
+                else {
+                    document.getElementById("PasswordValidationError").innerHTML = "wrong Password";
+                }
+            }
+
+
+        }
+        $(document).ready(function () {
+
+            $('#Email').keyup(function () {
+                var EmailChecking = /^[a-zA-Z.]{3,30}[@]{1}[A-Za-z]{3,10}[.]{1}[a-zA-Z]{2,10}.[A-Za-z]{2,10}$/;
+                var Email1 = document.getElementById("Email").value;
+                if (Email1 != null) {
+
+                    if (EmailChecking.test(Email1)) {
+                        document.getElementById("EmailError").innerHTML = " ";
                     }
-                    else
-                    {
-                        document.getElementById("PasswordValidationError").innerHTML="wrong Password";
+                    else {
+
+                        document.getElementById("EmailError").innerHTML = "Email is not Valid";
                     }
                 }
-
-              
-            }
-            $(document).ready(function()
-                {
-                    
-                    $('#Email').keyup(function()
-                    {
-                        var EmailChecking = /^[a-zA-Z.]{3,30}[@]{1}[A-Za-z]{3,10}[.]{1}[a-zA-Z]{2,10}.[A-Za-z]{2,10}$/;
-                        var Email1 = document.getElementById("Email").value;
-                        if(Email1!=null)
-                        {
-                            
-                            if(EmailChecking.test(Email1))
-                            {
-                                document.getElementById("EmailError").innerHTML=" ";
-                            }
-                            else
-                            {
-                                
-                                document.getElementById("EmailError").innerHTML="Email is not Valid";
-                            }
-                        }
-                    });
-
-
-                    
-                    $('#Email').blur(function()
-                    {
-                        var EmailChecking = /^[a-zA-Z.]{3,30}[@]{1}[A-Za-z]{3,10}[.]{1}[a-zA-Z]{2,10}.[A-Za-z]{2,10}$/;
-                        var Email1 = document.getElementById("Email").value;
-                        if(Email1!=null)
-                        {
-                            
-                            if(EmailChecking.test(Email1))
-                            {
-                                document.getElementById("EmailError").innerHTML=" ";
-                            }
-                            else
-                            {
-                                
-                                document.getElementById("EmailError").innerHTML="Email is not Valid";
-                            }
-                        }
-                    });
+            });
 
 
 
-                });
+            $('#Email').blur(function () {
+                var EmailChecking = /^[a-zA-Z.]{3,30}[@]{1}[A-Za-z]{3,10}[.]{1}[a-zA-Z]{2,10}.[A-Za-z]{2,10}$/;
+                var Email1 = document.getElementById("Email").value;
+                if (Email1 != null) {
+
+                    if (EmailChecking.test(Email1)) {
+                        document.getElementById("EmailError").innerHTML = " ";
+                    }
+                    else {
+
+                        document.getElementById("EmailError").innerHTML = "Email is not Valid";
+                    }
+                }
+            });
+
+
+
+        });
     </script>
 </body>
+
 </html>

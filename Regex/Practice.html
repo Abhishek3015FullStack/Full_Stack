@@ -1,37 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Form Validation</title>
+
+    <style>
+        .formerror {
+            color: red;
+        }
+    </style>
 </head>
+
 <body>
-    <label for="">name</label>
-    <input type ="text" name="name1" id="input1" onfocus="Abhishek()" >
-    <span id="error"></span>
-    <button id="btn1" >viewButton</button>
-    <script>
-        
-        
-                
-                    function Abhishek()
-                    {
-                    var a = document.getElementById("input1").value;
-                    var b = /^[a-zA-Z]{3,30}[@]{1}[A-Za-z]{3,}[.]{1}[a-zA-Z]{3,}$/;
-                    debugger
-                    if(b.test(a))
-                    {
-                        document.getElementById("error").innerHTML=" ";
-                    }
-                    else
-                    {
-                        
-                        document.getElementById("error").innerHTML="Wrong Input"
-                        
-                    }
-             
-                }
-    </script>
+    <h1>Welcome to the best form on Internet!</h1>
+    <form aciton="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
+        <div class="formdesign" id="name">
+            Name: <input type="text" name="fname" required id="FirstnameID" onkeyup="abhishek();"><b><span
+                    class="formerror" id="Abhishek1232"> </span></b>
+        </div>
+
+        <div class="formdesign" id="email">
+            Email: <input type="email" name="femail" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="phone">
+            Phone: <input type="phone" name="fphone" required><b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="pass">
+            Password: <input type="password" name="fpass" required><b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="cpass">
+            Confirm Password: <input type="password" name="fcpass" required><b><span class="formerror"></span></b>
+        </div>
+
+        <input class="but" type="submit" value="Submit" id="SubmittingTheform">
+
+        <input type="month" id="Fromdate" onchange="EnableTOdate();"><span id="Fromdate1" ></span>
+        <input type="month" id="Todate" onblur="DateValidation();" disabled><span id="Todate1" class="formerror"></span>
+
+    </form>
 </body>
+
+<script>
+
+    function abhishek() {
+
+        var a = /^[a-zA-Z]{3,10}$/;
+        var b = document.getElementById('FirstnameID').value;
+
+        if (a.test(b)) {
+            console.log("Passed Successfully")
+            document.getElementById('Abhishek1232').innerText = "";
+
+
+        }
+        else {
+            console.log("not passed Successfully");
+            document.getElementById('Abhishek1232').innerText = "name should contain the Alphabets";
+        }
+    }
+
+    function DateValidation() {
+        
+        var fromdate = document.getElementById('Fromdate').value;
+        var todate = document.getElementById('Todate').value;
+
+        var FromdateObject = new Date(fromdate);
+        var TodateObject = new Date(todate);
+
+        if (FromdateObject < TodateObject) {
+            console.log("Correct date range.");
+            document.getElementById('Todate1').innerText = ""; 
+        } else {
+            console.log("Incorrect date range.");
+            document.getElementById('Todate1').innerText = "End date must be greater than start date."; 
+        }
+    }
+    function EnableTOdate()
+    {
+        
+        var fromdate = document.getElementById('Fromdate').value;
+        if(fromdate!=='')
+        {
+            document.getElementById('Todate').disabled =false;
+        }
+        else
+        {
+            document.getElementById('Todate').disabled =true;
+        }
+    }
+
+
+</script>
+
+
 </html>

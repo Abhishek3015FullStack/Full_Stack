@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h2>Form Example</h2>
+    <form id="myForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName"><br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <h3>Education Details:</h3>
+        <table id="educationTable">
+            <thead>
+                <tr>
+                    <th>Degree</th>
+                    <th>School/College</th>
+                    <th>Start date</th>
+                    <th>Passout year</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="degree"></td>
+                    <td><input type="text" name="school"></td>
+                    <td><input type="text" name="startDate"></td>
+                    <td><input type="text" name="passoutYear"></td>
+                    <td><input type="text" name="percentage"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="degree"></td>
+                    <td><input type="text" name="school"></td>
+                    <td><input type="text" name="startDate"></td>
+                    <td><input type="text" name="passoutYear"></td>
+                    <td><input type="text" name="percentage"></td>
+                </tr>
+                <!-- Add more rows if needed -->
+            </tbody>
+        </table>
+
+        <table id="MYatbleTWo">
+            <thead>
+                <tr>
+                    <th>degree</th>
+                    <th>school</th>
+                    <th>startDate</th>
+                    <th>passoutYear</th>
+                    <th>percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+        <br>
+        <button id="addRowBtn" type="button">Add Row</button>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        
+        document.getElementById("addRowBtn").addEventListener("click", function () {
+            // var newRow = document.createElement('tr');
+            // newRow.innerHTML = `
+            //     <td><input type="text" name="degree"></td>
+            //     <td><input type="text" name="school"></td>
+            //     <td><input type="text" name="startDate"></td>
+            //     <td><input type="text" name="passoutYear"></td>
+            //     <td><input type="text" name="percentage"></td>
+            // `;
+
+            var table = $('#educationTable tbody')[0];
+            var Row = table.insertRow(2);
+            Row.innerHTML = '<td><input type="text" name="degree"></td>  <td><input type="text" name="degree"></td> <td><input type="text" name="degree"></td> <td><input type="text" name="degree"></td> <td><input type="text" name="degree"></td>'
+
+        });
+
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            var jsonObject = {};
+
+            formData.forEach(function (value, key) {
+                jsonObject[key] = value;
+            });
+
+
+            var table = document.getElementById('educationTable');
+            var Rows = table.getElementsByTagName('tr');
+            var TableData = [];
+            for (var i = 1; i < Rows.length; i++) {
+                var RowData = [];
+                var Cells = Rows[i].getElementsByTagName('td');
+                for (var j = 0; j < Cells.length; j++) {
+                    var inputFields = Cells[j].querySelector('input');
+                    if (inputFields) {
+                        RowData.push(inputFields.value)
+                    }
+                }
+                abhishek(RowData)
+                TableData.push(RowData)
+
+            }
+            // console.log(TableData);
+
+
+            TableData.forEach(function (rowData) {
+                var table = $('#MYatbleTWo tbody')[0];
+                var Rows = table.insertRow();
+
+                rowData.forEach(function (celldata) {
+                    var Celldata = Rows.insertCell();
+                    Celldata.innerHTML = celldata;
+                })
+            });
+           
+
+            function abhishek(RowData) {
+               
+                var fieldNames = ["Degree/board", "School/College", "Start date", "Passout year", "Percentage", "backLog"];
+                var RowDataItems = {};
+                for (var i = 0; i < RowData.length; i++) {
+                    var RowData1 = RowData[i];
+                    var index = i;
+                    var fieldName = fieldNames[i];
+                    RowDataItems[fieldName] =RowData1;
+
+                }
+                debugger
+                console.log(RowDataItems);
+
+
+
+            }
+
+            // console.log(RowdataWithename);
+
+        });
+    </script>
+</body>
+
+</html>
