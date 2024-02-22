@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Launch static backdrop modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="Id">IDModel</label>
+                    <input type="text" id="IDFromModel"><br>
+                    <label for="name">nameModel</label>
+                    <input type="text" id="name1FromModel">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success saveData" id="saveData"
+                        data-bs-dismiss="modal">SaveData</button>
+                    <button type="update" class="updatebtn" data-bs-dismiss="modal">update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <label>Id</label>
+    <input type="text" id="id">
+    <label>Name</label>
+    <input type="text" id="name">
+    <input type="button" value="submit" id="submitButton">
+    <table>
+        <thead>
+            <tr>
+                <td>Column 1</td>
+                <td>Column 2</td>
+            </tr>
+
+
+        </thead>
+        <tbody id="Tbody">
+
+        </tbody>
+    </table>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var id = document.querySelector('#id');
+            var name = document.querySelector('#name')
+            var FromModelID = document.querySelector('#IDFromModel');
+            var FromModelName = document.querySelector('#name1FromModel')
+            var alldata = [];
+            var ADDbutton = document.querySelector('#submitButton');
+            var tbody = document.querySelector('#Tbody');
+
+            ADDbutton.onclick = function () {
+
+                addingthedata();
+            }
+
+
+            function addingthedata() {
+
+                alldata.push({
+                    ID: id.value,
+                    NAME: name.value,
+                    ModelId: FromModelID.value,
+                    MOdelName: FromModelName.value
+                });
+                abhishek();
+                console.log(alldata)
+
+            }
+
+            function abhishek() {
+                debugger
+                tbody.innerHTML = "";
+
+                alldata.forEach((data, index) => {
+                    tbody.innerHTML += `
+                    <tr id="${index}">
+                        <td>${data.ID}</td>    
+                       <td>${data.NAME}</td>
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button></td>
+                        <td><button type="button" class="btn btn-primary Delete" ">Delete</button></td>
+                        <td><button type="button" class="btn btn-primary info" onclick="showInfo(${index})" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Info</button></td>
+
+                    </tr>`
+                });
+
+                var DeleteButton = document.querySelectorAll('.Delete')
+                for (var i = 0; i < DeleteButton.length; i++) {
+                    DeleteButton[i].onclick = function () {
+                        var parent = this.parentElement.parentElement;
+                        var index = parent.getAttribute('id');
+                        parent.remove();
+                        alldata.splice(index, 1);
+                    }
+                }
+                var infobutton = document.querySelectorAll('.info')
+
+
+                for (var i = 0; i < infobutton.length; i++) {
+
+
+                    infobutton[i].onclick = function () {
+                        debugger
+                        var parent = this.parentElement.parentElement;
+                        var index = parent.getAttribute('id');
+                        var td = parent.getElementsByTagName('td');
+                        var IDlocal = td[0].innerHTML;
+                        var Name = td[1].innerHTML;
+                        var c= alldata[index].ModelId;
+                        var d = alldata[index].MOdelName;
+                        FromModelID.value =c;
+                        FromModelName.value =d;
+
+
+
+                        // setData();
+                       
+                        
+                       
+                        saveData.onclick = function (e) {
+                            debugger
+
+                            alldata[index] = {
+                                ID: id.value,
+                                NAME: name.value,
+                                ModelId: FromModelID.value,
+                                MOdelName: FromModelName.value
+
+                            }
+                            console.log(alldata)
+                        }
+                        // function setData()
+                        // {
+                        //     debugger
+                        //     var a = alldata[index].ID;
+                        //     var b= alldata[index].NAME;
+                            
+                        // }
+
+
+
+                    }
+
+
+
+
+
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+        });
+    </script>
+</body>
+
+</html>

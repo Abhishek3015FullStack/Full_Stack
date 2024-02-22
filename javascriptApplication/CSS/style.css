@@ -27,6 +27,11 @@
     height: 100%;
     
 }
+.modal.active
+{
+    opacity: 1;
+    z-index: 1;
+}
 .table-box
 {
     width: 100%;
@@ -76,13 +81,10 @@
     border-top:5px groove black ;
     z-index: -1;
     opacity: 0;
+    transition: all 0.5s ease;
 
 }
-.modal .active
-{
-    opacity: 1;
-    z-index: 1;
-}
+
 .modal .close-icon
 {
     position: absolute;
