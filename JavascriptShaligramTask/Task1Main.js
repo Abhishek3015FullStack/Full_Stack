@@ -63,6 +63,8 @@ $(document).ready(function () {
 
         var Row = "<tr><td>" + FirstName + "</td>" + "<td>" + LastName + "</td>" + "<td>" + DateOfBirth + "</td>" + "<td>" + Email + "</td>" + "<td>" + Address + "</td>" + "<td>" + GraduationYear + "</td></tr>"
         $('#MySecondTable tbody').append(Row);
+
+        
     });
 
     function DatepiCKer() {

@@ -40,8 +40,8 @@
 
         <input class="but" type="submit" value="Submit" id="SubmittingTheform">
 
-        <input type="month" id="Fromdate" onchange="EnableTOdate();"><span id="Fromdate1" ></span>
-        <input type="month" id="Todate" onblur="DateValidation();" disabled><span id="Todate1" class="formerror"></span>
+        <input type="month" id="Fromdate" onchange="EnableTOdate();" onblur="DateValidation();"><span id="Fromdate1" ></span>
+        <input type="month" id="Todate" onchange="DateValidation();" disabled><span id="Todate1" class="formerror"></span>
 
     </form>
 </body>
@@ -73,7 +73,7 @@
         var FromdateObject = new Date(fromdate);
         var TodateObject = new Date(todate);
 
-        if (FromdateObject < TodateObject) {
+        if (FromdateObject <= TodateObject) {
             console.log("Correct date range.");
             document.getElementById('Todate1').innerText = ""; 
         } else {

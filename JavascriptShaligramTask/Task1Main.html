@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="Task1Main.js"></script>
+        <!-- <script src="Task1Main.js"></script> -->
 </head>
 <style>
     * {
@@ -154,10 +154,13 @@ $(document).ready(function () {
         newRow.append('<td><input type="text" class="form-control"></td>');
         newRow.append('<td><input type="text" class="form-control"></td>');
         newRow.append('<td><button class="Delete" style="background-color: black;"><i class="fa-solid fa-minus" style="color:white"></i></button></td>');
+        
+        
     });
 
     $('#tableMy').on('click', '.Delete', function () {
         $(this).closest('tr').remove();
+        
     });
 
     $('#getValues').click(function () {

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: rgb(226, 209, 209);
+        }
+
+        .container {
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .popup {
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Popup-content {
+            height: 250px;
+            width: 500px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body id="Abhishek">
+    <div class="container">
+        <h1>Login</h1>
+        <input type="button" value="Open Popup" class="showPopup" id="Button">
+    </div>
+
+    <div><input type="button" id="Multiple" value="RowIsGenarated"></div>
+
+    <div class="popup">
+        <div class="Popup-content">
+            <input type="text" id="abhishek">
+            <input type="button" class="Close" value="Close">
+        </div>
+    </div>
+    <div>
+        <table id="Mytable">
+            <thead>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                    <td>Column 3</td>
+                    <td>Column 4</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <input type="button" value="Abhishke" id="">
+    </div>
+
+    <script>
+        document.getElementById('Button').addEventListener('click', function () {
+            document.querySelector('.popup').style.display = "flex";
+        });
+
+        document.querySelector('.Close').addEventListener('click', function () {
+            document.querySelector('.popup').style.display = "none";
+        });
+
+        $(document).ready(function () {
+            $('#Multiple').on('click', function () {
+                var row = '<tr> <td>Abhishek</td> <td>Abhishek</td> <td>Abhishek</td> <td><input type="button" class="showPopup" value="Pop"></td> </tr> ';
+                var popup = '<div class="popup"><div class="Popup-content"><input type="text" id="abhishek"><input type="button" class="Close" value="Close"></div></div>';
+                $('#Mytable tbody').append(row);
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
