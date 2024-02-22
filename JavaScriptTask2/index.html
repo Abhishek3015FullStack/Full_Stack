@@ -156,6 +156,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Address</th>
                     <th scope="col">GraduationYear</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -235,7 +236,9 @@
                     document.createElement('td'),
                     document.createElement('td'),
                     document.createElement('td'),
-                    document.createElement('td')
+                    document.createElement('td'),
+                    document.createElement('button'),
+                    document.createElement('button')
                 ];
 
                 cells[0].textContent = FirstName;
@@ -244,6 +247,22 @@
                 cells[3].textContent = Email;
                 cells[4].textContent = Address;
                 cells[5].textContent = GraduationYear;
+
+
+                var button1 = document.createElement('button');
+                button1.textContent = 'Edit';
+                button1.classList.add('btn', 'btn-primary'); // Add Bootstrap button classes if needed
+
+                // Create the second button and set its attributes
+                var button2 = document.createElement('button');
+                button2.textContent = 'Delete';
+                button2.classList.add('btn', 'btn-secondary'); // Add Bootstrap button classes if needed
+
+                // Append buttons to the cells
+                cells[6].appendChild(button1);
+                cells[7].appendChild(button2);
+
+
 
                 cells.forEach(function (cell) {
                     newRow.appendChild(cell);
