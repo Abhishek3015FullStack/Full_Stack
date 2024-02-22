@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script src="JS/index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="upper-btn-box">
+      <div class="left-box">
+        <button id="Add-btn"><i class="fa fa-plus"></i>Add Employee</button>
+        <button><i class="fa fa-minus"></i> Filtering</button>
+      </div>
+      <div class="right-box"></div>
+    </div>
+    <div class="table-box">
+      <table>
+        <tr>
+          <th>Sr no</th>
+          <th>Profile</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Last Name</th>
+          <th>E-mail</th>
+          <th>Office code</th>
+          <th>Job title</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>Hello</td>
+          <td>Hello</td>
+          <td>Hello</td>
+          <td>Hello</td>
+          <td>Hello</td>
+          <td>Hello</td>
+          <td>Hello</td>
+          <td>Hello</td>
+          <td>
+            <button><i class="fa fa-eye"></i></button>
+            <button><i class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="modal ">
+        <i class="fa fa-times-circle close-icon"></i>
+      <div class="left-modal">
+        <div class="img-box">
+          <img src="../Image/2.jpg" width="150" height="150" />
+          <i class="fa fa-plus"></i>
+          <input type="file" />
+        </div>
+      </div>
+      <div class="right-modal">
+        <div class="input-box">
+          <label for="id">ID</label>
+          <input type="text" id="id" />
+        </div>
+
+        <div class="input-box">
+          <label for="Name">Name</label>
+          <input type="text" id="Name" />
+        </div>
+
+        <div class="input-box">
+          <label for="LastName">LastName</label>
+          <input type="text" id="LastName" />
+        </div>
+
+        <div class="input-box">
+            <label for="Email">Email</label>
+            <input type="text" id="Email" />
+          </div>
+
+
+        <div class="input-box">
+          <label for="OfficeCode">OfficeCode</label>
+          <input type="text" id="OfficeCode" />
+        </div>
+
+        <div class="input-box">
+          <label for="JobTitle">JobTitle</label>
+          <input type="text" id="JobTitle" />
+        </div>
+        <div class="input-box">
+            <button>Register</button>
+            <button>Update</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
