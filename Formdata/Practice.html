@@ -1,0 +1,113 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="Mytable">
+        <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <th>Column 3</th>
+                    <th>Column 4</th>
+                </tr>
+        </thead>
+        <tbody> 
+
+        </tbody>
+      
+    </table>
+    <input type ="button" value="Submit" id="ButtonAdd">
+    <script>
+        document.getElementById('ButtonAdd').addEventListener('click',Abhishek)
+        function Abhishek()
+        {
+            var table= document.getElementById('Mytable').getElementsByTagName('tbody')[0];
+            var rows = document.createElement('tr');
+            rows.innerHtml ='<td>A</td> <td>B</td> <td>C</td> <td>D</td> ';
+            table.appendChild(rows);
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <table id="Mytable">
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Abhishke</td>
+                <td>Abhishke</td>
+                <td>Abhishke</td>
+                <td>Abhishke</td>
+            </tr>
+            <tr>
+                <td>Abhishke</td>
+                <td>Abhishke</td>
+                <td>Abhishke</td>
+                <td>Abhishke</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type=" text" id="InputFields">
+    <select id="Selection">
+        <option>Select</option>
+    </select>
+    <input type="button" value="Submit" id="ButtonAddJAVAscript">
+    <input type="button" value="ButtonAddJQuery" id="ButtonAddJQuery">
+
+    <script>
+
+
+
+        document.getElementById('ButtonAddJAVAscript').addEventListener('click', Abhishek)
+        function Abhishek(event) {
+            debugger
+            var table = document.getElementById('Mytable').getElementsByTagName('tbody')[0];
+            var Row = table.insertRow(1);
+            Row.innerHTML = '<td>A</td> <td>B</td> <td>C</td> <td>D</td>';
+
+        }
+        document.getElementById('InputFields').addEventListener('keypress', Abhishek2);
+
+        function Abhishek2(event) {
+            if (event.keyCode == 13) {
+                debugger
+                var selecthave = document.getElementById('InputFields').value;
+                var option = '<option>' + selecthave + '</option>';
+                $('#Selection').append(option);
+            }
+        }
+        document.getElementById('ButtonAddJQuery').addEventListener('click', Abhishek3);
+
+        function Abhishek3() {
+            debugger
+            var table = $('#Mytable tbody')[0];
+            var Row = table.insertRow(0);
+            Row.innerHTML = '<td>JQuery</td><td>JQuery</td><td>JQuery</td><td>JQuery</td><td>JQuery</td>';
+
+        }
+    </script>
+</body>
+
+</html>
