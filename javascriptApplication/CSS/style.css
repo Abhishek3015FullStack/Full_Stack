@@ -25,7 +25,7 @@
 .upper-btn-box .right-box{
     width: 50%;
     height: 100%;
-    background-color: red;
+    
 }
 .table-box
 {
@@ -50,4 +50,127 @@
     border-right: 1px solid #ccc;
     text-align: center;
     padding: 10px 0px;
+    border-bottom: 1px solid #ccc;
+
+}
+.table-box table tr td button
+{
+    width: 35%;
+    border: none;
+    outline: none;
+    background-color: blue;
+    /* padding: 13px; */
+    font-size: 22px;
+    color: white;   
+}
+.modal
+{
+    width: 70%;
+    position: fixed;
+    top:50%;
+    left: 50%;
+    background-color: #f2f2ff;
+    height: auto;
+    transform: translate(-50%,-50%);
+    display: flex;
+    border-top:5px groove black ;
+    z-index: -1;
+    opacity: 0;
+
+}
+.modal.active
+{
+    opacity: 1;
+    z-index: 1;
+}
+.modal .close-icon
+{
+    position: absolute;
+    right: 0;
+    top: 0px;
+    font-size: 30px;
+    color: brown;
+}
+
+.modal .left-modal
+{
+    width: 30%;
+    height: 100%;
+    /* background-color: red; */
+}
+.modal .right-modal
+{
+    width: 70%;
+    /* height: 100%; */
+    background-color: #f2f2ff;
+    border-left: 2px groove black;
+    padding:40px;
+}
+
+.modal .left-modal .img-box
+{
+    width: 100%;
+    height: 70%;
+    /* background-color: brown; */
+    display: flex;
+    padding: 30px;
+    position: relative;
+}
+.modal .left-modal .img-box img
+{
+    border-radius: 10px;
+}
+
+.modal .left-modal .img-box i
+{
+    font-size: 30px;
+    position: absolute;
+    right: 60px;
+    top:100px
+    
+}
+.modal .left-modal .img-box input
+{
+    height: 40px;
+    width: 40px;
+    position:absolute;
+    right: 210px;
+    top:90px;
+    opacity: 0;
+    
+    
+}
+
+.modal .right-modal .input-box
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal .right-modal .input-box label
+{
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px;
+
+}
+.modal .right-modal .input-box input
+{
+    width: 70%;
+    margin: 10px 0px;
+    border: none;
+    padding: 13px;
+}
+
+.modal .right-modal .input-box button
+{
+    width: 45%;
+    border: none;
+    outline: none;
+    background-color: blue;
+    padding: 13px;
+    font-size: 22px;
+    color: white;
+    margin: 0px 5px;   
 }
