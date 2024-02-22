@@ -1,0 +1,53 @@
+.upper-btn-box
+{
+    width: 100%;
+    height: 100px;
+    /* background-color: aqua; */
+    display: flex;
+    padding: 30px;
+}
+.upper-btn-box .left-box{
+    width: 50%;
+    height: 100%;
+    /* background-color: blue; */
+
+}
+.upper-btn-box .left-box button
+{
+    border: none;
+    outline: none;
+    background-color: blue;
+    padding: 13px;
+    font-size: 22px;
+    color: white;
+}
+
+.upper-btn-box .right-box{
+    width: 50%;
+    height: 100%;
+    background-color: red;
+}
+.table-box
+{
+    width: 100%;
+
+}
+.table-box table
+{
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.table-box table tr th
+{
+    border-right:1px solid #ccc ;
+    padding: 30px 0px 0px ;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    
+}
+.table-box table tr td
+{
+    border-right: 1px solid #ccc;
+    text-align: center;
+    padding: 10px 0px;
+}
