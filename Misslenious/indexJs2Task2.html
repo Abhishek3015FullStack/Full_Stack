@@ -30,7 +30,8 @@
 
 <body style="background-color: rgb(190 222 231 / 99%) !important;">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        id="MainButtonForSubmit">
         Launch demo modal
     </button>
 
@@ -135,6 +136,8 @@
                         </div>
                         <div class="d-flex justify-content-center align-items-center"><button id="getValues"
                                 style="background: aliceblue; border: none; padding: 3px 7px 3px 9px;">Submit</button>
+                            <button style="display: none;" id="UpdateID" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Update</button>
                         </div>
                     </div>
                 </div>
@@ -167,16 +170,21 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            var rowIncrement = 0
+            var MainButton = document.querySelector('#MainButtonForSubmit');
 
             var addButtons = document.querySelectorAll('.Add');
             var deleteButtons = document.querySelectorAll('.Delete');
             var getValuesButton = document.getElementById('getValues');
+            var UpdateButton1 = document.querySelector('#UpdateID');
 
 
+            var table = document.getElementById('#MySecondTable')
 
 
             addButtons.forEach(function (button) {
                 button.addEventListener('click', function () {
+
                     var newRow = document.createElement('tr');
                     var tableBody = document.querySelector('#tableMy tbody');
                     var cells = [
@@ -205,10 +213,18 @@
                 });
             });
 
+            $(document).on('click', '#MainButtonForSubmit', function () {
+                getValuesButton.style.display = 'block';
+                UpdateButton1.style.display = 'none'
+            });
+
             getValuesButton.addEventListener('click', function () {
+                debugger
                 var rowData = [];
+
                 var tableRows = document.querySelectorAll('#tableMy tbody tr');
                 var TRID = 0;
+                var newObject1 = {};
 
                 tableRows.forEach(function (row) {
                     var rowDataItem = {};
@@ -217,19 +233,43 @@
                     var fieldNames = ["Degree/board", "School/College", "Start date", "Passout year", "Percentage", "backLog"];
 
                     inputs.forEach(function (input, index) {
+                        debugger
                         var value = input.value;
                         var fieldName = fieldNames[index];
+                        debugger
                         rowDataItem[fieldName] = value;
 
                     });
 
+
+                    for (var key in rowDataItem) {
+                        debugger
+                        if (rowDataItem.hasOwnProperty(key)) {
+                            // console.log(key + ": " + rowDataItem[key]);
+                        }
+                    }
+
+
+
+
                     rowData.push(rowDataItem);
+                    debugger
+
+
                 });
-                // var jsonData = JSON.stringify(rowData);
-                // console.log(jsonData);
-                // console.log(rowData);
+          
+                Table();
 
+            });
+            var NewData = [];
 
+            function Table(NewData) {
+                for(var i = 0;i<NewData.length;i++)
+                {
+                debugger
+                var table2 = document.getElementById('MySecondTable').querySelector('tbody');
+                table2.innerHTML ="";
+                tabl2.innerHTML="";
 
                 var FirstName = document.getElementById('FirstName').value;
                 var LastName = document.getElementById('LastName').value;
@@ -238,9 +278,10 @@
                 var Address = document.getElementById('Address').value;
                 var GraduationYear = document.getElementById('GraduationYear').value;
 
-                var newRow = document.createElement('tr');
-                newRow.id = FirstName;
 
+                var newRow = document.createElement('tr');
+                newRow.id = rowIncrement;
+                ++rowIncrement
                 var cells = [
                     document.createElement('td'),
                     document.createElement('td'),
@@ -270,31 +311,16 @@
 
 
                 };
-                // console.log(newObject)
 
-                var mergedData = { ...newObject, ...rowData };
-
-                console.log(mergedData);
-
-
+                NewData.push(newObject);
+                console.log(NewData)
+                // var mergedData = { ...newObject, ...rowData };
                 var a = newObject.Firstname1;
                 var b = newObject.LastName1;
                 var c = newObject.DateOfBirth1;
                 var d = newObject.Email1;
                 var e = newObject.Address1;
                 var f = newObject.GraduationYear1;
-
-                console.log(a, b, c, d, e, f);
-
-                var g = rowData[0];
-                console.log(g);
-
-
-
-               
-
-
-
 
                 var button1 = document.createElement('button');
                 button1.textContent = 'Edit';
@@ -317,7 +343,12 @@
                 });
 
                 document.getElementById('MySecondTable').querySelector('tbody').appendChild(newRow);
-            });
+
+
+            }
+        }
+                // }
+                
 
 
             $(document).on('click', '.Remove', function () {
@@ -328,29 +359,35 @@
             $(document).on('click', '.Edit', function () {
                 debugger;
                 var row = $(this).closest('tr');
-                var RowId = row.attr("id");
+                var RowId = row.attr('id')
+                getValuesButton.style.display = 'none';
+                UpdateButton1.style.display = 'block';
 
-                var a = getDataFromRow(RowId);
-                console.log(a);
 
 
-            })
+
+                getDataFromRow(RowId);
+                // console.log(a);
+
+
+         
 
             function getDataFromRow(rowId) {
                 var rowData = {};
+                var a = rowId;
                 debugger
 
-                
+
                 var row = document.getElementById(rowId);
 
-            
+
                 if (row) {
-                   
+
                     var cells = row.getElementsByTagName('td');
 
-                   
+
                     if (cells.length >= 6) {
-                        
+
                         rowData.FirstName = cells[0].textContent;
                         rowData.LastName = cells[1].textContent;
                         rowData.DateOfBirth = cells[2].textContent;
@@ -358,10 +395,86 @@
                         rowData.Address = cells[4].textContent;
                         rowData.GraduationYear = cells[5].textContent;
                     }
+                    abhishek2(rowData, a)
+
                 }
 
                 return rowData;
             }
+            function abhishek(mergedData) {
+                Object.entries(mergedData).forEach(([key, value]) => {
+                    // console.log(`${key}: ${value}`);
+                });
+            }
+
+            function abhishek2(rowData, a) {
+                debugger
+                var rowID = a;
+                var StudentInformation = rowData;
+                for (var key in StudentInformation) {
+                    debugger
+                    if (StudentInformation.hasOwnProperty(key)) {
+                        // console.log(key + ": " + StudentInformation[key]);
+                    }
+                }
+
+                var Firstname1 = StudentInformation.FirstName;
+                var Last1 = StudentInformation.LastName;
+                var DateOfBirth1 = StudentInformation.DateOfBirth;
+                var Email1 = StudentInformation.Email;
+                var Address1 = StudentInformation.Address;
+                var GraduationYear = StudentInformation.GraduationYear;
+
+
+
+                // setting the values in the popup 
+                var FirstnamePopup = document.querySelector('#FirstName');
+                var LastnamePopup = document.querySelector('#LastName');
+                var DateOfBirthPopup = document.querySelector('#DateOfBirth');
+                var EmailPopup = document.querySelector('#Email')
+                var AddressPopup = document.querySelector('#Address')
+                var GraduationYearPopup = document.querySelector('#GraduationYear')
+
+                FirstnamePopup.value = Firstname1;
+                LastnamePopup.value = Last1;
+                DateOfBirthPopup.value = DateOfBirth1;
+                EmailPopup.value = Email1;
+                AddressPopup.value = Address1;
+                GraduationYearPopup.value = GraduationYear;
+                debugger
+
+
+
+
+            }
+            $(document).on('click', '#UpdateID', function () {
+                debugger;
+
+
+                var row = $(this).closest('tr');
+                var FirstnamePopup = $('#FirstName').val();
+                var LastnamePopup = $('#LastName').val();
+                var DateOfBirthPopup = $('#DateOfBirth').val();
+                var EmailPopup = $('#Email').val();
+                var AddressPopup = $('#Address').val();
+                var GraduationYearPopup = $('#GraduationYear').val();
+
+                // Update the cells with the new values
+                row.find('td').eq(0).text(FirstnamePopup);
+                row.find('td').eq(1).text(LastnamePopup);
+                row.find('td').eq(2).text(DateOfBirthPopup);
+                row.find('td').eq(3).text(EmailPopup);
+                row.find('td').eq(4).text(AddressPopup);
+                row.find('td').eq(5).text(GraduationYearPopup);
+
+                // Hide the update button after updating
+                Table();
+            });
+
+        })
+
+
+
 
 
 
