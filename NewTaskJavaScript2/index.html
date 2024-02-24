@@ -1,99 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"/>
 
+</head>
 <body>
     <form id="myform">
         <div class="container">
-            <div><input type="button" id="add" value="addButton"></div>
-            <div id="inputs">
-            
-                <input id="ABhishek1" type="text">
-                <input id="ABhishek2" type="text">
-                <input id="ABhishek3" type="text">
-            </div>
-            <div>
-                <label>First name</label>
-                <input type="text" value="" id="input1">
-
-
-
-            </div>
-
-
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="--bs-modal-width: 100%">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <input type="submit" value="submit">
-    </form>
+        <div class="modal-body">
+            <!--code inserted -->
+            <div class="row mt-5 mb-5">
+                <div class="col-lg-4 col-sm-12">
+                    <label for="FirstName" class="form-label">FirstName</label>
+                    <input type="text"class="form-control"id="FirstName"value="" class="NameInput" name="FirstName"/>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <label for="LastName" class="form-label">LastName</label>
+                    <input type="text"class="form-control"id="LastName"value="" class="NameInput" name="LastName"/>
+                </div>
 
-    <div id="tableContainer"></div>
+                <div class="col-lg-4 col-sm-12">
+                    <label for="DateOfBirth" class="form-label">DateOfBirth</label>
+                    <input type="month"class="form-control"id="DateOfBirth"value="" class="NameInput" name="DateOfBirth"/>
+                </div>
+            </div>
+            <div class="row mt-5 mb-5">
+                <div class="col-lg-4 col-sm-12">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="Email"class="form-control"id="Email"value="" class="NameInput" name="Email"/>
+                </div>
 
+                <div class="col-lg-4 col-sm-12">
+                    <label for="Address" class="form-label">Address</label>
+                    <input type="text"class="form-control"id="Address"value="" class="NameInput" name="Address"/>
+                </div>
+
+                <div class="col-lg-4 col-sm-12">
+                    <label for="GraduationYear" class="form-label">GraduationYear</label>
+                    <input type="month"class="form-control"id="GraduationYear"value="" class="NameInput" name="GraduationYear"/>
+                </div>
+            </div>
+            <hr>      
+            <h1 class="d-flex align-items-center ">Education</h1>
+            <div class="d-flex justify-content-end align-items-end mb-3">
+                <input type="button" id="add" value="Add Row" class="btn btn-primary">
+            </div>
+
+            <div class="mt-5 mb-5">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Degree/Board</th>
+                            <th>School/College</th>
+                            <th>Start Date</th>
+                            <th>Passout Year</th>
+                            <th>Percentage</th>
+                            <th>BackLog</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" id="inputStatic1" name="inputstatic1"></td>
+                            <td><input type="text" id="inputStatic2" name="inputstatic2"></td>
+                            <td><input type="month" id="inputStatic3" name="inputstatic3"></td>
+                            <td><input type="month" id="inputStatic4" name="inputstatic4"></td>
+                            <td><input type="text" id="inputStatic5" name="inputstatic5"></td>
+                            <td><input type="text" id="inputStatic6" name="inputstatic6"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="inputStatic7" name="inputstatic7"></td>
+                            <td><input type="text" id="inputStatic8" name="inputstatic8"></td>
+                            <td><input type="month" id="inputStatic9" name="inputstatic9"></td>
+                            <td><input type="month" id="inputStatic10" name="inputstatic10"></td>
+                            <td><input type="text" id="inputStatic11" name="inputstatic11"></td>
+                            <td><input type="text" id="inputStatic12" name="inputstatic12"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-center align-items-center mb-3 mt-3">
+                <input type="submit" value="submit" class="btn btn-primary">
+            </div>
+
+            <!--code inserted -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="">
+    <table id="OutsideTable">
+            <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Date Of Birth</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Graduation Year</th>
+                        <th>Action</th>
+                    </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+    </table>
+</div>
+</form>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var counter = 3;
+            var counter = 0;
             var addButton = document.getElementById('add');
-            var inputsContainer = document.getElementById('inputs');
-            var tableContainer = document.getElementById('tableContainer');
+            var tableBody = document.querySelector('#dataTable tbody');
 
-            addButton.addEventListener('click', function (event) { 
+            addButton.addEventListener('click', function (event) {
                 event.preventDefault();
                 counter++;
-                var newInput = document.createElement('input');
-                newInput.type = 'text';
-                newInput.id = 'ABhishek' + counter;
-                inputsContainer.appendChild(newInput);
+
+                var newRow = document.createElement('tr');
+
+                // Create input fields for each column
+                for (var i = 0; i < 6; i++) {
+                    var newCell = document.createElement('td');
+                    var newInput = document.createElement('input');
+                    newInput.type = i == 2 || i == 3 ? 'month' : 'text'; // Set input type based on column
+                    newInput.name = 'input_' + counter + '_' + i;
+                    newCell.appendChild(newInput);
+                    newRow.appendChild(newCell);
+                }
+
+                // Create delete button
+                var deleteButtonCell = document.createElement('td');
+                var deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', function () {
+                    newRow.remove();
+                });
+                deleteButtonCell.appendChild(deleteButton);
+                newRow.appendChild(deleteButtonCell);
+
+                tableBody.appendChild(newRow);
             });
 
             myform.addEventListener('submit', function (event) {
                 event.preventDefault();
                 var formData = {};
+                debugger
+                // Collect data from static input fields
+                var staticInputs = document.querySelectorAll('#dataTable input[type="text"], #dataTable input[type="month"]');
+                staticInputs.forEach(function (input) {
+                    formData[input.name] = input.value;
+                });
 
-              
-                var additionalInputValue = document.getElementById('input1').value;
+                // Collect data from dynamically added input fields
+                var dynamicInputs = document.querySelectorAll('#dataTable input[type="text"], #dataTable input[type="month"]');
+                dynamicInputs.forEach(function (input) {
+                    formData[input.name] = input.value;
+                });
 
-              
-                formData['additionalInput'] = additionalInputValue;
+                var FirstName = document.getElementById('FirstName');
+                formData[FirstName.name] = FirstName.value; // Corrected usage
 
-               
-                for (var i = 1; i <= counter; i++) {
-                    var inputId = 'ABhishek' + i;
-                    var inputValue = document.getElementById(inputId).value;
-                    formData[inputId] = inputValue;
-                }
+                var LastName = document.getElementById('LastName')
+                formData[LastName.name] = LastName.value;
 
-               
-                var table = document.createElement('table');
-                var tbody = document.createElement('tbody');
+                var DateOfBirth = document.getElementById('DateOfBirth')
+                formData[DateOfBirth.name] = DateOfBirth.value;
 
-               
-                for (var key in formData) {
-                    var tr = document.createElement('tr');
-                    var td2 = document.createElement('td');
-                    td2.textContent = formData[key];
-                    tr.appendChild(td2);
-                    tbody.appendChild(tr);
-                }
+                var Email = document.getElementById('Email');
+                formData[Email.name] = Email.value;
 
-               
-                table.appendChild(tbody);
-                tableContainer.innerHTML = '';
-                tableContainer.appendChild(table);
+                var Address = document.getElementById('Address');
+                formData[Address.name] =Address.value;
 
-               
+                var GraduationYear = document.getElementById('GraduationYear');
+                formData[GraduationYear.name] = GraduationYear.value;
+                
+                var outsideTableBody = document.querySelector('#OutsideTable tbody');
+                var newRow = document.createElement('tr');
+
+                var firstNameCell = document.createElement('td');
+                firstNameCell.textContent = formData.FirstName;
+                newRow.appendChild(firstNameCell);
+
+                var lastNameCell = document.createElement('td');
+                lastNameCell.textContent = formData.LastName;
+                newRow.appendChild(lastNameCell);
+
+                var dateOfBirthCell = document.createElement('td');
+                dateOfBirthCell.textContent = formData.DateOfBirth;
+                newRow.appendChild(dateOfBirthCell);
+
+                var emailCell = document.createElement('td');
+                emailCell.textContent = formData.Email;
+                newRow.appendChild(emailCell);
+
+                var addressCell = document.createElement('td');
+                addressCell.textContent = formData.Address;
+                newRow.appendChild(addressCell);
+
+                var graduationYearCell = document.createElement('td');
+                graduationYearCell.textContent = formData.GraduationYear;
+                newRow.appendChild(graduationYearCell);
+
+                var actionCell = document.createElement('td');
+                var actionButton = document.createElement('input');
+                actionButton.type = 'button'; // Set type to button
+                actionButton.value = 'Action'; // Set the value (label) of the button
+                actionButton.className = 'btn btn-primary'; // Add Bootstrap button styles if needed
+                actionButton.name ='edit';
+                actionButton.setAttribute('data-bs-toggle', 'modal');
+                actionButton.setAttribute('data-bs-target', '#exampleModal');
+                actionCell.appendChild(actionButton);
+                newRow.appendChild(actionCell);
+
+                //delete button
+                var actionCell1 = document.createElement('td');
+                var actionButton1 = document.createElement('input');
+                actionButton1.type = 'button'; // Set type to button
+                actionButton1.value = 'Delete'; // Set the value (label) of the button
+                actionButton1.className = 'btn btn-primary'; // Add Bootstrap button styles if needed
+                actionButton1.name = 'delete';
+                actionCell1.appendChild(actionButton1);
+                newRow.appendChild(actionCell1); 
+                //delete button
+
+                outsideTableBody.appendChild(newRow);
+
                 console.log(formData);
+
+
             });
+
+            $(document).on('click', 'input[name="edit"]', function() 
+            {
+               
+
+            });
+
+            $(document).on('click','input[name="delete"]',function()
+            {
+                $(this).closest('tr').remove();
+            });
+
 
         });
     </script>
 </body>
-
-</html>
+</html> 
