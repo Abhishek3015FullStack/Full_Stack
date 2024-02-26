@@ -1,164 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: rgb(190 222 231 / 99%);
+        }
+    </style>
 
 </head>
+
 <body>
     <form id="myform">
         <div class="container">
             <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="Launch">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="--bs-modal-width: 100%">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn btn-primary mb-5 mt-5 p-2" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" id="Launch">
+                Add New Entry
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true" style="--bs-modal-width: 100% background-color: rgb(190 222 231 / 99%);">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Data Entry Page</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <!--code inserted -->
+                            <div class="row mt-5 mb-5">
+                                <div class="col-lg-4 col-sm-12">
+                                    <label for="FirstName" class="form-label">FirstName</label>
+                                    <input type="text" class="form-control" id="FirstName" value="" class="NameInput"
+                                        name="FirstName" onblur="FirstNameValidation()" onfocus="FirstNameValidation()"
+                                        required onkeypress="FirstNameValidation()"/>
+                                    <span id="FirstNameValidationMessage"></span>
+                                </div>
+                                <div class="col-lg-4 col-sm-12">
+                                    <label for="LastName" class="form-label">LastName</label>
+                                    <input type="text" class="form-control" id="LastName" value="" class="NameInput"
+                                        name="LastName" onblur="LastNameValidation()" onfocus="LastNameValidation()"
+                                        required onkeypress="LastNameValidation()"/>
+                                    <span id="SecondNameValidationMessage"></span>
+                                </div>
+
+                                <div class="col-lg-4 col-sm-12">
+                                    <label for="DateOfBirth" class="form-label">DateOfBirth</label>
+                                    <input type="month" class="form-control" id="DateOfBirth" value="" class="NameInput"
+                                        name="DateOfBirth" max="2006-12" required onclick="dateOfBirth()"
+                                        onblur="dateOfBirth()" onchange="dateOfBirth()" />
+                                    <span id="DateOfBirthValidationMessage"></span>
+                                </div>
+                            </div>
+                            <div class="row mt-5 mb-5">
+                                <div class="col-lg-4 col-sm-12">
+                                    <label for="Email" class="form-label">Email</label>
+                                    <input type="Email" class="form-control" id="Email" value="" class="NameInput"
+                                        name="Email" onblur="EmailValidation()" onfocus="EmailValidation()" required />
+                                    <span id="EmailValidationMessage"></span>
+                                </div>
+
+                                <div class="col-lg-4 col-sm-12">
+                                    <label for="Address" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="Address" value="" class="NameInput"
+                                        name="Address" onblur="AddressValidation()" onfocus="AddressValidation()"
+                                        required onkeypress="AddressValidation()"/>
+                                    <span id="AddressValidationMessage"></span>
+                                </div>
+
+                                <div class="col-lg-4 col-sm-12">
+                                    <label for="GraduationYear" class="form-label">GraduationYear</label>
+                                    <input type="month" class="form-control" id="GraduationYear" value=""
+                                        class="NameInput" name="GraduationYear" required onclick="GraduationYear1()"
+                                        onchange="GraduationYear1()" onblur="GraduationYear1()" />
+                                    <span id="GraduationYearValidationMessage"></span>
+                                </div>
+                            </div>
+                            <hr>
+                            <h1 class="d-flex align-items-center ">Education</h1>
+                            <div class="d-flex justify-content-end align-items-end mb-3">
+                                <input type="button" id="add" value="Add Row" class="btn btn-primary">
+                                <span id="addValidationMessage"></span>
+                            </div>
+
+                            <div class="mt-5 mb-5 table-responsive">
+                                <table id="dataTable" class="table table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="white-space: nowrap;">Degree/Board</th>
+                                            <th scope="col" style="white-space: nowrap;">School/College</th>
+                                            <th scope="col" style="white-space: nowrap;">Start Date</th>
+                                            <th scope="col" style="white-space: nowrap;">Passout Year</th>
+                                            <th scope="col" style="white-space: nowrap;">Percentage</th>
+                                            <th scope="col" style="white-space: nowrap;">BackLog</th>
+                                            <th scope="col" style="white-space: nowrap;">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="text" id="inputStatic1" name="inputstatic1"></td>
+                                            <td><input type="text" id="inputStatic2" name="inputstatic2"></td>
+                                            <td><input type="month" id="inputStatic3" name="inputstatic3"
+                                                    onchange="EnableTOdate();" onblur="DateValidation(); "><span
+                                                    id="Fromdate1"></span> </td>
+                                            <td><input type="month" id="inputStatic4" name="inputstatic4"
+                                                    onchange="DateValidation();" disabled> <span id="Todate1"
+                                                    class="formerror"></span> </td>
+                                            <td><input type="text" id="inputStatic5" name="inputstatic5"
+                                                    onclick="percentageInput5()" onblur="percentageInput5()"
+                                                    onfocus="percentageInput5()"><span
+                                                    id="PercentageValidationMessage"></span></td>
+                                            <td><input type="text" id="inputStatic6" name="inputstatic6"></td>
+                                            <td><button style="display: none;"></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" id="inputStatic7" name="inputstatic7"></td>
+                                            <td><input type="text" id="inputStatic8" name="inputstatic8"></td>
+                                            <td><input type="month" id="inputStatic9" name="inputstatic9"
+                                                    onchange="EnableTOdate1();" onblur="DateValidation1();"><span
+                                                    id="Fromdate2"></span></td>
+                                            <td><input type="month" id="inputStatic10" name="inputstatic10"
+                                                    onchange="DateValidation1();" disabled><span id="Todate2"
+                                                    class="formerror"></span></td>
+                                            <td><input type="text" id="inputStatic11" name="inputstatic11"
+                                                    onclick="percentageInput11()" onchange="percentageInput11()"
+                                                    onfocus="percentageInput11()"><span
+                                                    id="Inputstatic11validationMessage"></span></td>
+                                            <td><input type="text" id="inputStatic12" name="inputstatic12"></td>
+                                            <td><button style="display: none;"></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center mb-3 mt-3">
+                                <input type="submit" value="submit" class="btn btn-primary" id="submit"
+                                    data-bs-dismiss="modal" aria-label="Close">
+                                <input type="Update" value="Update" class="btn btn-primary" id="update"
+                                    data-bs-dismiss="modal" aria-label="Close">
+                            </div>
+
+                            <!--code inserted -->
+                        </div>
+                        <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-            <!--code inserted -->
-            <div class="row mt-5 mb-5">
-                <div class="col-lg-4 col-sm-12">
-                    <label for="FirstName" class="form-label">FirstName</label>
-                    <input type="text"class="form-control"id="FirstName"value="" class="NameInput" name="FirstName"/>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <label for="LastName" class="form-label">LastName</label>
-                    <input type="text"class="form-control"id="LastName"value="" class="NameInput" name="LastName"/>
-                </div>
-
-                <div class="col-lg-4 col-sm-12">
-                    <label for="DateOfBirth" class="form-label">DateOfBirth</label>
-                    <input type="month"class="form-control"id="DateOfBirth"value="" class="NameInput" name="DateOfBirth"/>
-                </div>
-            </div>
-            <div class="row mt-5 mb-5">
-                <div class="col-lg-4 col-sm-12">
-                    <label for="Email" class="form-label">Email</label>
-                    <input type="Email"class="form-control"id="Email"value="" class="NameInput" name="Email"/>
-                </div>
-
-                <div class="col-lg-4 col-sm-12">
-                    <label for="Address" class="form-label">Address</label>
-                    <input type="text"class="form-control"id="Address"value="" class="NameInput" name="Address"/>
-                </div>
-
-                <div class="col-lg-4 col-sm-12">
-                    <label for="GraduationYear" class="form-label">GraduationYear</label>
-                    <input type="month"class="form-control"id="GraduationYear"value="" class="NameInput" name="GraduationYear"/>
-                </div>
-            </div>
-            <hr>      
-            <h1 class="d-flex align-items-center ">Education</h1>
-            <div class="d-flex justify-content-end align-items-end mb-3">
-                <input type="button" id="add" value="Add Row" class="btn btn-primary">
-            </div>
-
-            <div class="mt-5 mb-5">
-                <table id="dataTable">
-                    <thead>
-                        <tr>
-                            <th>Degree/Board</th>
-                            <th>School/College</th>
-                            <th>Start Date</th>
-                            <th>Passout Year</th>
-                            <th>Percentage</th>
-                            <th>BackLog</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="text" id="inputStatic1" name="inputstatic1"></td>
-                            <td><input type="text" id="inputStatic2" name="inputstatic2"></td>
-                            <td><input type="month" id="inputStatic3" name="inputstatic3"></td>
-                            <td><input type="month" id="inputStatic4" name="inputstatic4"></td>
-                            <td><input type="text" id="inputStatic5" name="inputstatic5"></td>
-                            <td><input type="text" id="inputStatic6" name="inputstatic6"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" id="inputStatic7" name="inputstatic7"></td>
-                            <td><input type="text" id="inputStatic8" name="inputstatic8"></td>
-                            <td><input type="month" id="inputStatic9" name="inputstatic9"></td>
-                            <td><input type="month" id="inputStatic10" name="inputstatic10"></td>
-                            <td><input type="text" id="inputStatic11" name="inputstatic11"></td>
-                            <td><input type="text" id="inputStatic12" name="inputstatic12"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="d-flex justify-content-center align-items-center mb-3 mt-3">
-                <input type="submit" value="submit" class="btn btn-primary" id="submit">
-                <input type="Update" value="Update" class="btn btn-primary"  id="update">
-            </div>
-
-            <!--code inserted -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="">
-    <table id="OutsideTable">
-            <thead>
+        <div class="table-responsive">
+            <table id="OutsideTable" class="table table-responsive" style="--bs-table-bg: rgb(190 222 231 / 99%);">
+                <thead>
                     <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Date Of Birth</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Graduation Year</th>
-                        <th>Action</th>
+                        <th scope="col" style="white-space: nowrap;">First Name</th>
+                        <th scope="col" style="white-space: nowrap;">Last Name</th>
+                        <th scope="col" style="white-space: nowrap;">Date Of Birth</th>
+                        <th scope="col" style="white-space: nowrap;">Email</th>
+                        <th scope="col" style="white-space: nowrap;">Address</th>
+                        <th scope="col" style="white-space: nowrap;">Graduation Year</th>
+                        <th scope="col" style="white-space: nowrap;">Action</th>
                     </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
 
-            </tbody>
-    </table>
+                </tbody>
+            </table>
 
 
-</div>
-</form>
-    
+        </div>
+    </form>
+    <script>
+        var AllCorrect = true;
+        function FirstNameValidation() {
+
+
+            var firstNameInput = document.getElementById('FirstName');
+            var firstNameValue = firstNameInput.value;
+            var regexForFirstName = /^[a-zA-Z\s]{3,20}$/;
+
+            if (regexForFirstName.test(firstNameValue)) {
+                var spanForValidation = document.getElementById('FirstNameValidationMessage');
+                spanForValidation.innerText = "";
+                firstNameInput.style.border = "1px solid green"; // Assuming you want to indicate a valid input with a green border
+                AllCorrect = true;
+
+            } else {
+                var spanForValidation = document.getElementById('FirstNameValidationMessage');
+                spanForValidation.innerText = "First Name should contain only alphabets and be between 3 to 20 characters";
+                spanForValidation.style.color = "red";
+                firstNameInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
+                AllCorrect = false;
+            }
+        }
+
+        function LastNameValidation() {
+
+            var LastNameInput = document.getElementById('LastName');
+            var LastNameValue = LastNameInput.value;
+            var regexForLastName = /^[a-zA-Z\s]{3,20}$/;
+
+            if (regexForLastName.test(LastNameValue)) {
+                var spanForValidation = document.getElementById('SecondNameValidationMessage');
+                spanForValidation.innerText = "";
+                LastNameInput.style.border = "1px solid green"; // Assuming you want to indicate a valid input with a green border
+                AllCorrect = true;
+
+            } else {
+                var spanForValidation = document.getElementById('SecondNameValidationMessage');
+                spanForValidation.innerText = "Last Name should contain only alphabets and be between 3 to 20 characters";
+                spanForValidation.style.color = "red";
+                LastNameInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
+                AllCorrect = false;
+            }
+        }
+
+
+        function EmailValidation() {
+            var EmailInput = document.getElementById('Email');
+            var EmailValue = EmailInput.value;
+            var regexForEmail1 = /^[a-zA-Z0-9_%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+
+            if (regexForEmail1.test(EmailValue)) {
+                var spanForValidation = document.getElementById('EmailValidationMessage');
+                spanForValidation.innerText = "";
+                EmailInput.style.border = "1px solid green"; // Assuming you want to indicate a valid input with a green border
+                AllCorrect = true;
+            } else {
+                var spanForValidation = document.getElementById('EmailValidationMessage');
+                spanForValidation.innerText = "Please add the Email in the xyz@gmail.com format";
+                spanForValidation.style.color = "red";
+                EmailInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
+                AllCorrect = false;
+            }
+        }
+
+        function AddressValidation() {
+            var AddressInput = document.getElementById('Address');
+            var AddressValue = AddressInput.value;
+            var regexForAddress = /^[a-zA-Z0-9_\s%+-]{10,20}$/;
+
+
+            if (regexForAddress.test(AddressValue)) {
+                var spanForValidation = document.getElementById('AddressValidationMessage');
+                spanForValidation.innerText = "";
+                AddressInput.style.border = "1px solid green"; // Assuming you want to indicate a valid input with a green border
+                AllCorrect = true;
+            } else {
+                var spanForValidation = document.getElementById('AddressValidationMessage');
+                spanForValidation.innerText = "Please add the Address atleast 10 characters";
+                spanForValidation.style.color = "red";
+                AddressInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
+                AllCorrect = false;
+            }
+        }
+
+
+        function DateValidation() {
+
+            var fromdate = document.getElementById('inputStatic3').value;
+            var todate = document.getElementById('inputStatic4').value;
+
+            var FromdateObject = new Date(fromdate);
+            var TodateObject = new Date(todate);
+
+            if (FromdateObject <= TodateObject) {
+                console.log("Correct date range.");
+                document.getElementById('Todate1').innerText = "";
+            } else {
+                console.log("Incorrect date range.");
+                document.getElementById('Todate1').innerText = "End date must be greater than start date.";
+            }
+        }
+        function EnableTOdate() {
+
+            var fromdate = document.getElementById('inputStatic3').value;
+            if (fromdate !== '') {
+                document.getElementById('inputStatic4').disabled = false;
+            }
+            else {
+                document.getElementById('inputStatic4').disabled = true;
+            }
+        }
+
+
+
+        function DateValidation1() {
+
+            var fromdate = document.getElementById('inputStatic9').value;
+            var todate = document.getElementById('inputStatic10').value;
+
+            var FromdateObject = new Date(fromdate);
+            var TodateObject = new Date(todate);
+
+            if (FromdateObject <= TodateObject) {
+                console.log("Correct date range.");
+                document.getElementById('Todate2').innerText = "";
+            } else {
+                console.log("Incorrect date range.");
+                document.getElementById('Todate2').innerText = "End date must be greater than start date.";
+            }
+        }
+        function EnableTOdate1() {
+
+            var fromdate = document.getElementById('inputStatic9').value;
+            if (fromdate !== '') {
+                document.getElementById('inputStatic10').disabled = false;
+            }
+            else {
+                document.getElementById('inputStatic10').disabled = true;
+            }
+        }
+
+        function dateOfBirth() {
+            debugger
+            var DateOfBirth = document.getElementById('DateOfBirth');
+            if (DateOfBirth.value != '') {
+                DateOfBirth.style.border = "1px solid green";
+                DateOfBirthValidationMessage.innerText = "";
+
+            }
+            else {
+                DateOfBirth.style.border = "1px solid red";
+                DateOfBirthValidationMessage.innerText = "Please Add the date of Birth";
+                DateOfBirthValidationMessage.style.color = "red";
+            }
+        }
+
+
+
+
+
+
+        function GraduationYear1() {
+
+            var GraduationYear = document.getElementById('GraduationYear');
+            if (GraduationYear.value != '') {
+                GraduationYear.style.border = "1px solid green";
+                GraduationYearValidationMessage.innerText = "";
+
+            }
+            else {
+                GraduationYear.style.border = "1px solid red";
+                GraduationYearValidationMessage.innerText = "Please Add the Graduation year";
+                GraduationYearValidationMessage.style.color = "red";
+            }
+        }
+
+
+        function percentageInput5() {
+            var PercentageInput11 = document.getElementById('inputStatic5')
+            debugger
+            var spanForValidation = document.getElementById('PercentageValidationMessage');
+            if (PercentageInput11.value < 100 && PercentageInput11.value > 1) {
+                spanForValidation.innerText = "";
+            }
+            else {
+                spanForValidation.innerText = "Please enter the valid percentage";
+                spanForValidation.style.color = "red";
+            }
+        }
+
+
+        function percentageInput11() {
+            var PercentageInput11 = document.getElementById('inputStatic11')
+            debugger
+            var spanForValidation = document.getElementById('Inputstatic11validationMessage');
+            if (PercentageInput11.value < 100 && PercentageInput11.value > 1) {
+                spanForValidation.innerText = "";
+            }
+            else {
+                spanForValidation.innerText = "Please enter the valid percentage";
+                spanForValidation.style.color = "red";
+            }
+        }
+
+        function BackLog1() {
+            var Backlog1 = document.getElementById('')
+        }
+
+    </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var counter = 0;
+            var counter1 = 0;
             var formData = {};
             var addButton = document.getElementById('add');
             var tableBody = document.querySelector('#dataTable tbody');
-            var userData =[];
-            var LaunnchSubmite =document.getElementById('Launch')
-            var submit =document.getElementById('submit');
-            var update =document.getElementById('update');
+            var userData = [];
+            var LaunnchSubmite = document.getElementById('Launch')
+            var submit = document.getElementById('submit');
+            var update = document.getElementById('update');
 
 
 
-            LaunnchSubmite.addEventListener('click',function(event)
-            {
+            LaunnchSubmite.addEventListener('click', function (event) {
                 debugger
-                submit.style.display='block';
-                update.style.display='none';
+                submit.style.display = 'block';
+                update.style.display = 'none';
+                var validationMessages = document.querySelectorAll('#myform span');
+                validationMessages.forEach(function (span) {
+                    span.innerText = '';
+                });
+
+                var ValidationColor = document.querySelectorAll('#myform input')
+                ValidationColor.forEach(function (input) {
+                    input.style.border = 'var(--bs-border-width) solid var(--bs-border-color)';
+                });
+
+
+                var dynamicRows = document.getElementsByClassName("dynamicRow");
+                while (dynamicRows.length > 0) {
+                dynamicRows[0].parentNode.removeChild(dynamicRows[0]);
+            }
+
                 myform.reset();
             });
 
@@ -170,8 +439,8 @@
             addButton.addEventListener('click', function (event) {
                 event.preventDefault();
                 counter++;
-                
-            
+
+                debugger
                 var newRow = document.createElement('tr');
 
                 // Create input fields for each column
@@ -180,6 +449,8 @@
                     var newInput = document.createElement('input');
                     newInput.type = i == 2 || i == 3 ? 'month' : 'text'; // Set input type based on column
                     newInput.name = 'input_' + counter + '_' + i;
+                    newInput.id = 'input_' + counter + '_' + i;
+                    newInput.className ='dynamicRow';
                     newCell.appendChild(newInput);
                     newRow.appendChild(newCell);
                 }
@@ -188,6 +459,7 @@
                 var deleteButtonCell = document.createElement('td');
                 var deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
+                deleteButton.className = 'btn btn-primary dynamicRow';
                 deleteButton.addEventListener('click', function () {
                     newRow.remove();
                 });
@@ -198,8 +470,9 @@
             });
 
             myform.addEventListener('submit', function (event) {
-                    event.preventDefault();
-                    
+                event.preventDefault();
+                debugger
+                if (AllCorrect == true) {
                     // Create a new formData object
                     var formData = {};
 
@@ -213,7 +486,7 @@
                     var dynamicInputs = document.querySelectorAll('#dataTable input[type="text"], #dataTable input[type="month"]');
                     dynamicInputs.forEach(function (input) {
                         formData[input.name] = input.value;
-                    }); 
+                    });
 
                     var FirstName = document.getElementById('FirstName');
                     formData[FirstName.name] = FirstName.value; // Corrected usage
@@ -228,20 +501,51 @@
                     formData[Email.name] = Email.value;
 
                     var Address = document.getElementById('Address');
-                    formData[Address.name] =Address.value;
+                    formData[Address.name] = Address.value;
 
                     var GraduationYear = document.getElementById('GraduationYear');
                     formData[GraduationYear.name] = GraduationYear.value;
                     myform.reset();
                     userData.push(formData)
                     TableForm();
-                    console.log(userData)                
-                });
+                    console.log(userData)
+                    var validationMessages = document.querySelectorAll('#myform span');
+                    validationMessages.forEach(function (span) {
+                        span.innerText = '';
+                    });
+
+                    var ValidationColor = document.querySelectorAll('#myform input')
+                    ValidationColor.forEach(function (input) {
+                        input.style.border = 'var(--bs-border-width) solid var(--bs-border-color)';
+                    });
+
+                    var dynamicRows = document.getElementsByClassName("dynamicRow");
+                while (dynamicRows.length > 0) {
+                dynamicRows[0].parentNode.removeChild(dynamicRows[0]);
+                dynamicRows.remove();
+            }
 
 
-            $(document).on('click', 'input[name="edit"]', function() {
-                var row = $(this).closest('tr'); // Get the row of the clicked edit button
-                var cells = row.find('td'); // Get all cells of the row
+                }
+                else {
+                    debugger
+                    var ValidationColor = document.querySelectorAll('#myform input')
+                    ValidationColor.forEach(function (input) {
+                        input.style.border = 'var(--bs-border-width) solid var(--bs-border-color)';
+                    });
+
+                }
+            });
+
+
+
+
+
+
+
+            $(document).on('click', 'input[name="edit"]', function () {
+                var row = $(this).closest('tr');
+                var cells = row.find('td');
                 submit.style.display = 'none'; // Hide the submit button
                 update.style.display = 'block'; // Show the update button 
                 // Find the index of the row in the userData array
@@ -266,10 +570,60 @@
                 var inputStatic10Value = obj.inputstatic10;
                 var inputStatic11Value = obj.inputstatic11;
                 var inputStatic12Value = obj.inputstatic12;
+            
+
                 var keys = Object.keys(obj);
                 var objLength = keys.length;
-                console.log(objLength); 
-                console.log(userData[rowIndex].length)    
+                console.log(objLength);
+                var extra = objLength - 18;
+                console.log(extra)
+                if (extra => 6) {
+                    debugger
+                    var Input101 = obj.input_1_0;
+                    var Input102 =obj.input_1_1;
+                    var Input103 =obj.input_1_2;
+                    var Input104 = obj.input_1_3;
+                    var Input105 =obj.input_1_4;
+                    var Input106 =obj.input_1_5;
+
+
+
+                    var NeedRow = extra / 6;
+                    counter1++;
+                    debugger
+                    for(var i=1;i<=NeedRow;i++)
+                    {
+                    var newRow = document.createElement('tr');
+
+                    // Create input fields for each column
+                    for (var i = 0; i < 6; i++) {
+                        var newCell = document.createElement('td');
+                        var newInput = document.createElement('input');
+                        newInput.type = i == 2 || i == 3 ? 'month' : 'text'; // Set input type based on column
+                        newInput.name = 'input_' + counter + '_' + i;
+                        newInput.id = 'input_' + counter + '_' + i;
+                        newCell.appendChild(newInput);
+                        newRow.appendChild(newCell);
+                    }
+
+                    // Create delete button
+                    var deleteButtonCell = document.createElement('td');
+                    var deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.className = 'btn btn-primary';
+                    deleteButton.addEventListener('click', function () {
+                        newRow.remove();
+                    });
+                    deleteButtonCell.appendChild(deleteButton);
+                    newRow.appendChild(deleteButtonCell);
+
+                    tableBody.appendChild(newRow);
+
+                }
+            }
+
+
+                console.log(userData[rowIndex].length)
                 console.log(userData[rowIndex]);
 
                 var FirstName = document.getElementById('FirstName');
@@ -290,7 +644,7 @@
                 var InputStatic10 = document.getElementById('inputStatic10');
                 var InputStatic11 = document.getElementById('inputStatic11');
                 var InputStatic12 = document.getElementById('inputStatic12');
-                
+
                 FirstName.value = firstNameValue;
                 LastName.value = lastNameValue;
                 DateOfBirth.value = dateOfBirthValue;
@@ -309,70 +663,70 @@
                 InputStatic10.value = inputStatic10Value;
                 InputStatic11.value = inputStatic11Value;
                 InputStatic12.value = inputStatic12Value;
-                
-                document.getElementById('update').addEventListener('click', function() {
+
+                document.getElementById('update').addEventListener('click', function () {
                     debugger
-                    var FirstNew =document.getElementById('FirstName').value;
+                    var FirstNew = document.getElementById('FirstName').value;
                     var LastNew = document.getElementById('LastName').value;
-                    var DateOfBirthNew =document.getElementById('DateOfBirth').value
+                    var DateOfBirthNew = document.getElementById('DateOfBirth').value
                     var EmailNew = document.getElementById('Email').value
-                    var AddressNew =document.getElementById('Address').value;
-                    var GraduationYearNew =document.getElementById('GraduationYear').value;
+                    var AddressNew = document.getElementById('Address').value;
+                    var GraduationYearNew = document.getElementById('GraduationYear').value;
                     var inputStatic1New = document.getElementById('inputStatic1').value;
-                    var inputStatic2New =document.getElementById('inputStatic2').value;
+                    var inputStatic2New = document.getElementById('inputStatic2').value;
                     var inputStatic3New = document.getElementById('inputStatic3').value;
                     var inputStatic4New = document.getElementById('inputStatic4').value;
-                    var inputStatic5New =document.getElementById('inputStatic5').value;
-                    var inputStatic6New= document.getElementById('inputStatic6').value;
+                    var inputStatic5New = document.getElementById('inputStatic5').value;
+                    var inputStatic6New = document.getElementById('inputStatic6').value;
                     var inputStatic7New = document.getElementById('inputStatic7').value;
-                    var inputStatic8New =document.getElementById('inputStatic8').value;
+                    var inputStatic8New = document.getElementById('inputStatic8').value;
                     var inputStatic9New = document.getElementById('inputStatic9').value;
                     var inputStatic10New = document.getElementById('inputStatic10').value;
                     var inputStatic11New = document.getElementById('inputStatic11').value;
-                    var inputStatic12New =document.getElementById('inputStatic12').value;
+                    var inputStatic12New = document.getElementById('inputStatic12').value;
                     debugger
-                    var ObjectTOupdate =userData[rowIndex];
-                    ObjectTOupdate.FirstName =FirstNew;
+                    var ObjectTOupdate = userData[rowIndex];
+                    ObjectTOupdate.FirstName = FirstNew;
                     ObjectTOupdate.LastName = LastNew;
-                    ObjectTOupdate.DateOfBirth =DateOfBirthNew;
-                    ObjectTOupdate.Email =EmailNew;
-                    ObjectTOupdate.Address =AddressNew;
-                    ObjectTOupdate.GraduationYear=GraduationYearNew;
-                    ObjectTOupdate.inputstatic1 =inputStatic1New;
-                    ObjectTOupdate.inputstatic2 =inputStatic2New;
-                    ObjectTOupdate.inputstatic3 =inputStatic3New;
-                    ObjectTOupdate.inputstatic4 =inputStatic4New;
-                    ObjectTOupdate.inputstatic5 =inputStatic5New;
-                    ObjectTOupdate.inputstatic6 =inputStatic6New;
-                    ObjectTOupdate.inputstatic7 =inputStatic7New;
-                    ObjectTOupdate.inputstatic8 =inputStatic8New;
-                    ObjectTOupdate.inputstatic9 =inputStatic9New;
-                    ObjectTOupdate.inputstatic10 =inputStatic10New;
-                    ObjectTOupdate.inputstatic11 =inputStatic11New;
-                    ObjectTOupdate.inputstatic12 =inputStatic12New;
+                    ObjectTOupdate.DateOfBirth = DateOfBirthNew;
+                    ObjectTOupdate.Email = EmailNew;
+                    ObjectTOupdate.Address = AddressNew;
+                    ObjectTOupdate.GraduationYear = GraduationYearNew;
+                    ObjectTOupdate.inputstatic1 = inputStatic1New;
+                    ObjectTOupdate.inputstatic2 = inputStatic2New;
+                    ObjectTOupdate.inputstatic3 = inputStatic3New;
+                    ObjectTOupdate.inputstatic4 = inputStatic4New;
+                    ObjectTOupdate.inputstatic5 = inputStatic5New;
+                    ObjectTOupdate.inputstatic6 = inputStatic6New;
+                    ObjectTOupdate.inputstatic7 = inputStatic7New;
+                    ObjectTOupdate.inputstatic8 = inputStatic8New;
+                    ObjectTOupdate.inputstatic9 = inputStatic9New;
+                    ObjectTOupdate.inputstatic10 = inputStatic10New;
+                    ObjectTOupdate.inputstatic11 = inputStatic11New;
+                    ObjectTOupdate.inputstatic12 = inputStatic12New;
                     TableForm();
-                    });
+                });
 
 
 
-                                  
-        });
 
-
-        $(document).on('click', 'input[name="delete"]', function() {
-            var row = $(this).closest('tr'); // Get the row of the clicked delete button
-            var rowIndex = row.index(); // Find the index of the row
-            
-            // Remove the row from the table
-            row.remove();
-
-            // Remove the corresponding object from the userData array
-            userData.splice(rowIndex, 1);
             });
 
 
-                function TableForm() {
-                
+            $(document).on('click', 'input[name="delete"]', function () {
+                var row = $(this).closest('tr'); // Get the row of the clicked delete button
+                var rowIndex = row.index(); // Find the index of the row
+
+                // Remove the row from the table
+                row.remove();
+
+                // Remove the corresponding object from the userData array
+                userData.splice(rowIndex, 1);
+            });
+
+
+            function TableForm() {
+
                 var outsideTableBody = document.querySelector('#OutsideTable tbody');
                 outsideTableBody.innerHTML = ''; // Clear existing rows
 
@@ -426,12 +780,15 @@
                     newRow.appendChild(deleteButtonCell);
 
                     outsideTableBody.appendChild(newRow);
-    }
+                }
 
 
             }
 
+
+
         });
     </script>
 </body>
+
 </html> <!--last code updates -->
