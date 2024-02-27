@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.css" />
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
     <style>
         body {
             background-color: rgb(190 222 231 / 99%);
@@ -59,7 +61,8 @@
                                 <div class="col-lg-4 col-sm-12">
                                     <label for="DateOfBirth" class="form-label">DateOfBirth</label>
                                     <input type="month" class="form-control" id="DateOfBirth" value="" class="NameInput"
-                                        name="DateOfBirth" max="2006-12" required  onclick="dateOfBirth()" onblur="dateOfBirth()" onchange="dateOfBirth()"/>
+                                        name="DateOfBirth" max="2006-12" required onclick="dateOfBirth()"
+                                        onblur="dateOfBirth()" onchange="dateOfBirth()" />
                                     <span id="DateOfBirthValidationMessage"></span>
                                 </div>
                             </div>
@@ -82,7 +85,8 @@
                                 <div class="col-lg-4 col-sm-12">
                                     <label for="GraduationYear" class="form-label">GraduationYear</label>
                                     <input type="month" class="form-control" id="GraduationYear" value=""
-                                        class="NameInput" name="GraduationYear" required onclick="GraduationYear1()" onchange="GraduationYear1()" onblur="GraduationYear1()" />
+                                        class="NameInput" name="GraduationYear" required onclick="GraduationYear1()"
+                                        onchange="GraduationYear1()" onblur="GraduationYear1()" />
                                     <span id="GraduationYearValidationMessage"></span>
                                 </div>
                             </div>
@@ -108,26 +112,57 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><input type="text" id="inputStatic1" name="inputstatic1"></td>
-                                            <td><input type="text" id="inputStatic2" name="inputstatic2"></td>
+                                            <td><input type="text" id="inputStatic1" name="inputstatic1"
+                                                    onkeypress="Degree()" onclick="Degree()" onkeyup="Degree()"
+                                                    onkeydown="Degree()"><span id="FirstNamespanValidation"></span></td>
+                                            <td><input type="text" id="inputStatic2" name="inputstatic2"
+                                                    onclick="School()" onfocus="School()" onkeypress="School()"
+                                                    onkeyup="School()" onkeydown="School()"><span
+                                                    id="SchoolValidationMessage"></span></td>
                                             <td><input type="month" id="inputStatic3" name="inputstatic3"
                                                     onchange="EnableTOdate();" onblur="DateValidation();"><span
                                                     id="Fromdate1"></span> </td>
                                             <td><input type="month" id="inputStatic4" name="inputstatic4"
                                                     onchange="DateValidation();" disabled> <span id="Todate1"
                                                     class="formerror"></span> </td>
-                                            <td><input type="text" id="inputStatic5" name="inputstatic5" onclick="percentageInput5()" onblur="percentageInput5()" onfocus="percentageInput5()"><span id="PercentageValidationMessage"></span></td>
-                                            <td><input type="text" id="inputStatic6" name="inputstatic6"></td>
+                                            <td><input type="text" id="inputStatic5" name="inputstatic5"
+                                                    onclick="percentageInput5()" onblur="percentageInput5()"
+                                                    onfocus="percentageInput5()" onkeyup="percentageInput5()"
+                                                    onkeydown="percentageInput5()"><span
+                                                    id="PercentageValidationMessage"></span></td>
+                                            <td><input type="text" id="inputStatic6" name="inputstatic6"
+                                                    onfocus="BackLog1()" onblur="BackLog1()" onclick="BackLog1()"
+                                                    onkeypress="BackLog1()" onkeydown="BackLog1()"
+                                                    onkeyup="BackLog1()"><span id="backLog1ValidationSpan"></span>
+                                            </td>
                                             <td><button style="display: none;"></button></td>
                                         </tr>
                                         <tr>
-                                            <td><input type="text" id="inputStatic7" name="inputstatic7"></td>
-                                            <td><input type="text" id="inputStatic8" name="inputstatic8"></td>
-                                            <td><input type="month" id="inputStatic9" name="inputstatic9" onchange="EnableTOdate1();" onblur="DateValidation1();"><span id="Fromdate2"></span></td>
-                                            <td><input type="month" id="inputStatic10" name="inputstatic10" onchange="DateValidation1();" disabled><span id="Todate2"
-                                                class="formerror"></span></td>
-                                            <td><input type="text" id="inputStatic11" name="inputstatic11" onclick="percentageInput11()" onchange="percentageInput11()" onfocus="percentageInput11()"><span id="Inputstatic11validationMessage"></span></td>
-                                            <td><input type="text" id="inputStatic12" name="inputstatic12"></td>
+                                            <td><input type="text" id="inputStatic7" name="inputstatic7"
+                                                    onfocus="Degree2()" onclick="Degree2()" onkeypress="Degree2()"
+                                                    onkeyup="Degree2()" onkeydown="Degree2()"><span
+                                                    id="Degree2ValidationMessage"></span></td>
+                                            <td><input type="text" id="inputStatic8" name="inputstatic8"
+                                                    onfocus="School2()" onblur="School2()" onclick="School2()"
+                                                    onkeypress="School2()" onkeyup="School2()"
+                                                    onkeydown="School2()"><span id="School2validationMesaage"></span>
+                                            </td>
+                                            <td><input type="month" id="inputStatic9" name="inputstatic9"
+                                                    onchange="EnableTOdate1();" onblur="DateValidation1();"><span
+                                                    id="Fromdate2"></span></td>
+                                            <td><input type="month" id="inputStatic10" name="inputstatic10"
+                                                    onchange="DateValidation1();" disabled><span id="Todate2"
+                                                    class="formerror"></span></td>
+                                            <td><input type="text" id="inputStatic11" name="inputstatic11"
+                                                    onclick="percentageInput11()" onchange="percentageInput11()"
+                                                    onfocus="percentageInput11()" onkeydown="percentageInput11()"
+                                                    onkeypress="percentageInput11()" onkeyup="percentageInput11()"><span
+                                                    id="Inputstatic11validationMessage"></span></td>
+                                            <td><input type="text" id="inputStatic12" name="inputstatic12"
+                                                    onclick="BackLog2()" onblur="BackLog2()" onfocus="BackLog2()"
+                                                    onkeypress="BackLog2()" onkeydown="BackLog2()"
+                                                    onkeyup="BackLog2()"><span id="BacklogspanValidationMessage"></span>
+                                            </td>
                                             <td><button style="display: none;"></button></td>
                                         </tr>
                                     </tbody>
@@ -151,20 +186,21 @@
             </div>
         </div>
         <div class="table-responsive">
-            <table id="OutsideTable" class="table table-responsive" style="--bs-table-bg: rgb(190 222 231 / 99%);">
+            <table id="OutsideTable">
                 <thead>
                     <tr>
-                        <th scope="col" style="white-space: nowrap;">First Name</th>
-                        <th scope="col" style="white-space: nowrap;">Last Name</th>
-                        <th scope="col" style="white-space: nowrap;">Date Of Birth</th>
-                        <th scope="col" style="white-space: nowrap;">Email</th>
-                        <th scope="col" style="white-space: nowrap;">Address</th>
-                        <th scope="col" style="white-space: nowrap;">Graduation Year</th>
-                        <th scope="col" style="white-space: nowrap;">Action</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Date of Birth</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Graduation Year</th>
+                        <th>Action</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    <!-- Table rows will be populated here -->
                 </tbody>
             </table>
 
@@ -178,7 +214,7 @@
 
             var firstNameInput = document.getElementById('FirstName');
             var firstNameValue = firstNameInput.value;
-            var regexForFirstName = /^[a-zA-Z]{3,20}$/;
+            var regexForFirstName = /^[a-zA-Z\s]{3,20}$/;
 
             if (regexForFirstName.test(firstNameValue)) {
                 var spanForValidation = document.getElementById('FirstNameValidationMessage');
@@ -189,7 +225,7 @@
             } else {
                 var spanForValidation = document.getElementById('FirstNameValidationMessage');
                 spanForValidation.innerText = "First Name should contain only alphabets and be between 3 to 20 characters";
-                spanForValidation.style.color="red";
+                spanForValidation.style.color = "red";
                 firstNameInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
                 AllCorrect = false;
             }
@@ -199,7 +235,7 @@
 
             var LastNameInput = document.getElementById('LastName');
             var LastNameValue = LastNameInput.value;
-            var regexForLastName = /^[a-zA-Z]{3,20}$/;
+            var regexForLastName = /^[a-zA-Z\s]{3,20}$/;
 
             if (regexForLastName.test(LastNameValue)) {
                 var spanForValidation = document.getElementById('SecondNameValidationMessage');
@@ -210,7 +246,7 @@
             } else {
                 var spanForValidation = document.getElementById('SecondNameValidationMessage');
                 spanForValidation.innerText = "Last Name should contain only alphabets and be between 3 to 20 characters";
-                spanForValidation.style.color="red";
+                spanForValidation.style.color = "red";
                 LastNameInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
                 AllCorrect = false;
             }
@@ -231,7 +267,7 @@
             } else {
                 var spanForValidation = document.getElementById('EmailValidationMessage');
                 spanForValidation.innerText = "Please add the Email in the xyz@gmail.com format";
-                spanForValidation.style.color="red";
+                spanForValidation.style.color = "red";
                 EmailInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
                 AllCorrect = false;
             }
@@ -240,7 +276,7 @@
         function AddressValidation() {
             var AddressInput = document.getElementById('Address');
             var AddressValue = AddressInput.value;
-            var regexForAddress = /^[a-zA-Z0-9_%+-]{10,20}$/;
+            var regexForAddress = /^[a-zA-Z0-9_%+-\s/]{10,}$/;
 
 
             if (regexForAddress.test(AddressValue)) {
@@ -251,7 +287,7 @@
             } else {
                 var spanForValidation = document.getElementById('AddressValidationMessage');
                 spanForValidation.innerText = "Please add the Address atleast 10 characters";
-                spanForValidation.style.color="red";
+                spanForValidation.style.color = "red";
                 AddressInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
                 AllCorrect = false;
             }
@@ -272,6 +308,7 @@
             } else {
                 console.log("Incorrect date range.");
                 document.getElementById('Todate1').innerText = "End date must be greater than start date.";
+                document.getElementById('Todate1').style.color = "red";
             }
         }
         function EnableTOdate() {
@@ -285,8 +322,8 @@
             }
         }
 
-       
-        
+
+
         function DateValidation1() {
 
             var fromdate = document.getElementById('inputStatic9').value;
@@ -301,9 +338,11 @@
             } else {
                 console.log("Incorrect date range.");
                 document.getElementById('Todate2').innerText = "End date must be greater than start date.";
+                document.getElementById('Todate2').style.color = "red"
+
             }
-            }
-            function EnableTOdate1() {
+        }
+        function EnableTOdate1() {
 
             var fromdate = document.getElementById('inputStatic9').value;
             if (fromdate !== '') {
@@ -314,92 +353,153 @@
             }
         }
 
-        function dateOfBirth()
-        {
-            debugger
+        function dateOfBirth() {
+
             var DateOfBirth = document.getElementById('DateOfBirth');
-            if(DateOfBirth.value!='')
-            {
+            if (DateOfBirth.value != '') {
                 DateOfBirth.style.border = "1px solid green";
-                DateOfBirthValidationMessage.innerText ="";
+                DateOfBirthValidationMessage.innerText = "";
 
             }
-            else
-            {
+            else {
                 DateOfBirth.style.border = "1px solid red";
-                DateOfBirthValidationMessage.innerText ="Please Add the date of Birth";
-                DateOfBirthValidationMessage.style.color="red";
+                DateOfBirthValidationMessage.innerText = "Please Add the date of Birth";
+                DateOfBirthValidationMessage.style.color = "red";
             }
         }
 
-      
-
-    
 
 
-        function GraduationYear1()
-        {
-            
+
+
+
+        function GraduationYear1() {
+
             var GraduationYear = document.getElementById('GraduationYear');
-            if(GraduationYear.value!='')
-            {
+            if (GraduationYear.value != '') {
                 GraduationYear.style.border = "1px solid green";
-                GraduationYearValidationMessage.innerText ="";
+                GraduationYearValidationMessage.innerText = "";
 
             }
-            else
-            {
+            else {
                 GraduationYear.style.border = "1px solid red";
-                GraduationYearValidationMessage.innerText ="Please Add the Graduation year";
-                GraduationYearValidationMessage.style.color="red";
+                GraduationYearValidationMessage.innerText = "Please Add the Graduation year";
+                GraduationYearValidationMessage.style.color = "red";
             }
         }
 
 
-        function percentageInput5()
-        {
+        function percentageInput5() {
             var PercentageInput11 = document.getElementById('inputStatic5')
-            debugger
-            var spanForValidation = document .getElementById('PercentageValidationMessage');
-            if(PercentageInput11.value<100 && PercentageInput11.value>1)
-            {
-                spanForValidation.innerText ="";
+
+            var spanForValidation = document.getElementById('PercentageValidationMessage');
+            if (PercentageInput11.value < 100 && PercentageInput11.value > 1) {
+                spanForValidation.innerText = "";
             }
-            else
-            {
-                spanForValidation.innerText ="Please enter the valid percentage";
-                spanForValidation.style.color="red";
+            else {
+                spanForValidation.innerText = "Please enter the valid percentage";
+                spanForValidation.style.color = "red";
             }
         }
 
-        
-        function percentageInput11()
-        {
+
+        function percentageInput11() {
             var PercentageInput11 = document.getElementById('inputStatic11')
-            debugger
+
             var spanForValidation = document.getElementById('Inputstatic11validationMessage');
-            if(PercentageInput11.value<100 && PercentageInput11.value>1)
-            {
-                spanForValidation.innerText ="";
-            }   
-            else
-            {
-                spanForValidation.innerText ="Please enter the valid percentage";
-                spanForValidation.style.color="red";
+            if (PercentageInput11.value < 100 && PercentageInput11.value > 1) {
+                spanForValidation.innerText = "";
+            }
+            else {
+                spanForValidation.innerText = "Please enter the valid percentage";
+                spanForValidation.style.color = "red";
             }
         }
 
-        function BackLog1()
-        {
-            var Backlog1 = document.getElementById('')
+        function BackLog1() {
+            var Backlog1 = document.getElementById('inputStatic6')
+            var SpanValidation = document.getElementById('backLog1ValidationSpan');
+            if (Backlog1.value >= 1 && Backlog1.value <= 10) {
+                SpanValidation.innerText = "";
+            }
+            else {
+                SpanValidation.innerText = "Please Add the under the 10";
+                SpanValidation.style.color = "red";
+            }
+
         }
 
+        function BackLog2() {
+            var BackLog2 = document.getElementById('inputStatic12')
+            var BackLogMessage = document.getElementById('BacklogspanValidationMessage');
+            if (BackLog2.value >= 1 && BackLog2.value <= 10) {
+                BackLogMessage.innerText = "";
+            }
+            else {
+                BackLogMessage.style.color = "red";
+                BackLogMessage.innerText = "Please Add the under the 10";
+            }
+        }
+
+
+        function Degree() {
+
+            var FirstNameDegree = document.getElementById('inputStatic1').value;
+            var FirstNameValidationDegree = document.getElementById('FirstNamespanValidation')
+            if (FirstNameDegree != "") {
+                FirstNameValidationDegree.innerText = "";
+            }
+            else {
+                FirstNameValidationDegree.innerText = "This field is Required";
+                FirstNameValidationDegree.style.color = "red"
+            }
+        }
+
+        function School() {
+
+            var School = document.getElementById('inputStatic2').value;
+            var Schoolvalidation = document.getElementById('SchoolValidationMessage')
+            if (School != "") {
+                Schoolvalidation.innerText = " ";
+            }
+            else {
+                Schoolvalidation.innerText = "This Field is Required";
+                Schoolvalidation.style.color = "red";
+
+            }
+
+        }
+        function Degree2() {
+            var Degree2 = document.getElementById('inputStatic7').value;
+            var Degree2Message = document.getElementById('Degree2ValidationMessage');
+            if (Degree2 != "") {
+                Degree2Message.innerText = "";
+            }
+            else {
+                Degree2Message.innerText = "This field is required"
+                Degree2Message.style.color = "red"
+            }
+        }
+
+        function School2() {
+            var School2 = document.getElementById('inputStatic8').value
+            var School2validationMessage = document.getElementById('School2validationMesaage')
+
+            if (School2 != "") {
+                School2validationMessage.innerText = "";
+            }
+            else {
+                School2validationMessage.innerText = "This field is required"
+                School2validationMessage.style.color = "red"
+            }
+        }
     </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var counter = 0;
             var formData = {};
+            $('#OutsideTable').DataTable(); 
             var addButton = document.getElementById('add');
             var tableBody = document.querySelector('#dataTable tbody');
             var userData = [];
@@ -414,16 +514,16 @@
                 submit.style.display = 'block';
                 update.style.display = 'none';
                 var validationMessages = document.querySelectorAll('#myform span');
-                    validationMessages.forEach(function (span) {
-                        span.innerText = '';
-                    });
+                // validationMessages.forEach(function (span) {
+                //     span.innerText = '';
+                // });
 
-                    var ValidationColor = document.querySelectorAll('#myform input')
-                    ValidationColor.forEach(function (input) {
-                        input.style.border = 'var(--bs-border-width) solid var(--bs-border-color)';
-                    });
+                var ValidationColor = document.querySelectorAll('#myform input')
+                ValidationColor.forEach(function (input) {
+                    input.style.border = 'var(--bs-border-width) solid var(--bs-border-color)';
+                });
 
-                    
+
 
 
                 myform.reset();
@@ -438,7 +538,7 @@
                 event.preventDefault();
                 counter++;
 
-                debugger
+
                 var newRow = document.createElement('tr');
 
                 // Create input fields for each column
@@ -447,7 +547,7 @@
                     var newInput = document.createElement('input');
                     newInput.type = i == 2 || i == 3 ? 'month' : 'text'; // Set input type based on column
                     newInput.name = 'input_' + counter + '_' + i;
-                    newInput.id ='input_'+counter+'_'+i;
+                    newInput.id = 'input_' + counter + '_' + i;
                     newCell.appendChild(newInput);
                     newRow.appendChild(newCell);
                 }
@@ -468,25 +568,25 @@
 
             myform.addEventListener('submit', function (event) {
                 event.preventDefault();
-                debugger
+
                 if (AllCorrect == true) {
-                    // Create a new formData object
+
                     var formData = {};
 
-                    // Collect data from static input fields
+                    debugger
                     var staticInputs = document.querySelectorAll('#dataTable input[type="text"], #dataTable input[type="month"]');
                     staticInputs.forEach(function (input) {
                         formData[input.name] = input.value;
                     });
 
-                    // Collect data from dynamically added input fields
+
                     var dynamicInputs = document.querySelectorAll('#dataTable input[type="text"], #dataTable input[type="month"]');
                     dynamicInputs.forEach(function (input) {
                         formData[input.name] = input.value;
                     });
 
                     var FirstName = document.getElementById('FirstName');
-                    formData[FirstName.name] = FirstName.value; // Corrected usage
+                    formData[FirstName.name] = FirstName.value;
 
                     var LastName = document.getElementById('LastName')
                     formData[LastName.name] = LastName.value;
@@ -504,12 +604,12 @@
                     formData[GraduationYear.name] = GraduationYear.value;
                     myform.reset();
                     userData.push(formData)
-                    TableForm();
+                    TableForm(userData);
                     console.log(userData)
-                    var validationMessages = document.querySelectorAll('#myform span');
-                    validationMessages.forEach(function (span) {
-                        span.innerText = '';
-                    });
+                    // var validationMessages = document.querySelectorAll('#myform span');
+                    // validationMessages.forEach(function (span) {
+                    //     span.innerText = '';
+                    // });
 
                     var ValidationColor = document.querySelectorAll('#myform input')
                     ValidationColor.forEach(function (input) {
@@ -518,9 +618,8 @@
 
 
                 }
-                else
-                {
-                    debugger
+                else {
+
                     var ValidationColor = document.querySelectorAll('#myform input')
                     ValidationColor.forEach(function (input) {
                         input.style.border = 'var(--bs-border-width) solid var(--bs-border-color)';
@@ -536,20 +635,20 @@
 
 
             $(document).on('click', 'input[name="edit"]', function () {
-                var row = $(this).closest('tr'); 
-                var cells = row.find('td'); 
-                submit.style.display = 'none'; // Hide the submit button
-                update.style.display = 'block'; // Show the update button 
-                // Find the index of the row in the userData array
+                var row = $(this).closest('tr');
+                var cells = row.find('td');
+                submit.style.display = 'none';
+                update.style.display = 'block';
+
                 var rowIndex = $(this).closest('tbody').find('tr').index(row);
-                debugger
-                var obj = userData[rowIndex]; // Get the current object
-                var firstNameValue = obj.FirstName; // Access the FirstName property
-                var lastNameValue = obj.LastName; // Access the LastName property
-                var dateOfBirthValue = obj.DateOfBirth; // Access the DateOfBirth property
-                var emailValue = obj.Email; // Access the Email property
-                var addressValue = obj.Address; // Access the Address property
-                var graduationYearValue = obj.GraduationYear; // Access the GraduationYear property
+
+                var obj = userData[rowIndex];
+                var firstNameValue = obj.FirstName;
+                var lastNameValue = obj.LastName;
+                var dateOfBirthValue = obj.DateOfBirth;
+                var emailValue = obj.Email;
+                var addressValue = obj.Address;
+                var graduationYearValue = obj.GraduationYear;
                 var inputstatic1Value = obj.inputstatic1;
                 var inputstatic2Value = obj.inputstatic2;
                 var inputstatic3Value = obj.inputstatic3;
@@ -562,17 +661,16 @@
                 var inputStatic10Value = obj.inputstatic10;
                 var inputStatic11Value = obj.inputstatic11;
                 var inputStatic12Value = obj.inputstatic12;
-                
+
                 var keys = Object.keys(obj);
                 var objLength = keys.length;
                 console.log(objLength);
-                var extra = objLength-18;
+                var extra = objLength - 18;
                 console.log(extra)
-                
 
 
-                // console.log(userData[rowIndex].length)
-                // console.log(userData[rowIndex]);
+
+
 
                 var FirstName = document.getElementById('FirstName');
                 var LastName = document.getElementById('LastName')
@@ -613,7 +711,8 @@
                 InputStatic12.value = inputStatic12Value;
 
                 document.getElementById('update').addEventListener('click', function () {
-                    debugger
+
+
                     var FirstNew = document.getElementById('FirstName').value;
                     var LastNew = document.getElementById('LastName').value;
                     var DateOfBirthNew = document.getElementById('DateOfBirth').value
@@ -632,7 +731,7 @@
                     var inputStatic10New = document.getElementById('inputStatic10').value;
                     var inputStatic11New = document.getElementById('inputStatic11').value;
                     var inputStatic12New = document.getElementById('inputStatic12').value;
-                    debugger
+
                     var ObjectTOupdate = userData[rowIndex];
                     ObjectTOupdate.FirstName = FirstNew;
                     ObjectTOupdate.LastName = LastNew;
@@ -652,7 +751,8 @@
                     ObjectTOupdate.inputstatic10 = inputStatic10New;
                     ObjectTOupdate.inputstatic11 = inputStatic11New;
                     ObjectTOupdate.inputstatic12 = inputStatic12New;
-                    TableForm();
+                    console.log(userData)
+                    TableForm(userData);
                 });
 
 
@@ -662,81 +762,79 @@
 
 
             $(document).on('click', 'input[name="delete"]', function () {
-                var row = $(this).closest('tr'); // Get the row of the clicked delete button
-                var rowIndex = row.index(); // Find the index of the row
+                var row = $(this).closest('tr');
+                var rowIndex = row.index();
 
-                // Remove the row from the table
-                row.remove();
+                // Remove the row from the DataTable
+               
 
-                // Remove the corresponding object from the userData array
+                // Remove the corresponding data from the userData array
                 userData.splice(rowIndex, 1);
+                var table = $('#OutsideTable').DataTable();
+                table.row(row).remove().draw();
+                // location.reload();
+
             });
+            function TableForm(userData) {
+                debugger
+                // Get a reference to the table body
+                let outsideTableBody = $('#OutsideTable tbody');
 
-
-            function TableForm() {
-
-                var outsideTableBody = document.querySelector('#OutsideTable tbody');
-                outsideTableBody.innerHTML = ''; // Clear existing rows
-
+                // Clear the existing table body
+                outsideTableBody.empty();
+                debugger
+                // Iterate through each user data and populate the table
                 for (var i = 0; i < userData.length; i++) {
-                    var formData = userData[i]; // Get data for this iteration
+                    var formData = userData[i];
 
-                    var newRow = document.createElement('tr');
+                    // Create a new row
+                    var newRow = $('<tr>');
 
-                    var firstNameCell = document.createElement('td');
-                    firstNameCell.textContent = formData.FirstName;
-                    newRow.appendChild(firstNameCell);
+                    // Populate cells with user data
+                    newRow.append($('<td>').text(formData.FirstName));
+                    newRow.append($('<td>').text(formData.LastName));
+                    newRow.append($('<td>').text(formData.DateOfBirth));
+                    newRow.append($('<td>').text(formData.Email));
+                    newRow.append($('<td>').text(formData.Address));
+                    newRow.append($('<td>').text(formData.GraduationYear));
 
-                    var lastNameCell = document.createElement('td');
-                    lastNameCell.textContent = formData.LastName;
-                    newRow.appendChild(lastNameCell);
+                    // Create action button cell
+                    var actionCell = $('<td>');
+                    var actionButton = $('<input>').attr({
+                        type: 'button',
+                        value: 'Action',
+                        class: 'btn btn-primary',
+                        name: 'edit',
+                        'data-bs-toggle': 'modal',
+                        'data-bs-target': '#exampleModal'
+                    });
+                    actionCell.append(actionButton);
+                    newRow.append(actionCell);
 
-                    var dateOfBirthCell = document.createElement('td');
-                    dateOfBirthCell.textContent = formData.DateOfBirth;
-                    newRow.appendChild(dateOfBirthCell);
+                    // Create delete button cell
+                    var deleteButtonCell = $('<td>');
+                    var deleteButton = $('<input>').attr({
+                        type: 'button',
+                        value: 'Delete',
+                        class: 'btn btn-primary',
+                        name: 'delete'
+                    });
+                    deleteButtonCell.append(deleteButton);
+                    newRow.append(deleteButtonCell);
 
-                    var emailCell = document.createElement('td');
-                    emailCell.textContent = formData.Email;
-                    newRow.appendChild(emailCell);
-
-                    var addressCell = document.createElement('td');
-                    addressCell.textContent = formData.Address;
-                    newRow.appendChild(addressCell);
-
-                    var graduationYearCell = document.createElement('td');
-                    graduationYearCell.textContent = formData.GraduationYear;
-                    newRow.appendChild(graduationYearCell);
-
-                    var actionCell = document.createElement('td');
-                    var actionButton = document.createElement('input');
-                    actionButton.type = 'button';
-                    actionButton.value = 'Action';
-                    actionButton.className = 'btn btn-primary';
-                    actionButton.name = 'edit';
-                    actionButton.setAttribute('data-bs-toggle', 'modal');
-                    actionButton.setAttribute('data-bs-target', '#exampleModal');
-                    actionCell.appendChild(actionButton);
-                    newRow.appendChild(actionCell);
-
-                    var deleteButtonCell = document.createElement('td');
-                    var deleteButton = document.createElement('input');
-                    deleteButton.type = 'button';
-                    deleteButton.value = 'Delete';
-                    deleteButton.className = 'btn btn-primary';
-                    deleteButton.name = 'delete';
-                    deleteButtonCell.appendChild(deleteButton);
-                    newRow.appendChild(deleteButtonCell);
-
-                    outsideTableBody.appendChild(newRow);
+                    // Append the new row to the table body
+                    outsideTableBody.append(newRow);
                 }
-
-
+                
+                // 
+                // Initialize DataTable
+              
             }
-
-
+            // debugger
+            // TableForm(userData)
 
         });
     </script>
 </body>
 
-</html> <!--last code updates -->
+</html>
