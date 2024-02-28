@@ -185,18 +185,18 @@
                 </div>
             </div>
         </div>
-        <div class="table-responsive">
+        <div class="container">
             <table id="OutsideTable">
                 <thead>
                     <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Date of Birth</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Graduation Year</th>
-                        <th>Action</th>
-                        <th>Delete</th>
+                        <th style="white-space: nowrap;">First Name</th>
+                        <th style="white-space: nowrap;">Last Name</th>
+                        <th style="white-space: nowrap;">Date of Birth</th>
+                        <th style="white-space: nowrap;">Email</th>
+                        <th style="white-space: nowrap;">Address</th>
+                        <th style="white-space: nowrap;">Graduation Year</th>
+                        <th style="white-space: nowrap;">Action</th>
+                        <th style="white-space: nowrap;">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -499,13 +499,13 @@
         document.addEventListener('DOMContentLoaded', function () {
             var counter = 0;
             var formData = {};
-            $('#OutsideTable').DataTable(); 
             var addButton = document.getElementById('add');
             var tableBody = document.querySelector('#dataTable tbody');
             var userData = [];
             var LaunnchSubmite = document.getElementById('Launch')
             var submit = document.getElementById('submit');
             var update = document.getElementById('update');
+            $("#OutsideTable").DataTable();
 
 
 
@@ -766,23 +766,25 @@
                 var rowIndex = row.index();
 
                 // Remove the row from the DataTable
-               
+
 
                 // Remove the corresponding data from the userData array
                 userData.splice(rowIndex, 1);
                 var table = $('#OutsideTable').DataTable();
                 table.row(row).remove().draw();
-                // location.reload();
 
             });
             function TableForm(userData) {
                 debugger
+                // Destroy existing DataTable instance (if any)
+                $('#OutsideTable').DataTable().destroy();
+
                 // Get a reference to the table body
                 let outsideTableBody = $('#OutsideTable tbody');
 
                 // Clear the existing table body
                 outsideTableBody.empty();
-                debugger
+
                 // Iterate through each user data and populate the table
                 for (var i = 0; i < userData.length; i++) {
                     var formData = userData[i];
@@ -825,13 +827,12 @@
                     // Append the new row to the table body
                     outsideTableBody.append(newRow);
                 }
-                
-                // 
-                // Initialize DataTable
-              
+
+                // Reinitialize DataTable
+                $('#OutsideTable').DataTable();
             }
-            // debugger
-            // TableForm(userData)
+
+            
 
         });
     </script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" onclick="abhishek();" value="Button">
+    <script>
+        function abhishek() {
+            var dataArray = [
+                { name: "abhishke", counter: 1 },
+                { name: "Abhishek", counter: 2 },
+                { name: "abhishek", counter: 3 }
+            ];
+            debugger
+
+            var desiredCounter = 3; // The counter value you want to search for
+
+            var foundObject = dataArray.find(function (element) {
+                return element.counter === desiredCounter;
+            });
+
+            if (foundObject) {
+                // Object found, do something with it
+                console.log("Object found:", foundObject);
+            } else {
+                // Object not found
+                console.log("Object not found");
+            }
+        }
+    </script>
+</body>
+
+</html>
