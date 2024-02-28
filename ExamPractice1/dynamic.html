@@ -68,14 +68,17 @@
 
             }
             $(document).on('click', '.edit', function () {
-                alert(
-                    $.each(allData,function(index,object)
-                    {
-
-
-                    })
-                );
+                var dynamicInputs = "";
+                $.each(allData, function (index, object) {
+                    $.each(object, function (key, value) {
+                        dynamicInputs += '<label for="' + key + '">' + key + ':</label>' +
+                            '<input type="text" id="' + key + '" value="' + value + '"><br>';
+                    });
+                });
+                // Display the dynamic input fields in an alert
+                alert(dynamicInputs);
             });
+
         })
     </script>
 </body>
