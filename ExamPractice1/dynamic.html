@@ -34,6 +34,18 @@
 
             </tbody>
         </table>
+
+        <table>
+                <thead>
+                        <tr>
+                                <th>Degree</th>
+                                <th>School</th>
+                                <th>10</th>
+                                <th>12</th>
+                                <th>13</th>
+                        </tr>
+                </thead>
+        </table>
     </form>
     <script>
         var allData = [];
@@ -63,7 +75,7 @@
                 var table = $('#MYTbale').DataTable();
                 table.clear().draw();
                 $.each(allData, function (index, object) {
-                    var row = table.row.add([object.FirstName, '<input type="button" class="edit" value="Edit"><input type="button" class="Delete" value="Delete">']).draw()
+                    var row = table.row.add([object.FirstName, '<input type="button" class="edit" value="Edit"><input type="button" class="Delete" value="Delete">']).draw().node();
                 })
 
             }

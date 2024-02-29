@@ -219,14 +219,14 @@
             if (regexForFirstName.test(firstNameValue)) {
                 var spanForValidation = document.getElementById('FirstNameValidationMessage');
                 spanForValidation.innerText = "";
-                firstNameInput.style.border = "1px solid green"; // Assuming you want to indicate a valid input with a green border
+                firstNameInput.style.border = "1px solid green"; 
                 AllCorrect = true;
 
             } else {
                 var spanForValidation = document.getElementById('FirstNameValidationMessage');
                 spanForValidation.innerText = "First Name should contain only alphabets and be between 3 to 20 characters";
                 spanForValidation.style.color = "red";
-                firstNameInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
+                firstNameInput.style.border = "1px solid red"; 
                 AllCorrect = false;
             }
         }
@@ -240,14 +240,14 @@
             if (regexForLastName.test(LastNameValue)) {
                 var spanForValidation = document.getElementById('SecondNameValidationMessage');
                 spanForValidation.innerText = "";
-                LastNameInput.style.border = "1px solid green"; // Assuming you want to indicate a valid input with a green border
+                LastNameInput.style.border = "1px solid green"; 
                 AllCorrect = true;
 
             } else {
                 var spanForValidation = document.getElementById('SecondNameValidationMessage');
                 spanForValidation.innerText = "Last Name should contain only alphabets and be between 3 to 20 characters";
                 spanForValidation.style.color = "red";
-                LastNameInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
+                LastNameInput.style.border = "1px solid red"; 
                 AllCorrect = false;
             }
         }
@@ -262,13 +262,13 @@
             if (regexForEmail1.test(EmailValue)) {
                 var spanForValidation = document.getElementById('EmailValidationMessage');
                 spanForValidation.innerText = "";
-                EmailInput.style.border = "1px solid green"; // Assuming you want to indicate a valid input with a green border
+                EmailInput.style.border = "1px solid green"; 
                 AllCorrect = true;
             } else {
                 var spanForValidation = document.getElementById('EmailValidationMessage');
                 spanForValidation.innerText = "Please add the Email in the xyz@gmail.com format";
                 spanForValidation.style.color = "red";
-                EmailInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
+                EmailInput.style.border = "1px solid red"; 
                 AllCorrect = false;
             }
         }
@@ -282,13 +282,13 @@
             if (regexForAddress.test(AddressValue)) {
                 var spanForValidation = document.getElementById('AddressValidationMessage');
                 spanForValidation.innerText = "";
-                AddressInput.style.border = "1px solid green"; // Assuming you want to indicate a valid input with a green border
+                AddressInput.style.border = "1px solid green"; 
                 AllCorrect = true;
             } else {
                 var spanForValidation = document.getElementById('AddressValidationMessage');
                 spanForValidation.innerText = "Please add the Address atleast 10 characters";
                 spanForValidation.style.color = "red";
-                AddressInput.style.border = "1px solid red"; // Assuming you want to indicate an invalid input with a red border
+                AddressInput.style.border = "1px solid red"; 
                 AllCorrect = false;
             }
         }
@@ -541,11 +541,11 @@
 
                 var newRow = document.createElement('tr');
 
-                // Create input fields for each column
+                
                 for (var i = 0; i < 6; i++) {
                     var newCell = document.createElement('td');
                     var newInput = document.createElement('input');
-                    newInput.type = i == 2 || i == 3 ? 'month' : 'text'; // Set input type based on column
+                    newInput.type = i == 2 || i == 3 ? 'month' : 'text'; // 
                     newInput.name = 'input_' + counter + '_' + i;
                     newInput.id = 'input_' + counter + '_' + i;
                     newCell.appendChild(newInput);
@@ -765,10 +765,6 @@
                 var row = $(this).closest('tr');
                 var rowIndex = row.index();
 
-                // Remove the row from the DataTable
-
-
-                // Remove the corresponding data from the userData array
                 userData.splice(rowIndex, 1);
                 var table = $('#OutsideTable').DataTable();
                 table.row(row).remove().draw();
@@ -776,23 +772,23 @@
             });
             function TableForm(userData) {
                 debugger
-                // Destroy existing DataTable instance (if any)
+               
                 $('#OutsideTable').DataTable().destroy();
 
-                // Get a reference to the table body
+               
                 let outsideTableBody = $('#OutsideTable tbody');
 
-                // Clear the existing table body
+               
                 outsideTableBody.empty();
 
-                // Iterate through each user data and populate the table
+                
                 for (var i = 0; i < userData.length; i++) {
                     var formData = userData[i];
 
-                    // Create a new row
+                    
                     var newRow = $('<tr>');
 
-                    // Populate cells with user data
+                    
                     newRow.append($('<td>').text(formData.FirstName));
                     newRow.append($('<td>').text(formData.LastName));
                     newRow.append($('<td>').text(formData.DateOfBirth));
@@ -800,7 +796,7 @@
                     newRow.append($('<td>').text(formData.Address));
                     newRow.append($('<td>').text(formData.GraduationYear));
 
-                    // Create action button cell
+                    
                     var actionCell = $('<td>');
                     var actionButton = $('<input>').attr({
                         type: 'button',
@@ -813,7 +809,7 @@
                     actionCell.append(actionButton);
                     newRow.append(actionCell);
 
-                    // Create delete button cell
+
                     var deleteButtonCell = $('<td>');
                     var deleteButton = $('<input>').attr({
                         type: 'button',
@@ -824,11 +820,11 @@
                     deleteButtonCell.append(deleteButton);
                     newRow.append(deleteButtonCell);
 
-                    // Append the new row to the table body
+                    
                     outsideTableBody.append(newRow);
                 }
 
-                // Reinitialize DataTable
+
                 $('#OutsideTable').DataTable();
             }
 

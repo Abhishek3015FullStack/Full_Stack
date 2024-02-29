@@ -63,7 +63,7 @@
                 table.clear().draw();
                 $.each(allData, function (index, object) {
                     if (object.Deleted == false) {
-                        var row = table.row.add([object.FirstName, object.LastName, '<input type="button" class="edit" value="Edit"><input type="button" class="Delete" value ="Delete">']).draw().node();
+                        var row = table.row.add([object.FirstName, object.LastName, '<input type="button" class="edit" value="Edit"><input type="button" class="Delete" value ="Delete">']).draw().node(); //node is compulsory
                         $(row).attr('counter', object.counter);
                     }
                 })
@@ -115,6 +115,8 @@
                 allData[RowIndexDelete].Deleted =true;
                 table();
             });
+
+            
         });
     </script>
 </body>
