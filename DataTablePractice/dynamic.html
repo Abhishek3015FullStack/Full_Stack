@@ -21,7 +21,6 @@
             background-color: white;
             border: 2px solid black;
             display: none;
-
         }
     </style>
 </head>
@@ -31,7 +30,8 @@
         <input type="button" name="addButton" value="Add Button" id="addButton">
         <input type="text" name="Firstname" id="Firstname">
         <input type="submit" name="submit" id="submit" value="submit">
-        <input type="button" name="showData" id="ShowAll" value="ShowAll">
+        <!-- <input type="button" name="showData" id="ShowAll" value="ShowAll"> -->
+        <input type="button" name="update" id="update" value="update">
         <table>
             <thead>
                 <tr>
@@ -44,31 +44,33 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody id="Tbody">
-
-            </tbody>
+            <tbody id="Tbody"></tbody>
         </table>
-        <div id="showData">
-
-        </div>
+        <table id="SecondTable">
+            <thead>
+                <tr>
+                    <th>Firstname </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </form>
     <script>
         var Counter = 0;
         var allData = [];
+        var Counter1 = 0;
+        var RowIndex1s;
         $(document).ready(function () {
             $('#addButton').on('click', function () {
                 var newRow = '<tr>'
                 for (var i = 0; i < 6; i++) {
                     newRow += ('<td> <input type="text" class="dynamic" id="dynamic' + Counter + '"></td> delete button for the row ');
-
                     Counter++;
-
-
                 }
-                newRow += '<td><button class="delete">Delete</button></td>'; // Add delete button in the last column
+                newRow += '<td><button class="delete">Delete</button></td>';
                 newRow += '</tr>'
                 $('#Tbody').append(newRow);
-
             })
 
             $('#MyForm').on('click', '#submit', function (e) {
@@ -81,32 +83,95 @@
                 })
                 var FirstName = $('#Firstname').val();
                 rowData['Firstname'] = FirstName;
+                rowData['Counter1'] = Counter1;
                 allData.push(rowData)
-                console.log(allData)
+                Counter1++;
 
+                table();
                 MyForm.reset();
-
+                $('#Tbody').empty();
+                Counter = 0;
             });
 
-            $('#ShowAll').on('click', function () {
-                $('#showData').toggle();
 
+            $(document).on('click', '.delete', function (e) {
+                var rowCount = $('#Tbody tr').length;
+                if (rowCount > 2) {
+                    if ($(this).closest('tr').is(':last-child')) {
+                        $(this).closest('tr').remove(); 
+                    } else {
+                        alert("You can only delete the last row."); 
+                        return false; 
+                    }
+                } else {
+                    alert("You cannot delete the this row."); 
+                    return false; 
+                }
             });
 
-            $(document).on('click', '.delete', function () {
-                var RowIndexFind = $(this).closest('tr');
-                RowIndexFind.remove();
-            })
+            function table() {
+                debugger
+                var table = $('#SecondTable').DataTable();
+                table.clear().draw();
+                $.each(allData, function (index, object) {
+                    var newRow = table.row.add([object.Firstname, '<input type="button" class="Edit" value="Edit"> <input type="button" class="Delete" value="Delete">']).draw().node();
+                    $(newRow).attr('Counter1', object.Counter1);
+                });
+            }
 
-            $('#ShowAll').on('click', function () {
-                allData.forEach(function (obj) {
-                    console.log(obj)
-                    $('#showData').append('<p>'+obj+'</p>')
+            $(document).on('click', '.Edit', function () {
+                debugger
+                var RowIndexClick = parseInt($(this).closest('tr').attr('Counter1'));
+                RowIndex1s = allData.findIndex(function (element) {
+                    return element.Counter1 == RowIndexClick;
+                });
+                var rowData = allData[RowIndex1s];
+
+                var ObjectLength = Object.keys(rowData).length;
+                var ActualData = ObjectLength - 2;
+                var ActualRowsNeeded = ActualData / 6;
+                Counter = 0;
+                for (var i = 0; i < ActualRowsNeeded; i++) {
+                    var newRow = '<tr>';
+                    for (var j = 0; j < 6; j++) {
+                        newRow += '<td> <input type="text" class="dynamic" id="dynamic' + Counter + '">';
+                        Counter++;
+                    }
+                    newRow += '<td><button class="delete">Delete</button></td>';
+                    newRow += '</tr>';
+                    $('#Tbody').append(newRow);
+                }
+
+                $('.dynamic').each(function () {
+                    var id = $(this).attr('id');
+                    $(this).val(rowData[id]);
                 });
             });
 
+            $(document).on('click', '#update', function () {
+                debugger
+                var rowData = {};
+                $('.dynamic').each(function () {
+                    var id = $(this).attr('id');
+                    var value = $(this).val();
+                    rowData[id] = value;
+                });
 
 
+                var originalFirstName = allData[RowIndex1s].Firstname;
+                var originalCounter1 = allData[RowIndex1s].Counter1;
+
+
+                rowData.Firstname = originalFirstName;
+                rowData.Counter1 = originalCounter1;
+
+
+                allData[RowIndex1s] = rowData;
+
+                table();
+                console.log(allData)
+                $('#Tbody').empty();
+            });
 
         });
     </script>
