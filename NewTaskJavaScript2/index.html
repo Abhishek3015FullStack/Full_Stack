@@ -219,14 +219,14 @@
             if (regexForFirstName.test(firstNameValue)) {
                 var spanForValidation = document.getElementById('FirstNameValidationMessage');
                 spanForValidation.innerText = "";
-                firstNameInput.style.border = "1px solid green"; 
+                firstNameInput.style.border = "1px solid green";
                 AllCorrect = true;
 
             } else {
                 var spanForValidation = document.getElementById('FirstNameValidationMessage');
                 spanForValidation.innerText = "First Name should contain only alphabets and be between 3 to 20 characters";
                 spanForValidation.style.color = "red";
-                firstNameInput.style.border = "1px solid red"; 
+                firstNameInput.style.border = "1px solid red";
                 AllCorrect = false;
             }
         }
@@ -240,14 +240,14 @@
             if (regexForLastName.test(LastNameValue)) {
                 var spanForValidation = document.getElementById('SecondNameValidationMessage');
                 spanForValidation.innerText = "";
-                LastNameInput.style.border = "1px solid green"; 
+                LastNameInput.style.border = "1px solid green";
                 AllCorrect = true;
 
             } else {
                 var spanForValidation = document.getElementById('SecondNameValidationMessage');
                 spanForValidation.innerText = "Last Name should contain only alphabets and be between 3 to 20 characters";
                 spanForValidation.style.color = "red";
-                LastNameInput.style.border = "1px solid red"; 
+                LastNameInput.style.border = "1px solid red";
                 AllCorrect = false;
             }
         }
@@ -262,13 +262,13 @@
             if (regexForEmail1.test(EmailValue)) {
                 var spanForValidation = document.getElementById('EmailValidationMessage');
                 spanForValidation.innerText = "";
-                EmailInput.style.border = "1px solid green"; 
+                EmailInput.style.border = "1px solid green";
                 AllCorrect = true;
             } else {
                 var spanForValidation = document.getElementById('EmailValidationMessage');
                 spanForValidation.innerText = "Please add the Email in the xyz@gmail.com format";
                 spanForValidation.style.color = "red";
-                EmailInput.style.border = "1px solid red"; 
+                EmailInput.style.border = "1px solid red";
                 AllCorrect = false;
             }
         }
@@ -282,13 +282,13 @@
             if (regexForAddress.test(AddressValue)) {
                 var spanForValidation = document.getElementById('AddressValidationMessage');
                 spanForValidation.innerText = "";
-                AddressInput.style.border = "1px solid green"; 
+                AddressInput.style.border = "1px solid green";
                 AllCorrect = true;
             } else {
                 var spanForValidation = document.getElementById('AddressValidationMessage');
                 spanForValidation.innerText = "Please add the Address atleast 10 characters";
                 spanForValidation.style.color = "red";
-                AddressInput.style.border = "1px solid red"; 
+                AddressInput.style.border = "1px solid red";
                 AllCorrect = false;
             }
         }
@@ -541,7 +541,7 @@
 
                 var newRow = document.createElement('tr');
 
-                
+
                 for (var i = 0; i < 6; i++) {
                     var newCell = document.createElement('td');
                     var newInput = document.createElement('input');
@@ -772,23 +772,23 @@
             });
             function TableForm(userData) {
                 debugger
-               
+
                 $('#OutsideTable').DataTable().destroy();
 
-               
+
                 let outsideTableBody = $('#OutsideTable tbody');
 
-               
+
                 outsideTableBody.empty();
 
-                
+
                 for (var i = 0; i < userData.length; i++) {
                     var formData = userData[i];
 
-                    
+
                     var newRow = $('<tr>');
 
-                    
+
                     newRow.append($('<td>').text(formData.FirstName));
                     newRow.append($('<td>').text(formData.LastName));
                     newRow.append($('<td>').text(formData.DateOfBirth));
@@ -796,7 +796,7 @@
                     newRow.append($('<td>').text(formData.Address));
                     newRow.append($('<td>').text(formData.GraduationYear));
 
-                    
+
                     var actionCell = $('<td>');
                     var actionButton = $('<input>').attr({
                         type: 'button',
@@ -820,7 +820,7 @@
                     deleteButtonCell.append(deleteButton);
                     newRow.append(deleteButtonCell);
 
-                    
+
                     outsideTableBody.append(newRow);
                 }
 
@@ -828,9 +828,86 @@
                 $('#OutsideTable').DataTable();
             }
 
-            
+            $('#OutsideTable').on('click', 'tr', function () {
+                var $clickedRow = $(this);
+                var $nestedTable = $clickedRow.next();
+
+               
+                if ($nestedTable.is(':visible')) {
+               
+                    $nestedTable.hide();
+                } else {
+               
+                    if ($nestedTable.length === 0) {
+               
+                        var RowFind2 = $clickedRow.find('td:eq(0)').text();
+                        var RowIndex2 = userData.findIndex(function (element) {
+                            return element.FirstName == RowFind2;
+                        });
+                        console.log(RowIndex2);
+                        var dataforTheNested = userData[RowIndex2];
+                        var html =
+                            '<table class="display table table-striped" style="width:236%">' +
+                            '<thead>' +
+                            '<tr>' +
+                            '<th  scope="col">Degree</th>' +
+                            '<th  scope="col">School</th>' +
+                            '<th  scope="col">Start Date</th>' +
+                            '<th  scope="col">Passout Year</th>' +
+                            '<th  scope="col">Percentage</th>' +
+                            '<th  scope="col">Backlog</th>' +
+                            '<th  scope="col"></th>' +
+                            '<th  scope="col"></th>' +
+                            '</tr>' +
+                            '</thead>' +
+                            '<tbody>' +
+                            '<tr>' +
+                            '<td>' + dataforTheNested.inputstatic1 + '</td>' +
+                            '<td>' + dataforTheNested.inputstatic2 + '</td>' +
+                            '<td>' + dataforTheNested.inputstatic3 + '</td>' +
+                            '<td>' + dataforTheNested.inputstatic4 + '</td>' +
+                            '<td>' + dataforTheNested.inputstatic5 + '</td>' +
+                            '<td>' + dataforTheNested.inputstatic6 + '</td>' +
+                            '<td> <input type="button" class="hide" style="display:none"></td>' +
+                            '<td> <input type="button" class="hide" style="display:none"></td>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td>' + dataforTheNested.inputstatic7 + '</td>' +
+                            '<td>' + dataforTheNested.inputstatic8 + '</td>' +
+                            '<td>' + dataforTheNested.inputstatic9 + '</td>' +
+                            '<td>' + dataforTheNested.inputstatic10 + '</td>' +
+                            '<td>' + dataforTheNested.inputstatic11 + '</td>' +
+                            '<td>' + dataforTheNested.inputstatic12 + '</td>' +
+                            '<td> <input type="button" class="hide" style="display:none"></td>' +
+                            '<td> <input type="button" class="hide" style="display:none"></td>' +
+                            '</tr>' +
+                            '</tbody>' +
+                            '</table>';
+
+                        
+                        $clickedRow.after(html);
+                        $nestedTable = $clickedRow.next();
+                        $nestedTable.addClass('nested-table-appended');
+
+                        
+                        $nestedTable.DataTable({
+                            "paging": false, 
+                            "searching": false, 
+                            "info": false, 
+                            "autoWidth": false 
+                        });
+
+                        
+                        $nestedTable.parent().css('width', '100%');
+                    }
+                    $nestedTable.show();
+                }
+            });
+
+
 
         });
+
     </script>
 </body>
 
