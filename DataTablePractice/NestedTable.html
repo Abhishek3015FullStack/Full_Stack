@@ -56,10 +56,10 @@
       </select>
     </div>
 
-        <input type="button" name="update" id="update" value="update"><br>
-      </div>
+    <input type="button" name="update" id="update" value="update"><br>
+    </div>
 
-      <input type="submit" id="submit" name="submit" value="submit" id="submit">
+    <input type="submit" id="submit" name="submit" value="submit" id="submit">
     </div>
 
     <table id="MyTable">
@@ -85,7 +85,7 @@
     var Counter = 0;
     var RowIndex;
     $(document).ready(function () {
-      var rowData={};
+      var rowData = {};
       $('#MyForm').on('click', '#submit', function (e) {
         e.preventDefault();
         var FirstName = $('#FirstName').val();
@@ -96,30 +96,45 @@
         var Select = $('#Select').val();
 
         rowData['FirstName'] = FirstName;
-        rowData['LastName'] =LastName;
-        rowData['playGroud'] =playGroud;
-        rowData['Gender'] =Gender;
-        rowData['Date'] =Date;
-        rowData['Select'] =Select;
-        rowData['Counter'] =Counter
+        rowData['LastName'] = LastName;
+        rowData['playGroud'] = playGroud;
+        rowData['Gender'] = Gender;
+        rowData['Date'] = Date;
+        rowData['Select'] = Select;
+        rowData['Counter'] = Counter
         allData.push(rowData);
         Counter++;
+        console.log(allData);
         table();
       });
 
-      function table() 
-      {
-        var table =$('#MyTable').DataTable();
+      function table() {
+        var table = $('#MyTable').DataTable();
         table.clear().draw();
-        $.each(allData,function(index,object)
-        {
-            var row = table.row.add([object.FirstName,object.LastName,object.playGroud,object.Gender,object.Date,object.Select,'<input type="button" class="Edit" value="Edit"><input type="button" class="Delete" value="Delete">']).draw().node();
-            $(row).attr('Counter',object.Counter)
+        $.each(allData, function (index, object) {
+          var row = table.row.add([object.FirstName, object.LastName, object.playGroud, object.Gender, object.Date, object.Select, '<input type="button" class="Edit" value="Edit"><input type="button" class="Delete" value="Delete">']).draw().node();
+          $(row).attr('Counter', object.Counter)
         })
 
       }
 
-      
+      $(document).on('click','.Edit',function()
+      {
+          var rowFind = $(this).closest('tr').attr('Counter');
+          RowIndex = allData.findIndex(function(element)
+          {
+              return element.Counter == rowFind;
+          })
+          console.log( allData[RowIndex].FirstName);
+          console.log(allData[RowIndex].FirstName)
+
+
+          playground = playgroud.prop('checked',playgroud);
+          allfilter = all.filter('[value="'+ Gender+'"]').prop('checked', true)
+        
+      })
+
+
     });
   </script>
 </body>
