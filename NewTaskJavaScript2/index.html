@@ -114,54 +114,55 @@
                                         <tr>
                                             <td><input type="text" id="inputStatic1" name="inputstatic1"
                                                     onkeypress="Degree()" onclick="Degree()" onkeyup="Degree()"
-                                                    onkeydown="Degree()"><span id="FirstNamespanValidation"></span></td>
+                                                    onkeydown="Degree()"><span id="FirstNamespanValidation"
+                                                    required></span></td>
                                             <td><input type="text" id="inputStatic2" name="inputstatic2"
                                                     onclick="School()" onfocus="School()" onkeypress="School()"
-                                                    onkeyup="School()" onkeydown="School()"><span
+                                                    onkeyup="School()" onkeydown="School()" required><span
                                                     id="SchoolValidationMessage"></span></td>
                                             <td><input type="month" id="inputStatic3" name="inputstatic3"
-                                                    onchange="EnableTOdate();" onblur="DateValidation();"><span
+                                                    onchange="EnableTOdate();" onblur="DateValidation();" required><span
                                                     id="Fromdate1"></span> </td>
                                             <td><input type="month" id="inputStatic4" name="inputstatic4"
-                                                    onchange="DateValidation();" disabled> <span id="Todate1"
+                                                    onchange="DateValidation();" disabled required> <span id="Todate1"
                                                     class="formerror"></span> </td>
                                             <td><input type="text" id="inputStatic5" name="inputstatic5"
                                                     onclick="percentageInput5()" onblur="percentageInput5()"
                                                     onfocus="percentageInput5()" onkeyup="percentageInput5()"
-                                                    onkeydown="percentageInput5()"><span
+                                                    onkeydown="percentageInput5()" required><span
                                                     id="PercentageValidationMessage"></span></td>
                                             <td><input type="text" id="inputStatic6" name="inputstatic6"
                                                     onfocus="BackLog1()" onblur="BackLog1()" onclick="BackLog1()"
-                                                    onkeypress="BackLog1()" onkeydown="BackLog1()"
-                                                    onkeyup="BackLog1()"><span id="backLog1ValidationSpan"></span>
+                                                    onkeypress="BackLog1()" onkeydown="BackLog1()" onkeyup="BackLog1()"
+                                                    required><span id="backLog1ValidationSpan"></span>
                                             </td>
                                             <td><button style="display: none;"></button></td>
                                         </tr>
                                         <tr>
                                             <td><input type="text" id="inputStatic7" name="inputstatic7"
                                                     onfocus="Degree2()" onclick="Degree2()" onkeypress="Degree2()"
-                                                    onkeyup="Degree2()" onkeydown="Degree2()"><span
+                                                    onkeyup="Degree2()" onkeydown="Degree2()" required> <span
                                                     id="Degree2ValidationMessage"></span></td>
                                             <td><input type="text" id="inputStatic8" name="inputstatic8"
                                                     onfocus="School2()" onblur="School2()" onclick="School2()"
-                                                    onkeypress="School2()" onkeyup="School2()"
-                                                    onkeydown="School2()"><span id="School2validationMesaage"></span>
+                                                    onkeypress="School2()" onkeyup="School2()" onkeydown="School2()"
+                                                    required><span id="School2validationMesaage"></span>
                                             </td>
                                             <td><input type="month" id="inputStatic9" name="inputstatic9"
-                                                    onchange="EnableTOdate1();" onblur="DateValidation1();"><span
-                                                    id="Fromdate2"></span></td>
+                                                    onchange="EnableTOdate1();" onblur="DateValidation1();"
+                                                    required><span id="Fromdate2"></span></td>
                                             <td><input type="month" id="inputStatic10" name="inputstatic10"
-                                                    onchange="DateValidation1();" disabled><span id="Todate2"
+                                                    onchange="DateValidation1();" disabled required><span id="Todate2"
                                                     class="formerror"></span></td>
                                             <td><input type="text" id="inputStatic11" name="inputstatic11"
                                                     onclick="percentageInput11()" onchange="percentageInput11()"
                                                     onfocus="percentageInput11()" onkeydown="percentageInput11()"
                                                     onkeypress="percentageInput11()" onkeyup="percentageInput11()"><span
-                                                    id="Inputstatic11validationMessage"></span></td>
+                                                    id="Inputstatic11validationMessage" required></span></td>
                                             <td><input type="text" id="inputStatic12" name="inputstatic12"
                                                     onclick="BackLog2()" onblur="BackLog2()" onfocus="BackLog2()"
-                                                    onkeypress="BackLog2()" onkeydown="BackLog2()"
-                                                    onkeyup="BackLog2()"><span id="BacklogspanValidationMessage"></span>
+                                                    onkeypress="BackLog2()" onkeydown="BackLog2()" onkeyup="BackLog2()"
+                                                    required><span id="BacklogspanValidationMessage"></span>
                                             </td>
                                             <td><button style="display: none;"></button></td>
                                         </tr>
@@ -510,13 +511,15 @@
 
 
             LaunnchSubmite.addEventListener('click', function (event) {
-                debugger
+
                 submit.style.display = 'block';
                 update.style.display = 'none';
                 var validationMessages = document.querySelectorAll('#myform span');
                 // validationMessages.forEach(function (span) {
                 //     span.innerText = '';
                 // });
+
+                
 
                 var ValidationColor = document.querySelectorAll('#myform input')
                 ValidationColor.forEach(function (input) {
@@ -573,7 +576,7 @@
 
                     var formData = {};
 
-                    debugger
+
                     var staticInputs = document.querySelectorAll('#dataTable input[type="text"], #dataTable input[type="month"]');
                     staticInputs.forEach(function (input) {
                         formData[input.name] = input.value;
@@ -662,12 +665,22 @@
                 var inputStatic11Value = obj.inputstatic11;
                 var inputStatic12Value = obj.inputstatic12;
 
+
                 var keys = Object.keys(obj);
                 var objLength = keys.length;
                 console.log(objLength);
                 var extra = objLength - 18;
                 console.log(extra)
 
+                if (extra > 2) {
+                    var DynamicValue1 = obj.input_1_0;
+                    var DynamicValue2 = obj.input_1_1;
+                    var DynamicValue3 = obj.input_1_2;
+                    var DynamicValue4 = obj.input_1_3;
+                    var DynamicValue5 = obj.input_1_4;
+                    var DynamicValue6 = obj.input_1_5;
+
+                }
 
 
 
@@ -691,6 +704,7 @@
                 var InputStatic11 = document.getElementById('inputStatic11');
                 var InputStatic12 = document.getElementById('inputStatic12');
 
+
                 FirstName.value = firstNameValue;
                 LastName.value = lastNameValue;
                 DateOfBirth.value = dateOfBirthValue;
@@ -709,6 +723,27 @@
                 InputStatic10.value = inputStatic10Value;
                 InputStatic11.value = inputStatic11Value;
                 InputStatic12.value = inputStatic12Value;
+                if (extra > 1) {
+                    var Dynamic1 = document.getElementById('input_1_0');
+                    var Dynamic2 = document.getElementById('input_1_1');
+                    var Dynamic3 = document.getElementById('input_1_2');
+                    var Dynamic4 = document.getElementById('input_1_3');
+                    var Dynamic5 = document.getElementById('input_1_4');
+                    var Dynamic6 = document.getElementById('input_1_5');
+
+                    Dynamic1.value = DynamicValue1;
+                    Dynamic2.value = DynamicValue2;
+                    Dynamic3.value = DynamicValue3;
+                    Dynamic4.value = DynamicValue4;
+                    Dynamic5.value = DynamicValue5;
+                    Dynamic6.value = DynamicValue6;
+
+
+
+
+
+
+                }
 
                 document.getElementById('update').addEventListener('click', function () {
 
@@ -732,6 +767,19 @@
                     var inputStatic11New = document.getElementById('inputStatic11').value;
                     var inputStatic12New = document.getElementById('inputStatic12').value;
 
+                    if (extra > 1) 
+                    {
+                        var Dynamic1New = document.getElementById('input_1_0').value;
+                        var Dynamic2New = document.getElementById('input_1_1').value;
+                        var Dynamic3New = document.getElementById('input_1_2').value;
+                        var Dynamic4New = document.getElementById('input_1_3').value;
+                        var Dynamic5New = document.getElementById('input_1_4').value;
+                        var Dynamic6New = document.getElementById('input_1_5').value;
+
+
+
+                    }
+
                     var ObjectTOupdate = userData[rowIndex];
                     ObjectTOupdate.FirstName = FirstNew;
                     ObjectTOupdate.LastName = LastNew;
@@ -751,6 +799,19 @@
                     ObjectTOupdate.inputstatic10 = inputStatic10New;
                     ObjectTOupdate.inputstatic11 = inputStatic11New;
                     ObjectTOupdate.inputstatic12 = inputStatic12New;
+                    if(extra>1)
+                    {
+                        ObjectTOupdate.input_1_0 = Dynamic1New;
+                        ObjectTOupdate.input_1_1 = Dynamic2New
+                        ObjectTOupdate.input_1_2 = Dynamic3New
+                        ObjectTOupdate.input_1_3 = Dynamic4New
+                        ObjectTOupdate.input_1_4 = Dynamic5New
+                        ObjectTOupdate.input_1_5 = Dynamic6New
+
+
+                    }
+
+
                     console.log(userData)
                     TableForm(userData);
                 });
@@ -771,7 +832,7 @@
 
             });
             function TableForm(userData) {
-                debugger
+
 
                 $('#OutsideTable').DataTable().destroy();
 
@@ -829,23 +890,26 @@
             }
 
             $('#OutsideTable').on('click', 'tr', function () {
+
                 var $clickedRow = $(this);
                 var $nestedTable = $clickedRow.next();
 
-               
+
                 if ($nestedTable.is(':visible')) {
-               
+
                     $nestedTable.hide();
                 } else {
-               
+
                     if ($nestedTable.length === 0) {
-               
+
                         var RowFind2 = $clickedRow.find('td:eq(0)').text();
                         var RowIndex2 = userData.findIndex(function (element) {
                             return element.FirstName == RowFind2;
                         });
                         console.log(RowIndex2);
                         var dataforTheNested = userData[RowIndex2];
+                        var DataLength = Object.keys(dataforTheNested).length;
+                        console.log(DataLength);
                         var html =
                             '<table class="display table table-striped" style="width:236%">' +
                             '<thead>' +
@@ -880,24 +944,35 @@
                             '<td>' + dataforTheNested.inputstatic12 + '</td>' +
                             '<td> <input type="button" class="hide" style="display:none"></td>' +
                             '<td> <input type="button" class="hide" style="display:none"></td>' +
-                            '</tr>' +
-                            '</tbody>' +
-                            '</table>';
+                            '</tr>';
+                        if (DataLength > 19) {
+                            html += '<tr>' +
+                                '<td>' + dataforTheNested.input_1_0 + '</td>' +
+                                '<td>' + dataforTheNested.input_1_1 + '</td>' +
+                                '<td>' + dataforTheNested.input_1_2 + '</td>' +
+                                '<td>' + dataforTheNested.input_1_3 + '</td>' +
+                                '<td>' + dataforTheNested.input_1_4 + '</td>' +
+                                '<td>' + dataforTheNested.input_1_5 + '</td>' +
+                                '<td> <input type="button" class="hide" style="display:none"></td>' +
+                                '<td> <input type="button" class="hide" style="display:none"></td>' +
+                                '</tr>'
+                        }
+                        html += '</tbody></table>';
 
-                        
+
                         $clickedRow.after(html);
                         $nestedTable = $clickedRow.next();
                         $nestedTable.addClass('nested-table-appended');
 
-                        
+
                         $nestedTable.DataTable({
-                            "paging": false, 
-                            "searching": false, 
-                            "info": false, 
-                            "autoWidth": false 
+                            "paging": false,
+                            "searching": false,
+                            "info": false,
+                            "autoWidth": false
                         });
 
-                        
+
                         $nestedTable.parent().css('width', '100%');
                     }
                     $nestedTable.show();
