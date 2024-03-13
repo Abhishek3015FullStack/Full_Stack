@@ -148,3 +148,103 @@
 </body>
 
 </html>
+
+
+<!-- 
+
+create database Abhishek;
+
+use [Abhishek];
+
+create table Abhishek
+(id int primary key not null identity(1,1),
+name varchar(250));
+
+EXEC sp_rename 'Abhishek', 'AbhishekTable';
+
+insert into AbhishekTable values('Abhishek');
+
+
+select name As Information from AbhishekTable;
+
+drop table [dbo].[AbhishekTable];
+
+
+
+create table AbhishekTable(id int ,
+name nvarchar(100),
+dateTimeData DATETIME,
+TimeStampData TIMESTAMP,
+floatData float ,
+NumberData numeric,
+TextData text,
+DecimalData decimal(5,2)
+);
+
+INSERT INTO AbhishekTable (id, name, dateTimeData, floatData, NumberData, TextData, DecimalData) 
+VALUES (1, 'John Doe', GETDATE(), 123.45, 123, 'Lorem ipsum dolor sit amet', 123.45); 
+
+
+select id, name, dateTimeData, floatData, NumberData, TextData, DecimalData ,TimeStampData from AbhishekTable;
+
+alter table AbhishekTable 
+alter column  DecimalData decimal(5,2);
+
+truncate table AbhishekTable;
+
+drop table AbhishekTable;
+
+SELECT CURRENT_TIMESTAMP AS Abhishek;
+
+
+create table DemoPrimaryKey(
+DemoPrimary_id int primary key not null ,
+name varchar(50)
+);
+
+create table DemoForeignkey(
+id int,
+name varchar(12),
+DemoPrimary_id int references DemoPrimaryKey(DemoPrimary_id)
+);
+
+insert into DemoForeignkey values(1,'Abhishek2',2);
+
+insert into DemoPrimaryKey values(2,'Abhishek')
+
+update DemoPrimaryKey set DemoPrimary_id=2;
+
+
+select * from DemoPrimaryKey;
+
+
+create index DemonamePrimary on DemoPrimaryKey (name);
+
+select * from DemoForeignkey where name like 'a%';
+
+truncate table DemoForeignkey;
+
+select  distinct(DemoPrimary_id,id,name) from  DemoForeignkey;
+
+
+select count(id) as abhishke from DemoForeignkey ;
+
+
+select count(distinct(DemoPrimary_id)) as abhishek from DemoForeignkey
+
+
+select id ,name  from DemoForeignkey where((id= 1 AND name='Abhishek2') or DemoPrimary_id =2);
+select * from DemoForeignkey;
+
+
+update DemoForeignkey set name='ZZZZ1' where DemoPrimary_id= 2;
+
+select name, DemoPrimary_id from DemoForeignkey order by name desc ,DemoPrimary_id asc;
+
+select DemoPrimary_id  from DemoForeignkey where  DemoPrimary_id  between 1 And 2;
+
+
+select count(Distinct(DemoPrimary_id)) as Abhishek from DemoForeignkey where DemoPrimary_id IN(1,2);
+
+
+select name from DemoForeignkey where name like 'a%' OR name like 'Z%'; -->
