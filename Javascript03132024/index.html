@@ -238,6 +238,7 @@
                 table1()
                 $('#myForm')[0].reset();
                 $('.dynamic').remove();
+                counter= 0;
 
             })
             function table1() {
@@ -304,7 +305,7 @@
             });
 
             function countDynamicKeys(obj) {
-                debugger
+                
                     let dynamicKeyCount = 0;
                     for (let key in obj) {
                         if (key.startsWith('Dynamic')) { 
