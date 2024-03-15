@@ -204,11 +204,14 @@
                 var InputStatic10 = $('#InputStatic10').val();
                 var InputStatic11 = $('#InputStatic11').val();
                 var InputStatic12 = $('#InputStatic12').val();
-                $('.dynamic').each(function () {
-                    var id = $(this).attr('id');
-                    var val = $(this).val();
-                    rowData[id] = val
-                })
+               document.querySelectorAll('.dynamic').forEach(function(element)
+               {
+                debugger
+                 var id = element.id;
+                 var value = element.value;
+                 rowData[id] = value
+               });
+
                 rowData['First_Name'] = First_Name
                 rowData['Last_Name'] = Last_Name
                 rowData['Date_of_Birth'] = Date_of_Birth
@@ -294,9 +297,8 @@
                 document.querySelectorAll('.dynamic').forEach(function (element) {
 
                     var id = element.id;
-                    if (SetValuesFromObject.hasOwnProperty(id)) {
-                        element.value = SetValuesFromObject[id];
-                    }
+                    element.value = SetValuesFromObject[id];
+                   
                 });
                
 
