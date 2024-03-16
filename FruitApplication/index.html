@@ -37,6 +37,7 @@
 
             </div>
             <input type="submit" name="submit" id="save1" class="btn-primary mt-4 mb-4 ">
+            <input type="button" name="Available" id="Available" value="Available">
             <table id="Fruit_Table" class="mt-5 mb-4">
                 <thead>
                     <tr>
@@ -49,6 +50,16 @@
                     </tr>
                 </thead>
             </table>
+            <table id="SecondTable">
+                    <thead>
+                            <tr>
+                                    <th>rem</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+            </table>
             <h4 id="GrandTotal"></h4>
         </div>
     </form>
@@ -57,8 +68,16 @@
         var counter2 = 0;
         var counter1 = 0;
         var counter3 = 0
+        var rem =0;
         var table = $('#Fruit_Table').DataTable();
+        var table4 =$('#SecondTable').DataTable();
+
         $(document).ready(function () {
+            $(document).on('click','#Available',function()
+            {
+                table2();
+            });
+
             $('#form1').on('click', '#save1', function (e) {
                 e.preventDefault();
                 var OnebyOnedataFruit = {};
@@ -71,6 +90,7 @@
                 OnebyOnedataFruit['quantity'] = quantity
                 OnebyOnedataFruit['counter2'] = counter2
                 OnebyOnedataFruit['Deleted'] = false;
+                OnebyOnedataFruit['rem']=rem
                 fruitList.push(OnebyOnedataFruit)
                 counter2++;
                 console.log(fruitList)
@@ -102,8 +122,8 @@
                 var total = price * saleValue;
 
                 var quantity = fruitList[FindIndex].quantity
-                var rem = quantity - saleValue
-
+                rem = quantity - saleValue
+                fruitList[FindIndex].rem =rem;
                 table.cell($(this).closest('tr'), 4).data(total);
                 if (saleValue != null) {
                     table.cell($(this).closest('tr'), 2).data(rem);
@@ -113,7 +133,7 @@
             });
 
             $('#Fruit_Table').on('click', '.Delete', function () {
-                debugger
+                
                 var findIndexDelete = $(this).closest('tr').attr('counter2');
                 var ObjectIndex = fruitList.findIndex(function (element) {
                     return element.counter2 == findIndexDelete;
@@ -131,15 +151,24 @@
                     var columnData = table.column(4).data();
                     var cellData = columnData[i];
                     total  = total+ cellData
-                    debugger
+                    
                     if(total!=null)
                     {
                         $('#GrandTotal').text(total)
                     }
                   
                 }
-
             }
+            function table2()
+            {
+                table4.clear().draw();
+                $.each(fruitList,function(index,object)
+                {
+                    var row = table4.row.add([object.rem]).draw().node();
+
+                })
+            }
+
         })
     </script>
 </body>

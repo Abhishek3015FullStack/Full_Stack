@@ -18,54 +18,105 @@
 <body>
     <form id="myform">
         <input type="button" name="addDynamicField" id="addDynamicField" value="addDynamicField">
-        <input type="text" name="first_name" id="firstName">
+        <input type="text" name="first_name" id="firstName" onblur="abhishek5()">
+        <input type="text" name="items" id="items">
+        <input type="button" id="Save2" value="Save2">
         <div id="Abhishke">
 
         </div>
         <input type="submit" name="submit" id="submit">
-        <table>
+        <table id="Abhishek">
             <thead>
                 <tr>
                     <th>Name</th>
-                    
+                    <th>action</th>
                 </tr>
             </thead>
             <tbody>
 
             </tbody>
         </table>
+        <select id="select1">
+            <option value="1">select</option>
+        </select>
     </form>
     <script>
         var counter = 0;
         var userdata = [];
-        var rowData = {}
-        
+        var counter1 = 0;
+
+        var table = $('#Abhishek').DataTable();
+
         $(document).ready(function () {
+            $('#Save2').on('click', function (e) {
+
+                e.preventDefault();
+                var values = $('#items').val();
+                var option1 = $('<option>')
+                option1.val(values).text(values);
+                $('#select1').append(option1)
+
+            });
             $('#addDynamicField').on('click', function () {
-                var a = $('<input>').attr({ 'type': 'text', 'id': 'dynamic' + counter, 'class': 'dynamic' });
+                var a = $('<input>').attr({ 'type': 'text', 'id': 'dynamic' + counter, 'class': 'dynamic', 'onblur': 'abhishek5()' });
                 $('#Abhishke').append(a);
                 counter++;
 
             })
             $('#myform').on('click', '#submit', function (e) {
                 e.preventDefault();
-                document.querySelectorAll('.dynamic').forEach(function (elemement) 
-                {
+                var rowData = {}
+                var DynamicData = []
+                document.querySelectorAll('.dynamic').forEach(function (elemement) {
                     var id = elemement.id;
                     var value = elemement.value
-                    rowData[id] = value;
+                    rowData[id]= value 
 
                 });
-                rowData['first_name'] = $('#firstName').val();
+                var firstName = $('#firstName').val();
+                rowData['firstName']= firstName
+                rowData['counter1']= counter1   
                 userdata.push(rowData)
+                counter1++
                 console.log(userdata);
+                $('#myform')[0].reset();
+                table1();
+
 
             });
-            function table()
-            {
-                
+            function table1() {
+                table.clear().draw();
+                $.each(userdata, function (index, object) {
+                    var rowData = [
+                        object.firstName,
+                        '<input type="button" class="Edit">'
+                    ];
+                    table.row.add(rowData).draw();
+                });
             }
+
+            $(document).on('click', '.Edit', function () {
+
+                var FindAttributeValue = $(this).closest('tr').attr('counter1')
+
+                var Indexhave = userdata.findIndex(function (element) {
+                    return element.counter1 == FindAttributeValue;
+                });
+                console.log(Indexhave)
+                userdata[Indexhave];
+                document.querySelectorAll('.dynamic').forEach(function (elemement) {
+                    var id1 = elemement.id;
+                    elemement.value = userdata[Indexhave][id1]
+
+                });
+
+            })
+
         });
+        // function abhishek5()
+        //     {
+        //         alert("functionCalled");
+        //     }
 
 
 
