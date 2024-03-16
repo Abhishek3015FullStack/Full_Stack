@@ -25,6 +25,11 @@
             background-color: white;
             padding: 268px 0px 0px 0px;
         }
+        .classMargin   
+        {
+            
+            margin: 0px 22px 0px -8px;
+        }
     </style>
 </head>
 
@@ -106,6 +111,7 @@
                         <div class="d-flex justify-content-center align-items-center mt-4 mb-4">
                             <input type="submit" name="submit" value="submit" id="submit" class="btn btn-primary">
                             <input type="button" name="close" value=" close " id="close" class="btn btn-danger m-4">
+                            <input type="button" name="update" value="update" id="update" class="btn btn-success" style="display: none;">
                         </div>
                     </div>
                 </div>
@@ -119,6 +125,7 @@
                         <th>LastName</th>
                         <th>Gender</th>
                         <th>Action</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -132,11 +139,15 @@
         var counter1 = 0;
         var DegreeTable = $('#Degree')
         var userData = [];
+        var FindIndexClick;
         var counter2 =0;
         $(document).ready(function () {
             $('#OpenPopup').on('click', function () {
                 $('#Popup').css({ "display": "block", "opacity": "1", "z-index": "1" })
                 $('#OpenPopup').css({ "display": "none" })
+                $('#submit').css({"display":"block"})
+                $('#update').css({"display":"none"})
+            
             })
 
             $('#close').on('click', function () {
@@ -159,7 +170,7 @@
                 counter1++;
                 row.append('<td><input type="text" name="" id="dynamic'+counter1+'" class="dynamic"></td>')
                 counter1++;
-                row.append('<td><input type="button" name="Edit" class="btn btn-primary DeleteDegree" value="Delete"> </td>')
+                row.append('<td><input type="button" name="Edit" class="btn btn-primary DeleteDegree dynamic" value="Delete"> </td>')
                 DegreeTable.append(row);
             });
             $(document).on('click' ,'.DeleteDegree',function()
@@ -178,7 +189,7 @@
             {
                 
                 e.preventDefault();
-                debugger
+                
                 var GenderValue;
                 var rowData = {};
                 var FirstName =$('#FirstName').val();
@@ -195,6 +206,7 @@
                     }
                 }
                 rowData['Gender'] =GenderValue;
+                rowData['Deleted'] =false;
                 var inputStatic1 = $('#inputStatic1').val();
                 var inputStatic2= $('#inputStatic2').val();
                 var inputStatic3= $('#inputStatic3').val();
@@ -230,8 +242,74 @@
                     rowData[id] = value;
                 });
                 userData.push(rowData);
-                counter2++;    
+                counter2++; 
+                console.log(userData)   
+                $('#Myform')[0].reset();
+                $('#Popup').css({ "display": "none", "opacity": "0", "z-index": "-1" })
+                $('#OpenPopup').css({ "display": "block"})
+                tableFormoutside();
+                $('.dynamic').closest('tr').remove();
+                counter1=0;
             });
+
+            function tableFormoutside()
+            {
+                outSideTbale.clear().draw();
+                $.each(userData,function(index,object)
+                {
+                    if(object.Deleted==false)
+                    {
+                        var row = outSideTbale.row.add([object.FirstName,object.LastName,object.Gender,'<input type="button" class="edit btn btn-primary classMargin" value="edit"><input type="button" class="delete btn btn-primary classMargin" value="delete">']).draw().node();
+                        $(row).attr('counter2',object.counter2)
+                    }
+                    else
+                    {
+
+                    }
+                });
+            }
+            $(document).on('click','.edit',function()
+            {
+                var findAttribute = $(this).closest('tr').attr('counter2');
+                FindIndexClick = userData.findIndex(function(element)
+                {
+                    return element.counter2 == findAttribute;
+                });
+                $('#OpenPopup').click();
+
+                $('#FirstName').val(userData[FindIndexClick].FirstName);
+                $('#LastName').val(userData[FindIndexClick].LastName);
+                var GenderSave  =userData[FindIndexClick].Gender;
+                $('input[name="gender"][value="'+ GenderSave+'"]').prop('checked',true)
+
+                document.querySelectorAll('.dynamic').forEach(function(element)
+                {
+                    var id = element.id;
+                    element.value = userData[FindIndexClick][id];
+                });
+                $('#update').css({"display":"block"})
+                $('#submit').css({"display":"none"})
+                
+            });
+            $(document).on('click','#update',function()
+            {
+                debugger
+                var FirstName = $('#FirstName').val();
+                var LastName = $('#LastName').val();
+                var Genderoption = document.querySelectorAll('input[name="gender"]');
+                var gender;
+                for(var i = 0;i<Genderoption.length;i++)
+                {
+                    if(Genderoption[i].checked)
+                    {
+                        gender = Genderoption[i].value;
+                        break;
+                    }
+                }
+                
+
+            })
+
 
         });
     </script>
