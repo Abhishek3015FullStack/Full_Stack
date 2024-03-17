@@ -20,6 +20,7 @@
         <div>
             <label>FirstName</label>
             <input type="text" name="FirstName" id="FirstName">
+            <span id="errorFirstName"></span>
         </div>
         <div>
             <label>LastName</label>
@@ -33,6 +34,9 @@
             <input type="radio" name="Gender" id="Female" value="Female">
             <label>TransGender</label>
             <input type="radio" name="Gender" id="TransGender" value="TransGender">
+            <label>CreatingTheDropDown</label>
+            <input type="text" name="CreatingTheDropDown" id="CreatingTheDropDown">
+            <input type="button" name="CreatingTheDropDown" id="CreatingTheDropDown1" value="CreatingTheDropDown">
             <select id="Select1">
                 <option value="Select">Select</option>
                 <option value="Abhishek1" id="Abhishek1">Abhishek1</option>
@@ -48,18 +52,25 @@
         <div><input type="button" name="Update" id="Update" value="Update"></div>
 
         <table id="tableset">
-                <thead>
-                        <tr>
-                            <th>FirstName</th>
-                            <th>LastName</th>
-                            <th>Gender</th>
-                            <th>DropDownValue</th>
-                            <th>Action</th>
-                        </tr>
-                </thead>
+            <thead>
+                <tr>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Gender</th>
+                    <th>DropDownValue</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
         </table>
+        <select id="SelectSecond">
+            <option>Select</option>
+        </select>
     </form>
     <script>
+
+
+
+
         var counter = 0;
         var userData = [];
         var counter2 = 0;
@@ -70,104 +81,111 @@
                 var div = $('#DynamicGroup')
                 div.append(input);
                 counter++;
+                abhishek()
             });
+            $('#CreatingTheDropDown1').on('click', function () {
+                debugger
+                var data = $('#CreatingTheDropDown').val();
+                console.log(data)
+                var option = $('<option>').attr({ "value": data, "id": data });
+                option.text(data)
+                $('#Select1').append(option);
+            });
+
 
             $('#myform').on('click', '#submit', function (e) {
-                
+
+
                 var rowData = {};
                 e.preventDefault();
-                var FirstName = $('#FirstName').val();
-                var LastName = $('#LastName').val();
-                var Gender = document.querySelectorAll('input[name="Gender"]');
-                var GenderValue;
-                for (var i = 0; i < Gender.length; i++) {
-                    if (Gender[i].checked) {
-                        GenderValue = Gender[i].value;
+                var a = validation();
+                if (a == true) {
+                    var FirstName = $('#FirstName').val();
+                    var LastName = $('#LastName').val();
+                    var Gender = document.querySelectorAll('input[name="Gender"]');
+                    var GenderValue;
+                    for (var i = 0; i < Gender.length; i++) {
+                        if (Gender[i].checked) {
+                            GenderValue = Gender[i].value;
+                        }
                     }
+
+                    var Dropdown = document.getElementById('Select1')
+                    var Value = Dropdown.options[Dropdown.selectedIndex].value;
+                    document.querySelectorAll('.Dynamic').forEach(function (element) {
+
+                        var id = element.id;
+                        var value = element.value;
+                        rowData[id] = value;
+                    })
+                    rowData['FirstName'] = FirstName;
+                    rowData['LastName'] = LastName;
+                    rowData['Gender'] = GenderValue;
+                    rowData['DropDownValue'] = Value;
+                    rowData['counter2'] = counter2
+                    userData.push(rowData)
+                    counter2++;
+
+                    $('#myform')[0].reset();
+                    table1();
+                    $('.Dynamic').remove();
+                    counter = 0;
+
                 }
 
-                var Dropdown = document.getElementById('Select1')
-                var Value = Dropdown.options[Dropdown.selectedIndex].value;
-                document.querySelectorAll('.Dynamic').forEach(function (element) {
-
-                    var id = element.id;
-                    var value = element.value;
-                    rowData[id] = value;
-                })
-                rowData['FirstName'] = FirstName;
-                rowData['LastName'] = LastName;
-                rowData['Gender'] = GenderValue;
-                rowData['DropDownValue'] = Value;
-                rowData['counter2'] = counter2
-                userData.push(rowData)
-                counter2++;
-                
-                $('#myform')[0].reset();
-                table1();
-                $('.Dynamic').remove();
-                counter=0;
             });
-            function table1()
-            {
+            function table1() {
                 table.clear().draw();
-                $.each(userData, function(index,object)
-                {
-                    var row = table.row.add([object.FirstName,object.LastName,object.Gender,object.DropDownValue,'<input type="button" name="Edit" value="Edit" class="Edit"><input type="button" name="Delete" value ="Delete">']).draw().node();
-                    $(row).attr('counter2',object.counter2);
-                }) 
+                $.each(userData, function (index, object) {
+                    var row = table.row.add([object.FirstName, object.LastName, object.Gender, object.DropDownValue, '<input type="button" name="Edit" value="Edit" class="Edit"><input type="button" name="Delete" value ="Delete">']).draw().node();
+                    $(row).attr('counter2', object.counter2);
+                })
             }
-            $(document).on('click','.Edit',function()
-            {
+            $(document).on('click', '.Edit', function () {
                 var counter4 = 1;
                 var RowFindAttr = $(this).closest('tr').attr('counter2')
-                var FindValue = userData.findIndex(function(element)
-                {
+                var FindValue = userData.findIndex(function (element) {
                     return element.counter2 == RowFindAttr
                 })
                 var SetValues = userData[FindValue];
                 $('#FirstName').val(SetValues.FirstName);
                 $('#LastName').val(SetValues.LastName);
-                $('input[name="Gender"][value="'+SetValues.Gender+'"]').prop('checked',true);
+                $('input[name="Gender"][value="' + SetValues.Gender + '"]').prop('checked', true);
                 $('#Select1').val(SetValues.DropDownValue);
                 var ObjectLenght = Object.keys(SetValues).length;
 
-                var actualDynamicCount = ObjectLenght-5;
-                for(var i=0;i<actualDynamicCount;i++)
-                {
+                var actualDynamicCount = ObjectLenght - 5;
+                for (var i = 0; i < actualDynamicCount; i++) {
                     $('#DynamicGroupCreation').click();
                 }
-                document.querySelectorAll('.Dynamic').forEach(function(element)
-                {
+                document.querySelectorAll('.Dynamic').forEach(function (element) {
                     var id = element.id
                     element.value = SetValues[id];
                 });
-               
-                $(document).on('click','#Update',function()
-                {
-                    var rowData1 ={};
+
+                $(document).on('click', '#Update', function () {
+                    var rowData1 = {};
                     var counter2 = SetValues.counter2; //this is static values which was we assign 
-                    var NewValuesFirstName= $('#FirstName').val();
+                    var NewValuesFirstName = $('#FirstName').val();
                     var NewValuesLastName = $('#LastName').val();
-                    var Gender = document.querySelectorAll('input[name="gender"]');
+                    var Gender = document.querySelectorAll('input[name="Gender"]');
                     var GenderValue;
-                    for(var i=0;i<Gender.length;i++)
-                    {
-                        if(Gender[i].checked)
-                        {
+                    for (var i = 0; i < Gender.length; i++) {
+                        if (Gender[i].checked) {
                             GenderValue = Gender[i].value;
                         }
                     }
                     var Dropdown = document.getElementById('Select1');
                     var Values = Dropdown.options[Dropdown.selectedIndex].value;
 
-                    document.querySelectorAll('.Dynamic').forEach(function(element)
-                    {
+                    document.querySelectorAll('.Dynamic').forEach(function (element) {
                         var id = element.id;
                         var value = element.value;
                         rowData1[id] = value;
                     });
                     rowData1['FirstName'] = NewValuesFirstName;
-                    rowData1['LastName'] =NewValuesLastName;
+                    rowData1['LastName'] = NewValuesLastName;
+                    rowData1['Gender'] = GenderValue
                     rowData1['DropDownValue'] = Values;
                     rowData1['counter2'] = counter2;
                     userData[FindValue] = rowData1;
@@ -176,6 +194,46 @@
 
                 });
             })
+
+            function validation() {
+                var flag = 0;
+                var FirstName = $('#FirstName').val();
+                var regx = /^[a-zA-Z]+$/;
+                if (regx.test(FirstName)) {
+                    flag = 0;
+                } else {
+                    debugger
+                    $('#errorFirstName').text("please add the proper name");
+                    flag = 1;
+                }
+                var LastName = $('#LastName').val();
+                var regexLast = /^[a-zA-Z _-](3-10)+$/
+                if(regexLast.test(LastName))
+                {   
+                    flag=0;
+                }
+                else
+                {
+                    flag =1
+                }
+                if (flag == 1) {
+                    return false; 
+                }
+                else {
+                    return true;
+                }
+                
+            }
+            function abhishek() {
+                var a = [{ "Abhishek": "Abhishek", "Pankaj": "Pankaj", "jain": "jain" }, { "Abhishek": "Abhishek1", "Pankaj": "Pankaj2", "jain": "jain2" }]
+                $.each(a, function (index, object) {
+                    var newOption = $('<option>').attr({ "value": object.Abhishek, "id": object.Pankaj })
+                    newOption.text(object.jain);
+
+                    $('#SelectSecond').append(newOption)
+                });
+            }
+
 
         });
     </script>
