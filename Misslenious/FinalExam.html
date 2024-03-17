@@ -19,7 +19,7 @@
     <form id="myform">
         <div>
             <label>FirstName</label>
-            <input type="text" name="FirstName" id="FirstName">
+            <input type="text" name="FirstName" id="FirstName"><br>
             <span id="errorFirstName"></span>
         </div>
         <div>
@@ -199,11 +199,15 @@
                 var flag = 0;
                 var FirstName = $('#FirstName').val();
                 var regx = /^[a-zA-Z]+$/;
-                if (regx.test(FirstName)) {
+                if (regx.test(FirstName)&& FirstName.length>3   ) 
+                {
                     flag = 0;
-                } else {
+                } 
+                else 
+                {
                     debugger
                     $('#errorFirstName').text("please add the proper name");
+                    $('#errorFirstName').css({"color":"red"})
                     flag = 1;
                 }
                 var LastName = $('#LastName').val();
