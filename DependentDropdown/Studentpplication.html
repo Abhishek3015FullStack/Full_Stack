@@ -4,14 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+.LinkButton
+{
+    background-color: white;
+    border:none;
+}
+    </style>
 </head>
 <body>
     <form>
         <ul>
-            <li><input type="button" value="City" id="City" class=""> </li>
-            <li><input type="button" value="School" id="School"></li>
-            <li><input type="button" value="Student" id="Student"></li>
+            <li><input type="button" value="City" id="City" class="LinkButton"> </li>
+            <li><input type="button" value="School" id="School" class="LinkButton"></li>
+            <li><input type="button" value="Student" id="Student" class="LinkButton"></li>
         </ul>
     </form>
+    <script>
+        $(document).ready(function()
+        {
+            $('#City').on('click',function()
+            {
+                alert();
+            })
+        })
+    </script>
 </body>
 </html>
