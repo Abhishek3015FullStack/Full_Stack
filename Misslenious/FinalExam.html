@@ -196,16 +196,17 @@
             })
 
             function validation() {
+                debugger
                 var flag = 0;
                 var FirstName = $('#FirstName').val();
-                var regx = /^[a-zA-Z]+$/;
-                if (regx.test(FirstName)&& FirstName.length>3   ) 
+                var regx = /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
+                if ((regx.test(FirstName)) && FirstName.length>3) 
                 {
                     flag = 0;
                 } 
                 else 
                 {
-                    debugger
+                    
                     $('#errorFirstName').text("please add the proper name");
                     $('#errorFirstName').css({"color":"red"})
                     flag = 1;
@@ -237,8 +238,6 @@
                     $('#SelectSecond').append(newOption)
                 });
             }
-
-
         });
     </script>
 </body>
