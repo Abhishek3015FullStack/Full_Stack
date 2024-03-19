@@ -31,96 +31,112 @@
                     <th>Action</th>
                 </tr>
             </thead>
+            <tbody>
+
+            </tbody>
         </table>
     </form>
     <script>
         var table = $('#Myform1').DataTable();
         var newTable = []
-        var counter2 =0;
-        $(document).ready(function () 
-        {
-            $(document).on('click','#submit',function(e)
-            {
+        var counter2 = 0;
+        $(document).ready(function () {
+            $(document).on('click', '#submit', function (e) {
                 var newData = {}
                 e.preventDefault();
                 var input1 = $('#input1').val();
                 var input2 = $('#input2').val();
                 newData['input1'] = input1;
                 newData['input2'] = input2;
-                newData['counter2'] =counter2
+                newData['counter2'] = counter2
+                newData['Total'] = 0;
                 newTable.push(newData);
+                counter2++;
                 table1()
-                
+
+
             })
-            function table1()
-            {
+            function table1() {
                 table.clear().draw();
-                $.each(newTable,function(index, object)
-                {
-                    var row = table.row.add([object.input1,object.input2,'<input type="text" name="calculation" class=".calculations">','<input type="button" name="add" class="add" value="add"><input type="button" name="Subtract" class="Subtract" value="Subtract"><input type="button" name="Multi" class="Multi" value="Multi"><input type="button" name="Division" class="Division" value="Division">']).draw().node();
-                    $(row).attr("counter2",object.counter2)
+                $.each(newTable, function (index, object) {
+                    var row = table.row.add([object.input1, object.input2, '<input type="text" name="calculation" class=".calculations">', '<input type="button" name="add" class="add" value="add"><input type="button" name="Subtract" class="Subtract" value="Subtract"><input type="button" name="Multi" class="Multi" value="Multi"><input type="button" name="Division" class="Division" value="Division">']).draw().node();
+                    $(row).attr("counter2", object.counter2)
                 })
             }
-            $(document).on('click','.add',function()
-            {
-                var FindIndex = $(this).closest('tr').attr('counter2')
+            $(document).on('click', '.add', function () {
+                debugger
+                var FindIndex12 = $(this).closest('tr').attr('counter2')
                 var row = $(this).closest('tr');
-                var DataIndex =newTable.findIndex(function(element)
-                {
-                    return element.counter2 = FindIndex;
-                }) 
+                var DataIndex = newTable.findIndex(function (element) {
+                    return element.counter2 == FindIndex12;
+                })
                 console.log(newTable[DataIndex]);
-                var input1 =parseInt(newTable[DataIndex].input1);
-                var input2 =parseInt(newTable[DataIndex].input2);
-                var addition = input1+input2;
+                var input1 = parseInt(newTable[DataIndex].input1);
+                var input2 = parseInt(newTable[DataIndex].input2);
+                var addition = input1 + input2;
                 var fourthTd = row.find('td:eq(2)');
                 fourthTd.text(addition)
+                newTable[DataIndex].Total = addition
             })
-            $(document).on('click','.Subtract',function()
-            {
+            $(document).on('click', '.Subtract', function () {
                 var FindIndex = $(this).closest('tr').attr('counter2')
                 var row = $(this).closest('tr');
-                var DataIndex =newTable.findIndex(function(element)
-                {
-                    return element.counter2 = FindIndex;
-                }) 
+                var DataIndex = newTable.findIndex(function (element) {
+                    return element.counter2 == FindIndex;
+                })
                 console.log(newTable[DataIndex]);
-                var input1 =parseInt(newTable[DataIndex].input1);
-                var input2 =parseInt(newTable[DataIndex].input2);
-                var addition = input1-input2;
+                var input1 = parseInt(newTable[DataIndex].input1);
+                var input2 = parseInt(newTable[DataIndex].input2);
+                var addition = input1 - input2;
                 var fourthTd = row.find('td:eq(2)');
                 fourthTd.text(addition)
+                newTable[DataIndex].Total = addition
             })
-            $(document).on('click','.Multi',function()
-            {
+            $(document).on('click', '.Multi', function () {
                 var FindIndex = $(this).closest('tr').attr('counter2')
                 var row = $(this).closest('tr');
-                var DataIndex =newTable.findIndex(function(element)
-                {
-                    return element.counter2 = FindIndex;
-                }) 
+                var DataIndex = newTable.findIndex(function (element) {
+                    return element.counter2 == FindIndex;
+                })
                 console.log(newTable[DataIndex]);
-                var input1 =parseInt(newTable[DataIndex].input1);
-                var input2 =parseInt(newTable[DataIndex].input2);
-                var addition = input1*input2;
+                var input1 = parseInt(newTable[DataIndex].input1);
+                var input2 = parseInt(newTable[DataIndex].input2);
+                var addition = input1 * input2;
                 var fourthTd = row.find('td:eq(2)');
                 fourthTd.text(addition)
+                newTable[DataIndex].Total = addition
+
             })
-            $(document).on('click','.Division',function()
-            {
+            $(document).on('click', '.Division', function () {
+                debugger
+                var cellText =[];
+                var data = {}
                 var FindIndex = $(this).closest('tr').attr('counter2')
                 var row = $(this).closest('tr');
-                var DataIndex =newTable.findIndex(function(element)
-                {
-                    return element.counter2 = FindIndex;
-                }) 
+                var DataIndex = newTable.findIndex(function (element) {
+                    return element.counter2 == FindIndex;
+                })
                 console.log(newTable[DataIndex]);
-                var input1 =parseInt(newTable[DataIndex].input1);
-                var input2 =parseInt(newTable[DataIndex].input2);
-                var addition = input1/input2;
+                var input1 = parseInt(newTable[DataIndex].input1);
+                var input2 = parseInt(newTable[DataIndex].input2);
+                var addition = input1 / input2;
                 var fourthTd = row.find('td:eq(2)');
                 fourthTd.text(addition)
+                var five = fourthTd.text();
+                console.log(five)
+                newTable[DataIndex].Total = addition
+             
+                var total=0 ;
+                newTable.forEach(element=>
+                {
+                    total +=parseInt(element.Total)
+                    
+                    
+                })
+                console.log(total)
+               
             })
+
         })
     </script>
 </body>
