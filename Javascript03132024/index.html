@@ -19,7 +19,10 @@
             padding: 0px;
             box-sizing: border-box;
         }
-
+        .showDataTable
+        {
+            margin: 0px 0px 5px 0px;
+        }
         #popup {
             background-color: rgb(183, 220, 238);
             opacity: 0;
@@ -46,13 +49,17 @@
         body {
             background-color: rgb(183, 220, 238);
         }
+        .Edit1
+        {
+            margin: 0px 8px 4px 0px;
+        }
     </style>
 </head>
 
 <body>
     <form id="myForm">
         <div>
-            <input type="button" id="openPopup" value="addStudent">
+            <input type="button" id="openPopup" value="addStudent" class="btn btn-primary">
         </div>
         <div id="popup" class="d-flex justify-content-center align-items-center">
             <div class="container mt-4 mb-5">
@@ -60,7 +67,8 @@
                     <div class="col-lg-4 p-3">
                         <label for="First Name">First Name</label>
                         <input type="text" id="First_Name" name="First_Name" class="form-control"
-                            onkeyup="FirstNameValidation()" onfocus="FirstNameValidation()" onblur="FirstNameValidation()" required>
+                            onkeyup="FirstNameValidation()" onfocus="FirstNameValidation()"
+                            onblur="FirstNameValidation()" required>
                         <span id="FirstNameValidationMessage"></span>
                     </div>
                     <div class="col-lg-4 p-3">
@@ -102,7 +110,7 @@
                         <h2>Education </h2>
                         <span id="addValidationMessage"></span>
                     </div>
-                    <div class="d-flex justify-content-end"><input type="button" id="AddDynamicButton" value="ADD">
+                    <div class="d-flex justify-content-end"><input type="button" id="AddDynamicButton" value="ADD" class="btn btn-light">
                     </div>
 
                 </div>
@@ -163,9 +171,8 @@
                     </tbody>
 
                 </table>
-                <div class="d-flex justify-content-center mt-2 mb-2"><input type="submit" id="submit" value="submit">
-                    <div class="d-flex justify-content-center mt-2 mb-2 "><input type="button" id="update"
-                            value="update"></div>
+                <div class="d-flex justify-content-center mt-2 mb-2"><input type="submit" id="submit" value="submit" class="btn btn-primary">
+                    <div class="d-flex justify-content-center mt-2 mb-2 "><input type="button" id="update" value="update" class="btn btn-warning"></div>
                 </div>
             </div>
         </div>
@@ -184,7 +191,7 @@
                 </thead>
             </table>
         </div>
-        
+
     </form>
     <script>
         var AllCorrect = false;
@@ -571,7 +578,7 @@
                     var InputStatic11 = $('#InputStatic11').val();
                     var InputStatic12 = $('#InputStatic12').val();
                     document.querySelectorAll('.dynamic').forEach(function (element) {
-                        debugger
+                        
                         var id = element.id;
                         var value = element.value;
                         rowData[id] = value
@@ -614,7 +621,7 @@
                 table.clear().draw();
                 $.each(formData, function (index, object) {
                     if (object.Deleted == false) {
-                        var row = table.row.add([object.First_Name, object.Last_Name, object.Date_of_Birth, object.Email, object.Address, object.Graduation, '<input type="button" value="edit" class="Edit1"><input type="button" name="Delete" value="Delete" class="OutsideDelete"><input type="button" name="showDataTable" value="showDataTable" class="showDataTable"><input type="button" name="destroy" id="destroy" value="deleteData">']).draw().node();
+                        var row = table.row.add([object.First_Name, object.Last_Name, object.Date_of_Birth, object.Email, object.Address, object.Graduation, '<input type="button" value="edit" class="Edit1 btn btn-warning"><input type="button" name="Delete" value="Delete" class="OutsideDelete btn btn-danger"><input type="button" name="showDataTable" value="showDataTable" class="showDataTable btn btn-light"><input type="button" name="destroy" id="destroy" value="deleteDataTable" class="btn btn-danger">']).draw().node();
                         $(row).attr('counter2', object.counter2)
                     }
 
@@ -666,6 +673,59 @@
 
                     var id = element.id;
                     element.value = SetValuesFromObject[id];
+                });
+                $(document).on("click", "#update", function () {
+                    var NewData = {};
+                    var First_Name = $("#First_Name").val();
+                    var Last_Name = $("#Last_Name").val();
+                    var Date_of_Birth = $("#Date_of_Birth").val();
+                    var Email = $("#Email").val();
+                    var Address = $("#Address").val();
+                    var Graduation = $("#Graduation").val();
+                    var InputStatic1 = $("#InputStatic1").val();
+                    var InputStatic2 = $("#InputStatic2").val();
+                    var InputStatic3 = $("#InputStatic3").val();
+                    var InputStatic4 = $("#InputStatic4").val();
+                    var InputStatic5 = $("#InputStatic5").val();
+                    var InputStatic6 = $("#InputStatic6").val();
+                    var InputStatic7 = $("#InputStatic7").val();
+                    var InputStatic8 = $("#InputStatic8").val();
+                    var InputStatic9 = $("#InputStatic9").val();
+                    var InputStatic10 = $("#InputStatic10").val();
+                    var InputStatic11 = $("#InputStatic11").val();
+                    var InputStatic12 = $("#InputStatic12").val();
+                    document.querySelectorAll(".dynamic").forEach(function (element) {
+                        
+                        var id = element.id;
+                        var value = element.value;
+                        NewData[id] = value;
+                    });
+                    NewData["First_Name"] = First_Name;
+                    NewData["Last_Name"] = Last_Name;
+                    NewData["Date_of_Birth"] = Date_of_Birth;
+                    NewData["Email"] = Email;
+                    NewData["Address"] = Address;
+                    NewData["Graduation"] = Graduation;
+                    NewData["InputStatic1"] = InputStatic1;
+                    NewData["InputStatic2"] = InputStatic2;
+                    NewData["InputStatic3"] = InputStatic3;
+                    NewData["InputStatic4"] = InputStatic4;
+                    NewData["InputStatic5"] = InputStatic5;
+                    NewData["InputStatic6"] = InputStatic6;
+                    NewData["InputStatic7"] = InputStatic7;
+                    NewData["InputStatic8"] = InputStatic8;
+                    NewData["InputStatic9"] = InputStatic9;
+                    NewData["InputStatic10"] = InputStatic10;
+                    NewData["InputStatic11"] = InputStatic11;
+                    NewData["InputStatic12"] = InputStatic12;
+                    var Deleted = SetValuesFromObject.Deleted;
+                    var counter2 = SetValuesFromObject.counter2;
+                    NewData["Deleted"] = Deleted;
+                    NewData["counter2"] = counter2;
+                    formData[findindexWhichClick] = NewData;
+                    // console.log(formData)
+                    table1();
+                    $("#popup").css({ opacity: "0", "z-index": "-1" });
                 });
             });
             $(document).on('click', '.showDataTable', function () {
@@ -735,8 +795,7 @@
                 } else {
                     table.show();
                 }
-                $(document).on('click', '#destroy', function () 
-                {
+                $(document).on('click', '#destroy', function () {
                     $('#myDataTable').remove();
                 })
 
@@ -753,7 +812,7 @@
                 }
             });
             $(document).on('click', '.OutsideDelete', function () {
-                debugger
+                
                 var ClickIndex = $(this).closest('tr').attr('counter2')
                 var NowFind = formData.findIndex(function (element) {
                     return element.counter2 == ClickIndex
