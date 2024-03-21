@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nested Datatable Example</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Outer ID</th>
+            <th>Outer Name</th>
+            <th>Nested Data</th>
+        </tr>
+    </thead>
+    <tbody id="datatable-body">
+    </tbody>
+</table>
+
+<script>
+    // Define the outer datatable
+    const outerDatatable = [
+        { 
+            id: 1, 
+            name: "Outer Data 1", 
+            // Define the nested datatable within each outer datatable row
+            nestedData: [
+                { id: 101, name: "Nested Data 1-1" },
+                { id: 102, name: "Nested Data 1-2" }
+            ]
+        },
+        { 
+            id: 2, 
+            name: "Outer Data 2", 
+            // Define another nested datatable within another outer datatable row
+            nestedData: [
+                { id: 201, name: "Nested Data 2-1" },
+                { id: 202, name: "Nested Data 2-2" }
+            ]
+        }
+    ];
+
+    // Function to generate the HTML table
+    function generateTable() {
+        const tableBody = document.getElementById('datatable-body');
+
+        outerDatatable.forEach(outerRow => {
+            const outerRowHTML = `
+                <tr>
+                    <td>${outerRow.id}</td>
+                    <td>${outerRow.name}</td>
+                    <td>
+                        <ul>
+                            ${outerRow.nestedData.map(nestedRow => `<li>Nested ID: ${nestedRow.id}, Nested Name: ${nestedRow.name}</li>`).join('')}
+                        </ul>
+                    </td>
+                </tr>
+            `;
+            tableBody.innerHTML += outerRowHTML;
+        });
+    }
+
+    // Call the function to generate the table
+    generateTable();
+</script>
+
+</body>
+</html>

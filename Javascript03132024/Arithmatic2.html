@@ -16,9 +16,9 @@
     <style>
         #popup {
             height: 50%;
-            
+
             width: 50%;
-            
+
             position: absolute;
             background-color: grey;
             display: none;
@@ -38,17 +38,17 @@
             <label>Input 2</label>
             <input type="text" name="input2" id="input2" class="form-control">
             <label>Addition</label>
-            <input type="radio" name="Operation" id="Addition" value="Addition">
+            <input type="checkbox" name="Operation" id="Addition" value="Addition">
 
             <label>Subtraction</label>
-            <input type="radio" name="Operation" id="Subtraction" value="Subtraction">
+            <input type="checkbox" name="Operation" id="Subtraction" value="Subtraction">
 
             <label>Multiplication</label>
-            <input type="radio" name="Operation" id="Multiplication" value="Multiplication">
+            <input type="checkbox" name="Operation" id="Multiplication" value="Multiplication">
 
 
             <label>Division</label>
-            <input type="radio" name="Operation" id="Division" value="Division">
+            <input type="checkbox" name="Operation" id="Division" value="Division">
 
 
             <input type="button" name="submit" value="submit" id="submit">
@@ -101,36 +101,80 @@
                         rowData['input1'] = input1
                         rowData['input2'] = input2
                         rowData['Counter'] = Counter
-
-                        var operation = document.querySelectorAll('input[name="Operation"]');
-                        for (var i = 0; i < operation.length; i++) {
-                            if (operation[i].checked) {
-                                var value = operation[i].value;
-                            }
-                        }
-                        rowData['Operation'] = value
                         debugger
-                        if (value == "Addition") {
+                        var value = []
+                        var valuesOfOperation = {}
+                        operation = document.querySelectorAll('input[name="Operation"]');
+                        // for (var i = 0; i < operation.length; i++) {
+                        //     if (operation[i].checked) 
+                        //     {
+                        //         var id = operation[i].id;
+                        //         var value = operation[i].value;
+                        //         valuesOfOperation[id]= value
+                        //     }
 
-                            additiontotal = ActualInput1 + ActualInput2;
 
-                        }
-                        else if (value == "Subtraction") {
-                            debugger
-                            Subtractiontotal = ActualInput1 - ActualInput2;
+                        // }
+                        operation.forEach(function(element)
+                        {
+                            var id = element.id;
+                            var value =element.value
+                            valuesOfOperation[id] = value
+                        })
+                        console.log(valuesOfOperation)
+                        rowData['OperationList'] = value
 
-                        }
-                        else if (value == "Multiplication") {
-                            debugger
-                            MultiplicationTotal = ActualInput1 * ActualInput2;
+                        value.forEach(function (element) {
+                            if (element.id == "Addition") {
 
-                        }
-                        else if (value == "Division") {
-                            debugger
+                                additiontotal = ActualInput1 + ActualInput2;
 
-                            Divisiontotal = ActualInput1 / ActualInput2;
+                            }
+                            else if (element.id == "Subtraction") {
+                                debugger
+                                Subtractiontotal = ActualInput1 - ActualInput2;
 
-                        }
+                            }
+                            else if (element.id == "Multiplication") {
+                                debugger
+                                MultiplicationTotal = ActualInput1 * ActualInput2;
+
+                            }
+                            else if (element.id == "Division") {
+                                debugger
+
+                                Divisiontotal = ActualInput1 / ActualInput2;
+
+                            }
+
+
+                        });
+                        // console.log(value)
+                        debugger
+                        // console.log(operation)
+                        // rowData['Operation'] = value
+                        // debugger
+                        // if (value == "Addition") {
+
+                        //     additiontotal = ActualInput1 + ActualInput2;
+
+                        // }
+                        // else if (value == "Subtraction") {
+                        //     debugger
+                        //     Subtractiontotal = ActualInput1 - ActualInput2;
+
+                        // }
+                        // else if (value == "Multiplication") {
+                        //     debugger
+                        //     MultiplicationTotal = ActualInput1 * ActualInput2;
+
+                        // }
+                        // else if (value == "Division") {
+                        //     debugger
+
+                        //     Divisiontotal = ActualInput1 / ActualInput2;
+
+                        // }
                         rowData['additiontotal'] = additiontotal
                         rowData['Subtractiontotal'] = Subtractiontotal
                         rowData['MultiplicationTotal'] = MultiplicationTotal
@@ -160,7 +204,13 @@
                         $('#input1').val(userData[FindInputIndex].input1)
                         $('#input2').val(userData[FindInputIndex].input2)
                         var values = userData[FindInputIndex].Operation;
-                        $('input[name="Operation"][value="' + values + '"]').prop("checked", true);
+                        var a = userData[FindInputIndex].OperationList
+                        console.log(a)
+                        a.forEach(function(e)
+                        {
+                            $('input[name="Operation"][value="'+ e.id+'"]').prop('checked',true)
+                        })
+
                         $(document).on('click', '#update', function () {
                             var newAfterUpdate = {}
                             var value;
