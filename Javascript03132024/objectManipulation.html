@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,159 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.css" />
     <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
 </head>
-<body>
 
+<body>
+<form id="myform">
+    <input type="button" name="DynamicValue" value="DynamicValue" id="DynamicValue">
+    <input type="text" name="firstname" id="firstname">
+
+    <table id="Mytable">
+        <thead>
+            <tr>
+                <th>Degree</th>
+                <th>School</th>
+                <th>Startdate</th>
+                <th>Passout_Year</th>
+                <th>Percentage</th>
+                <th>Backlog</th>
+            </tr>
+        </thead>
+    </table>
+    <input type="button" name="submit" id="submit" value="submit">
+    <h5>Outside Table</h5>
+    <table id="Outside">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>action</th>
+            </tr>
+        </thead>
+    </table>
+</form>
+    <script>
+        var counter = 0
+        var userData = []
+        var counter1 = 0
+        var outsideTable = $('#Outside').DataTable();
+        $(document).ready(function () {
+            $('#DynamicValue').on('click', function () {
+
+                var row = $('<tr>')
+                row.append('<td><input type="text" name="Degree" id="Degree' + counter + '" class="Dynamic"></td>')
+                row.append('<td><input type="text" name="School" id="School' + counter + '" class="Dynamic"></td>')
+                row.append('<td><input type="text" name="Startdate" id="Startdate' + counter + '" class="Dynamic"></td>')
+                row.append('<td><input type="text" name="Passout_Year" id="Passout_Year' + counter + '" class="Dynamic"></td>')
+                row.append('<td><input type="text" name="Percentage" id="Percentage' + counter + '" class="Dynamic"></td>')
+                row.append('<td><input type="text" name="Backlog" id="Backlog' + counter + '" class="Dynamic"></td>')
+                counter++;
+                $('#Mytable').append(row)
+            })
+
+            $(document).on('click', '#submit', function (e) {
+                var rowData = {}
+                e.preventDefault();
+                var FirstName = $('#firstname').val();
+                rowData['FirstName'] = FirstName;
+
+                var dynamicArray = [];
+
+                var DyamicData = document.querySelectorAll('.Dynamic')
+                for (var i = 0; i < DyamicData.length; i = i + 6) {
+                    var DynamicObject = {}
+                    for (var j = 0; j < 6; j++) {
+                        debugger
+                        var id = DyamicData[i + j].id
+                        var value = DyamicData[i + j].value
+                        DynamicObject[id] = value
+                    }
+                    dynamicArray.push(DynamicObject)
+                }
+                rowData['dynamicArray'] = dynamicArray
+                rowData['counter1'] = counter1
+                userData.push(rowData)
+                console.log(userData)
+                counter1++
+                table();
+                $('#myform .Dynamic').remove();
+                counter=0;
+            })
+            function table() {
+                outsideTable.clear().draw();
+                $.each(userData, function (index, object) {
+                    var row = outsideTable.row.add([object.FirstName, '<input type="button" name="showDataTable" class="showDataTable" value="showDataTable"><input type="button" name="edit" class="edit" value="edit">']).draw().node();
+                    $(row).attr('counter1', object.counter1)
+                })
+            }
+            $(document).on('click', '.showDataTable', function () {
+                var rowClickIndex = $(this).closest('tr').attr('counter1')
+                var closerTr = $(this).closest('tr')
+                var IndexFind = userData.findIndex(function (element) {
+                    return element.counter1 == rowClickIndex
+                })
+                var DataArray = userData[IndexFind].dynamicArray
+
+                var table = $('<table>').attr({ "id": "Mytable" })
+                closerTr.after(table)
+                var i = 0;
+                var newArray = DataArray.map(item => {
+                    var newObject = {
+                        Degree: item['Degree' + i],
+                        School: item['School' + i],
+                        Startdate: item['Startdate' + i],
+                        Passout_Year: item['Passout_Year' + i],
+                        Percentage: item['Percentage' + i],
+                        Backlog: item['Backlog' + i]
+
+                    }
+                    i++;
+                    return newObject
+                })
+                console.log(newArray)
+
+                var dataTable = table.DataTable({
+                    paging: false,
+                    info: false,
+                    data: newArray,
+                    columns: [
+                        { data: "Degree", title: "Degree" },
+                        { data: "School", title: "School" },
+                        { data: "Startdate", title: "Startdate" },
+                        { data: "Passout_Year", title: "Passout_Year" },
+                        { data: "Percentage", title: "Percentage" },
+                        { data: "Backlog", title: "Backlog" }
+                    ]
+                })
+
+            });
+            $(document).on('click', '.edit', function () {
+
+                var FindClickAttribute = $(this).closest('tr').attr('counter1');
+                var FindIndex = userData.findIndex(function(element)
+                {
+                    return element.counter1 == FindClickAttribute
+                })
+                var Object = userData[FindIndex].dynamicArray
+
+                var ObjectLength = Object.length;
+                console.log(ObjectLength)
+                for(var i=0;i<ObjectLength;i++)
+                {
+                    $('#DynamicValue').click();   
+                }
+                var dynamicisArrived = document.querySelectorAll('.Dynamic')
+                dynamicisArrived.forEach(function(element,index)
+                {
+                    var id = element.id
+                    var value = Object.find(function(item)
+                    {
+                        return item.hasOwnProperty(id)
+                    })[id]
+                    element.value = value
+                })
+            })
+        })
+
+    </script>
 </body>
+
 </html>
