@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.css" />
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
+    <style>
+        #popup {
+            display: none;
+            position: absolute;
+            z-index: -1;
+            background-color: rgb(206, 226, 226);
+            top: 30%;
+            height: 50%;
+            width: 100%;
+        }
+        #mytavke
+        {
+            width: 360%;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="Myform">
+
+        <div id="popup">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label>FirstName</label>
+                        <input type="text" name="FirstName" id="FirstName" class="form-control">
+                    </div>
+                    <div class="col-lg-4">
+                        <label>LastName</label>
+                        <input type="text" name="LastName" id="LastName" class="form-control">
+                    </div>
+                    <div class="col-lg-4">
+                        <label>DateOfBirth</label>
+                        <input type="date" name="DateOfBirth" id="DateOfBirth" class="form-control">
+                    </div>
+                </div> <!--row ends-->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <label>male</label>
+                        <input type="radio" name="gender" id="male" value="male">
+                        <label>Female</label>
+                        <input type="radio" name="gender" id="female" value="female">
+                        <label>Transgender</label>
+                        <input type="radio" name="gender" id="Transgender" value="Transgender">
+                    </div>
+                    <div class="col-lg-4">
+                        <select id="Country">
+                            <option value="Select" id="Select">Select</option>
+                            <option value="USA" id="USA">USA</option>
+                            <option value="UAE" id="UAE">UAE</option>
+                            <option value="London" id="London">London</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-12">
+                        <label>Hobbies</label>
+                        <label>Music</label>
+                        <input type="checkbox" name="Hobbies" id="Music" value="Music">
+                        <label>Movie</label>
+                        <input type="checkbox" name="Hobbies" id="Movie" value="Movie">
+                        <label>Singing</label>
+                        <input type="checkbox" name="Hobbies" id="Singing" value="Singing">
+
+
+                    </div>
+                </div>
+                <div>
+                    <input type="button" name="dynamic" id="dynamic" class="dynamic" value="dynamic">
+
+                    <table id="InsideTable">
+                        <thead>
+                            <tr>
+                                <th>Degree</th>
+                                <th>School</th>
+                                <th>Start_Date</th>
+                                <th>Passout_Year</th>
+                                <th>Percentage</th>
+                                <th>backlog</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <input type="button" name="submit" id="submit" value="submit" class="mt-5">
+                        <input type="button" name="close" id="close" value="close" class="mt-5">
+                        <input type="button" name="update" id="update" value="update" class="mt-5">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <input type="button" name="openPopup" id="openPopup" value="openPopup">
+        </div>
+        <div>
+            <table id="MyTable">
+                <thead>
+                    <tr>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>DateOfBirth</th>
+                        <th>GenderSelected</th>
+                        <th>Country</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+    </form>
+    <script>
+        var UserData = [];
+        var counter = 0;
+        var DynamicCounter = 0
+        var InsideTable = $('#InsideTable');
+        var MyTable = $('#MyTable').DataTable();
+        $(document).ready(function () {
+            $('#openPopup').on('click', function () {
+                $('#popup').css({ "display": "block", "z-index": "1", "position": "absolute" })
+                $('#Myform .Dynamic').remove();
+                $('#Myform .buttonDelete').remove();
+            })
+            $('#close').on('click', function () {
+                $('#popup').css({ "display": "none", "z-index": "-1", "position": "absolute" })
+            })
+
+            $(document).on('click', '#submit', function (e) {
+                e.preventDefault();
+                debugger
+
+                var FirstName = $('#FirstName').val();
+                var LastName = $('#LastName').val();
+                var DateOfBirth = $('#DateOfBirth').val();
+                var Gender = document.querySelectorAll('input[name="gender"]')
+                var GenderSelected;
+                for (var i = 0; i < Gender.length; i++) {
+                    if (Gender[i].checked) {
+                        GenderSelected = Gender[i].value
+                    }
+                }
+
+                var DynamicALL = document.querySelectorAll('.Dynamic')
+                var DynamicSelectorArray = [];
+
+                for (var i = 0; i < DynamicALL.length; i = i + 6) {
+                    var DynamicSelectorObject = {};
+
+                    for (let j = 0; j < 6; j++) {
+                        var element = DynamicALL[i + j]
+                        var id = element.id;
+                        var value = element.value;
+                        DynamicSelectorObject[id] = value;
+                    }
+
+                    DynamicSelectorArray.push(DynamicSelectorObject);
+                }
+
+                console.log(DynamicSelectorArray)
+
+                var Country = $('#Country').val();
+                //checkbox
+                var Checkboxelement = document.querySelectorAll('input[name="Hobbies"]');
+                var checkboxvalue = [];
+                for (var i = 0; i < Checkboxelement.length; i++) {
+                    debugger
+                    if (Checkboxelement[i].checked) {
+                        var value = Checkboxelement[i].value
+                        checkboxvalue.push(value)
+                    }
+                }
+
+                var rowData = {
+                    FirstName: FirstName,
+                    LastName: LastName,
+                    DateOfBirth: DateOfBirth,
+                    GenderSelected: GenderSelected,
+                    Country: Country,
+                    Deleted: false,
+                    counter: counter,
+                    DynamicSelectorArray: DynamicSelectorArray,
+                    checkboxvalue: checkboxvalue
+
+                };
+                UserData.push(rowData)
+                console.log(UserData)
+                counter++;
+                table()
+                $('#Myform')[0].reset();
+                DynamicCounter = 0;
+                $('#Myform .Dynamic').remove();
+                $('#Myform .buttonDelete').remove();
+                $('#close').click();
+
+            });
+            function table() {
+                MyTable.clear().draw();
+                $.each(UserData, function (index, object) {
+                    var row = MyTable.row.add([object.FirstName, object.LastName, object.DateOfBirth, object.GenderSelected, object.Country, '<input type="button" name="Edit" value="Edit" class="Edit"><input type="button" name="Delete" class="Delete" value="Delete"><input type="button" name="ShowDatatable" value="ShowDatatable" class="ShowDatatable">']).draw().node();
+                    $(row).attr('counter', object.counter)
+                })
+            }
+            $(document).on('click', '.Edit', function () {
+
+                var RowFindIndex = $(this).closest('tr').attr('counter')
+                var RowIndexAttribute = UserData.findIndex(function (element) {
+                    return element.counter == RowFindIndex;
+                })
+                $('#openPopup').click();
+                var ClickEditButton = UserData[RowIndexAttribute]
+                $('#FirstName').val(ClickEditButton.FirstName)
+                $('#LastName').val(ClickEditButton.LastName);
+                $('#DateOfBirth').val(ClickEditButton.DateOfBirth);
+                var GenderSelected = ClickEditButton.GenderSelected;
+                $('input[name="gender"][value="' + GenderSelected + '"]').prop('checked', true)
+                $('#Country').val(ClickEditButton.Country)
+                var DynamicLength = UserData[RowIndexAttribute].DynamicSelectorArray
+                console.log(DynamicLength)
+                var DynamicLengthActual = DynamicLength.length;
+                console.log(DynamicLengthActual)
+                for (var i = 0; i < DynamicLengthActual; i++) {
+                    $('#dynamic').click();
+                }
+                var dynamicData = document.querySelectorAll('.Dynamic')
+                dynamicData.forEach(function (element, index) {
+                    var id = element.id;
+                    var value = DynamicLength.find(function (item) {
+                        return item.hasOwnProperty(id);
+                    })[id];
+                    element.value = value;
+                });
+
+                $(document).on('click', '#update', function (e) {
+                    e.preventDefault();
+                    var FirstName = $('#FirstName').val();
+                    var LastName = $('#LastName').val();
+                    var DateOfBirth = $('#DateOfBirth').val();
+                    var GenderSelected = document.querySelectorAll('input[name="gender"]')
+                    for (var i = 0; i < GenderSelected.length; i++) {
+                        if (GenderSelected[i].checked) {
+                            var gender = GenderSelected[i].value
+                        }
+                    }
+                    var Country = $('#Country').val();
+                    var Deleted = ClickEditButton.Deleted;
+                    var counter = ClickEditButton.counter;
+                    var Object = {
+                        FirstName: FirstName,
+                        LastName: LastName,
+                        DateOfBirth: DateOfBirth,
+                        GenderSelected: gender,
+                        Country: Country,
+                        Deleted: Deleted,
+                        counter: counter
+                    }
+                    UserData[RowIndexAttribute] = Object
+                    table();
+                    DynamicCounter = 0;
+                })
+            })
+            $(document).on('click', '#dynamic', function () {
+
+                var rows = $('<tr>')
+                rows.append('<td><input type="text" name="Degree" class="Dynamic" id="Degree' + DynamicCounter + '" ></td>')
+                rows.append('<td><input type="text" name="School" class="Dynamic" id="School' + DynamicCounter + '" ></td>')
+                rows.append('<td><input type="text" name="Start_Date" class="Dynamic" id="Start_Date' + DynamicCounter + '" ></td>')
+                rows.append('<td><input type="text" name="Passout_Year" class="Dynamic" id="Passout_Year' + DynamicCounter + '" ></td>')
+                rows.append('<td><input type="text" name="Percentage" class="Dynamic" id="Percentage' + DynamicCounter + '" ></td>')
+                rows.append('<td><input type="text" name="backlog" class="Dynamic" id="backlog' + DynamicCounter + '" ></td>')
+                rows.append('<td><input type="button" class="Dynamic12 buttonDelete" id="Deleted' + DynamicCounter + '" value="Deleted"></td>')
+                rows.append('</tr>')
+                DynamicCounter++;
+                InsideTable.append(rows)
+            })
+            $(document).on('click', '.ShowDatatable', function () {
+                var RowClick = $(this).closest('tr').attr('counter');
+                var ClosestTr = $(this).closest('tr')
+                var FindIndexAsperClick = UserData.findIndex(function (element) {
+                    return element.counter == RowClick
+                })
+                var clickButton = UserData[FindIndexAsperClick].DynamicSelectorArray
+                var tableGenrated = $('<table>').attr({"id":"mytavke"});
+                    ClosestTr.after(tableGenrated)
+                
+
+                let i = 0; 
+                const transformedArray = clickButton.map(item => {
+                    const transformedItem = {
+                        degree: item['Degree' + i],
+                        school: item['School' + i],
+                        startDate: item['Start_Date' + i],
+                        passoutYear: item['Passout_Year' + i],
+                        percentage: item['Percentage' + i],
+                        backlog: item['backlog' + i]
+                    };
+
+                    i++; 
+                    return transformedItem;
+                });
+
+                var dataTable = tableGenrated.DataTable({
+                    width: "100%",
+                    paging: false,
+                    searching: false,
+                    info: false,
+                    autoWidth: false,
+                    data: transformedArray,
+                    columns: [
+                        { data: 'degree', title: 'Degree' },
+                        { data: 'school', title: 'School' },
+                        { data: 'startDate', title: 'Start date' },
+                        { data: 'passoutYear', title: 'Passout Year' },
+                        { data: 'percentage', title: 'Percentage' },
+                        { data: 'backlog', title: 'Backlog' }
+                    ]
+                });
+                
+
+
+            })
+
+
+
+        })
+    </script>
+</body>
+
+</html>

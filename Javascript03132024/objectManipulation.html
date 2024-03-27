@@ -14,27 +14,6 @@
     <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
 </head>
 <body>
-    <input type="button" name="AddButton" id="AddButton" value="AddButton">
-    <input type="text" name="firstname" id="firstname">
-    <div id="dynamicInputs">
 
-    </div>
-    <input type="button" name="submit" value="submit" id="submit">
-    <script>
-        var counter=0
-        $(document).ready(function()
-        {
-            $('#AddButton').on('click',function()
-            {
-                var input1 = $('<input>').attr({"type":"text","id":"dynamic"+counter})
-                counter++;
-                $('#dynamicInputs').append(input1)
-            })
-            $(document).on('click','#submit',function()
-            {
-                $('')
-            });
-        })
-    </script>
 </body>
 </html>

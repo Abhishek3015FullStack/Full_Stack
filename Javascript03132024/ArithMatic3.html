@@ -105,6 +105,15 @@
         var dynamicCounter = 0
 
         $(document).ready(function () {
+            let currentDate = new Date();
+            let currentYear = currentDate.getFullYear();
+            var a= "2000";
+            debugger
+            var date1 = new Date(a)
+            var age = currentYear - a
+            console.log(age)
+
+
             $('#show_the_pop').on('click', function () {
                 $('#popup').css({ "z-index": "1", "opacity": "1", "display": "block" })
             })
@@ -167,19 +176,19 @@
                     })
                     
 
-                    // for (var i = 0; i < Data.length; i += 4) {
-                    //     var newDataObject = {};
+                    for (var i = 0; i < Data.length; i++) {
+                        var newDataObject = {};
 
-                    //     for (var j = 0; j < 4 ;j++) {
-                    //         var element = Data[i + j];
-                    //         var id = element.id;
-                    //         var value = element.value;
-                    //         newDataObject[id] = value;
-                    //     }
+                        for (var j = 0; j < 4 ;j++) {
+                            var element = Data[i + j];
+                            var id = element.id;
+                            var value = element.value;
+                            newDataObject[id] = value;
+                        }
                         
 
-                    //     DataArray.push(newDataObject);
-                    // }
+                        DataArray.push(newDataObject);
+                    }
 
                     rowData['DataOfArray'] = DataArray
 
