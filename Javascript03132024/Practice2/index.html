@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,10 @@
     <script src="Jquery.js"></script>
     <link rel="stylesheet" href="DataTables.css">
     <script src="DataTables.js"></script>
-    <link  rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
     <script src="bootstrap-5.3.3-dist/js/bootstrap.js"></script>
     <style>
-        #popup
-        {
+        #popup {
             z-index: -1;
             opacity: 0;
             display: none;
@@ -23,15 +23,18 @@
         }
     </style>
 </head>
+
 <body>
-    <div>
-        <input type="button" name="showPopup" id="showPopup" value="showPopup">
-    </div>
-    <div id="popup">
-        <input type="text" name="firstname" id="firstname">
-        <input type="button" name="DynamicGenerate" id="DynamicGenerate" value="ADD">
-        <table id="FruitDynamic">
-                <thead>
+    <form id="Myform">
+        <div>
+            <input type="button" name="showPopup" id="showPopup" value="showPopup">
+        </div>
+        <div id="popup">
+            <div class="container">
+                <input type="text" name="firstname" id="firstname">
+                <input type="button" name="DynamicGenerate" id="DynamicGenerate" value="ADD">
+                <table id="FruitDynamic">
+                    <thead>
                         <tr>
                             <th>FruitName</th>
                             <th>rate</th>
@@ -39,86 +42,213 @@
                             <th>Total</th>
                             <th>Action</th>
                         </tr>
-                </thead>
-        </table>
-        <div>
-            <input type="submit" name="submit" id="submit" value="submit">
+                    </thead>
+                </table>
+                <input type="text" name="total" id="total">
+                <div>
+                    <input type="submit" name="submit" id="submit" value="submit">
+                    <input type="button" name="Close" id="Close" value="Close">
+                    <input type="button" name="Update" id="Update" value="Update">
+                </div>
+            </div>
         </div>
-    </div>
-  
-
-<script>
-    var userData =[]
+        <div>
+            <table id="outsideTable" class="table">
+                <thead>
+                    <tr>
+                        <th>FirstName</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </form>
+    <script>
+        var userData = []
+        var counter = 0
+        var flag = true
+        var outsideTable = $('#outsideTable').DataTable();
         function Valuestaking1(element) {
             var FruitData = []
-
+            var grandtotal = 0;
             var row = $(element).closest('tr');
-            var td1 = row.find('td').eq(0).find('select').val(); 
+            var td1 = row.find('td').eq(0).find('select').val();
             var td2 = row.find('td').eq(1).find('input').val();
             var td3 = row.find('td').eq(2).find('input').val();
-            var taotal = parseInt(td2)* parseInt(td3)
+            var taotal = parseInt(td2) * parseInt(td3)
             var td4 = row.find('td').eq(3).find('input').val(taotal)
             var dynamic = document.querySelectorAll('.Dynamic')
-            var rowData  = {}
-            dynamic.forEach(function(element)
-            {
-                
+            var rowData = {}
+            dynamic.forEach(function (element) {
+
                 var name = element.name;
                 var value = element.value
-                rowData[name] =value
-                
+                rowData[name] = value
+                if (element.name == 'Total') {
+                    grandtotal = grandtotal + parseInt(element.value)
+                    console.log(grandtotal)
+                }
             })
+            var a = $('#total')
+            a.val(grandtotal)
 
-            // FruitData.push(rowData)
-            // console.log(FruitData)
-
-            
         }
+        $(document).ready(function () {
 
-        $(document).ready(function() {
-            $('#DynamicGenerate').on('click', function() {
-                var row = $('<tr>');
-                row.append('<td><select class="Dynamic" name="fruitName"> <option value="Apple" id="Apple">Apple</option> <option value="Banana" id="Banana">Banana</option></select> </td>');
-                row.append('<td><input type="text" name="rate" class="Dynamic"></td>');
-                row.append('<td><input type="text" name="Quantity" class="Dynamic"></td>');
-                row.append('<td><input type="text" name="Total" class="Dynamic" onblur="Valuestaking1(this)"></td>');
-                row.append('<td><input type="button" name="DeleteDynamic" value="Delete" class="DeleteDynamic"></td>');
-                $('#FruitDynamic').append(row);
+            $('#DynamicGenerate').on('click', function () {
+                if (flag) {
+                    var row = $('<tr>');
+                    row.append('<td><select class="Dynamic" name="fruitName"> <option value="Apple" id="Apple">Apple</option> <option value="Banana" id="Banana">Banana</option></select> </td>');
+                    row.append('<td><input type="text" name="rate" class="Dynamic"></td>');
+                    row.append('<td><input type="text" name="Quantity" class="Dynamic"></td>');
+                    row.append('<td><input type="text" name="Total" class="Dynamic" onblur="Valuestaking1(this)"></td>');
+                    row.append('<td><input type="button" name="DeleteDynamic" value="Delete" class="DeleteDynamic"></td>');
+                    $('#FruitDynamic').append(row);
+                }
             });
-            $(document).on('click','#showPopup',function()
-            {
-                $('#popup').css({"z-index":"1","opacity":"1","display":"block"});
+            $(document).on('click', '#showPopup', function () {
+                $('#popup').css({ "z-index": "1", "opacity": "1", "display": "block" });
+                $('#Myform .Dynamic').remove();
+                $('#Myform .DeleteDynamic').remove();
             })
-            $(document).on('click','#submit',function(e)
-            {
+
+            $(document).on('click', '#Close', function () {
+                $('#popup').css({ "z-index": "-1", "opacity": "0", "display": "none" });
+                $('#Myform .Dynamic').remove();
+                $('#Myform .DeleteDynamic').remove();
+            })
+
+            $(document).on('click', '#submit', function (e) {
                 var rowData = {}
                 e.preventDefault();
-                var firstname =$('#firstname').val();
-                rowData['firstname']= firstname
+                var firstname = $('#firstname').val();
+                rowData['firstname'] = firstname
                 debugger
                 var dynamic = document.querySelectorAll('.Dynamic')
-                var FruitDataArray =[]
-                for(var i=0;i<dynamic.length;i=i+4)
-                {
-                    var FruitDataObject ={}
-                    for(var j=0;j<4;j++)
-                    {
-                        var element = dynamic[i+j]
+                var FruitDataArray = []
+                for (var i = 0; i < dynamic.length; i = i + 4) {
+                    var FruitDataObject = {}
+                    for (var j = 0; j < 4; j++) {
+                        var element = dynamic[i + j]
                         var name = element.name;
                         var value = element.value
                         FruitDataObject[name] = value
                     }
                     FruitDataArray.push(FruitDataObject)
                 }
+                rowData['counter'] = counter
+                rowData['Deleted'] = false
                 rowData['FruitDataArray'] = FruitDataArray
 
                 userData.push(rowData)
+                counter++;
                 console.log(userData)
+                $('#Myform .Dynamic').remove();
+                $('#Myform .DeleteDynamic').remove();
+                tableForm()
+                $('#Close').click();
+            })
+            function tableForm() {
+                outsideTable.clear().draw();
+                $.each(userData, function (index, object) {
+                    if (object.Deleted == false) {
+                        var row = outsideTable.row.add([object.firstname, '<input type="button", name="editButton" class="editButton" value="editButton"><input type="button" name="delete" class="OutsideDelete" value="OutsideDelete"><input type="ShowDataTable" name="ShowDataTable" class="ShowDataTable" value="ShowDataTable">']).draw().node();
+                        $(row).attr('counter', object.counter)
+                    }
+                })
+            }
+            $(document).on('click', '.editButton', function () {
+                var rowclick = $(this).closest('tr').attr('counter')
+                var FindIndexofData = userData.findIndex(function (element) {
+                    return element.counter == rowclick
+                })
+                var Object = userData[FindIndexofData]
+                var ObjectDynamic = userData[FindIndexofData].FruitDataArray
+                $('#showPopup').click();
+                for (var i = 0; i < ObjectDynamic.length; i++) {
+                    $('#DynamicGenerate').click();
+                }
+                $('#firstname').val(userData[FindIndexofData].firstname)
+                var dynamic = document.querySelectorAll('.Dynamic')
+                dynamic.forEach(function (element, index) {
+                    var element = element
+                    var name = element.name;
+                    var value = ObjectDynamic[Math.floor(index / 4)][name]
+                    element.value = value
+                })
+                $(document).on('click', '#Update', function () {
+                    debugger
+                    var newObject = {}
+                    var counter = userData[FindIndexofData].counter;
+                    var Deleted = userData[FindIndexofData].Deleted
+                    var firstname = $('#firstname').val();
+
+                    var Dynamic = document.querySelectorAll('.Dynamic')
+                    var DynamicArray = []
+                    for (var i = 0; i < Dynamic.length; i = i + 4) {
+                        var DyanmicData = {}
+                        for (var j = 0; j < 4; j++) {
+                            var element = Dynamic[i + j]
+                            var name = element.name
+                            var value = element.value
+                            DyanmicData[name] = value
+                        }
+                        DynamicArray.push(DyanmicData)
+                    }
+                    newObject = {
+                        firstname: firstname,
+                        Deleted: Deleted,
+                        counter: counter,
+                        FruitDataArray: DynamicArray
+
+                    }
+                    userData[FindIndexofData] = newObject
+                    tableForm()
+                })
 
             })
-            
+            $(document).on('click', '.DeleteDynamic', function () {
+                var FindClick = $(this).closest('tr').remove();
+            })
+
+            $(document).on('click', '.OutsideDelete', function () {
+                debugger
+                var rowClikc = $(this).closest('tr').attr('counter')
+                var element1 = userData.findIndex(function (element) {
+                    return element.counter == rowClikc
+                })
+                var a = userData[element1].Deleted = true
+                tableForm();
+            })
+            $(document).on('click', '.ShowDataTable', function () {
+                var rowClick = $(this).closest('tr').attr('counter')
+                var row = $(this).closest('tr')
+                var element1 = userData.findIndex(function (element) {
+                    return element.counter == rowClick
+                })
+                var a = userData[element1].FruitDataArray
+
+                var tableDynamic = $('<table>')
+                row.after(tableDynamic)
+                var datatable = tableDynamic.DataTable({
+                    paging: false,
+                    info: false,
+                    searching: false,
+                    data: a,
+                    columns: [
+                        { data: "fruitName", title: "fruitName" },
+                        { data: "rate", title: "rate" },
+                        { data: "Quantity", title: "Quantity" },
+                        { data: "Total", title: "Total" },
+
+                    ]
+                })
+            })
+
         });
     </script>
 
 </body>
+
 </html>
+

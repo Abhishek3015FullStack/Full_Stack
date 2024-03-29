@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script src="datatable.js"></script>
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="datatbale.css">
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <form id="myform">
+        <div id="popup">
+            <label>input1</label>
+            <input type="text" name="input1" id="input1">
+
+            <label>input2</label>
+            <input type="text" name="input2" id="input2">
+
+            <label>addition</label>
+            <input type="checkbox" name="operation" value="addition" id="addition" class="Checkbox1">
+
+            <label>Substraction</label>
+            <input type="checkbox" name="operation" value="Substraction" id="Substraction" class="Checkbox1">
+
+
+            <label>Multiplication</label>
+            <input type="checkbox" name="operation" value="Multiplication" id="Multiplication" class="Checkbox1">
+
+
+            <label>Divide</label>
+            <input type="checkbox" name="operation" value="Divide" id="Divide" class="Checkbox1">
+
+            <input type="button" name="submit" value="submit" id="submit">
+        </div>
+        <table id="Mytable">
+            <thead>
+                <tr>
+                    <th>Input 1</th>
+                    <th>Input 2</th>
+                    <th>Addition</th>
+                    <th>Substraction</th>
+                    <th>Multiplication</th>
+                    <th>Divide</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    </form>
+    <script>
+
+        var userData = []
+        var counter = 0;
+        var Mytable = $('#Mytable').DataTable();
+        $(document).ready(function () {
+            $(document).on('click', '#submit', function (e) {
+                var ab;
+                var addition = 0;
+                var Substraction = 0;
+                var Multiplication = 0;
+                var Divide = 0;
+                e.preventDefault();
+                var mainObject = {}
+                var input1 = $('#input1').val();
+                var input2 = $('#input2').val();
+                var operations = document.querySelectorAll('input[name="operation"]:checked');
+                for (var i = 0; i < operations.length; i++) {
+                    if (operations[i].value == 'addition') {
+                        addition = parseInt(input1) + parseInt(input2)
+                    }
+                    else if (operations[i].value == 'Substraction') {
+                        Substraction = parseInt(input1) - parseInt(input2)
+                    }
+                    else if (operations[i].value == 'Multiplication') {
+                        Multiplication = parseInt(input1) * parseInt(input2)
+                    }
+                    else if (operations[i].value == 'Divide') {
+                        Divide = parseInt(input1) / parseInt(input2)
+                    }
+                }
+
+                mainObject['input1'] = input1
+                mainObject['input2'] = input2
+                mainObject['addition'] = addition
+                mainObject['Substraction'] = Substraction
+                mainObject['Multiplication'] = Multiplication
+                mainObject['Divide'] = Divide
+                mainObject['counter'] = counter
+                mainObject['operations'] = operations
+                counter++;
+                userData.push(mainObject)
+                tableform()
+                $('#myform')[0].reset();
+                console.log(userData)
+
+            })
+            function tableform() {
+                Mytable.clear().draw();
+                $.each(userData, function (index, object) {
+                    var row = Mytable.row.add([object.input1, object.input2, object.addition, object.Substraction, object.Multiplication, object.Divide, '<input type="button" name="edit" class="edit" value="edit">']).draw().node();
+                    $(row).attr('counter', object.counter)
+                })
+            }
+            $(document).on('click', '.edit', function () {
+                var rowclick = $(this).closest('tr').attr('counter')
+                var finderow = userData.findIndex(function (element) {
+                    return element.counter == rowclick
+                })
+                console.log(userData[finderow]);
+                debugger
+                var input1 = userData[finderow].input1;
+                var input2 = userData[finderow].input2;
+                var operation = userData[finderow].operations
+
+                for (var i = 0; i < operation.length; i++) {
+                    $('input[name="operation"][value="' + operation[i].value + '"]').prop('checked', true)
+                }
+
+            })
+
+        })
+    </script>
+</body>
+
+</html>
