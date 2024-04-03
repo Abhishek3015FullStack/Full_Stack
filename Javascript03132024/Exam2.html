@@ -93,6 +93,37 @@
         var totalTd5 = 0;
         var totalTd6 = 0;
         var OusideTable = $('#OusideTable').DataTable();
+        function validation(element)
+        {
+            debugger
+            var element = element;
+            var id = element.id;
+            var value = element.value;
+            if(value!="")
+            {
+                
+                var spanId = id+"Span"
+                console.log(spanId)
+                var span = document.getElementById(spanId)
+                span.innerHTML ="abhishke"
+            }
+            else
+            {
+                // span.textContent="field is required"
+            }
+            if(id.includes("startDateField"))
+            {
+                var a = id.split("startDateField")
+                var b =parseInt(a[1])
+                var endDate = "EndDateField"+b;
+                var endDate = document.getElementById(endDate)
+                var value1 =  endDate.value;
+                console.log(value1)
+
+            }
+            
+        }
+
         function abhishek(element) {
             debugger
             var td7 = 0
@@ -174,6 +205,7 @@
                     debugger
                     var element = DynamicFields[i + j];
                     var name = element.name;
+                    validation(element);
                     var value = element.value;
                     DyanmicObject[name] = value
                     if (name == "Degree") {
@@ -267,5 +299,4 @@
 
     </script>
 </body>
-
 </html>
