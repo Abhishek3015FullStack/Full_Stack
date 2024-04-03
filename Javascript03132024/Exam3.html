@@ -4,164 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dynamic Form Validation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.css" />
-    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
+    <style>
+        .error {
+            color: red;
+            font-size: smaller;
+        }
+    </style>
 </head>
 
 <body>
-    <form id="Myform">
-        <input type="button" name="showPopup" id="showPopup" value="showPopup">
-        <div id="popup">
-            <input type="button" name="AddDynamic" id="AddDynamic" value="AddDynamic">
-            <input type="firstName" name="firstName" id="firstName">
-            <table id="InsideTable">
-                <thead>
-                    <tr>
-                        <th>Degree</th>
-                        <th>School</th>
-                        <th>StartDate</th>
-                        <th>EndDate</th>
-                        <th>Percentage</th>
-                        <th>Backlog</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-            </table>
-            <input type="button" name="submit" id="submit" value="submit">
+    <form class="commentForm" method="get" action="">
+        <div id="inputs">
+            <p>
+                <input class="comment form-control" name="name0" placeholder="Enter Name" />
+            </p>
         </div>
-        <div>
-            <table id="OutsideTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
+        <input class="submit btn btn-primary" type="submit" value="Submit" />
+        <input type="button" value="Add Field" id="addInput" />
     </form>
+
     <script>
-        var userData = []
-        var counter = 0;
-        var outSideTable = $('#OutsideTable').DataTable();
-        function Abhishek(element) {
-            var element = element;
-            if (element.checked) {
-                element.setAttribute("value", true)
-            }
-            else {
-                element.setAttribute("value", false)
-            }
-        }
-        var counter = 0;
-        $(document).ready(function () {
-            $(document).on('click', '#AddDynamic', function () {
-                var row = $('<tr>')
-                row.append('<td> <input type="checkbox" name="Active1" checked value="true" onclick="Abhishek(this)" class="dynamic need"></td>')
-                row.append('<td> <input type="checkbox" name="Active2" checked value="true"onclick="Abhishek(this)"class="dynamic need"></td>')
-                row.append('<td> <input type="checkbox" name="Active3" checked value="true"onclick="Abhishek(this)"class="dynamic need"></td>')
-                row.append('<td> <input type="checkbox" name="Active4" checked value="true"onclick="Abhishek(this)"class="dynamic need"></td>')
-                row.append('<td> <input type="checkbox" name="Active5" checked value="true"onclick="Abhishek(this)"class="dynamic need"></td>')
-                row.append('<td> <input type="checkbox" name="Active6" checked value="true"onclick="Abhishek(this)"class="dynamic need"> </td>')
-                $('#InsideTable').append(row)
-            })
+        $(document).ready(function() {
+            var numberIncr = 1; // used to increment the name for the inputs
 
-            $(document).on('click', '#submit', function (e) {
-                var rowData = {}
-                e.preventDefault();
-                var FirstName = $('#firstName').val();
-                var Dynamic = document.querySelectorAll('.dynamic');
-                var DynamicArray = []
-                for (var i = 0; i < Dynamic.length; i = i + 6) {
-                    var DynamicObject = {}
-                    for (var j = 0; j < 6; j++) {
-                        var element = Dynamic[i + j]
-                        var name = element.name;
-                        var value = element.value;
-                        DynamicObject[name] = value
-                    }
-                    DynamicArray.push(DynamicObject)
-                }
-                rowData = {
-                    FirstName: FirstName,
-                    DynamicArray: DynamicArray
-                }
-                userData.push(rowData)
-                console.log(userData)
-                TableForm()
-                $('.need').remove();
-                $('#Myform')[0].reset();
-            })
-            function TableForm() {
-                outSideTable.clear().draw();
-                $.each(userData, function (index, object) {
-                    var row = outSideTable.row.add([object.FirstName, '<input type="button" name="edit" class="edit" value="edit"><input type="button" name="Delete" class="Delete" value="Delete"><input type="button" name="showTable" value="showTable" class="showTable"> ']).draw().node();
-                    $(row).attr('counter', object.counter)
-                })
+            function addInput() {
+                $('#inputs').append('<p><input class="comment form-control" name="name' + numberIncr + '" placeholder="Enter Name" /></p>');
+                numberIncr++;
             }
-            $(document).on('click', '.showTable', function () {
-                var rowClick = $(this).closest('tr').attr('counter')
-                var rowFindex = userData.findIndex(function (element) {
-                    return element.counter == rowClick
-                })
-                var row = $(this).closest('tr')
-                var a = userData[rowFindex].DynamicArray;
-                console.log(a);
-                var table = $('<table>')
-                row.after(table)
-                var dataTable = table.DataTable({
-                    searching: false,
-                    paging: false,
-                    info: false,
-                    data: a,
-                    columns: [
-                        { data: "Active1" },
-                        { data: "Active2" },
-                        { data: "Active3" },
-                        { data: "Active4" },
-                        { data: "Active5" },
-                        { data: "Active6" }
-                    ]
 
-                })
-            })
-            $(document).on('click', '.edit', function () {
-                var rowClick = $(this).closest('tr').attr('counter')
-                var EditFindIndex = userData.findIndex(function (element) {
-                    return element.counter == rowClick
-                })
-                var a = userData[EditFindIndex].DynamicArray;
-                $('#firstName').val(userData[EditFindIndex].FirstName)
-                for(var i=0;i<a.length;i++)
-                {
-                    $('#AddDynamic').click();
+            $('form.commentForm').on('submit', function(event) {
+                // Clear previous validation messages
+                $('.error').remove();
+
+                // Add new validation rules
+                $('input.comment').each(function() {
+                    $(this).rules("add", {
+                        required: true,
+                        minlength: 3,
+                        pattern: /^[a-zA-Z]+$/,
+                        messages: {
+                            required: "This field is required",
+                            minlength: jQuery.validator.format("Please enter at least {0} characters"),
+                            pattern: "Please enter only alphabetic characters"
+                        }
+                    });
+                });
+
+                // Test if form is valid 
+                if ($('form.commentForm').valid()) {
+                    console.log("Form validates");
+                } else {
+                    console.log("Form does not validate");
+                    return false; // Prevent form submission
                 }
-                debugger
-                var dynamic = document.querySelectorAll('.dynamic');
-                dynamic.forEach(function(element,index)
-                {
-                    debugger
-                    var element = element;
-                    var name = element.name;
-                    var value = a[Math.floor(index/6)][name];
-                    if(value=="true")
-                    {
-                        element.checked =true
-                    }
-                    else
-                    {
-                        element.checked =false;
-                    }
-                })
-            })
-        })
+            });
+
+            // Set handler for Add Field button click
+            $("#addInput").on('click', addInput);
+
+        });
+
     </script>
 </body>
 

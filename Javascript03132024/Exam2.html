@@ -93,36 +93,36 @@
         var totalTd5 = 0;
         var totalTd6 = 0;
         var OusideTable = $('#OusideTable').DataTable();
-        function validation(element)
-        {
-            debugger
-            var element = element;
-            var id = element.id;
-            var value = element.value;
-            if(value!="")
-            {
+        // function validation(element)
+        // {
+        //     debugger
+        //     var element = element;
+        //     var id = element.id;
+        //     var value = element.value;
+        //     if(value!="")
+        //     {
                 
-                var spanId = id+"Span"
-                console.log(spanId)
-                var span = document.getElementById(spanId)
-                span.innerHTML ="abhishke"
-            }
-            else
-            {
-                // span.textContent="field is required"
-            }
-            if(id.includes("startDateField"))
-            {
-                var a = id.split("startDateField")
-                var b =parseInt(a[1])
-                var endDate = "EndDateField"+b;
-                var endDate = document.getElementById(endDate)
-                var value1 =  endDate.value;
-                console.log(value1)
+        //         var spanId = id+"Span"
+        //         console.log(spanId)
+        //         var span = document.getElementById(spanId)
+        //         span.innerHTML ="abhishke"
+        //     }
+        //     else
+        //     {
+        //         // span.textContent="field is required"
+        //     }
+        //     if(id.includes("startDateField"))
+        //     {
+        //         var a = id.split("startDateField")
+        //         var b =parseInt(a[1])
+        //         var endDate = "EndDateField"+b;
+        //         var endDate = document.getElementById(endDate)
+        //         var value1 =  endDate.value;
+        //         console.log(value1)
 
-            }
+        //     }
             
-        }
+        // }
 
         function abhishek(element) {
             debugger
@@ -134,8 +134,13 @@
             var td4 = parseInt(row.find('td').eq(3).find('input').val());
             var td5 = parseInt(row.find('td').eq(4).find('input').val());
             var td6 = parseInt(row.find('td').eq(5).find('input').val());
-            td7 = td1 + td2 + td3 + td4 + td5 + td6 + td7
-            row.find('td').eq(7).find('input').val(td7)
+            if(td1>0&&td2>0&&td3>0&&td4>0&&td5>0&&td6>0)
+            {
+                td7 = td1 + td2 + td3 + td4 + td5 + td6 + td7
+                row.find('td').eq(7).find('input').val(td7)
+            }
+
+
 
             if (td1 > 0) {
                 totalTd1 += td1;
@@ -173,7 +178,7 @@
             row.append('<td><input type="number" class="percentage dynamic" name="Percentage" id="percentageField' + counter + '" ><br><span class="percentage-error error-message " id="percentageField' + counter + 'Span"></span></td>');
             row.append('<td><input type="number" class="backLog dynamic" name="BackLog" id="BackLogField' + counter + '" onblur = abhishek(this)><br><span class="backLog-error error-message " id="BackLogField' + counter + 'Span"></span></td>');
             counter++;
-            row.append('<td><input type="button" value="Delete" class="Delete "></td>');
+            row.append('<td><input type="button" value="Delete" class="Delete"></td>');
             row.append('<td><input type="text" class="dynamic" name ="TotalCalCulation"></td>')
             $('#MyTable').append(row);
         });
@@ -245,6 +250,7 @@
                 BackLog: BackLog,
                 TotalCalCulation: TotalCalCulation,
                 counter1: counter1,
+                
 
             }
             userData.push(rowData)
@@ -296,7 +302,10 @@
             })
 
         })
-
+        $(document).on('click','.Delete',function()
+        {
+            var RowClick = $(this).closest('tr').remove();
+        })
     </script>
 </body>
 </html>
