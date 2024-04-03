@@ -18,8 +18,8 @@
             color: red;
             font-size: 12px;
         }
-        #popup
-        {
+
+        #popup {
             position: absolute;
             z-index: -1;
             opacity: 0;
@@ -28,8 +28,8 @@
             left: 20%;
             top: 20%;
         }
-        .dynamic
-        {
+
+        .dynamic1 {
             margin: 2px;
         }
     </style>
@@ -38,9 +38,11 @@
 <body>
     <form id="myform">
         <div>
-            <input type="button" id="showPopup" value="showPopup" >
+            <input type="button" id="showPopup" value="showPopup">
         </div>
         <div id="popup">
+            <label>FirstName</label>
+            <input type="text" name="FirstName" id="FirstName">
             <input type="button" name="AddDynamic" id="AddDynamic" value="AddDynamic">
             <table id="MyTable">
                 <thead>
@@ -58,23 +60,42 @@
             <input type="button" name="submit" id="submit" value="submit">
             <input type="button" name="close" id="close" value="close">
             <div class="mt-5">
-                
+
                 <input type="text" name="totalOFDegree" id="totalOFDegree">
                 <input type="text" name="totalOFSchool" id="totalOFSchool">
                 <input type="text" name="totalOFStartDate" id="totalOFStartDate">
                 <input type="text" name="totalOFEndDate" id="totalOFEndDate">
                 <input type="text" name="totalOFPercentage" id="totalOFPercentage">
                 <input type="text" name="totalOFBackLog" id="totalOFBackLog">
-                <input type="text" name="totalOFBackLog" id="totalOFBackLog">
+
             </div>
         </div>
+        <div>
+            <table id="OusideTable">
+                <thead>
+                    <tr>
+                        <th>FirstName</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </form>
+
     <script>
-        var userData =[]
+        var userData = []
         var counter = 0;
+        var counter1 = 0
+        var totalTd1 = 0;
+        var totalTd2 = 0;
+        var totalTd3 = 0;
+        var totalTd4 = 0;
+        var totalTd5 = 0;
+        var totalTd6 = 0;
+        var OusideTable = $('#OusideTable').DataTable();
         function abhishek(element) {
             debugger
-            var td7 =0
+            var td7 = 0
             var row = $(element).closest('tr');
             var td1 = parseInt(row.find('td').eq(0).find('input').val());
             var td2 = parseInt(row.find('td').eq(1).find('input').val());
@@ -82,62 +103,168 @@
             var td4 = parseInt(row.find('td').eq(3).find('input').val());
             var td5 = parseInt(row.find('td').eq(4).find('input').val());
             var td6 = parseInt(row.find('td').eq(5).find('input').val());
-            td7 = td1+td2+td3+td4+td5+td6+td7
+            td7 = td1 + td2 + td3 + td4 + td5 + td6 + td7
             row.find('td').eq(7).find('input').val(td7)
+
+            if (td1 > 0) {
+                totalTd1 += td1;
+                $('#totalOFDegree').val(totalTd1)
+            }
+            if (td2 > 0) {
+                totalTd2 += td2
+                $('#totalOFSchool').val(totalTd2)
+            }
+            if (td3 > 0) {
+                totalTd3 += td3
+                $('#totalOFStartDate').val(totalTd3)
+            }
+            if (td4 > 0) {
+                totalTd4 += td4
+                $('#totalOFEndDate').val(totalTd4)
+            }
+            if (td5 > 0) {
+                totalTd5 += td5
+                $('#totalOFPercentage').val(totalTd5)
+            }
+            if (td6 > 0) {
+                totalTd6 += td6
+                $('#totalOFBackLog').val(totalTd6)
+            }
+
         }
 
         $(document).on('click', '#AddDynamic', function () {
             var row = $('<tr>');
-            row.append('<td><input type="number" class="degree dynamic" name="Degree" id="DegreeField' + counter + '" ><br> <span class="degree-error error-message" id="DegreeField' + counter + 'Span"></span></td>');
-            row.append('<td><input type="number" class="school dynamic" name="School" id="schoolField' + counter + '"><br><span class="school-error error-message" id="schoolField' + counter + 'Span"></span></td>');
-            row.append('<td><input type="number" class="startDate dynamic" name="StartDate" id="startDateField' + counter + '" ><br><span class="startDate-error error-message" id="startDateField' + counter + 'Span"></span></td>');
-            row.append('<td><input type="number" class="endDate dynamic" name="EndDate" id="EndDateField' + counter + '" ><br><span class="endDate-error error-message" id="EndDateField' + counter + 'Span"></span></td>');
-            row.append('<td><input type="number" class="percentage dynamic" name="Percentage" id="percentageField' + counter + '" ><br><span class="percentage-error error-message" id="percentageField' + counter + 'Span"></span></td>');
-            row.append('<td><input type="number" class="backLog dynamic" name="BackLog" id="BackLogField' + counter + '" onblur = abhishek(this)><br><span class="backLog-error error-message" id="BackLogField' + counter + 'Span"></span></td>');
+            row.append('<td><input type="number" class="degree dynamic" name="Degree" id="DegreeField' + counter + '" ><br> <span class="degree-error error-message " id="DegreeField' + counter + 'Span"></span></td>');
+            row.append('<td><input type="number" class="school dynamic" name="School" id="schoolField' + counter + '"><br><span class="school-error error-message " id="schoolField' + counter + 'Span"></span></td>');
+            row.append('<td><input type="number" class="startDate dynamic" name="StartDate" id="startDateField' + counter + '" ><br><span class="startDate-error error-message " id="startDateField' + counter + 'Span"></span></td>');
+            row.append('<td><input type="number" class="endDate dynamic" name="EndDate" id="EndDateField' + counter + '" ><br><span class="endDate-error error-message " id="EndDateField' + counter + 'Span"></span></td>');
+            row.append('<td><input type="number" class="percentage dynamic" name="Percentage" id="percentageField' + counter + '" ><br><span class="percentage-error error-message " id="percentageField' + counter + 'Span"></span></td>');
+            row.append('<td><input type="number" class="backLog dynamic" name="BackLog" id="BackLogField' + counter + '" onblur = abhishek(this)><br><span class="backLog-error error-message " id="BackLogField' + counter + 'Span"></span></td>');
             counter++;
-            row.append('<td><input type="button" value="Delete" class="Delete"></td>');
+            row.append('<td><input type="button" value="Delete" class="Delete "></td>');
             row.append('<td><input type="text" class="dynamic" name ="TotalCalCulation"></td>')
             $('#MyTable').append(row);
         });
-        $('#showPopup').on('click',function()
-        {   
-            $('#popup').css({"z-index":"1","opacity":"1","display":"block"})
+        $('#showPopup').on('click', function () {
+            $('#popup').css({ "z-index": "1", "opacity": "1", "display": "block" })
             $('#AddDynamic').click();
+
         })
-        $('#close').on('click',function()
-        {
-            $('#popup').css({"z-index":"-1","opacity":"0","display":"none"})  
+        $('#close').on('click', function () {
+            $('#popup').css({ "z-index": "-1", "opacity": "0", "display": "none" })
+            $('.dynamic').remove();
         })
-        $(document).on('click','#submit',function(e)
-        {  
-            var total =0
-            var rowData ={} 
+        $(document).on('click', '#submit', function (e) {
+            var total = 0
+            var rowData = {}
+            var TotalDegree = 0
+            var TotalSchool = 0;
+            var TotalStartDate = 0;
+            var TotalEndDate = 0;
+            var Percentage = 0;
+            var BackLog = 0;
+            var TotalCalCulation = 0;
             e.preventDefault();
             var DynamicFields = document.querySelectorAll('.dynamic')
-            var DynamicArray =[];
-            for(var i=0;i<DynamicFields.length;i=i+7)
-            {
-                var DyanmicObject ={}
-                for(var j=0;j<7;j++)
-                {
+            var DynamicArray = [];
+            for (var i = 0; i < DynamicFields.length; i = i + 7) {
+                var DyanmicObject = {}
+                for (var j = 0; j < 7; j++) {
                     debugger
-                    var element = DynamicFields[i+j];
+                    var element = DynamicFields[i + j];
                     var name = element.name;
                     var value = element.value;
-                    DyanmicObject[name] =value
+                    DyanmicObject[name] = value
+                    if (name == "Degree") {
+                        TotalDegree += parseInt(value)
+                    }
+                    if (name == "School") {
+                        TotalSchool += parseInt(value)
+                    }
+                    if (name == "StartDate") {
+                        TotalStartDate += parseInt(value)
+                    }
+                    if (name == "EndDate") {
+                        TotalEndDate += parseInt(value)
+                    }
+                    if (name == "Percentage") {
+                        Percentage += parseInt(value)
+                    }
+                    if (name == "BackLog") {
+                        BackLog += parseInt(value)
+                    }
+                    if (name == "TotalCalCulation") {
+                        TotalCalCulation += parseInt(value)
+                    }
                 }
                 DynamicArray.push(DyanmicObject)
             }
-        
-            rowData ={
-                DynamicArray:DynamicArray
+            var FirstName = $('#FirstName').val();
+
+            rowData = {
+                FirstName: FirstName,
+                DynamicArray: DynamicArray,
+                TotalDegree: TotalDegree,
+                TotalSchool: TotalSchool,
+                TotalStartDate: TotalStartDate,
+                TotalEndDate: TotalEndDate,
+                Percentage: Percentage,
+                BackLog: BackLog,
+                TotalCalCulation: TotalCalCulation,
+                counter1: counter1,
+
             }
-            userData.push(DynamicArray)
+            userData.push(rowData)
             console.log(userData)
-            console.log(total)
-            var a = userData[0].DynamicArray ;
-            console.log(a)
+            TableForm()
+            $('#close').click();
+            $('.dynamic').remove();
+
+
         })
+        function TableForm() {
+            OusideTable.clear().draw();
+            $.each(userData, function (index, object) {
+                var row = OusideTable.row.add([object.FirstName, '<input type="button" name="edit" class="edit" value="edit"><input type="button" name="Delete" class="Delete" value="Delete"><input type="button" name="ShowTable" class="ShowTable" value="ShowTable"> ']).draw().node();
+                $(row).attr('counter1', object.counter1);
+            })
+        }
+        $(document).on('click', '.edit', function () {
+            var rowClick = $(this).closest('tr').attr('counter1')
+            var rowIndex = userData.findIndex(function (element) {
+                return element.counter1 == rowClick
+            })
+
+        })
+        $(document).on('click', '.ShowTable', function () {
+            var rowClick = $(this).closest('tr').attr('counter1')
+            var rowIndex = userData.findIndex(function (element) {
+                return element.counter1 == rowClick
+            })
+            var row = $(this).closest('tr')
+            var a = userData[rowIndex].DynamicArray
+            
+            var table = $('<table><thead><tr><th>Degree</th><th>School</th><th>StartDate</th><th>EndDate</th><th>Percentage</th><th>BackLog</th></tr></thead><tfoot><tr><th>'+userData[rowIndex].TotalDegree +'</th><th>'+userData[rowIndex].TotalSchool +'</th><th>'+ userData[rowIndex].TotalStartDate+'</th><th>'+ userData[rowIndex].TotalEndDate+'</th><th>'+ userData[rowIndex].Percentage+'</th><th>'+userData[rowIndex].BackLog +'</th></tr></tfoot></table>')
+            row.after(table)
+            var dataTable = table.dataTable({
+                searching:false,
+                info:false,
+                paging:false,
+                data:a,
+                columns:[
+                    {data:"Degree"},
+                    {data:"School"},
+                    {data:"StartDate"},
+                    {data:"EndDate"},
+                    {data:"Percentage"},
+                    {data:"BackLog"}
+                ],
+                footer:true
+            })
+
+        })
+
     </script>
 </body>
 
