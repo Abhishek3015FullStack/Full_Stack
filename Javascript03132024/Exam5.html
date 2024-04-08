@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.css" />
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="Myform">
+        <input type="firstName" name="firstName" id="firstName">
+        <span id="firstNameSpan"></span>
+        <input type="button" name="ADDItem" id="ADDItem" value="ADDItem">
+        <table id="insideTable">
+            <thead>
+                <tr>
+                    <th>Degree</th>
+                    <th>School</th>
+                    <th>StartDate</th>
+                    <th>EndDate</th>
+                    <th>Percentage</th>
+                    <th>Backlog</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+        <input type="button" name="save" id="save" value="save">
+        <table id="Outside">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>FirstName</th>
+                    <th>Action</th>
+                </tr>
+        </table>
+        </table>
+    </form>
+    <script>
+        var userData = [];
+        var counter=0
+        
+        function firstName() {
+            
+            var firstName = document.getElementById('firstName').value
+            var Span = document.getElementById('firstNameSpan')
+            var regx = /^[a-zA_Z]{3,}$/
+            var flagFirstName = 0
+            if ((firstName.trim())!="") {
+                flagFirstName = 0 
+                Span.innerHTML = " "
+                if (firstName.length> 3) 
+                {
+                    flagFirstName = 0
+                    Span.innerHTML = " "
+                    if (regx.test(firstName)) 
+                    {
+                        flagFirstName = 0
+                        Span.innerHTML = " "
+
+                    }
+                    else 
+                    {
+                        Span.innerHTML = "regx is not passed"
+                        flagFirstName = 1
+                    }
+                }
+                else 
+                {
+                    Span.innerHTML = "the name is less than 3"
+                    flagFirstName = 1
+                }
+            }
+            else 
+            {
+                Span.innerHTML = "this is required "
+                flagFirstName = 1
+            }
+            if(flagFirstName==1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        function Degree(element) {
+            debugger
+            var DegreeFlag = 0
+            var element = element;
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            var spanid = id + "Span"
+            var SpanTag = document.getElementById(spanid);
+            var regx = /^[a-zA_Z]{3,}/
+            if ((value.trim())!= "") {
+                DegreeFlag = 0
+                SpanTag.innerHTML = " "
+                if (value.length> 3) {
+                    DegreeFlag = 0
+                    SpanTag.innerHTML = " ";
+                    if (regx.test(value)) {
+                        DegreeFlag = 0
+                        SpanTag.innerHTML = ""
+                    }
+                    else {
+                        SpanTag.innerHTML = "regx is not satisfied";
+                        DegreeFlag = 1
+                    }
+                }
+                else {
+                    SpanTag.innerHTML = "Less than 3";
+                    DegreeFlag = 1
+                }
+            }
+            else {
+                SpanTag.innerHTML = "this field is required "
+                DegreeFlag = 1
+            }
+            if (DegreeFlag == 1) {
+                return false;
+            }
+            else {
+                return true;
+            }
+
+        }
+        function School(element) {
+            var element = element;
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            var span = id + "Span";
+            var SpanTag = document.getElementById(span)
+            var regx = /^[a-zA-Z]{3,}/
+            var SchoolFlag = 0
+            if ((value.trim()) != "") {
+                SchoolFlag = 0
+                SpanTag.innerHTML = " "
+                if (value.length> 3) {
+                    SchoolFlag = 0
+                    SpanTag.innerHTML = " "
+                    if (regx.test(value)) {
+                        SchoolFlag = 0
+                        SpanTag.innerHTML = " "
+                    }
+                    else {
+                        SpanTag.innerHTML = "regx is not passed"
+                        SchoolFlag = 1
+                    }
+                }
+                else {
+                    SpanTag.innerHTML = "thsi is less than 3"
+                    SchoolFlag = 1
+                }
+            }
+            else {
+                SpanTag.innerHTML = "This is required  "
+                SchoolFlag = 1
+            }
+            if (SchoolFlag == 0) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        function StartDate(element) {
+            var element = element;
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            var span = id + "Span";
+            var FlagStartDate = 0
+            var SpanTag = document.getElementById(span)
+            if ((value.trim()) != "") {
+                FlagStartDate = 0
+                SpanTag.innerHTML = " ";
+            }
+            else {
+                SpanTag.innerHTML = "this is required"
+                FlagStartDate = 1
+            }
+            if (FlagStartDate == 1) {
+                return false;
+            }
+            else {
+                return true;
+            }
+
+        }
+        function EndDate(element) {
+            
+            var element = element; //end Date 
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            var spanEnDateSpan = id + "Span"; //end date span
+            var Counter = id.split("EndDate")[1]
+            var StartDate = "StartDate" + Counter //start date id 
+            var StartDateTag = document.getElementById(StartDate) //start Date tag
+            var StartDateId = StartDateTag.id;
+            var SpanStartDateSpanTag = id + "Span"
+            var StartDateSpanTag = document.getElementById(SpanStartDateSpanTag)//startDate Span tag
+            var FlagEndDate = 0
+            var spanEnDateSpanTag = document.getElementById(spanEnDateSpan)
+            var StartDateValue = StartDateTag.value;
+            var EndDateValue = value
+            var EndateDateSpanTag = document.getElementById(spanEnDateSpan)
+            console.log(StartDateValue)
+            console.log(EndDateValue)
+            //convert into the date object 
+            var StartDatenew = new Date(StartDateValue);
+            var EndDatenew = new Date(EndDateValue)
+            if (EndDatenew != " ") {
+                FlagEndDate = 0
+                EndateDateSpanTag.innerHTML = ""
+                if (StartDatenew < EndDatenew) {
+                    FlagEndDate = 0
+                    EndateDateSpanTag.innerHTML = ""
+                }
+                else {
+                    EndateDateSpanTag.innerHTML = "need the start Date is less than the enddate"
+                    FlagEndDate = 1
+                }
+
+            }
+            else {
+                EndateDateSpanTag.innerHTML = "this is required"
+                FlagEndDate = 1
+            }
+            if (FlagEndDate == 1) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        function Percentage(element) {
+            debugger
+            var element = element;
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            var span = id + "Span";
+
+            var FlagPercentage = 0
+            var SpanTag = document.getElementById(span)
+            if ((value.trim()) != "") {
+                SpanTag.innerHTML = " "
+                FlagPercentage = 0
+                if (value >= 0) {
+                    SpanTag.innerHTML = " "
+                    FlagPercentage = 0
+                }
+                else {
+                    SpanTag.innerHTML = "Please add the greater than 0 values"
+                    FlagPercentage = 1
+                }
+            }
+            else {
+                SpanTag.innerHTML = "this is required"
+                FlagPercentage = 1
+            }
+            if (FlagPercentage == 1) {
+                return false
+            }
+            else {
+                return true
+            }
+
+        }
+
+        function Backlog(element) {
+            var element = element;
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            var span = id + "Span";
+            var BacklogFlag = 0;
+            var SpanTag = document.getElementById(span)
+            if ((value.trim()) != "") 
+            {
+                BacklogFlag = 0
+                SpanTag.innerHTML = ""
+                if (value >= 0) 
+                {
+                    BacklogFlag = 0
+                    SpanTag.innerHTML = ""
+                }
+                else
+                {
+                    SpanTag.innerHTML = "the value is not greateer than zero"
+                    BacklogFlag = 1
+                }
+            }
+            else {
+                SpanTag.innerHTML = "this is required"
+                BacklogFlag = 1
+            }
+            if(BacklogFlag ==1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        function validation(element) {
+            var element = element;
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            if (name == "Degree") {
+                var Degree1 = Degree(element);
+                return Degree1;
+            }
+            if (name == "School") {
+                var School1 = School(element);
+                return School1;
+
+            }
+            if (name == "StartDate") {
+                var StartDate1 = StartDate(element);
+                return StartDate1;
+            }
+            if (name == "EndDate") {
+                var EndDate1 = EndDate(element);
+                return EndDate1
+            }
+            if (name == "Percentage") {
+                var Percentage1 = Percentage(element);
+                return Percentage1
+            }
+            if (name == "Backlog") {
+                var Backlog1 = Backlog(element);
+                return Backlog1
+            }
+            
+        }
+
+        var counter1 = 0;
+        
+        $(document).ready(function () {
+            var Outside =$('#Outside').DataTable();
+            $('#ADDItem').on('click', function () {
+                var row = $('<tr>').attr('counter1', counter1)
+                row.append('<td><input type="text" name="Degree" id="Degree' + counter1 + '" class="Dynamic"><span id="Degree' + counter1 + 'Span"></span></td>')
+                row.append('<td><input type="text" name="School" id="School' + counter1 + '" class="Dynamic"><span id="School' + counter1 + 'Span"></span></td>')
+                row.append('<td><input type="month" name="StartDate" id="StartDate' + counter1 + '" class="Dynamic"><span id="StartDate' + counter1 + 'Span"></span></td>')
+                row.append('<td><input type="month" name="EndDate" id="EndDate' + counter1 + '" class="Dynamic"><span id="EndDate' + counter1 + 'Span"></span></td>')
+                row.append('<td><input type="text" name="Percentage" id="Percentage' + counter1 + '" class="Dynamic"><span id="Percentage' + counter1 + 'Span"></span></td>')
+                row.append('<td><input type="text" name="Backlog" id="Backlog' + counter1 + '" class="Dynamic"><span id="Backlog' + counter1 + 'Span"></span></td>')
+                row.append('<td><input type="button" name ="Delete" class="DeleteDynamic" value="Delete"></td>')
+                $('#insideTable').append(row)
+                counter1++;
+            })
+            $(document).on('click', '#save', function (e) {
+                var resultArray = [];
+                var checkpoint = 0
+                e.preventDefault();
+                var dynamic = document.querySelectorAll('.Dynamic');
+                for (var i = 0; i < dynamic.length; i++) {
+                    var result = validation(dynamic[i])
+                    resultArray.push(result)
+                }
+                for (var i = 0; i < dynamic.length; i++) {
+                    if (resultArray[i] == true) {
+                        checkpoint = 0;
+                    }
+                    else {
+                        checkpoint = 1;
+                        break;
+                    }
+                }
+                var rowData ={}
+                var FirstNameValidation = firstName();
+                if (checkpoint == 0 &&FirstNameValidation==true) 
+                {
+                    debugger
+                    var FirstName = $('#firstName').val();
+                    debugger
+                    var dynamic = document.querySelectorAll('.Dynamic')
+                    var DynamicArray =[]
+                    for(var i=0;i<dynamic.length;i=i+6)
+                    {
+                        var DynamicObject ={}
+                        for(var j=0;j<6;j++)
+                        {
+                            var element = dynamic[i+j];
+                            var name = element.name;
+                            var value = element.value;
+                            DynamicObject[name] = value
+                        }
+                        DynamicArray.push(DynamicObject)
+                    }
+                    rowData={
+                        FirstName:FirstName,
+                        DynamicArray:DynamicArray,
+                        counter:counter
+                    }
+                    userData.push(rowData);
+                    console.log(userData)
+                    counter++;
+                    counter1=0;
+                    tableForm()
+                }
+            })
+            function tableForm()
+            {
+                Outside.clear().draw();
+                $.each(userData,function(index,object)
+                {
+                    var row = Outside.row.add([index+1,object.FirstName,'<input type="button" name="Edit" value="Edit" class="Edit"><input type="button" name="Delete" class="Delete" value="Delete"><input type="button" name="show" value="show" class="show">']).draw().node();
+                    $(row).attr('counter',object.counter);
+                })
+            }
+        })
+    </script>
+</body>
+</html>

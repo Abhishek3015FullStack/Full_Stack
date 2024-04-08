@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.css" />
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
+    <style>
+        #popup {
+            position: absolute;
+            display: none;
+            opacity: 0;
+            z-index: -1;
+            background-color: aqua;
+        }
+
+        .dynamicSpan {
+            color: red;
+        }
+
+        .spanNEw {
+            color: red
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="container">
+            <input type="button" name="showPopup" id="showPopup" value="showPopup">
+            <div id="popup">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label>CategoryName</label>
+                            <input type="text" name="CategoryName" id="CategoryName" class="form-control">
+                            <span id="CategoryNameSpan" class="spanNEw"></span>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>CategoryDescription</label>
+                            <input type="text" name="CategoryDescription" id="CategoryDescription" class="form-control">
+                            <span id="CategoryDescriptionSpan" class="spanNEw"></span>
+                        </div>
+                        <div class="col-lg-3">
+                            <label>Active</label>
+                            <input type="checkbox" name="Active" id="Active" class="form-check-input"
+                                onclick="changeValuesActive()" value="yes">
+                        </div>
+                        <div class="col-lg-3">
+                            <label>LaunchDate</label>
+                            <input type="date" name="LaunchDate" id="LaunchDate" max class="form-control">
+                            <span id="LaunchDateSpan" class="spanNEw"></span>
+                        </div>
+                    </div>
+                    <input type="button" name="ADD" id="ADD" value="ADD">
+                    <table id="InsideTable">
+                        <thead>
+                            <tr>
+                                <th>ItemName</th>
+                                <th>itemDescription</th>
+                                <th>FoodType</th>
+                                <th>Price</th>
+                                <th>Discount</th>
+                                <th>GST</th>
+                                <th>Active</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div>
+                        <input type="button" name="save" id="save" value="save">
+                        <input type="button" name="update" id="update" value="update">
+                        <input type="button" name="close" id="close" value="close">
+                    </div>
+                </div>
+            </div>
+            <table id="OutsideTable">
+                <thead>
+                    <tr>
+                        <th>Show</th>
+                        <th>CategoryName</th>
+                        <th>CategoryDescription</th>
+                        <th>Active</th>
+                        <th>LaunchDate</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </form>
+    <script>
+        var userData = []
+        counter = 0
+        var OutsideTable = $('#OutsideTable').DataTable();
+        function changeValuesActive() {
+            var active = document.getElementById('Active')
+            var value = active.value;
+            if (value == "true") {
+                active.setAttribute("value", "false")
+            }
+            else {
+                active.setAttribute("value", "true")
+            }
+        }
+        function changesValue(element) {
+
+            var element = element;
+            var value = element.value;
+            if (value == "true") {
+                element.setAttribute("value", "false")
+            }
+            else {
+                element.setAttribute("value", "true")
+            }
+        }
+        function calculation(element) {
+            var element = element;
+            var row = $(element).closest('tr');
+            var td3 = parseInt(row.find('td').eq(3).find('input').val());
+            var td4 = parseInt(row.find('td').eq(4).find('input').val());
+            var td5 = parseInt(row.find('td').eq(5).find('input').val());
+            if (td3 >= 0 && td4 >= 0 && td5 >= 0) {
+                var td6 = td3 + td4 + td5;
+                row.find('td').eq(8).find('input').val(td6);
+            }
+        }
+        function CategoryName1() {
+            var CategoryNameSpan = document.getElementById('CategoryNameSpan')
+            var CategoryName = document.getElementById('CategoryName');
+            var CategoryNameFalg = 0
+            var regx = /^[a-zA-Z]{3,}/
+            if ((CategoryName.value.trim()) != "") {
+                CategoryNameFalg = 0
+                CategoryNameSpan.innerHTML = ""
+                if (regx.test(CategoryName.value)) {
+                    CategoryNameFalg = 0
+                    CategoryNameSpan.innerHTML = ""
+
+                }
+                else {
+                    CategoryNameFalg = 1
+                    CategoryNameSpan.innerHTML = "this not valid input"
+                }
+            }
+            else {
+                CategoryNameFalg = 1
+                CategoryNameSpan.innerHTML = "this field is required"
+            }
+            if (CategoryNameFalg == 1) {
+                return false
+            }
+            else {
+                return true
+            }
+
+        }
+        function CategoryDescription1() {
+            var CategoryDescription = document.getElementById('CategoryDescription')
+            var value = CategoryDescription.value;
+            var span = document.getElementById('CategoryDescriptionSpan')
+            var regx = /^[a-zA-Z]{3,}/
+            var FlagCategoryDescription = 0
+            if (value.trim() != "") {
+                FlagCategoryDescription = 0
+                span.innerHTML = ""
+                if (regx.test(value)) {
+                    FlagCategoryDescription = 0
+                    span.innerHTML = ""
+                }
+                else {
+                    FlagCategoryDescription = 1
+                    span.innerHTML = " this is not valid input"
+                }
+            }
+            else {
+                FlagCategoryDescription = 1
+                span.innerHTML = "this is required"
+            }
+            if (FlagCategoryDescription == 0) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+
+
+        function LaunchDate1() {
+            var LaunchDate = document.getElementById('LaunchDate')
+            var value = LaunchDate.value;
+            var span = document.getElementById('LaunchDateSpan')
+            var Date1 = new Date(value)
+            var Date1 = new Date()
+            var Datenew = Date1.getDate();
+            var date12 = new Date(Date1.getTime() - 7 * 60 * 60 * 24 * 1000)
+            console.log(date12)
+            var LaunchDateFlag = 0
+            if ((value.trim()) != "") {
+                LaunchDateFlag = 0
+                span.innerHTML = ""
+
+            }
+            else {
+                LaunchDateFlag = 1
+                span.innerHTML = "this is required"
+            }
+            if (LaunchDateFlag == 0) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        function itemName1(element) {
+            var element = element;
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            var spanId = id + "Span"
+            var SpanTag = document.getElementById(spanId);
+            var flagitemName1 = 0
+            if ((value.trim()) != "") {
+                flagitemName1 = 0
+                SpanTag.innerHTML = ""
+            }
+            else {
+                flagitemName1 = 1
+                SpanTag.innerHTML = "this fields is required"
+            }
+            if (flagitemName1 == 1) {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+
+        function itemDescription1(element) {
+            var element = element;
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            var spanId = id + "Span"
+            var SpanTag = document.getElementById(spanId);
+            var flagitemName1 = 0
+            if ((value.trim()) != "") {
+                flagitemName1 = 0
+                SpanTag.innerHTML = ""
+            }
+            else {
+                flagitemName1 = 1
+                SpanTag.innerHTML = "this fields is required"
+            }
+            if (flagitemName1 == 1) {
+                return false
+            }
+            else {
+                return true
+            }
+
+        }
+        function Price1(element) {
+            var element = element;
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            var spanId = id + "Span"
+            var SpanTag = document.getElementById(spanId);
+            var flagitemName1 = 0
+            if ((value.trim()) != "") {
+                flagitemName1 = 0
+                SpanTag.innerHTML = ""
+            }
+            else {
+                flagitemName1 = 1
+                SpanTag.innerHTML = "this fields is required"
+            }
+            if (flagitemName1 == 1) {
+                return false
+            }
+            else {
+                return true
+            }
+
+        }
+        function Discount1(element) {
+            var element = element;
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            var spanId = id + "Span"
+            var SpanTag = document.getElementById(spanId);
+            var flagitemName1 = 0
+            if ((value.trim()) != "") {
+                flagitemName1 = 0
+                SpanTag.innerHTML = ""
+            }
+            else {
+                flagitemName1 = 1
+                SpanTag.innerHTML = "this fields is required"
+            }
+            if (flagitemName1 == 1) {
+                return false
+            }
+            else {
+                return true
+            }
+
+        }
+        function GST1(element) {
+            var element = element;
+            var name = element.name;
+            var id = element.id;
+            var value = element.value;
+            var spanId = id + "Span"
+            var SpanTag = document.getElementById(spanId);
+            var flagitemName1 = 0
+            if ((value.trim()) != "") {
+                flagitemName1 = 0
+                SpanTag.innerHTML = ""
+            }
+            else {
+                flagitemName1 = 1
+                SpanTag.innerHTML = "this fields is required"
+            }
+            if (flagitemName1 == 1) {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        function validation(element) {
+            var name = element.name;
+            if (name == "itemName") {
+                var itemName = itemName1(element)
+                return itemName
+            }
+            if (name == "itemDescription") {
+                var itemDescription = itemDescription1(element)
+                return itemDescription
+            }
+            if (name == "select") {
+                return true
+            }
+            if (name == "Price") {
+                var price = Price1(element)
+                return price
+            }
+            if (name == "Discount") {
+                var Discount = Discount1(element)
+                return Discount
+
+            }
+            if (name == "GST") {
+                var Gst = GST1(element)
+                return Gst
+
+            }
+
+            if (name == "ActiveItems") {
+                return true
+            }
+            if (name == "totalsat") {
+                return true
+            }
+
+        }
+
+        var counter1 = 0
+        $(document).ready(function () {
+            $('#ADD').on('click', function () {
+                var row = $('<tr class="dynamicDelete">')
+                row.append('<td ><input type="text" name="itemName" id="itemName' + counter1 + '" class="dynamic dynamicDelete" onchange="calculation(this)"><br><span id="itemName' + counter1 + 'Span" ></span></td>')
+                row.append('<td ><input type="text" name="itemDescription" id="itemDescription' + counter1 + '" class="dynamic" onchange="calculation(this)"><br><span id="itemDescription' + counter1 + 'Span" ></span></td>')
+                row.append('<td ><select name="select" class="dynamic "><option name="DairyFood" value="DairyFood">DairyFood</option><option name="SeaFood" value="SeaFood">SeaFood</option><option name="Vegan" value="Vegan">Vegan</option><option name="Veg" value="Veg" selected>Veg</option><option name="Non" value="Non">Non</option></td>')
+                row.append('<td ><input type="number" name="Price" id="Price' + counter1 + '" class="dynamic" onchange="calculation(this)"><br><span id="Price' + counter1 + 'Span"></span></td>')
+                row.append('<td ><input type="number" name="Discount" id="Discount' + counter1 + '" class="dynamic "onchange="calculation(this)"><br><span id="Discount' + counter1 + 'Span"></span></td>')
+                row.append('<td ><input type="number" name="GST" id="GST' + counter1 + '" class="dynamic" onchange="calculation(this)"><br><span id="GST' + counter1 + 'Span" ></span></td>')
+                row.append('<td ><input type="checkbox" name="ActiveItems" id="ActiveItems' + counter1 + '" checked class="form-label-check dynamic" onclick ="changesValue(this)" value="true"><br><span id="ActiveItems' + counter1 + 'Span" ></span></td>')
+                row.append('<td><input type="button" name="Delete" class="DeleteInside" value="Delete"></td>')
+                row.append('<td><input type="text" name="totalsat" class="dynamic" hidden></td>')
+                $('#InsideTable').append(row)
+                counter1++;
+            })
+            $('#showPopup').on('click', function () {
+                $('#popup').css({ "display": "block", "opacity": "1", "z-index": "1" })
+                $('.dynamicDelete').remove();
+                $('#ADD').click();
+            })
+            $('#close').on('click', function () {
+                $('#popup').css({ "display": "none", "opacity": "0", "z-index": "-1" })
+                $('.dynamicDelete').remove();
+            })
+            $(document).on('click', '#save', function () {
+                var rowData = {}
+                var totalPrice = 0
+                var totalDiscount = 0
+                var totalGST = 0
+                var totalsat = 0
+                var resultset = []
+                var checkPoint = 0
+                var CategoryName = CategoryName1()
+                var CategoryDescription = CategoryDescription1();
+                var LaunchDate = LaunchDate1()
+                var dynamic = document.querySelectorAll('.dynamic')
+                for (var i = 0; i < dynamic.length; i++) {
+                    var a = validation(dynamic[i])
+                    resultset.push(a);
+                }
+                console.log(resultset);
+
+                for (var i = 0; i < resultset.length; i++) {
+
+                    if (resultset[i] == true) {
+                        checkPoint = 0
+
+                    }
+                    else {
+                        checkPoint = 1
+                        break;
+                    }
+                }
+
+                if (checkPoint == 0) {
+                    var CategoryName = $('#CategoryName').val()
+                    var CategoryDescription = $('#CategoryDescription').val()
+                    var Active = $('#Active').val()
+                    var LaunchDate = $('#LaunchDate').val()
+                    var dyanmic = document.querySelectorAll('.dynamic')
+                    console.log(dyanmic.length)
+                    var dynamicArray = [];
+                    for (var i = 0; i < dyanmic.length; i = i + 8) {
+                        var dynamicObject = {}
+                        for (var j = 0; j < 8; j++) {
+                            var element = dyanmic[i + j];
+                            var name = element.name;
+                            var value = element.value;
+                            dynamicObject[name] = value
+                            if (name == "Price") {
+                                totalPrice += parseInt(value)
+                            }
+                            if (name == "Discount") {
+                                totalDiscount += parseInt(value)
+                            }
+                            if (name == "GST") {
+                                totalGST += parseInt(value);
+                            }
+                            if (name == "totalsat") {
+                                totalsat += parseInt(value)
+                            }
+                        }
+                        dynamicArray.push(dynamicObject)
+                    }
+                    rowData = {
+                        CategoryName: CategoryName,
+                        CategoryDescription: CategoryDescription,
+                        Active: Active,
+                        LaunchDate: LaunchDate,
+                        dynamicArray: dynamicArray,
+                        Deleted: false,
+                        counter: counter,
+                        totalPrice: totalPrice,
+                        totalDiscount: totalDiscount,
+                        totalGST: totalGST,
+                        totalsat: totalsat
+                    }
+                    userData.push(rowData)
+                    console.log(userData)
+                    counter++;
+                    tableForm()
+                    counter1 = 0;
+                }
+            })
+            function tableForm() {
+                OutsideTable.clear().draw();
+                $.each(userData, function (index, object) {
+                    debugger
+                    if (object.Deleted == false) {
+                        debugger
+                        var row = OutsideTable.row.add(['<input type="button" name="show" value="show" class="show">', object.CategoryName, object.CategoryDescription, object.Active, object.LaunchDate, '<input type="button" name="edit" value="edit" class="edit"><input type="button" name="delete" value="delete" class="deleteData">']).draw().node();
+                        $(row).attr('counter', object.counter)
+                    }
+                })
+            }
+            $(document).on('click', '.show', function () {
+                debugger
+                var rowClick = $(this).closest('tr').attr('counter');
+                var row = $(this).closest('tr')
+                var rowFind = userData.findIndex(function (element) {
+                    return element.counter == rowClick
+                })
+                var a = userData[rowFind].dynamicArray
+                var table = $(`<table>
+                                        <thead>
+                                            <tr>
+                                                <th>Number</th>
+                                                <th>price</th>
+                                                <th>GST</th>
+                                                <th>Discount</th>
+                                                <th>Totalsat</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                                <tr>
+                                                    <th>Total</th>
+                                                    <th>${userData[rowFind].totalPrice}</th>
+                                                    <th>${userData[rowFind].totalDiscount}</th>
+                                                    <th>${userData[rowFind].totalGST}</th>
+                                                    <th>${userData[rowFind].totalsat}</th>
+                                                </tr>
+                                        </tfoot>
+                                </table>
+                                `).attr("id", "mytable")
+                row.after(table)
+                var datatable = table.DataTable({
+                    paging: false,
+                    searching: false,
+                    info: false
+                })
+
+                $.each(a, function (index, object) {
+                    var row = datatable.row.add([index + 1, object.Price, object.Discount, object.GST, object.totalsat]).draw().node();
+                    $(row).attr('counter1', index)
+                })
+            })
+            $(document).on('click', '.edit', function () {
+                debugger
+                var rowClick = $(this).closest('tr').attr('counter')
+                var FindeIndex = userData.findIndex(function (element) {
+                    return element.counter == rowClick
+                })
+                var a = userData[FindeIndex].dynamicArray
+                $('#showPopup').click();
+
+                for (var i = 0; i < a.length - 1; i++) {
+                    $('#ADD').click();
+                }
+
+                $('#CategoryName').val(userData[FindeIndex].CategoryName)
+                $('#CategoryDescription').val(userData[FindeIndex].CategoryDescription)
+                var b = userData[FindeIndex].Active
+                var element = document.getElementById('Active')
+                if (b == "true") {
+                    element.checked = true
+                }
+                else {
+                    element.checked = false;
+                }
+                $('#LaunchDate').val(userData[FindeIndex].LaunchDate)
+                var dynamicAll = document.querySelectorAll('.dynamic')
+                dynamicAll.forEach(function (element, index) {
+                    var element = element;
+                    var name = element.name;
+                    var value = a[Math.floor(index / 8)][name]
+                    element.value = value
+
+                    if (name == "ActiveItems" && value == "true") {
+                        debugger
+                        element.checked = true
+                    }
+                    else {
+                        element.checked = false
+                    }
+                })
+                $(document).on('click', '#update', function () {
+                    var Deleted = userData[FindeIndex].Deleted
+                    var counter1 = userData[FindeIndex].counter;
+
+
+                    var rowData = {}
+                    var totalPrice = 0
+                    var totalDiscount = 0
+                    var totalGST = 0
+                    var totalsat = 0
+                    var resultset = []
+                    var checkPoint = 0
+                    var CategoryName = CategoryName1()
+                    var CategoryDescription = CategoryDescription1();
+                    var LaunchDate = LaunchDate1()
+                    var dynamic = document.querySelectorAll('.dynamic')
+                    for (var i = 0; i < dynamic.length; i++) {
+                        var a = validation(dynamic[i])
+                        resultset.push(a);
+                    }
+                    console.log(resultset);
+
+                    for (var i = 0; i < resultset.length; i++) {
+
+                        if (resultset[i] == true) {
+                            checkPoint = 0
+
+                        }
+                        else {
+                            checkPoint = 1
+                            break;
+                        }
+                    }
+
+                    if (checkPoint == 0) {
+                        var CategoryName = $('#CategoryName').val()
+                        var CategoryDescription = $('#CategoryDescription').val()
+                        var Active = $('#Active').val()
+                        var LaunchDate = $('#LaunchDate').val()
+                        var dyanmic = document.querySelectorAll('.dynamic')
+                        console.log(dyanmic.length)
+                        var dynamicArray = [];
+                        for (var i = 0; i < dyanmic.length; i = i + 8) {
+                            var dynamicObject = {}
+                            for (var j = 0; j < 8; j++) {
+                                var element = dyanmic[i + j];
+                                var name = element.name;
+                                var value = element.value;
+                                dynamicObject[name] = value
+                                if (name == "Price") {
+                                    totalPrice += parseInt(value)
+                                }
+                                if (name == "Discount") {
+                                    totalDiscount += parseInt(value)
+                                }
+                                if (name == "GST") {
+                                    totalGST += parseInt(value);
+                                }
+                                if (name == "totalsat") {
+                                    totalsat += parseInt(value)
+                                }
+                            }
+                            dynamicArray.push(dynamicObject)
+                        }
+                        rowData = {
+                            CategoryName: CategoryName,
+                            CategoryDescription: CategoryDescription,
+                            Active: Active,
+                            LaunchDate: LaunchDate,
+                            dynamicArray: dynamicArray,
+                            Deleted: Deleted,
+                            counter: counter1,
+                            totalPrice: totalPrice,
+                            totalDiscount: totalDiscount,
+                            totalGST: totalGST,
+                            totalsat: totalsat
+                        }
+
+                        console.log(userData)
+                        userData[FindeIndex] = rowData
+                        tableForm()
+                        counter1 = 0;
+                    }
+
+                })
+            })
+            $(document).on('click', '.DeleteInside', function () {
+                var rowClick = $(this).closest('tr').remove()
+            })
+            $(document).on('click', '.deleteData', function () {
+                var rowClick = $(this).closest('tr').attr('counter');
+                var FindIndex = userData.findIndex(function (element) {
+                    return element.counter == rowClick
+                })
+                var a  = userData[FindIndex].Deleted = true;
+                tableForm()
+                
+            })
+
+
+        })
+    </script>
+
+</body>
+</html>

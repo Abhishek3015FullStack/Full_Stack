@@ -14,16 +14,65 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.css" />
     <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
     <style>
-        .spanClass
-        {
-            font-size: smaller;
-            color: red;
-        }
+
     </style>
 </head>
-
 <body>
-    
+    <form id="myfrom">
+        <input type="text" name="FirstName" id="FirstName">
+        <input type="button" name="save" id="save" value="save">
+        <table id="Outside">
+            <thead>
+                <tr>
+                    <th>FirstName</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    </form>
+    <script>
+        var userData = []
+        var counter = 0;
+        var Outside = $('#Outside').DataTable();
+        $(document).ready(function () {
+            $('#save').on('click', function () {
+                var rowData = []
+                var FirstName = $('#FirstName').val();
+                rowData = {
+                    FirstName: FirstName,
+                    counter: counter
+                }
+                userData.push(rowData);
+                counter++;
+                TableForm()
+            })
+            function TableForm() {
+                Outside.clear().draw();
+                $.each(userData, function (index, object) {
+                    var row = Outside.row.add([object.FirstName, '<input type="button" name="Copy" value="Copy" class="Copy">']).draw().node();
+                    $(row).attr('counter', object.counter);
+                })
+            }
+            $(document).on('click', '.Copy', function () 
+            {
+                var rowClick = $(this).closest('tr').attr('counter');
+                var FindIndex = userData.findIndex(function(element)
+                {
+                    return element.counter == rowClick
+                }) 
+                var a = userData[FindIndex];
+                var FindThelength = userData.length;
+                var FirstName = userData[FindIndex].FirstName;
+                var rowData ={
+                    counter:FindThelength,
+                    FirstName:FirstName
+                }
+                userData.push(rowData)
+                TableForm();
+                counter++;
+            })
+        })
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.css" />
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
+    <style>
+        #popup {
+            z-index: -1;
+            opacity: 0;
+            display: none;
+            position: absolute;
+            background-color: aqua;
+            /* left: 20%; */
+            width: 100%;
+            height: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myform">
+        <input type="button" id="Show" name="Show" value="Show">
+        <div id="popup">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label>Firstname</label>
+                        <input type="text" name="Firstname" id="Firstname" class="form-control">
+                        <span id="FirstnameSpan"></span>
+                    </div>
+                    <div class="col-lg-4">
+                        <label>LastName</label>
+                        <input type="text" name="LastName" id="LastName" class="form-control">
+                        <span id="LastNameSpan"></span>
+                    </div>
+                    <div class="col-lg-4">
+                        <label>DateOFbirth</label>
+                        <input type="date" name="DateOFbirth" id="DateOFbirth" class="form-control" max=""
+                            onclick="SettingMax()">
+                        <span id="DateOFbirthSpan"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label>Address</label>
+                        <input type="text" name="Address" id="Address" class="form-control">
+                        <span id="AddressSpan"></span>
+                    </div>
+                    <div class="col-lg-4">
+                        <label>Information</label>
+                        <input type="checkbox" name="Information" id="Information" value="true"
+                            onclick="InformationChange()" checked>
+                    </div>
+                    <div class="col-lg-4">
+                        <label>Medical</label>
+                        <input type="text" name="Medical" id="Medical" class="form-control">
+                        <span id="MedicalSpan"></span>
+                    </div>
+                </div>
+                <div>
+                    <input type="button" name="Add" id="Add" value="Add">
+                </div>
+                <table id="Inside">
+                    <thead>
+                        <tr>
+                            <th>Degree</th>
+                            <th>School</th>
+                            <th>StartDate</th>
+                            <th>EndDate</th>
+                            <th>Percentage</th>
+                            <th>Backlog</th>
+                            <th>Active</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                </table>
+                <input type="submit" name="save" id="save" value="save">
+                <input type="button" name="update" id="update" value="update">
+                <input type="button" name="close" id="close" value="close">
+            </div>
+        </div>
+        <table id="Outside">
+            <thead>
+                <tr>
+                    <td>Firstname</td>
+                    <td>LastName</td>
+                    <td>DateOFbirth</td>
+                    <td>Address</td>
+                    <td>Information</td>
+                    <td>Medical</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+        </table>
+
+    </form>
+
+    <script>
+        var restrictionForDeleteItem = 0
+        var counter1 = 0
+        var counterForDegree = 0
+        var userData = []
+        var counter = 0
+        var Outside = $('#Outside').DataTable();
+        function SettingMax() {
+            debugger
+            var Date1 = new Date();
+            var Date2 = Date1.getDate();
+            var month = Date1.getMonth()
+            var year = Date1.getFullYear();
+            var value = year + '-' + '0' + month + '-' + '0' + Date2
+            var max = document.getElementById('DateOFbirth')
+            max.setAttribute("max", value)
+        }
+        function InformationChange() {
+            var Information = document.getElementById('Information').value;
+            var InformationElement = document.getElementById('Information')
+            if (Information == "true") {
+                InformationElement.setAttribute("value", "false")
+            }
+            else {
+                InformationElement.setAttribute("value", "true")
+            }
+        }
+        function ChangeValues2(element) {
+            var elementValue = element.value;
+            var element = element
+            if (elementValue == "true") {
+                element.setAttribute("value", "false")
+            }
+            else {
+                element.setAttribute("value", "true")
+            }
+
+        }
+        function addition(element) {
+            var row = $(element).closest('tr');
+            var Zero = 0;
+            var td7 = row.find('td').eq(8).find('input').val(Zero);
+            var td1 = parseInt(row.find('td').eq(0).find('input').val());
+            var td2 = parseInt(row.find('td').eq(1).find('input').val());
+            var td3 = parseInt(row.find('td').eq(2).find('input').val());
+            var td4 = parseInt(row.find('td').eq(3).find('input').val());
+            var td5 = parseInt(row.find('td').eq(4).find('input').val());
+            var td6 = parseInt(row.find('td').eq(5).find('input').val());
+            if (td1 >= 0 && td2 >= 0 && td3 >= 0 && td3 >= 0 && td4 >= 0 && td5 >= 0 && td6 >= 0) {
+                var total = td1 + td2 + td3 + td4 + td5 + td6
+                var td7 = row.find('td').eq(8).find('input').val(total);
+            }
+        }
+
+        $(document).ready(function () {
+            $('#Show').on('click', function () {
+                $('#popup').css({ "z-index": "1", "opacity": "1", "display": "block" })
+                $('#Add').click();
+            })
+            $('#close').on('click', function () {
+                $('#popup').css({ "z-index": "-1", "opacity": "0", "display": "none" })
+                $('.dynamic').remove();
+                $('.delete').remove();
+                $('.dynamic1').remove();
+            })
+            function DegreeValidation(element) {
+                debugger
+                var FlagDegree = 0
+                var element = element;
+                var id = element.id;
+                var value = element.value;
+                var SpanId = id + "Span"
+                var regx = /^[0-9]{1,}/
+                var SpanTag = document.getElementById(SpanId)
+                if ((value.trim()) != "") {
+                    SpanTag.innerHTML = " "
+                    FlagDegree = 0
+                    if (value.length > 3) {
+                        SpanTag.innerHTML = " "
+                        FlagDegree = 0
+                        if (regx.test(value)) {
+                            SpanTag.innerHTML = " "
+                            FlagDegree = 0
+                        }
+                        else {
+                            SpanTag.innerHTML = "Not a valid input"
+                            FlagDegree = 1
+                        }
+
+                    }
+                    else {
+                        SpanTag.innerHTML = "Less than 3"
+                        FlagDegree = 1
+                    }
+                }
+                else {
+                    SpanTag.innerHTML = "This is required"
+                    FlagDegree = 1
+                }
+                if (FlagDegree == 1) {
+                    return false
+                }
+                else {
+                    return true
+                }
+
+            }
+            function SchoolValidation(element) {
+                debugger
+                var flagSchool = 0
+                var element = element;
+                var name = element.name;
+                var id = element.id;
+                var value = element.value;
+                var spanId = id + "Span"
+                var SpanTag = document.getElementById(spanId)
+
+                var regx = /^[0-9]{1,}/
+                if ((value.trim()) != "") {
+                    SpanTag.innerHTML = " "
+                    flagSchool = 0
+                    if (value.length > 3) {
+                        SpanTag.innerHTML = " "
+                        flagSchool = 0
+                        if (regx.test(value)) {
+                            SpanTag.innerHTML = " "
+                            flagSchool = 0
+
+                        }
+                        else {
+                            SpanTag.innerHTML = "not valid input "
+                            flagSchool = 1
+                        }
+                    }
+                    else {
+                        SpanTag.innerHTML = "less than 3"
+                        flagSchool = 1
+                    }
+                }
+                else {
+                    SpanTag.innerHTML = " this is required"
+                    flagSchool = 1
+                }
+                if (flagSchool == 1) {
+                    return false
+                }
+                else {
+                    return true
+                }
+            }
+            function validation(element) {
+                var element = element;
+                var name = element.name;
+                if (name == "Degree") {
+                    debugger
+                    var Degree1 = DegreeValidation(element)
+                    return Degree1
+                }
+                if (name == "School") {
+                    var School1 = SchoolValidation(element)
+                    return School1
+                }
+                if (name == "StartDate") {
+                    var StartDate1 = true
+                    return StartDate1
+                }
+                if (name == "EndDate") {
+                    var Enddate1 = true
+                    return Enddate1
+                }
+                if (name == "Percentage") {
+                    var Percentage1 = true
+                    return Percentage1;
+                }
+                if (name == "Backlog") {
+                    var Backlog = true
+                    return Backlog
+                }
+                if (name == "totalRow") {
+                    return true;
+                }
+            }
+            $(document).on('click', '#save', function (e) {
+                var totalDegree = 0;
+                var totalSchool = 0
+                var totalStartDate = 0
+                var totalEndDate = 0
+                var totalPercentage = 0
+                var totalBacklog = 0
+                var b = []
+                var checkpoint;
+                var totalRow = 0
+                e.preventDefault();
+                //upward statrting validation
+                var dyanmicValid = document.querySelectorAll('.dynamic')
+                for (var i = 0; i < dyanmicValid.length; i++) {
+                    var a = validation(dyanmicValid[i])
+                    b.push(a)
+                }
+                debugger
+                for (var i = 0; i < b.length; b++) {
+                    if (b[i] == true) {
+                        checkpoint = 0
+                        debugger
+                    }
+                    else {
+                        checkpoint = 1
+                        break;
+                    }
+                }
+                var rowData = {}
+
+                if (checkpoint == 0) {
+                    debugger
+                    var Firstname = $('#Firstname').val();
+                    var LastName = $('#LastName').val();
+                    var DateOFbirth = $('#DateOFbirth').val();
+                    var Address = $('#Address').val();
+                    var Information = $('#Information').val();
+                    debugger
+                    var InformationChangeValue;
+                    if (Information == "true") {
+                        InformationChangeValue = "yes"
+                    }
+                    else {
+                        InformationChangeValue = "no"
+                    }
+                    var Medical = $('#Medical').val();
+                    var Dyanamic = document.querySelectorAll('.dynamic')
+                    var DynamicArray = []
+                    for (var i = 0; i < Dyanamic.length; i = i + 8) {
+                        var dynamicObject = {}
+                        for (var j = 0; j < 8; j++) {
+                            debugger
+                            var element = Dyanamic[i + j];
+                            var name = element.name;
+                            var value = element.value;
+                            dynamicObject[name] = value;
+                            if (name == "Degree") {
+                                totalDegree += parseInt(value)
+                            }
+                            if (name == "School") {
+                                totalSchool += parseInt(value)
+                            }
+                            if (name == "StartDate") {
+                                totalStartDate += parseInt(value)
+                            }
+                            if (name == "EndDate") {
+                                totalEndDate += parseInt(value)
+                            }
+                            if (name == "Percentage") {
+                                totalPercentage += parseInt(value)
+                            }
+                            if (name == "Backlog") {
+                                totalBacklog += parseInt(value)
+                            }
+                            if (name == "totalRow") {
+                                totalRow += parseInt(value)
+                            }
+                        }
+                        DynamicArray.push(dynamicObject)
+
+                    }
+                    rowData = {
+                        Firstname: Firstname,
+                        LastName: LastName,
+                        DateOFbirth: DateOFbirth,
+                        Address: Address,
+                        Information: Information,
+                        InformationChangeValue: InformationChangeValue,
+                        Medical: Medical,
+                        DynamicArray: DynamicArray,
+                        counter: counter,
+                        deleted: false,
+                        totalDegree: totalDegree,
+                        totalSchool: totalSchool,
+                        totalStartDate: totalStartDate,
+                        totalEndDate: totalEndDate,
+                        totalPercentage: totalPercentage,
+                        totalBacklog: totalBacklog,
+                        totalRow: totalRow
+                    }
+
+                    counter1 = 0;
+                    counterForDegree = 0;
+                    userData.push(rowData);
+                    counter++;
+                    console.log(userData)
+                    tableForm()
+                }
+            })
+            $(document).on('click', '#Add', function () {
+
+                var row = $('<tr>')
+                row.append('<td><input type="text" name="Degree" id="Degree' + counter1 + '" class="dynamic" onchange="addition(this)"><span id="Degree' + counter1 + 'Span" class="dynamic1"></span></td>')
+                row.append('<td><input type="text" name="School" id="School' + counter1 + '" class="dynamic" onchange="addition(this)"><span id="School' + counter1 + 'Span" class="dynamic1"></span></td>')
+                row.append('<td><input type="text" name="StartDate" id="StartDate' + counter1 + '" class="dynamic" onchange="addition(this)"><span id="StartDate' + counter1 + 'Span" class="dynamic1"></span></td>')
+                row.append('<td><input type="text" name="EndDate" id="EndDate' + counter1 + '" class="dynamic" onchange="addition(this)"><span id="EndDate' + counter1 + 'Span" class="dynamic1"></span></td>')
+                row.append('<td><input type="text" name="Percentage" id="Percentage' + counter1 + '" class="dynamic" onchange="addition(this)"><span id="Percentage' + counter1 + 'Span" class="dynamic1"></span></td>')
+                row.append('<td><input type="number" name="Backlog" id="Backlog' + counter1 + '"class="dynamic" onchange="addition(this)" min="0" max="100"><span id="Backlog' + counter1 + 'Span" class="dynamic1" ></span></td>')
+                row.append('<td><input type="checkbox" name="ActiveChecking" value="true" onclick="ChangeValues2(this)" checked class="dynamic">')
+
+                if (counterForDegree >= 1) {
+                    row.append('<td><input type="button" name="delete" class="delete" value="delete" ></td>')
+                }
+                else {
+                    row.append('<td><input type="button" name="" hidden></td>')
+                }
+                row.append('<td><input type="text" name="totalRow" id="' + counter1 + '" class="dynamic" hidden></td>')
+                counter1++;
+                counterForDegree++;
+                $('#Inside').append(row)
+
+            })
+            function tableForm() {
+                Outside.clear().draw();
+                $.each(userData, function (index, object) {
+                    var row = Outside.row.add([object.Firstname, object.LastName, object.DateOFbirth, object.Address, object.InformationChangeValue, object.Medical, '<input type="button" value="showButton" class="showButton"><input type="button" class="edit" name="edit" value="edit">']).draw().node();
+                    $(row).attr('counter', object.counter);
+                })
+            }
+            $(document).on('click', '.showButton', function () {
+                debugger
+                var rowClick = $(this).closest('tr').attr('counter');
+
+                var row = $(this).closest('tr')
+                var FindIndex = userData.findIndex(function (element) {
+                    return element.counter == rowClick
+                })
+                var a = userData[FindIndex].DynamicArray;
+                debugger
+                var table = $('<table><thead><tr><th>Number</th><th>Degree</th><th>School</th><th>StartDate</th><th>EndDate</th><th>Percentage</th><th>Backlog</th><th>Total</th></tr></thead><tfoot><tr><th>Total</th><th>' + userData[FindIndex].totalDegree + '</th><th>' + userData[FindIndex].totalSchool + '</th><th>' + userData[FindIndex].totalStartDate + '</th><th>' + userData[FindIndex].totalEndDate + '</th><th>' + userData[FindIndex].totalPercentage + '</th><th>' + userData[FindIndex].totalBacklog + '</th><th>' + userData[FindIndex].totalRow + '</th></tr></tfoot></table>')
+                row.after(table)
+                var dataTable = table.DataTable(
+                    {
+                        paging: false,
+                        searching: false,
+                        info: false,
+                        footer: true
+                    })
+
+                $.each(a, function (index, object) {
+                    var row = dataTable.row.add([index + 1, object.Degree, object.School, object.StartDate, object.EndDate, object.Percentage, object.Backlog, object.totalRow]).draw().node();
+                    $(row).attr('Ab',index+1)
+                })
+            })
+            $(document).on('click', '.edit', function () {
+                var rowClick = $(this).closest('tr').attr('counter');
+                var FindIndex = userData.findIndex(function (element) {
+                    return element.counter == rowClick
+                })
+                var a = userData[FindIndex]
+                $('#Show').click();
+                var b = userData[FindIndex].DynamicArray;
+
+                for (var i = 0; i < b.length - 1; i++) {
+                    $('#Add').click();
+                }
+                $('#Firstname').val(userData[FindIndex].Firstname);
+                $('#LastName').val(userData[FindIndex].LastName)
+                $('#DateOFbirth').val(userData[FindIndex].Address)
+                // $('#Information').val(userData[FindIndex].Information)
+                var InformationChangeValue = userData[FindIndex].InformationChangeValue;
+                debugger
+                var c = document.getElementById('Information')
+                if (InformationChangeValue == "yes") {
+                    c.checked = true
+                }
+                else {
+                    c.checked = false
+                }
+                var Dynamic = document.querySelectorAll('.dynamic')
+                Dynamic.forEach(function (element, index) {
+                    debugger
+                    var element = element;
+                    var name = element.name;
+                    var value = b[Math.floor(index / 8)][name]
+                    element.value = value
+                    if (name == "ActiveChecking" && value == "true") {
+                        element.checked = true;
+                    }
+                    if (name == "ActiveChecking" && value == "false") {
+                        element.checked = false;
+                    }
+
+                })
+            })
+        })
+    </script>
+</body>
+</html>

@@ -13,65 +13,212 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .error {
-            color: red;
-            font-size: smaller;
-        }
+
     </style>
 </head>
 
 <body>
-    <form class="commentForm" method="get" action="">
-        <div id="inputs">
-            <p>
-                <input class="comment form-control" name="name0" placeholder="Enter Name" />
-            </p>
-        </div>
-        <input class="submit btn btn-primary" type="submit" value="Submit" />
-        <input type="button" value="Add Field" id="addInput" />
+    <form id="MYFORM">
+        <input type="text" name="FirstName" id="FirstName">
+        <input type="button" name="addButton" value="addButton" id="addButton">
+        <table id="OutSideTable">
+            <thead>
+                <tr>
+                    <th>Degree</th>
+                    <th>School</th>
+                    <th>StartTime</th>
+                    <th>EndTime</th>
+                    <th>Percentage</th>
+                    <th>Backlog</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
     </form>
-
+    <input type="button" name="submit" id="submit" value="submit">
     <script>
-        $(document).ready(function() {
-            var numberIncr = 1; // used to increment the name for the inputs
-
-            function addInput() {
-                $('#inputs').append('<p><input class="comment form-control" name="name' + numberIncr + '" placeholder="Enter Name" /></p>');
-                numberIncr++;
+        var flag1 = 0;
+        var flag2 = 0
+        var flag3 = 0
+        var flag4 = 0
+        var flag5 = 0
+        function getCurrentYearMonth() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1; // Months are 0-indexed, so we add 1
+            var date = date.getDate();
+            console.log(year + "year")
+            console.log(month + "month")
+            return year + '-' + '0' + month;
+        }
+        function Degree(element) {
+            debugger
+            var name = element.name;
+            var value = element.value;
+            var id = element.id
+            var span = id + "Span";
+            var SpanTag = document.getElementById(span);
+            var regx = /^[a-zA-Z]{3,}/
+            if (value != "") {
+                flag1 = 0;
+                SpanTag.innerHTML = ""
+                if (value.length > 3) {
+                    flag1 = 0;
+                    SpanTag.innerHTML = ""
+                    if (regx.test(value)) {
+                        SpanTag.innerHTML = "";
+                        flag1 = 0;
+                    }
+                    else {
+                        SpanTag.innerHTML = "please enterd valid input"
+                        flag1 = 1;
+                    }
+                }
+                else {
+                    SpanTag.innerHTML = "Value is less than 3"
+                    flag1 = 1;
+                }
+            }
+            else {
+                SpanTag.innerHTML = "this is  required"
+                flag1 = 1;
+            }
+            if (flag1 == 1) {
+                return false;
+            }
+            else {
+                return true
+            }
+        }
+        function School(element) {
+            var name = element.name;
+            var value = element.value;
+            var id = element.id
+            var span = id + "Span";
+            var SpanTag = document.getElementById(span);
+            var regx = /^[a-zA-Z]{3,}/
+            if (value != "") {
+                flag2 = 0;
+                SpanTag.innerHTML = ""
+                if (value.length > 3) {
+                    flag2 = 0;
+                    SpanTag.innerHTML = ""
+                    if (regx.test(value)) {
+                        SpanTag.innerHTML = "";
+                        flag2 = 0;
+                    }
+                    else {
+                        SpanTag.innerHTML = "please enterd valid input"
+                        flag2 = 1;
+                    }
+                }
+                else {
+                    SpanTag.innerHTML = "Value is less than 3"
+                    flag2 = 1;
+                }
+            }
+            else {
+                SpanTag.innerHTML = "this is  required"
+                flag2 = 1;
+            }
+            if (flag2 == 1) {
+                return false;
+            }
+            else {
+                return true
             }
 
-            $('form.commentForm').on('submit', function(event) {
-                // Clear previous validation messages
-                $('.error').remove();
+        }
+        function StartDate(element)
+        {
+            return true
+        }
+        function EndDate(element)
+        {
+            return true
+        }
+        function BackLog(element)
+        {
+            return true
+        }
+        
+        function validity(element) {
 
-                // Add new validation rules
-                $('input.comment').each(function() {
-                    $(this).rules("add", {
-                        required: true,
-                        minlength: 3,
-                        pattern: /^[a-zA-Z]+$/,
-                        messages: {
-                            required: "This field is required",
-                            minlength: jQuery.validator.format("Please enter at least {0} characters"),
-                            pattern: "Please enter only alphabetic characters"
-                        }
-                    });
-                });
+            var name = element.name;
+            var value = element.value;
+            var id = element.id
+            var span = id + "Span";
+            var SpanTag = document.getElementById(span);
 
-                // Test if form is valid 
-                if ($('form.commentForm').valid()) {
-                    console.log("Form validates");
-                } else {
-                    console.log("Form does not validate");
-                    return false; // Prevent form submission
+            if (name == "Degree") {
+               var Degree1 =  Degree(element)
+               return Degree1
+            }
+            if (name == "School") {
+               var School1 = School(element)
+               return School1
+            }
+            if (name == "StartDate") {
+                var StartDate1 =StartDate(element)
+                return StartDate1
+            }
+            if (name == "Percentage") {
+                var EndDate1 = EndDate(element)
+                return EndDate1
+            }
+            if (name == "BackLog") {
+                var BackLog1= BackLog(element)
+                return BackLog1
+            }
+            if (name == "EndDate") {
+                var EndDate1 = EndDate(element)
+                return EndDate1
+            }
+           
+        }
+        var counter = 0
+        var dynamic = 0
+
+        $(document).ready(function () {
+            $('#addButton').on('click', function () {
+                var row = $('<tr>');
+                row.append('<td><input type="text" name="Degree" id="Degree' + counter + '" class="dynamic" ><span id="Degree' + counter + 'Span"></span></td>')
+                row.append('<td><input type="text" name="School" id="School' + counter + '" class="dynamic"><span id="School' + counter + 'Span"></span></td>')
+                row.append('<td><input type="month" name="StartDate" id="StartDate' + counter + '" class="dynamic" max="' + getCurrentYearMonth() + '"><span id="StartDate' + counter + 'Span"></span></td>')
+                row.append('<td><input type="month" name="EndDate" id="EndDate' + counter + '" class="dynamic"><span id="EndDate' + counter + 'Span"></span></td>')
+                row.append('<td><input type="text" name="Percentage" id="Percentage' + counter + '" class="dynamic"><span id="Percentage' + counter + 'Span"></span></td>')
+                row.append('<td><input type="text" name="BackLog" id="BackLog' + counter + '" class="dynamic"><span id="BackLog' + counter + 'Span"></span></td>')
+                row.append('<td><input type="button" name="Delete" value="Delete" ></td>');
+                counter++;
+                $('#OutSideTable').append(row)
+            })
+            $(document).on('click', '#submit', function (e) {
+                var needToCheck = 0
+                e.preventDefault();
+                var a = []
+                var Dynamic = document.querySelectorAll('.dynamic')
+                for (var i = 0; i < Dynamic.length; i++) {
+                    debugger
+                    dynamic = validity(Dynamic[i]);
+                    a.push(dynamic)
                 }
-            });
 
-            // Set handler for Add Field button click
-            $("#addInput").on('click', addInput);
-
-        });
-
+                console.log(a)
+                for (var i = 0; i < Dynamic.length; i++) {
+                    debugger
+                    if (a[i] == true) {
+                        needToCheck = 0
+                    }
+                    else {
+                        needToCheck = 1
+                        break;
+                    }
+                }
+                if (needToCheck == 0) {
+                    alert();
+                }
+            })
+        })
     </script>
 </body>
 

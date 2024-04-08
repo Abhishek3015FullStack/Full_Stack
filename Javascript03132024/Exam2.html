@@ -134,7 +134,7 @@
             var td4 = parseInt(row.find('td').eq(3).find('input').val());
             var td5 = parseInt(row.find('td').eq(4).find('input').val());
             var td6 = parseInt(row.find('td').eq(5).find('input').val());
-            if(td1>0&&td2>0&&td3>0&&td4>0&&td5>0&&td6>0)
+            if(td1>=0&&td2>=0&&td3>=0&&td4>=0&&td5>=0&&td6>=0)
             {
                 td7 = td1 + td2 + td3 + td4 + td5 + td6 + td7
                 row.find('td').eq(7).find('input').val(td7)
@@ -179,7 +179,7 @@
             row.append('<td><input type="number" class="backLog dynamic" name="BackLog" id="BackLogField' + counter + '" onblur = abhishek(this)><br><span class="backLog-error error-message " id="BackLogField' + counter + 'Span"></span></td>');
             counter++;
             row.append('<td><input type="button" value="Delete" class="Delete"></td>');
-            row.append('<td><input type="text" class="dynamic" name ="TotalCalCulation"></td>')
+            row.append('<td><input type="text" class="new" name ="TotalCalCulation"></td>')
             $('#MyTable').append(row);
         });
         $('#showPopup').on('click', function () {
@@ -304,7 +304,54 @@
         })
         $(document).on('click','.Delete',function()
         {
+            debugger
             var RowClick = $(this).closest('tr').remove();
+            var DegreeCount = 0;
+            var SchoolCount = 0;
+            var StartDateCount =0;
+            var EndDateCount = 0;
+            var PercentageCount = 0;
+            var BackLogCount= 0;
+            var dynamic =document.querySelectorAll('.dynamic');
+            for(var i=0;i<dynamic.length;i++)
+            {
+                var element = dynamic[i];
+                var id = element.id;
+                var value = element.value;
+                var name = element.name;
+                if(name=="Degree")
+                {
+                    DegreeCount+=parseInt(value)
+                }
+                if(name=="School")
+                {
+                    SchoolCount+=parseInt(value)
+                }
+                if(name=="StartDate")
+                {
+                    StartDateCount+=parseInt(value)
+                }
+                if(name=="EndDate")
+                {
+                    EndDateCount+=parseInt(value)
+                }
+                if(name=="Percentage")
+                {
+                    PercentageCount+=parseInt(value)
+                }
+                if(name=="BackLog")
+                {       
+                    BackLogCount+=parseInt(value)
+                }
+
+            }
+            $('#totalOFDegree').val(DegreeCount)
+            $('#totalOFSchool').val(SchoolCount)
+            $('#totalOFStartDate').val(StartDateCount)
+            $('#totalOFEndDate').val(EndDateCount)
+            $('#totalOFPercentage').val(PercentageCount)
+            $('#totalOFBackLog').val(BackLogCount)
+
         })
     </script>
 </body>

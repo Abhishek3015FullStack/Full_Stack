@@ -296,35 +296,36 @@
                     return element.counter == rowClick;
                 });
                 var a = userData[rowFindex].dynamicArray;
+                console.log(a);
 
                 // Create the table with thead and tbody
-                var table = $('<table><thead><tr><th>DiscountPrice</th><th>Price</th><th>Discount</th><th>itemName</th></tr></thead><tbody></tbody><tfoot><tr><th>Total</th><th>'+  userData[rowFindex].counter+'$</th><th>'+  userData[rowFindex].counter+'$</th><th>'+  userData[rowFindex].counter+'$</th></tr></tfoot></table>');
+                var table = $('<table><thead><tr><th>Number</th><th>DiscountPrice</th><th>Action</th></tr></thead><tbody></tbody><tfoot><tr><th>Total</th><th></th></tr></tfoot></table>');
                 row.after(table);
 
                 var dataTable = table.DataTable({
                     paging: false,
                     searching: false,
-                    info: false,
-                    data: a,
-                    columns: [
-                        { data: 'DiscountPrice', title: "DiscountPrice" },
-                        { data: 'Price', title: "Price" },
-                        { data: 'Discount', title: "Discount" },
-                        { data: 'itemName', title: "itemName" }
-                    ],
-                    footer: true
-                });
-
-                // var column = dataTable.column(0); 
-                // $(column.footer()).html(
-                //     column.data().reduce(function (a, b) {
-                //         return parseFloat(a) + parseFloat(b);
-                //     }, 0).toFixed(2) 
-                // );
+                    info: false})
+                var counter5=1 
+                $.each(a,function(index,object)
+                {
+                    var row = dataTable.row.add([counter5,object.Active,'<input type="button" value="EditItem" class="EditItem">']).draw().node()
+                    $(row).attr('counter5',counter5)
+                    counter5++;
+                })
+                $(document).on('click','.EditItem',function()
+                {
+                    debugger
+                    var rowWasclick = $(this).closest('tr').attr('counter5')
+                    var newIndex = rowWasclick-1;
+                    var newData = a[newIndex];
+                    console.log(newIndex)
+                    
+                })
 
                 
-                // table.find('tfoot th:last-child').text("Total");
             });
+           
 
 
         })
