@@ -130,7 +130,7 @@
                 $('#State').html("<option selected>Select State</option>");
                 $('#City').html("<option selected>Select City</option>");
 
-                const CountryName = Liststate.filter(m=>m.Country == $('#Country').val());
+                var CountryName = Liststate.filter(m=>m.Country == $('#Country').val());
 
                 CountryName.forEach(element => {
                     const states = "<option val'"+element.State+"'>"+element.State+ "</option>";
@@ -141,7 +141,7 @@
             $('#State').change(function()
             {
                 $('#City').html("<option selected> Select City </option>");
-                const State = Listcity.filter(m=>m.State == $('#State').val());
+                var State = Listcity.filter(m=>m.State == $('#State').val());
                 State.forEach(element =>
                 {
                     const option= "<option val'"+element.City +"'>"+element.City+"</option>";
