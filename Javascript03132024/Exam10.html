@@ -20,34 +20,54 @@
 </head>
 
 <body>
-    <form id="myform" class="was-validated" novalidate>
-        <div class="">
-            <label for="Firstname">Firstname</label>
-            <input type="text" name="Firstname" id="Firstname" required pattern="[a-zA-Z]{3,}" class="form-control">
+    <div class="container">
+        <form id="myform" class="was-validated" novalidate>
+            <div class="">
+                <label for="Firstname">Firstname</label>
+                <input type="text" name="Firstname" id="Firstname" required class="form-control">
+                <div class="invalid-feedback">
+                    field is required
+                </div>
+                <div class="valid-feedback">
+                    success
+                </div>
+            </div>
+            <input type="text" name="Firstname" id="Firstname" required pattern="[a-zA-Z]{3,}">
             <div class="invalid-feedback">
                 field is required
             </div>
             <div class="valid-feedback">
                 success
             </div>
-        </div>
-        <input type="text" name="Firstname" id="Firstname" required pattern="[a-zA-Z]{3,}">
-        <div class="invalid-feedback">
-            field is required
-        </div>
-        <div class="valid-feedback">
-            success
-        </div>
-        <input type="button" name="ADD" id="ADD" value="ADD">
-        <input type="button" name="submit" id="submit" value="submit">
-        <div id="add1">
+            <input type="button" name="ADD" id="ADD" value="ADD">
+            <input type="submit" name="submit" id="submit" value="submit">
+            <div id="add1">
 
-        </div>
-        <table id="abhishke">
+            </div>
+            <table id="abhishke">
 
-        </table>
-    </form>
+            </table>
+            <div>
+                <input type="checkbox" name="check1" id="check" required value="true" onclick="changeFunction()" checked>
+                <label for="check">check</label>
+            </div>
+        </form>
+    </div>
     <script>
+        function changeFunction()
+        {
+            debugger
+            var a1 = document.getElementById("check");
+            var value =document.getElementById("check").value;
+            if (value=="true")
+            {
+                a1.setAttribute("value","false")
+            }
+            else
+            {
+                a1.setAttribute("value","true")
+            }
+        }
         var counter1 = 0
         $(document).ready(function () {
             $('#ADD').on('click', function () {
@@ -80,10 +100,11 @@
 
                 $('#abhishke').append(row);
             })
-            $('#submit').on('click', function (event) {
+            $('#myform').on('submit', function (event) {
                 debugger
                 var form = $('#myform')[0];
                 var validity = form.checkValidity();
+                event.preventDefault(); 
                 console.log(validity)
                 if (validity == true) {
                     alert("done")
