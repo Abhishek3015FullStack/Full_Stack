@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <form id="myform" class="was-validated" novalidate action="/home/InsertData" method="post"> 
+        <div class="row mt-5 mb-5">
+            <div class="col-lg-4" >
+                <label>firstName</label>
+                <input type="text" name="firstName" id="firstName" class="form-control" pattern="[a-zA-Z]{3,}"/>
+                <div class="invalid-feedback" style=" margin: 0px 0px 0px -164px; ">
+                    This is required Fields
+                </div>
+                <div class="valid-feedback" style=" margin: 0px 0px 0px -164px; ">
+                    This is correct
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <label>LastName</label>
+                <input type="text" name="LastName" id="LastName" class="form-control" pattern="[a-zA-Z]{3,}"/>
+                <div class="invalid-feedback" style=" margin: 0px 0px 0px -164px; ">
+                    This is required Fields
+                </div>
+                <div class="valid-feedback" style=" margin: 0px 0px 0px -164px; ">
+                    This is correct
+                </div>
+            </div>
+            <div class="col-lg-4" style=" margin: 23px 0px 0px 0px;">
+                <select class="form-select" required>
+                    <option value="select" id="select" selected disabled>select</option>
+                    <option value="Dhule" id="Dhule">Dhule</option>
+                    <option value="Nandurbar" id="Nandurbar">Nandurbar</option>
+                    <option value="Sakri" id="Sakri">Sakri</option>
+                </select>
+                <div class="invalid-feedback" style=" margin: 0px 0px 0px -164px; ">
+                    This is required Fields
+                </div>
+                <div class="valid-feedback" style=" margin: 0px 0px 0px -164px; ">
+                    This is correct
+                </div>
+            </div>
+        </div>
+        <input type="button" name="submit" id="submit" value="submit" location.href />
+    </form>
+</div>
