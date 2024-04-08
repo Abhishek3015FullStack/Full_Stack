@@ -22,7 +22,7 @@
 
 <body>
     <form id="Myform">
-        <input type="firstName" name="firsstName" id="firstName">
+        <input type="firstName" name="firstName" id="firstName">
         <span id="firstNameSpan"></span>
         <input type="button" name="ADDItem" id="ADDItem" value="ADDItem">
         <table id="insideTable">
@@ -391,7 +391,7 @@
                 }
                 var rowData ={}
                 var FirstNameValidation = firstName();
-                if (checkpoint == 0 &&FirstNameValidation==true) 
+                if (true) 
                 {
                     debugger
                     var FirstName = $('#firstName').val();
@@ -400,13 +400,27 @@
                     var DynamicArray =[]
                     for(var i=0;i<dynamic.length;i=i+6)
                     {
+                        var Discount= 0
+                        var total = 0
+                        var amount = 0
                         var DynamicObject ={}
                         for(var j=0;j<6;j++)
                         {
+                           debugger
                             var element = dynamic[i+j];
                             var name = element.name;
                             var value = element.value;
                             DynamicObject[name] = value
+                            if(name=="Degree")
+                            {
+                                Discount = value
+                            }
+                            if(name =="School")
+                            {
+                                total = Discount*value;
+                                DynamicObject['total'] = total
+                            }
+                         
                         }
                         DynamicArray.push(DynamicObject)
                     }
