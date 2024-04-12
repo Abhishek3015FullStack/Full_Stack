@@ -1,0 +1,21 @@
+﻿@model Product
+<h1>Create Product</h1>
+
+<div>
+    <form id="myform" class="was-validated" novalidate>
+        <div asp-validation-summary="All"></div>
+        <div class="row">
+            <div class="col-lg-6">
+                <label asp-for="Product_name"></label>
+                <input asp-for="Product_name" name="Product_name" id="Product_name"pattern="[a-zA-Z ]{3,}" class="form-control"/>
+                <span asp-validation-for="Product_name"></span>
+            </div>
+            <div class="col-lg-6">
+                <label asp-for="Product_Price"></label>
+                <input asp-for="Product_Price" name="Product_Price" id="Product_Price" required pattern="[0-9]{3,}" class="form-control" />
+                <span asp-validation-for="Product_Price"></span>
+            </div>
+            <input type="submit" name="submit" id="submit" value="submit" class="btn btn-success"/>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,13 @@
+﻿
+@if (TempData["Success"] != null)
+{
+    <script src="https://code.jquery.com/jquery-migrate-3.4.1.js" integrity="sha256-CfQXwuZDtzbBnpa5nhZmga8QAumxkrhOToWweU52T38=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    //cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js
+    <script type="text/javascript">
+        toastr.success('@TempData["Success"]')
+    </script>
+}
+
+

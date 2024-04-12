@@ -1,0 +1,47 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "CreatePage";
+}
+
+<h1>CreatePage</h1>
+
+<form id="myform" method="post" class="was-validated" novalidate>
+    <div asp-validation-summary="All">
+    </div>
+    <div class="row">
+           <div class="col-lg-4">
+                <label asp-for="Category_Id"></label>
+                <input asp-for="Category_Id" name="Category_Id" id="Category_Id" pattern="[0-9]{3,}" required class="form-control"/>
+                <span asp-validation-for="Category_Id" class="text-danger"></span>
+            </div>
+            <div class="col-lg-4">
+            <label asp-for="Category_Name"></label>
+                 <input asp-for="Category_Name" id="Category_Name" pattern="[a-zA-Z]{3,}" required class="form-control" />
+                <span asp-validation-for="Category_Name" class="text-danger"></span>
+            
+        </div>
+        <div class="col-lg-4">
+            <label asp-for="Category_Description"></label>
+                <input asp-for="Category_Description" id="Category_Description" pattern="[a-zA-Z]{3,}" required class="form-control" />
+                <span asp-validation-for="Category_Description" class="text-danger"></span>
+        </div>
+        <div class="row mt-2">
+            <div class="col-6 p-2">
+                <div>  <input type="Submit" name="Submit" id="Submit" value="Submit" class="btn btn-success form-control" /></div>
+            </div>
+            <div class="col-6 p-2">
+                <div><a asp-controller="Category" asp-action="Index" class="btn btn-danger form-control">Back</a></div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+

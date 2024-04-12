@@ -1,0 +1,63 @@
+﻿@model List<Category>
+
+
+<h1>category</h1>
+<div class=" justify-content-end"  >
+    <button>    
+        <a asp-action="CreatePage" asp-controller="Home">CreateCategory</a>
+    </button>
+
+<table class="table table-striped" id="Tbale" >
+    <tr>
+        <thead>
+            <th>Category_Name</th>
+            <th>Category_Description</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model)
+            {
+                <tr>
+                    <td>@obj.Category_Name</td>
+                    <td>@obj.Category_Description</td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Home" class="btn btn-outline-success" asp-route-id="@obj.Category_Id">Edit</a>
+                        <a asp-action="Delete" asp-controller="Home" class="btn btn-outline-danger" asp-route-id="@obj.Category_Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+</table>
+    @if (TempData["Success"] != null)
+    {
+        <h1>@TempData["Success"]</h1>
+    }
+
+<script>
+$(document).ready(function()
+{
+    
+   $.ajax({
+       debugger
+        url:'Category/Index',
+        HttpMethod: "GET",
+        dataType: "json",
+        success: function (data) {
+            debugger
+            $('#Tbale').dataTable(
+                {
+                    debugger
+                    data:data,
+                    columns:[
+                                { 'data': 'Category_Name' },
+                                { 'data': 'Category_Description' }
+                    ]
+
+
+                });
+            
+        },
+   });
+})
+
+        </script>
